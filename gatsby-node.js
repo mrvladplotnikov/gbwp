@@ -22,6 +22,16 @@ const generatePath = (langCode, slug) => {
   return `/${lang.code}/${slug}/`
 }
 
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig()
+  if (stage.startsWith("develop") && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react-dom": "@hot-loader/react-dom",
+    }
+  }
+}
+
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
@@ -80,8 +90,6 @@ exports.createPages = async ({ graphql, actions }) => {
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
     const nodePath = generatePath(edge.node.lang, edge.node.slug)
-    console.log(nodePath)
-
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
@@ -102,7 +110,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   allWordpressPost.edges.forEach(edge => {
     const nodePath = generatePath(edge.node.lang, edge.node.slug)
-    console.log(nodePath)
     createPage({
       path: nodePath,
       component: slash(postTemplate),
