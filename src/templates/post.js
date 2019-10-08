@@ -1,19 +1,17 @@
-import React, { Component } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Layout from "../layouts"
 
-class PostTemplate extends Component {
-  render() {
-    const post = this.props.data.wordpressPost
+const PostTemplate = ({ data }) => {
+  const post = data.wordpressPost
 
-    return (
-      <Layout>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </Layout>
+  )
 }
 
 PostTemplate.propTypes = {

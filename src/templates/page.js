@@ -1,19 +1,16 @@
-import React, { Component } from "react"
+import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../layouts"
 
-class PageTemplate extends Component {
-  render() {
-    const currentPage = this.props.data.wordpressPage
+const PageTemplate = ({ data }) => {
+  const currentPage = data.wordpressPage
 
-    return (
-      <Layout>
-        <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-        <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+      <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+    </Layout>
+  )
 }
 
 export default PageTemplate
