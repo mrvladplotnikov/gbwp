@@ -1,0 +1,8 @@
+.FeatureList {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .FeatureList {
+    columns: 2;
+  }
+}
