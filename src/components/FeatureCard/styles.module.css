@@ -1,0 +1,44 @@
+.FeatureCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  width: 36px;
+}
+
+.text {
+  width: auto;
+  margin: 0;
+  margin-left: 15px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 992px) {
+  .FeatureCard {
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
+  .image {
+    display: block;
+    max-width: 100%;
+    width: 80px;
+  }
+  .text {
+    width: auto;
+    margin-left: 44px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: initial;
+  }
+}
