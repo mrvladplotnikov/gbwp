@@ -1,0 +1,59 @@
+.wrapper {
+  display: inline-block;
+}
+.StyledLink {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 1px solid #747474;
+  box-sizing: border-box;
+  min-width: 123px;
+  display: inline-block;
+}
+.StyledLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(90.32deg, #f2390b 0.07%, #1897d9 99.93%);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.arrowWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.arrow {
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.arrow path {
+  stroke: #747474;
+  transition: stroke 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+
+.wrapper:hover .StyledLink::before {
+  transform: scaleX(1);
+}
+.wrapper:hover .arrow {
+  transform: translateX(13px);
+}
+.wrapper:hover .arrow path {
+  stroke: #ffffff;
+}
+@media (min-width: 768px) {
+  .StyledLink {
+    font-size: 20px;
+    line-height: 24px;
+    min-width: 179px;
+  }
+}
