@@ -1,0 +1,57 @@
+.Hero {
+  height: 100vh;
+  position: relative;
+  background-image: url("../../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #000000;
+}
+.overlay {
+  position: absolute;
+  padding: 45px 32px 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.96) 66.36%,
+    #000000 102.12%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 100%;
+  display: block;
+  width: auto;
+  height: 90vh;
+}
+
+.logo path {
+  animation: fadeInWaves 2s forwards;
+}
+.logo path:nth-child(1),
+.logo path:nth-child(2) {
+  animation: fadeInLogo 1.5s forwards;
+}
+
+@keyframes fadeInWaves {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

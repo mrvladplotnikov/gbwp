@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../layouts"
-import Hero from "../components/Hero"
+import FeatureList from "../components/FeatureList/FeatureList"
 
 const Home = () => (
   <Layout>
-    <Hero />
+    <FeatureList />
   </Layout>
 )
 

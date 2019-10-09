@@ -1,0 +1,30 @@
+.languages {
+  display: none;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  position: absolute;
+  top: 45px;
+  left: 32px;
+}
+@media (min-width: 992px) {
+  .languages {
+    display: flex;
+  }
+}
+.language {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+.language:first-child {
+  padding-left: 0;
+}
+.language:last-child {
+  padding-right: 0;
+}
+.currentLanguage {
+  font-weight: 600;
+}
