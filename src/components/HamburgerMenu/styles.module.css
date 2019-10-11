@@ -1,7 +1,7 @@
 .hamburger {
   position: absolute;
-  top: 45px;
-  right: 32px;
+  top: 28px;
+  right: 20px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -9,6 +9,13 @@
   align-items: flex-end;
   flex-direction: column;
 }
+@media (min-width: 992px) {
+  .hamburger {
+    top: 45px;
+    right: 32px;
+  }
+}
+
 .hamburger:focus {
   outline: none;
 }
