@@ -1,8 +1,20 @@
 .FeatureList {
   position: relative;
 }
+
+.FeatureList .feature {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 992px) {
   .FeatureList {
     columns: 2;
+  }
+  .FeatureList .feature {
+    margin-bottom: 100px;
+  }
+  .FeatureList .feature:nth-child(3),
+  .FeatureList .feature:nth-child(6) {
+    margin-bottom: 0;
   }
 }

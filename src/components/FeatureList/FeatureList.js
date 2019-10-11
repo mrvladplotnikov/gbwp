@@ -8,7 +8,13 @@ const FeatureList = () => (
   <Inner>
     <div className={styles.FeatureList}>
       {features.map(({ id, image, alt, text }) => (
-        <FeatureCard key={id} img={image} alt={alt} text={text} />
+        <FeatureCard
+          key={id}
+          img={image}
+          alt={alt}
+          text={text}
+          className={styles.feature}
+        />
       ))}
     </div>
   </Inner>
