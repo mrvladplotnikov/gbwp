@@ -1,0 +1,19 @@
+.Why {
+  background-color: #090909;
+  padding: 43px 15px 46px 15px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 21px;
+}
+
+@media (min-width: 992px) {
+  .Why {
+    padding: 122px 15px 129px 15px;
+  }
+  .title {
+    margin-bottom: 112px;
+  }
+}

@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 
 import styles from "./styles.module.css"
 
-const StyledLink = ({ children, to, ...attrs }) => {
+const StyledLink = ({ className, children, to, ...attrs }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={classNames(styles.wrapper, className)}>
       <Link className={styles.StyledLink} to={to} {...attrs}>
         {children}
       </Link>
