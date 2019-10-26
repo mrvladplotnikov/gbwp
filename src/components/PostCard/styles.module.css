@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-right: 15px;
+  padding-right: 16px;
 }
 .title {
   font-weight: bold;
@@ -10,11 +10,7 @@
   line-height: 22px;
   margin: 0;
   margin-bottom: 10px;
-}
-.thumbnail {
-  max-width: 100%;
-  display: block;
-  margin: 15px 0;
+  order: 1;
 }
 .description {
   font-style: normal;
@@ -23,8 +19,24 @@
   line-height: 17px;
   margin: 0;
   padding: 0;
+  order: 2;
 }
+.thumbnail {
+  max-width: 100%;
+  display: block;
+  margin: 15px 0 0 0;
+  order: 3;
+  width: 100%;
+  height: auto;
+}
+.PostCard.revers {
+  justify-content: flex-end;
+}
+
 @media (min-width: 992px) {
+  .PostCard {
+    min-height: 560px;
+  }
   .title {
     font-size: 22px;
     line-height: 27px;
@@ -33,5 +45,16 @@
   .description {
     font-size: 18px;
     line-height: 22px;
+  }
+
+  .PostCard.revers .title {
+    order: 2;
+  }
+  .PostCard.revers .description {
+    order: 3;
+  }
+  .PostCard.revers .thumbnail {
+    order: 1;
+    margin: 0 0 15px 0;
   }
 }

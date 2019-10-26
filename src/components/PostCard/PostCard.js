@@ -3,30 +3,43 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 import styles from "./styles.module.css"
 
-import postImage from "../../images/post-t.jpg"
+//TODO: add gatsby link
 
-const PostCard = ({ className, title, thumbnail, description }) => (
-  <div className={classNames(styles.PostCard, className)}>
-    <img className={styles.thumbnail} src={postImage} alt={title} />
+const PostCard = ({
+  className = "",
+  title = "",
+  thumbnail = "",
+  description = "",
+  revers = false,
+}) => (
+  <div
+    className={classNames(
+      styles.PostCard,
+      { [styles.revers]: revers },
+      className
+    )}
+  >
+    <img
+      className={styles.thumbnail}
+      width="366"
+      height="366"
+      src={thumbnail}
+      alt={title}
+      onDragStart={e => {
+        e.preventDefault()
+      }}
+    />
     <h5 className={styles.title}>{title}</h5>
-    <p className={styles.description}>
-      Cras dapibus. Vivamus elementum semper nisi.
-    </p>
+    <p className={styles.description}>{description}</p>
   </div>
 )
-
-PostCard.defaultProps = {
-  className: "",
-  title: "",
-  thumbnail: "",
-  description: "",
-}
 
 PostCard.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   thumbnail: PropTypes.string,
   description: PropTypes.string,
+  revers: PropTypes.bool,
 }
 
 export default PostCard
