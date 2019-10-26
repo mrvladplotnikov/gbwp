@@ -1,0 +1,35 @@
+.alice-carousel {
+  padding: 0 0 0 15px;
+}
+
+.alice-carousel__dots {
+  font-size: 0;
+  line-height: 0;
+  margin: 20px 15px 35px 0;
+}
+
+.alice-carousel__dots-item {
+  width: 45px;
+  height: 4px;
+  background: #fff;
+  border-radius: 0;
+  margin: 5px 0;
+}
+.alice-carousel__dots-item:not(:last-child) {
+  margin-right: 5px;
+}
+@media (min-width: 992px) {
+  .alice-carousel__dots {
+    margin: 25px 15px 62px 0;
+  }
+  .alice-carousel__dots-item {
+    width: 108px;
+  }
+  .alice-carousel__dots-item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.alice-carousel__dots-item:hover,
+.alice-carousel__dots-item.__active {
+  background: linear-gradient(90deg, #f3461b -0.37%, #0da6f2 99.72%);
+}
