@@ -1,5 +1,25 @@
 .Blog {
+  padding: 44px 0 35px 0;
+  background-color: #090909;
 }
 
 .title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.linkWrapper {
+  display: flex;
+  padding: 0 15px;
+  justify-content: flex-end;
+}
+
+@media (min-width: 992px) {
+  .Blog {
+    padding: 124px 0 111px 0;
+  }
+  .title {
+    margin-bottom: 115px;
+  }
 }
