@@ -12,10 +12,10 @@ import Img from "gatsby-image"
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "hero-bg.jpg" }) {
+      bgImage: file(relativePath: { eq: "hero-bg.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1280) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <div className={styles.Hero}>
       <Img
-        fluid={data.placeholderImage.childImageSharp.fluid}
+        fluid={data.bgImage.childImageSharp.fluid}
         alt=""
         role="presentation"
         className={styles.bg}
