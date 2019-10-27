@@ -1,0 +1,86 @@
+.Card {
+  border: 1px solid #3b3b3b;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 114px;
+  padding: 0 30px;
+}
+.Card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90.21deg,
+    rgba(242, 57, 11, 0.32) 0.07%,
+    rgba(24, 151, 217, 0.32) 99.93%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.Card:hover::after {
+  opacity: 1;
+}
+
+.bgWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg {
+  display: block;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "Montserrat";
+}
+
+.icon {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 20px;
+}
+
+@media (min-width: 570px) {
+  .Card {
+    padding: 0 60px;
+    height: 224px;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 39px;
+    font-family: "Montserrat";
+  }
+
+  .icon {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .Card {
+    width: 568px;
+    height: 224px;
+    padding: 0 60px;
+  }
+}
