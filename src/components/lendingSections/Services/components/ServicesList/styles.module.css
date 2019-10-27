@@ -1,0 +1,25 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  margin-bottom: 11px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .item {
+    margin-bottom: 33px;
+    width: auto;
+  }
+
+  .item:nth-child(3),
+  .item:nth-child(4) {
+    margin-bottom: 0;
+  }
+}
