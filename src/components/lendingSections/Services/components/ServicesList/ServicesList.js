@@ -7,7 +7,7 @@ import serviceIcon2 from "../../../../../images/services/icon-2.svg"
 import serviceIcon3 from "../../../../../images/services/icon-3.svg"
 import serviceIcon4 from "../../../../../images/services/icon-4.svg"
 
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const ServicesList = () => {
   const data = useStaticQuery(graphql`
