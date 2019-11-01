@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+  margin-left: -15px; /* gutter size offset */
+  padding: 0 15px;
+  width: auto;
+}
+.column {
+  padding-left: 15px; /* gutter size */
+  background-clip: padding-box;
+}
