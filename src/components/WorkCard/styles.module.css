@@ -1,0 +1,55 @@
+.WorkCard {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+.WorkCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)),
+    linear-gradient(
+      90.1deg,
+      rgba(242, 57, 11, 0.7) 0.07%,
+      rgba(24, 151, 217, 0.7) 99.93%
+    );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.WorkCard:hover::after {
+  opacity: 1;
+}
+.container {
+  margin: 0;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.title {
+  position: absolute;
+  bottom: 7px;
+  left: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 13px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+@media (min-width: 992px) {
+  .title {
+    bottom: 23px;
+    left: 17px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
