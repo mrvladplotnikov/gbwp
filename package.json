@@ -7,6 +7,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.15.29",
+    "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.20",
@@ -17,12 +18,14 @@
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-source-wordpress": "^3.1.39",
     "gatsby-transformer-sharp": "^2.2.20",
+    "intersection-observer": "^0.7.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-alice-carousel": "^1.15.3",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-masonry-css": "^1.0.14"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.9.0",
