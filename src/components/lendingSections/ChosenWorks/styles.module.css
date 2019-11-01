@@ -1,0 +1,39 @@
+.ChosenWorks {
+  padding: 44px 0 25px 0;
+  background-color: #090909;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+.desktopButton {
+  display: none;
+}
+.mobileButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+  .ChosenWorks {
+    padding: 123px 0 126px 0;
+  }
+  .desktopButton {
+    display: block;
+  }
+  .mobileButtonContainer {
+    display: none;
+  }
+  .title {
+    margin-bottom: 100px;
+  }
+}

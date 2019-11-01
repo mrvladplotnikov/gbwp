@@ -4,7 +4,7 @@ import Hero from "../components/lendingSections/Hero"
 import About from "../components/lendingSections/About"
 import Why from "../components/lendingSections/Why"
 import Services from "../components/lendingSections/Services"
-import Blog from "../components/lendingSections/Blog"
+import ChosenWorks from "../components/lendingSections/ChosenWorks/"
 
 const Home = () => (
   <Layout>
@@ -12,7 +12,7 @@ const Home = () => (
     <About />
     <Why />
     <Services />
-    <Blog />
+    <ChosenWorks />
   </Layout>
 )
 
