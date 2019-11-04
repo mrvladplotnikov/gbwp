@@ -1,0 +1,135 @@
+.container {
+  border-top: 1px solid #585858;
+  color: #bebebe;
+  padding: 24px 15px;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.col {
+  flex-grow: 1;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.col:nth-child(1) {
+  text-align: left;
+  order: 1;
+}
+.col:nth-child(2) {
+  text-align: center;
+  order: 3;
+}
+.col:nth-child(3) {
+  text-align: center;
+  order: 2;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.footerLinks li {
+  line-height: 1.65;
+  margin: 5px 10px;
+}
+
+.link {
+  cursor: pointer;
+  display: block;
+}
+
+.link[href=""] {
+  opacity: 0.5;
+}
+
+.privacyPolicy {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+  color: #bebebe;
+  margin-bottom: 24px;
+}
+
+.footerTitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.footerRights {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.footerLogo {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 30px 15px;
+  }
+  .innerContainer {
+    flex-direction: row;
+  }
+  .col:nth-child(1) {
+    text-align: left;
+    align-items: flex-start;
+    order: 1;
+  }
+  .col:nth-child(2) {
+    text-align: center;
+    order: 2;
+  }
+  .col:nth-child(3) {
+    text-align: right;
+    align-items: flex-end;
+    order: 3;
+  }
+
+  .footerLinks {
+    max-width: 105px;
+  }
+
+  .footerLinks li:nth-child(1),
+  .footerLinks li:nth-child(4) {
+    margin-left: 0;
+  }
+
+  .footerLinks li:nth-child(3),
+  .footerLinks li:nth-child(6) {
+    margin-right: 0;
+  }
+  .privacyPolicy {
+    margin-bottom: 0;
+  }
+  .footerTitle {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 10px;
+  }
+  .footerRights {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .footerLogo {
+    margin-bottom: 0;
+  }
+}
