@@ -27,30 +27,30 @@ const WorkCardsLIst = ({ className = "" }) => (
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 1"
-      image="http://webneel.com/daily/sites/default/files/images/daily/07-2013/2-3d-cartoon-elephant-mohamed-abdelfatah.preview.jpg"
+      image={image1}
       link="/"
     />
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 2"
-      image="https://th01.deviantart.net/fs71/PRE/f/2013/195/b/f/chihiro_hakuresized_by_chukairi_d6d8vl4_by_chukairi-d6dg8fe.jpg"
+      image={image2}
       link="/"
     />
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 3"
-      image="http://images6.fanpop.com/image/photos/34900000/Minion-Hitman-despicable-me-minions-34992255-2592-1620.jpg"
+      image={image3}
       link="/"
     />
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 4 "
-      image="http://www.plusthings.com/wp-content/uploads/2013/07/Disney-Cartoon-8.jpg"
+      image={image4}
       link="/"
     />
     <WorkCard
       className={styles.item}
-      title="Lorem ipsum dolores 5 "
+      title="Lorem ipsum dolores 5"
       image={image5}
       link="/"
     />

@@ -5,8 +5,8 @@ import Headline from "../../Headline"
 import StyledLink from "../../StyledLink"
 import WorkCardsLIst from "../../WorkCardsLIst"
 
-const ChosenWorks = () => (
-  <section className={styles.ChosenWorks}>
+const ChosenWorks = ({ portfolioRef = null }) => (
+  <section ref={portfolioRef} className={styles.ChosenWorks}>
     <Outer className={styles.container}>
       <Headline className={styles.title}>Избранные работы</Headline>
       <StyledLink className={styles.desktopButton} to="/blog">

@@ -9,7 +9,7 @@ import HeroLogo from "../../../images/logo.inline.svg"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Hero = () => {
+const Hero = ({ onClick }) => {
   const data = useStaticQuery(graphql`
     query {
       bgImage: file(relativePath: { eq: "hero-bg.jpg" }) {
@@ -34,7 +34,7 @@ const Hero = () => {
         <Languages />
         <HamburgerMenu />
         <SocialLinks />
-        <PortfolioButton />
+        <PortfolioButton onClick={onClick} />
         <HeroLogo className={styles.logo} />
       </div>
     </div>

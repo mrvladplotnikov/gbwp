@@ -1,0 +1,77 @@
+.section {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+  padding: 177px 15px 213px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.outer {
+  position: static;
+}
+
+.box {
+  position: absolute;
+  width: 67.94px;
+  height: 69.07px;
+}
+
+.boxTopLeft {
+  top: 12px;
+  left: -25px;
+}
+.boxTopRight {
+  top: 12px;
+  right: 8px;
+}
+.boxBottomLeft {
+  bottom: 12px;
+  left: 7px;
+}
+.boxBottomRight {
+  bottom: 12px;
+  right: -25px;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+@media (min-width: 992px) {
+  .section {
+    font-size: 60px;
+    line-height: 73px;
+    padding: 319px 15px 177px 15px;
+  }
+  .linkContainer {
+    margin-top: 106px;
+  }
+  .box {
+    width: 110.06px;
+    height: 111.89px;
+  }
+
+  .boxTopLeft {
+    top: 23px;
+    left: -39px;
+  }
+  .boxTopRight {
+    top: 23px;
+    right: 15px;
+  }
+  .boxBottomLeft {
+    bottom: 15px;
+    left: 18px;
+  }
+  .boxBottomRight {
+    bottom: 15px;
+    right: -39px;
+  }
+}
