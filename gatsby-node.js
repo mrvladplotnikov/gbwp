@@ -16,10 +16,17 @@ const langs = {
   },
 }
 
-const generatePath = (langCode, slug) => {
+const generatePath = (langCode, slug, type) => {
   const lang = langs[langCode]
-  if (!lang || lang.default) return slug
-  return `/${lang.code}/${slug}/`
+  if (!type) {
+    if (!lang || lang.default) return slug
+
+    return `/${lang.code}/${slug}/`
+  }
+
+  if (!lang || lang.default) return `/${type}/${slug}/`
+
+  return `/${lang.code}/${type}/${slug}/`
 }
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
@@ -70,6 +77,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressWpWork {
+        edges {
+          node {
+            id
+            slug
+            status
+            lang: polylang_current_lang
+          }
+        }
+      }
     }
   `)
 
@@ -79,7 +96,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allWordpressPage, allWordpressPost, allWordpressWpWork } = result.data
 
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   // We want to create a detailed page for each
@@ -113,6 +130,19 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: nodePath,
       component: slash(postTemplate),
+      context: {
+        id: edge.node.id,
+      },
+    })
+  })
+
+  const workTemplate = path.resolve(`./src/templates/work.js`)
+
+  allWordpressWpWork.edges.forEach(edge => {
+    const nodePath = generatePath(edge.node.lang, edge.node.slug, "works")
+    createPage({
+      path: nodePath,
+      component: slash(workTemplate),
       context: {
         id: edge.node.id,
       },
