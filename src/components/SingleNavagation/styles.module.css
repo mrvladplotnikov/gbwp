@@ -1,0 +1,138 @@
+.navigation {
+  background: #090909;
+  padding: 29px 0 32px;
+}
+
+.container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topLine {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.next,
+.prev {
+  display: flex;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: default;
+  touch-action: none;
+}
+
+.disabled .icon {
+  opacity: 0.3;
+}
+
+.icon {
+  max-width: 20px;
+  height: auto;
+}
+
+.prev .icon {
+  margin-right: 10px;
+}
+
+.next .label {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.next {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.label {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.list {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 7px 23px;
+  border: 1px solid #747474;
+  box-sizing: border-box;
+
+  z-index: 1;
+}
+.list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(90.32deg, #f2390b 0.07%, #1897d9 99.93%);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.list:hover::before {
+  transform: scaleX(1);
+}
+.list.disabled:hover::before {
+  transform: scaleX(0);
+}
+.list.mobile {
+  display: inline-block;
+}
+.list.desktop {
+  display: none;
+}
+
+@media (min-width: 574px) {
+  .list.desktop {
+    display: inline-block;
+  }
+  .list.mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .navigation {
+    padding: 55px 0;
+  }
+  .icon {
+    max-width: 42px;
+    height: auto;
+  }
+  .prev .icon {
+    margin-right: 15px;
+  }
+  .next .label {
+    margin-right: 15px;
+  }
+  .label {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .list {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 7px 30px;
+  }
+}
