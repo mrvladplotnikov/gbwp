@@ -1,6 +1,6 @@
 @import "~/normalize.css";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap&subset=cyrillic");
-
+@import "./basic-block-styles.css";
 html {
   font-family: sans-serif;
   scroll-behavior: smooth;
