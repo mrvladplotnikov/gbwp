@@ -6,12 +6,9 @@ import styles from "./styles.module.css"
 
 import WorkCard from "../WorkCard"
 
-import image1 from "../../images/post-t.jpg"
-import image2 from "../../images/post-t-2.jpg"
-import image3 from "../../images/post-t-3.jpg"
-import image4 from "../../images/post-t-4.jpg"
-import image5 from "../../images/post-t-5.jpg"
-import image6 from "../../images/post-t-6.jpg"
+import image1 from "../../images/works/1.jpg"
+import image2 from "../../images/works/2.jpg"
+import image3 from "../../images/works/3.jpg"
 
 const WorkCardsLIst = ({ className = "" }) => (
   <Masonry
@@ -45,19 +42,31 @@ const WorkCardsLIst = ({ className = "" }) => (
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 4 "
-      image={image4}
+      image={image2}
       link="/"
     />
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 5"
-      image={image5}
+      image={image1}
       link="/"
     />
     <WorkCard
       className={styles.item}
       title="Lorem ipsum dolores 6"
-      image={image6}
+      image={image3}
+      link="/"
+    />
+    <WorkCard
+      className={styles.item}
+      title="Lorem ipsum dolores 7"
+      image={image1}
+      link="/"
+    />
+    <WorkCard
+      className={styles.item}
+      title="Lorem ipsum dolores 8"
+      image={image3}
       link="/"
     />
   </Masonry>
