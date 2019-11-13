@@ -1,5 +1,5 @@
-const path = require(`path`)
-const slash = require(`slash`)
+const path = require("path")
+const slash = require("slash")
 
 const langs = {
   uk: {
@@ -83,6 +83,12 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             slug
             status
+            work_category
+            work_genre
+            work_service
+            work_platform
+            work_developer
+            work_authors
             lang: polylang_current_lang
           }
         }
@@ -136,7 +142,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const workTemplate = path.resolve(`./src/templates/work.js`)
+  const workTemplate = path.resolve(`./src/templates/work/work.js`)
 
   allWordpressWpWork.edges.forEach(edge => {
     const nodePath = generatePath(edge.node.lang, edge.node.slug, "works")
@@ -145,6 +151,12 @@ exports.createPages = async ({ graphql, actions }) => {
       component: slash(workTemplate),
       context: {
         id: edge.node.id,
+        work_category_ids: edge.node.work_category,
+        work_service_ids: edge.node.work_service,
+        work_genre_ids: edge.node.work_genre,
+        work_platform_ids: edge.node.work_platform,
+        work_developer_ids: edge.node.work_developer,
+        work_authors_ids: edge.node.work_authors,
       },
     })
   })
