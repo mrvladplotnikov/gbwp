@@ -1,0 +1,105 @@
+.section {
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 104px 15px 128px 15px;
+}
+
+.section h1 {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+}
+.section h2 {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+}
+.section h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.box {
+  position: absolute;
+  width: 67.94px;
+  height: 69.07px;
+}
+
+.boxTopLeft {
+  top: 12px;
+  left: -25px;
+}
+.boxTopRight {
+  top: 12px;
+  right: 8px;
+}
+.boxBottomLeft {
+  bottom: 12px;
+  left: 7px;
+}
+.boxBottomRight {
+  bottom: 12px;
+  right: -25px;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+@media (min-width: 992px) {
+  .section {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 35px;
+    text-align: justify;
+    padding: 340px 15px 320px 15px;
+    margin-bottom: 125px;
+  }
+  .section h1 {
+    font-size: 100px;
+    line-height: 122px;
+    text-transform: uppercase;
+  }
+  .section h2 {
+    font-size: 70px;
+    line-height: 85px;
+  }
+  .section h3 {
+    font-size: 32px;
+    line-height: 37px;
+  }
+  .linkContainer {
+    margin-top: 106px;
+  }
+  .box {
+    width: 110.06px;
+    height: 111.89px;
+  }
+
+  .boxTopLeft {
+    top: 23px;
+    left: -39px;
+  }
+  .boxTopRight {
+    top: 23px;
+    right: 15px;
+  }
+  .boxBottomLeft {
+    bottom: 15px;
+    left: 18px;
+  }
+  .boxBottomRight {
+    bottom: 15px;
+    right: -39px;
+  }
+}

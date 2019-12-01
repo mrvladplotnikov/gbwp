@@ -1,0 +1,29 @@
+.container {
+  margin: 0;
+}
+
+.icon {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .container {
+    min-width: 160px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

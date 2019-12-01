@@ -4,15 +4,15 @@ import { Outer, Inner } from "../../Container"
 import Headline from "../../Headline"
 import ServicesList from "./components/ServicesList/ServicesList"
 
-const Services = () => {
+const Services = ({ title = "", services = [] }) => {
   return (
     <section className={styles.Services}>
       <Outer>
         <Headline className={styles.title} Tag="h2">
-          Наши услуги
+          {title}
         </Headline>
         <Inner>
-          <ServicesList />
+          <ServicesList services={services} />
         </Inner>
       </Outer>
     </section>

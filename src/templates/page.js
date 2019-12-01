@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../layouts"
+import Layout from "../layouts/uk/default"
 
-const PageTemplate = ({ data }) => {
+const PageTemplate = ({ data, location }) => {
   const currentPage = data.wordpressPage
 
   return (
-    <Layout>
+    <Layout location={location}>
       <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
       <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
     </Layout>

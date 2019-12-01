@@ -1,0 +1,118 @@
+.container {
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.logo {
+  display: block;
+  line-height: 1;
+  max-width: 33px;
+  width: 100%;
+}
+
+.nav {
+  flex: 1;
+  display: none;
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul > li {
+  margin-right: 60px;
+  position: relative;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.nav li > ul {
+  margin: 0;
+  padding: 20px 35px 20px;
+  list-style: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 1);
+  background-blend-mode: color;
+  top: 100%;
+  left: -35px;
+}
+
+.nav li > ul > li {
+  margin-bottom: 8px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.nav li > ul a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #c2c2c2;
+}
+
+.nav a:hover {
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
+.dropdown {
+  cursor: pointer;
+}
+.childList {
+  display: none;
+}
+.childList.open {
+  display: block;
+}
+
+.menuButton {
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  .logo {
+    max-width: 54px;
+  }
+  .nav {
+    display: block;
+  }
+  .nav a {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .nav li > ul a {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .menuButton {
+    display: none !important;
+  }
+}

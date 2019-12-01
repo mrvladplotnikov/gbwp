@@ -1,0 +1,131 @@
+.card {
+  background-color: #090909;
+  min-height: 420px;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.card.rect::before {
+  content: url("../../images/cards-bg-vectors/rect.svg");
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 100%;
+  display: block;
+  max-width: 134px;
+}
+.card.rect::after {
+  content: url("../../images/cards-bg-vectors/rect.svg");
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 100%;
+  display: block;
+  max-width: 134px;
+}
+.card.rectRevers::before {
+  content: url("../../images/cards-bg-vectors/rect.svg");
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100%;
+  display: block;
+  max-width: 134px;
+}
+.card.rectRevers::after {
+  content: url("../../images/cards-bg-vectors/rect.svg");
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 100%;
+  display: block;
+  max-width: 134px;
+}
+
+.card.waves::before {
+  content: url("../../images/cards-bg-vectors/wave-2.svg");
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  display: block;
+  max-width: 226px;
+}
+.card.waves::after {
+  content: url("../../images/cards-bg-vectors/wave-1.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  max-width: 226px;
+}
+.card.wavesRevers::before {
+  content: url("../../images/cards-bg-vectors/wave-2.svg");
+  position: absolute;
+  top: -10px;
+  left: 4px;
+  width: 100%;
+  display: block;
+  max-width: 226px;
+  transform: rotate(90deg);
+}
+.card.wavesRevers::after {
+  content: url("../../images/cards-bg-vectors/wave-1.svg");
+  position: absolute;
+  bottom: -13px;
+  right: 0;
+  width: 100%;
+  display: block;
+  max-width: 226px;
+  transform: rotate(90deg);
+}
+.card.fullWaves::after {
+  content: "";
+  background-image: url("../../images/cards-bg-vectors/full-waves.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.card.circle::after {
+  content: "";
+  background-image: url("../../images/cards-bg-vectors/cricle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.content {
+  max-width: 770px;
+  width: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+  .card {
+    min-height: 628px;
+    margin-bottom: 38px;
+  }
+  .content {
+    font-size: 22px;
+    line-height: 37px;
+  }
+}

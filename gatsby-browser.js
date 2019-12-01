@@ -5,15 +5,10 @@
  */
 
 // You can delete this file if you're not using it
-import React from "react"
-import { LangProvider } from "./src/context/LangContext"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 library.add(fab)
 
-export const wrapRootElement = ({ element }) => (
-  <LangProvider>{element}</LangProvider>
-)
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {

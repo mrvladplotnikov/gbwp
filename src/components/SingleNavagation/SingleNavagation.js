@@ -9,7 +9,7 @@ import ArrowLeftColorIcon from "../../images/arrow-color-left.svg"
 import ArrowRightIcon from "../../images/arrow-right.svg"
 import ArrowRightColorIcon from "../../images/arrow-color-right.svg"
 
-const WorkTemplate = ({ prev = "", next = "", list = "" }) => {
+const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
   const [prevHovered, setPrevHovered] = useState(false)
   const [nextHovered, setNextHovered] = useState(false)
 
@@ -18,6 +18,10 @@ const WorkTemplate = ({ prev = "", next = "", list = "" }) => {
   const handleNextMouseEnter = () => setNextHovered(next !== "")
   const handleNextMouseLeave = () => setNextHovered(false)
 
+  const nextPostLink = prefix ? `/${prefix}/${next}` : `/${next}`
+  const prevPostLink = prefix ? `/${prefix}/${prev}` : `/${prev}`
+  const listPostLink = prefix ? `/${prefix}/${list}` : `/${list}`
+
   return (
     <div className={styles.navigation}>
       <Inner>
@@ -25,7 +29,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "" }) => {
           <div className={styles.topLine}>
             <Link
               className={classNames(styles.prev, { [styles.disabled]: !prev })}
-              to={prev}
+              to={prevPostLink}
               onMouseEnter={handlePrevMouseEnter}
               onMouseLeave={handlePrevMouseLeave}
             >
@@ -40,13 +44,13 @@ const WorkTemplate = ({ prev = "", next = "", list = "" }) => {
               className={classNames(styles.list, styles.desktop, {
                 [styles.disabled]: !list,
               })}
-              to={list}
+              to={listPostLink}
             >
               Вернуться в портфолио
             </Link>
             <Link
               className={classNames(styles.next, { [styles.disabled]: !next })}
-              to={next}
+              to={nextPostLink}
               onMouseEnter={handleNextMouseEnter}
               onMouseLeave={handleNextMouseLeave}
             >
@@ -62,7 +66,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "" }) => {
             className={classNames(styles.list, styles.mobile, {
               [styles.disabled]: !list,
             })}
-            to={list}
+            to={listPostLink}
           >
             Вернуться в портфолио
           </Link>
@@ -76,6 +80,7 @@ WorkTemplate.propTypes = {
   prev: PropTypes.string,
   next: PropTypes.string,
   list: PropTypes.string,
+  prefix: PropTypes.string,
 }
 
 export default WorkTemplate

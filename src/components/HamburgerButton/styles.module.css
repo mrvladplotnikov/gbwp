@@ -1,0 +1,53 @@
+.hamburger {
+  position: absolute;
+  top: 28px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  z-index: 200;
+}
+@media (min-width: 992px) {
+  .hamburger {
+    top: 45px;
+    right: 32px;
+  }
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger .hamburgerLine {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin-bottom: 9px;
+  background: #ffffff;
+  transition: transform 0.13s ease-in-out;
+}
+.hamburger .hamburgerLine:nth-child(2) {
+  width: 20px;
+  transition: width 0.13s ease-in-out, transform 0.13s ease-in-out;
+}
+.hamburger .hamburgerLine:nth-child(3) {
+  opacity: 1;
+  transition: opacity 0.13s ease-in-out;
+}
+.hamburger:hover .hamburgerLine:nth-child(2) {
+  width: 30px;
+}
+
+.hamburger.open .hamburgerLine:nth-child(1) {
+  transform: rotateZ(-45deg) translate(-8px, 7px);
+}
+.hamburger.open .hamburgerLine:nth-child(2) {
+  transform: rotateZ(45deg) translate(0px, 0px);
+  width: 30px;
+}
+.hamburger.open .hamburgerLine:nth-child(3) {
+  opacity: 0;
+}

@@ -77,18 +77,12 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allWordpressWpWork {
+      allWordpressWpWork(sort: { order: ASC, fields: date }) {
         edges {
           node {
             id
             slug
             status
-            work_category
-            work_genre
-            work_service
-            work_platform
-            work_developer
-            work_authors
             lang: polylang_current_lang
           }
         }
@@ -142,21 +136,48 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const workTemplate = path.resolve(`./src/templates/work/work.js`)
+  const works = allWordpressWpWork.edges
 
-  allWordpressWpWork.edges.forEach(edge => {
-    const nodePath = generatePath(edge.node.lang, edge.node.slug, "works")
+  const workUKTemplate = path.resolve(`./src/templates/work/work.uk.js`)
+  const worksUK = works.filter(({ node }) => node.lang === "uk")
+  worksUK.forEach(({ node }, index) => {
+    const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({
       path: nodePath,
-      component: slash(workTemplate),
+      component: slash(workUKTemplate),
       context: {
-        id: edge.node.id,
-        work_category_ids: edge.node.work_category,
-        work_service_ids: edge.node.work_service,
-        work_genre_ids: edge.node.work_genre,
-        work_platform_ids: edge.node.work_platform,
-        work_developer_ids: edge.node.work_developer,
-        work_authors_ids: edge.node.work_authors,
+        id: node.id,
+        prev: index === 0 ? null : worksUK[index - 1].node,
+        next: index === worksUK.length - 1 ? null : worksUK[index + 1].node,
+      },
+    })
+  })
+
+  const workRUTemplate = path.resolve(`./src/templates/work/work.ru.js`)
+  const worksRU = works.filter(({ node }) => node.lang === "ru_RU")
+  worksRU.forEach(({ node }, index) => {
+    const nodePath = generatePath(node.lang, node.slug, "works")
+    createPage({
+      path: nodePath,
+      component: slash(workRUTemplate),
+      context: {
+        id: node.id,
+        prev: index === 0 ? null : worksRU[index - 1].node,
+        next: index === worksRU.length - 1 ? null : worksRU[index + 1].node,
+      },
+    })
+  })
+  const workENTemplate = path.resolve(`./src/templates/work/work.en.js`)
+  const worksEN = works.filter(({ node }) => node.lang === "en_GB")
+  worksEN.forEach(({ node }, index) => {
+    const nodePath = generatePath(node.lang, node.slug, "works")
+    createPage({
+      path: nodePath,
+      component: slash(workENTemplate),
+      context: {
+        id: node.id,
+        prev: index === 0 ? null : worksEN[index - 1].node,
+        next: index === worksEN.length - 1 ? null : worksEN[index + 1].node,
       },
     })
   })

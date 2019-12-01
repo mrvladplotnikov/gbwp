@@ -1,0 +1,40 @@
+.langs {
+  line-height: 1;
+  display: none;
+}
+.langs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  position: relative;
+  display: none;
+}
+
+.langs ul.open {
+  display: block;
+}
+
+.langs li {
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.langs .currentLang {
+  display: block;
+  cursor: pointer;
+}
+
+.langs a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .langs {
+    display: block;
+  }
+}

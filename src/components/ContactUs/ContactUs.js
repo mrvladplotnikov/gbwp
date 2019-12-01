@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import { Inner } from "../Container"
 import Headline from "../Headline"
+import { FormattedMessage } from "react-intl"
+import { graphql, useStaticQuery } from "gatsby"
 
 const ContactUs = ({
   email,
@@ -13,16 +15,34 @@ const ContactUs = ({
   vimeo,
   linkedin,
 }) => {
+  const {
+    site: {
+      siteMetadata: { socialLinks },
+    },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            socialLinks {
+              name
+              link
+            }
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Inner>
       <div className={styles.container}>
         <div className={styles.col}>
-          <Headline className={styles.title}>Напишите нам</Headline>
+          <Headline className={styles.title}>
+            <FormattedMessage id="contactTitle" />
+          </Headline>
           <p className={styles.text}>
-            Расскажите нам о своём проекте, продукте или идее. Спросите совет
-            или получите полноценную бесплатную консультацию. Узнайте цены,
-            уточните важный вопрос, да что угодно! Мы будем рады с вами
-            познакомиться и помочь.
+            <FormattedMessage id="contactText" />
           </p>
           <a className={styles.email} href={`mailto:${email}`}>
             {email}
@@ -30,66 +50,18 @@ const ContactUs = ({
         </div>
         <div className={styles.col}>
           <ul className={styles.socialLinks}>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={facebook}
-              >
-                facebook
-              </a>
-            </li>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={soundcloud}
-              >
-                soundcloud
-              </a>
-            </li>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={twitter}
-              >
-                twitter
-              </a>
-            </li>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={instagram}
-              >
-                instagram
-              </a>
-            </li>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={vimeo}
-              >
-                vimeo
-              </a>
-            </li>
-            <li>
-              <a
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={linkedin}
-              >
-                linkedin
-              </a>
-            </li>
+            {socialLinks.map((sc, i) => (
+              <li key={i}>
+                <a
+                  className={styles.link}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  href={sc.link}
+                >
+                  {sc.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

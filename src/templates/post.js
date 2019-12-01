@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import Layout from "../layouts"
+import Layout from "../layouts/uk/default"
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ data, location }) => {
   const post = data.wordpressPost
 
   return (
-    <Layout>
+    <Layout location={location}>
       <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </Layout>

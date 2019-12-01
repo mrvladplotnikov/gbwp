@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 0;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+  .list {
+    padding: 80px 0 85px 0;
+  }
+}

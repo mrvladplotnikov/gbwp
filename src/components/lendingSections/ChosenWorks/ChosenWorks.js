@@ -5,18 +5,29 @@ import Headline from "../../Headline"
 import StyledLink from "../../StyledLink"
 import WorkCardsLIst from "../../WorkCardsLIst"
 
-const ChosenWorks = ({ portfolioRef = null }) => (
-  <section ref={portfolioRef} className={styles.ChosenWorks}>
+const ChosenWorks = ({
+  id = "",
+  portfolioRef = null,
+  title = "",
+  works = [],
+  linkLabel = "",
+  linkURL = null,
+}) => (
+  <section id={id} ref={portfolioRef} className={styles.ChosenWorks}>
     <Outer className={styles.container}>
-      <Headline className={styles.title}>Избранные работы</Headline>
-      <StyledLink className={styles.desktopButton} to="/blog">
-        Перейти в блог
-      </StyledLink>
+      <Headline className={styles.title}>{title}</Headline>
+      {linkURL && (
+        <StyledLink className={styles.desktopButton} to={linkURL}>
+          {linkLabel}
+        </StyledLink>
+      )}
     </Outer>
-    <WorkCardsLIst />
-    <div className={styles.mobileButtonContainer}>
-      <StyledLink to="/blog">Перейти в блог</StyledLink>
-    </div>
+    <WorkCardsLIst works={works} />
+    {linkURL && (
+      <div className={styles.mobileButtonContainer}>
+        <StyledLink to={linkURL}>{linkLabel}</StyledLink>
+      </div>
+    )}
   </section>
 )
 

@@ -1,0 +1,67 @@
+.container {
+  padding: 108px 15px 75px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  color: #f2f2f2;
+}
+
+.quote {
+  margin: 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.autor {
+  text-align: right;
+}
+
+.autor cite {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: auto;
+    padding: 1px 15px;
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 55px;
+    line-height: 1.2;
+  }
+
+  .quote blockquote {
+    font-size: 18px;
+    line-height: 35px;
+  }
+
+  .autor cite {
+    font-size: 18px;
+    line-height: 35px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .title {
+    font-size: 70px;
+    line-height: 85px;
+  }
+}

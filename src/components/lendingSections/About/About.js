@@ -5,7 +5,8 @@ import StyledLink from "../../StyledLink"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Headline from "../../Headline"
-const About = () => {
+
+const About = ({ title = "", text = "", linkLabel = "", linkURL = null }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "about.jpg" }) {
@@ -22,26 +23,24 @@ const About = () => {
     <section className={styles.About}>
       <Outer>
         <Headline className={styles.title} Tag="h1">
-          VP Production
+          {title}
         </Headline>
         <Inner>
           <figure className={styles.imageCard}>
             <Img
               fluid={data.placeholderImage.childImageSharp.fluid}
-              alt="Мы – команда людей, которые создают музыку."
+              alt={title}
               className={styles.image}
             />
-            <figcaption className={styles.text}>
-              Мы – команда людей, которые создают музыку, звуки и продюсируют
-              дикторское озвучивание на грани чистого творчества и
-              функциональности.
-            </figcaption>
+            <figcaption className={styles.text}>{text}</figcaption>
           </figure>
-          <div className={styles.linkWrapper}>
-            <StyledLink className={styles.link} to="/about">
-              О нас
-            </StyledLink>
-          </div>
+          {linkURL && (
+            <div className={styles.linkWrapper}>
+              <StyledLink className={styles.link} to={linkURL}>
+                {linkLabel}
+              </StyledLink>
+            </div>
+          )}
         </Inner>
       </Outer>
     </section>
