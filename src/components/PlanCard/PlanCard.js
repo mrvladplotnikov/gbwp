@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
+import { FormattedMessage } from "react-intl"
 
 const PlanCard = ({
   icon,
@@ -23,7 +24,7 @@ const PlanCard = ({
       </ul>
     )}
     <button className={styles.button} type="button" onClick={onClick}>
-      Узнать цену
+      <FormattedMessage id="planCardButtonLabel" />
     </button>
   </div>
 )

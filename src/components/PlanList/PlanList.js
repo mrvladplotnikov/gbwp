@@ -29,9 +29,9 @@ const PlanList = ({ children, onClick = () => {} }) => (
     >
       {children}
     </ReactAliceCarousel>
-    <button type="button" className={styles.button} onClick={onClick}>
+    {/* <button type="button" className={styles.button} onClick={onClick}>
       Все предложения
-    </button>
+    </button> */}
   </div>
 )
 

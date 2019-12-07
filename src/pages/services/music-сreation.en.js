@@ -23,152 +23,200 @@ const MusicCreation = ({ data, location }) => {
   return (
     <Layout Sidebar={<Sidebar />} location={location}>
       <ServiceHero>
-        <h3>Больше всего мы любим музыку за её возможности.</h3>
+        <h3>We love music mostly because of its potential.</h3>
         <p>
-          Это ведь самый сильный вид искусства, если сравнивать их всех по
-          эмоциональному воздействию. Знаете, как это бывает, когда одна песня
-          меняет ваше настроение?
+          After all, this is the most potent form of art if we compare them all
+          by their emotional impact. Do you know how one song entirely changes
+          your mood?
         </p>
         <p>
-          Всего пару нот, правильный ритмический рисунок и вот уже человек готов
-          к великим свершениям. А стоит слегка изменить аранжировку – и он
-          внезапно предаётся грустным воспоминаниям. Всё это захватывает нас и
-          заставляет каждый день делать то, что мы делаем. Слушать, изучать и, в
-          конце-концов, создавать музыку.
+          Just a couple of notes, the correct rhythmic pattern, and a person is
+          now ready for great deals. And then you slightly change the
+          arrangement, and the very same person is now suddenly all in sad
+          memories. It fascinates and captures us, and makes us do what we do
+          every day. Listen, study and, ultimately, compose music.
         </p>
       </ServiceHero>
-      <ServiceSection title="Что мы делаем?">
-        <p>Мы пишем саундтреки и создаём музыку для:</p>
+      <ServiceSection title="What are we doing?">
+        <p>We compose soundtracks and create music for:</p>
 
         <ServiceIconList>
           <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Games" icon={GamesIcon} />
+          <ServiceIcon title="Commercials" icon={GamesIcon} />
+          <ServiceIcon title="Films" icon={GamesIcon} />
+          <ServiceIcon title="Animated films/cartoons" icon={GamesIcon} />
+          <ServiceIcon title="Trailers" icon={GamesIcon} />
+          <ServiceIcon title="Theatre" icon={GamesIcon} />
         </ServiceIconList>
 
         <p>
-          Ещё мы создаём музыку для motion-дизайна, но она скорее относится к
-          звуковому дизайну, так что о ней можете прочесть{" "}
-          <a href="/">вот здесь.</a>
+          We also create music for motion design, but it relates more to sound
+          design so that you can read about it here.
         </p>
         <p>
-          Мы не пишем «минусовки» и песни для корпоративов. А вот корпоративные
-          гимны — это мы с радостью, подробнее смотрите тут.
+          We do not compose backing tracks and songs for corporate parties. But
+          we do write corporate hymns — you can read more about it here.
         </p>
       </ServiceSection>
-      <ServiceSection title="Как происходит процесс?">
+      <ServiceSection title="Our Best Soundtracks">
+        ссылка на виджет soundcloud
+      </ServiceSection>
+      <ServiceSection title="What is the process like?">
         <p>
-          За последние несколько лет мы выработали простую схему для
-          сотрудничества. Такую, чтобы вам на каждом этапе было понятно, что
-          происходит, и у вас был контроль над процессом. А мы могли в это время
-          создать именно ту музыку, которая нужна вашему проекту.
+          Over the past few years, we have developed a simple framework for
+          cooperation. So that at each stage, you will understand what is
+          happening, and you will have control over the process. And at the same
+          time, we can create precisely the music that your project needs.
         </p>
-
+        <p>There are only six stages:</p>
         <StyledAccordion>
-          <StyledAccordionItem title="What harsh truths do you prefer to ignore?">
+          <StyledAccordionItem title="Acquaintance">
             <p>
-              Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat
-              occaecat ut occaecat consequat est minim minim esse tempor laborum
-              consequat esse adipisicing eu reprehenderit enim.
+              Acquaintance: you fill out a brief and get a free consultation. We
+              will get to know each other and understand if we are ready to
+              cooperate. We need to match with the client in the general vision
+              and principles of work.
             </p>
           </StyledAccordionItem>
-          <StyledAccordionItem title="Is free will real or just an illusion?">
+          <StyledAccordionItem title="Preparation">
             <p>
-              In ad velit in ex nostrud dolore cupidatat consectetur ea in ut
-              nostrud velit in irure cillum tempor laboris sed adipisicing eu
-              esse duis nulla non.
+              at this stage, you create the technical task, and we help you with
+              this if needed. You can read about why we do not do the technical
+              task by ourselves here. At the same time, we select references for
+              the future track and prepare a contract with lawyers. We discuss
+              and coordinate everything with you and proceed to the next stage.
+            </p>
+          </StyledAccordionItem>
+          <StyledAccordionItem title="Launch">
+            <p>
+              together, we sign a contract, and you send us an advance payment,
+              then we proceed to the sketches. We usually create them in the
+              form of a 30-second demo of the main theme of the track.
+            </p>
+          </StyledAccordionItem>
+          <StyledAccordionItem title="Production">
+            <p>
+              this stage is the most crucial. We send you demos and get feedback
+              from you. Here you will need maximum concentration on the process
+              because the fate of the composition depends on your wishes. We
+              modify the track according to the proposals and send it back to
+              you for approval.
+            </p>
+            <p>
+              Depending on the selected service package, you may have up to 5
+              free edits per track.
+            </p>
+          </StyledAccordionItem>
+          <StyledAccordionItem title="Project acceptance">
+            <p>
+              after all approvals, we send you the final file with the track.
+              This moment is the last chance to take advantage of free edits.
+            </p>
+            <p>
+              When everything is ready, together, we sign the Acceptance
+              Certificate, and you send us the second part of the payment if
+              this is needed depending on the selected service package.
+            </p>
+          </StyledAccordionItem>
+          <StyledAccordionItem title="Support">
+            <p>
+              most often, this stage is needed for the big game projects and is
+              negotiated separately. We will only say that we are always happy
+              for long-term cooperation.
             </p>
           </StyledAccordionItem>
         </StyledAccordion>
       </ServiceSection>
 
-      <ServiceSection title="Наши предложения">
+      <ServiceSection title="Our offers">
         <p style={{ marginBottom: 60 }}>
-          Кроме понятной схемы сотрудничества мы разработали ещё и понятные
-          пакеты по созданию музыки. Мы проанализировали опыт предыдущих
-          проектов, отзывы клиентов и поняли, что так вам будет гораздо легче
-          выбрать подходящий для вашего проекта вариант.
+          Apart from an easy-to-understand cooperation framework, we also
+          developed some easy-to-understand music composing packages. We
+          analyzed the experience of previous projects, clients' reviews. We
+          realized that this would be a much easier way for you to choose the
+          suitable option for your project.
         </p>
 
         <PlanList>
           <PlanCard
             title="Standart"
             icon={StandartIcon}
-            subTitle="Название скучное, пакет крутой"
+            subTitle="The naming is boring, the package is cool"
             list={[
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
+              "completion — up to 7 business days",
+              "five free edits",
+              "50 % prepayment",
             ]}
           />
           <PlanCard
-            title="Standart"
+            title="Soft Launch"
             icon={StandartIcon}
-            subTitle="Название скучное, пакет крутой"
+            subTitle="Testing your hypotheses"
             list={[
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
+              "track duration — 30 sec",
+              "completion — up to 5 business days",
+              "five free edits",
+              "50 % prepayment",
+              "upon further ordering of Standard / Premium packages for the same track, Soft Launch price is included",
             ]}
           />
           <PlanCard
-            title="Standart"
+            title="S.O.S"
             icon={StandartIcon}
-            subTitle="Название скучное, пакет крутой"
-            list={[
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-            ]}
+            subTitle="коли все горить і палає"
+            list={["completion — ASAP", "without edits", "full prepayment"]}
           />
           <PlanCard
-            title="Standart"
+            title="Premium"
             icon={StandartIcon}
-            subTitle="Название скучное, пакет крутой"
-            list={[
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-              "Выполнение — до 7 рабочих дней.",
-            ]}
+            subTitle="так, ви на коні"
+            list={["completion — ASAP", "five free edits", "50 % prepayment"]}
           />
         </PlanList>
       </ServiceSection>
-      <ServiceSection title="Наш подход">
+      <ServiceSection title="Our approach">
         <CardDeck>
-          <CardDeckItem variant="waves" textAlign="left">
-            Многие люди считают создание музыки чем-то непостижимым и
-            таинственным. Некоторые же утверждают, что всё дело — исключительно
-            в технике и правильной методологии. Нам кажется, за годы практики мы
-            наконец приблизились к пониманию, как всё устроено.
+          <CardDeckItem variant="rect" textAlign="left">
+            Many people consider the music composing to be something
+            incomprehensible and mysterious. Some people think that the whole
+            thing is solely in technology and proper methodology. It seems to us
+            that, over the years of practice, we have finally come closer to
+            understanding how everything works.
           </CardDeckItem>
-          <CardDeckItem variant="waves-revers" textAlign="left">
-            Многие люди считают создание музыки чем-то непостижимым и
-            таинственным. Некоторые же утверждают, что всё дело — исключительно
-            в технике и правильной методологии. Нам кажется, за годы практики мы
-            наконец приблизились к пониманию, как всё устроено.
+          <CardDeckItem variant="full-waves" textAlign="left">
+            There is such a thing as pure inspiration. This state is familiar to
+            everyone. It is like someone else who creates something cool with
+            your hands: a song, a picture, a poem, or something else. An
+            incredible and rare experience, clearly not suitable for work. :)
           </CardDeckItem>
           <CardDeckItem variant="waves" textAlign="left">
-            Многие люди считают создание музыки чем-то непостижимым и
-            таинственным. Некоторые же утверждают, что всё дело — исключительно
-            в технике и правильной методологии. Нам кажется, за годы практики мы
-            наконец приблизились к пониманию, как всё устроено.
+            Another thing is a methodical approach. You take all the accumulated
+            theoretical knowledge and transform it into a piece of music.
+            Obviously, according to all the rules and techniques. Reliable and…
+            boring. Such music does not catch your attention because, most
+            often, this approach is initially devoid of emotion.
+          </CardDeckItem>
+          <CardDeckItem variant="rect-revers" textAlign="center">
+            We found a balance. It's all about the «planning» of inspiration.
           </CardDeckItem>
           <CardDeckItem variant="full-waves" textAlign="center">
-            Мы же нашли баланс. Всё дело — в «планировании» вдохновения.
+            When we begin to work on a project, we find out as much as possible
+            about it. We learn about its atmosphere, mood, message. We study the
+            target audience and its interests. We even ask about the client's
+            thoughts on the product. The more information we gather, the better
+            it will transform into the idea and emotion of the soundtrack inside
+            the composer's subconscious mind.
+          </CardDeckItem>
+          <CardDeckItem variant="waves-revers" textAlign="center">
+            And after that, it is a matter of technology. We take the «core» and
+            build the rest of the composition around it.
           </CardDeckItem>
           <CardDeckItem variant="circle" textAlign="center">
-            Творчески и надёжно.
+            Creatively and reliably.
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
-      <ServiceSection title="Отзывы клиентов">
+      <ServiceSection title="Customer reviews">
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">
