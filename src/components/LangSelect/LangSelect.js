@@ -25,9 +25,9 @@ const LangSelect = ({ langsMenu = [] }) => {
 
   return (
     <div className={styles.langs}>
-      <div className={styles.currentLang} onClick={handleOpen}>
+      <button className={styles.currentLang} onClick={handleOpen}>
         /{processLangLabe(currentLang ? currentLang.langKey : UK)}/
-      </div>
+      </button>
       <ul className={classNames({ [styles.open]: open })}>
         {langsMenu
           .filter(lang => !lang.selected)

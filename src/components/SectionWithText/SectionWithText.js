@@ -15,7 +15,10 @@ const SectionBox = ({ className }) => {
       className={classNames(styles.box, className)}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onFocus={() => setHover(true)}
       src={hover ? boxOfDotsLink : boxOfDotsWhiteLink}
+      role="presentation"
+      aria-hidden="true"
       alt=""
     />
   )

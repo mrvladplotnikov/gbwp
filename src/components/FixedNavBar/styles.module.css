@@ -29,12 +29,14 @@
 .navigation > li:last-child {
   margin-bottom: 0;
 }
-.navigation a {
+.navigation a,
+.navigation button {
   text-decoration: none;
   color: #ffffff;
   opacity: 0.7;
   transition: opacity 0.3s ease-in;
 }
+.navigation button:hover,
 .navigation a:hover {
   opacity: 1;
 }
@@ -48,7 +50,7 @@
 .navigation ul li:last-child {
   margin-bottom: 0;
 }
-.navigation ul a {
+.navigation ul button .navigation ul a {
   font-size: 18px;
   line-height: 22px;
   color: #c2c2c2;
@@ -76,6 +78,18 @@
 .dropdown {
   cursor: pointer;
   opacity: 0.7;
+}
+.dropdownButton {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  list-style: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  color: #ffffff;
+  cursor: pointer;
 }
 .childList {
   display: none;

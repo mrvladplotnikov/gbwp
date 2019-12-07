@@ -86,6 +86,26 @@
 .dropdown {
   cursor: pointer;
 }
+.dropdownButton {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  color: #ffffff;
+  white-space: nowrap;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.dropdownButton:hover {
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
 .childList {
   display: none;
 }

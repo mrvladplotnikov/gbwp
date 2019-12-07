@@ -10,8 +10,10 @@ const NestedNavItem = ({ label = "", child, locale = "uk" }) => {
   const handleClick = () => setIsOpen(!isOpen)
 
   return (
-    <li className={styles.dropdown} onClick={handleClick}>
-      {label} <ArrowDown />
+    <li className={styles.dropdown}>
+      <button className={styles.dropdownButton} onClick={handleClick}>
+        {label} <ArrowDown />
+      </button>
       <ul className={classNames(styles.childList, { [styles.open]: isOpen })}>
         {child.map((childItem, i) => (
           <li key={i}>
