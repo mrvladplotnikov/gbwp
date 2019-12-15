@@ -1,4 +1,6 @@
 const languages = require("./src/utils/languages")
+const siteMenu = require("./src/utils/siteMenu.js")
+const siteSocialLinks = require("./src/utils/siteSocialLinks.js")
 
 module.exports = {
   siteMetadata: {
@@ -6,115 +8,8 @@ module.exports = {
     description: `Мы – команда людей, которые создают музыку, звуки и продюсируют дикторское озвучивание на грани чистого творчества и функциональности.`,
     languages,
     author: `@tarotum`,
-    navMenu: [
-      {
-        link: {
-          uk: "/#portfolio",
-          ru: "/ru#portfolio",
-          en: "/en#portfolio",
-        },
-        label: {
-          uk: "Портфолио",
-          ru: "Портфолио",
-          en: "Portfolio",
-        },
-      },
-      {
-        label: {
-          uk: "Послуги",
-          ru: "Услуги",
-          en: "Services",
-        },
-        child: [
-          {
-            link: {
-              uk: "/services/music-сreation",
-              ru: "/ru/services/music-сreation",
-              en: "/en/services/music-сreation",
-            },
-            label: {
-              uk: "Создание музыки",
-              ru: "Создание музыки",
-              en: "Music creation",
-            },
-          },
-          {
-            link: {
-              uk: "/",
-              en: "/",
-              ru: "/",
-            },
-            label: {
-              uk: "Создание музыки",
-              ru: "Создание музыки",
-              en: "Music creation",
-            },
-          },
-        ],
-      },
-      {
-        link: {
-          uk: "/blog",
-          ru: "/blog",
-          en: "/blog",
-        },
-        label: {
-          uk: "Блог",
-          ru: "Блог",
-          en: "Blog",
-        },
-      },
-      {
-        link: {
-          uk: "/about",
-          en: "/about",
-          ru: "/about",
-        },
-        label: {
-          uk: "О компании",
-          ru: "О компании",
-          en: "About",
-        },
-      },
-    ],
-    socialLinks: [
-      {
-        name: "facebook",
-        showOnHome: true,
-        link: "link",
-        icon: "facebook-f",
-      },
-      {
-        name: "instagram",
-        showOnHome: true,
-        link: "instagram",
-        icon: "instagram",
-      },
-      {
-        name: "soundcloud",
-        showOnHome: false,
-        link: "soundcloud",
-        icon: "soundcloud",
-      },
-      {
-        name: "vimeo",
-        showOnHome: false,
-        link: "vimeo",
-        icon: "vimeo-v",
-      },
-      {
-        name: "twitter",
-        showOnHome: false,
-        link: "twitter",
-        icon: "twitter",
-      },
-      {
-        name: "linkedin",
-        showOnHome: true,
-        link: "linkedin",
-        icon: "linkedin-in",
-      },
-    ],
+    navMenu: siteMenu,
+    socialLinks: siteSocialLinks,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -154,6 +49,12 @@ module.exports = {
           "**/media",
           "**/pages",
           "**/posts",
+          "**/work_category",
+          "**/work_platform",
+          "**/work_authors",
+          "**/work_developer",
+          "**/work_genre",
+          "**/work_service",
           "**/media",
         ],
       },
