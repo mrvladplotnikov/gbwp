@@ -6,15 +6,7 @@ import Headline from "../Headline"
 import { FormattedMessage } from "react-intl"
 import { graphql, useStaticQuery } from "gatsby"
 
-const ContactUs = ({
-  email,
-  facebook,
-  soundcloud,
-  twitter,
-  instagram,
-  vimeo,
-  linkedin,
-}) => {
+const ContactUs = ({ email }) => {
   const {
     site: {
       siteMetadata: { socialLinks },
@@ -71,22 +63,10 @@ const ContactUs = ({
 
 ContactUs.defaultProps = {
   email: "",
-  facebook: "",
-  soundcloud: "",
-  twitter: "",
-  instagram: "",
-  vimeo: "",
-  linkedin: "",
 }
 
 ContactUs.propTypes = {
   email: PropTypes.string,
-  facebook: PropTypes.string,
-  soundcloud: PropTypes.string,
-  twitter: PropTypes.string,
-  instagram: PropTypes.string,
-  vimeo: PropTypes.string,
-  linkedin: PropTypes.string,
 }
 
 export default ContactUs
