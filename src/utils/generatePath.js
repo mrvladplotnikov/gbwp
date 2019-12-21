@@ -3,11 +3,11 @@ const langs = {
     default: true,
     code: "uk",
   },
-  en_GB: {
+  en: {
     default: false,
     code: "en",
   },
-  ru_RU: {
+  ru: {
     default: false,
     code: "ru",
   },

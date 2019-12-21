@@ -121,7 +121,7 @@ export const query = graphql`
   query HomePageRuQuery {
     works: allWordpressWpWork(
       limit: 10
-      filter: { polylang_current_lang: { eq: "ru_RU" } }
+      filter: { polylang_current_lang: { eq: "ru" } }
     ) {
       nodes {
         id

@@ -1,6 +1,7 @@
 const languages = require("./src/utils/languages")
 const siteMenu = require("./src/utils/siteMenu.js")
 const siteSocialLinks = require("./src/utils/siteSocialLinks.js")
+const normalizer = require("./src/utils/normalizeData.js")
 
 module.exports = {
   siteMetadata: {
@@ -57,6 +58,7 @@ module.exports = {
           "**/work_service",
           "**/media",
         ],
+        normalizer,
       },
     },
     {

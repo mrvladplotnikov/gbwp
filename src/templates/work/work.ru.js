@@ -7,91 +7,68 @@ import { Inner } from "../../components/Container"
 import SingleNavagation from "../../components/SingleNavagation"
 import Contacts from "../../components/lendingSections/Contacts"
 import parseContent from "../../utils/parseContent"
+import TermItem from "../../components/TermItem"
 import styles from "./styles.module.css"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
-  const work = data.wordpressWpWork
-  const category = data.wordpressWpWork.meta.category
-  const service = data.wordpressWpWork.meta.service
-  const genre = data.wordpressWpWork.meta.genre
-  const platform = data.wordpressWpWork.meta.platform
-  const developer = data.wordpressWpWork.meta.developer
-  const authors = data.wordpressWpWork.meta.authors
+  const {
+    title,
+    content,
+    translations,
+    featured_media,
+    work_category,
+    work_service,
+    work_genre,
+    work_platform,
+    work_developer,
+    work_authors,
+  } = data.wordpressWpWork
   const media = data.allWordpressWpMedia.edges
-  const Content = parseContent(work.content, media)
+  const Content = parseContent(content, media)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} translations={translations}>
       <Inner>
         <div className={styles.template}>
-          <h1 className={styles.mainTitle}>{work.title}</h1>
+          <h1 className={styles.mainTitle}>{title}</h1>
+
           <ul className={styles.meta}>
-            {category && (
-              <li>
-                Категория:{" "}
-                <ul className={styles.metaValues}>
-                  {category.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
-            {service && (
-              <li>
-                Услуга:{" "}
-                <ul className={styles.metaValues}>
-                  {service.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
-            {genre && (
-              <li>
-                Жанр:{" "}
-                <ul className={styles.metaValues}>
-                  {genre.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
-            {platform && (
-              <li>
-                Платформа:{" "}
-                <ul className={styles.metaValues}>
-                  {platform.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
-            {developer && (
-              <li>
-                Разработчик:{" "}
-                <ul className={styles.metaValues}>
-                  {developer.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
-            {authors && (
-              <li>
-                Работа над проектом:{" "}
-                <ul className={styles.metaValues}>
-                  {authors.split(", ").map((item, i) => (
-                    <li key={i}>{(i ? ", " : "") + item}</li>
-                  ))}
-                </ul>
-              </li>
-            )}
+            <TermItem
+              className={styles.metaValues}
+              terms={work_category}
+              name="Категории"
+            />
+            <TermItem
+              className={styles.metaValues}
+              terms={work_service}
+              name="Услуга"
+            />
+            <TermItem
+              className={styles.metaValues}
+              terms={work_genre}
+              name="Жанр"
+            />
+            <TermItem
+              className={styles.metaValues}
+              terms={work_platform}
+              name="Платформа"
+            />
+            <TermItem
+              className={styles.metaValues}
+              terms={work_developer}
+              name="Разработчик"
+            />
+            <TermItem
+              className={styles.metaValues}
+              terms={work_authors}
+              name="Работа над проектом"
+            />
           </ul>
           <div className={styles.featuredImage}>
-            {work.featured_media && (
+            {featured_media && (
               <Img
-                fluid={work.featured_media.localFile.childImageSharp.fluid}
-                alt={work.title}
+                fluid={featured_media.localFile.childImageSharp.fluid}
+                alt={title}
               />
             )}
           </div>
@@ -123,13 +100,33 @@ export const pageQuery = graphql`
     wordpressWpWork(id: { eq: $id }) {
       title
       content
-      meta: acf {
-        category
-        service
-        genre
-        platform
-        developer
-        authors
+      work_developer {
+        id
+        name
+      }
+      work_genre {
+        id
+        name
+      }
+      work_platform {
+        id
+        name
+      }
+      work_authors {
+        id
+        name
+      }
+      work_category {
+        id
+        name
+      }
+      work_service {
+        id
+        name
+      }
+      translations: polylang_translations {
+        slug
+        langKey: polylang_current_lang
       }
       featured_media {
         localFile {

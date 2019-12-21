@@ -122,7 +122,7 @@ export const query = graphql`
   query HomePageEnQuery {
     works: allWordpressWpWork(
       limit: 10
-      filter: { polylang_current_lang: { eq: "en_GB" } }
+      filter: { polylang_current_lang: { eq: "en" } }
     ) {
       nodes {
         id

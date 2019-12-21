@@ -9,7 +9,13 @@ import { IntlProvider } from "react-intl"
 import "intl"
 import "./styles.css"
 
-const DefaultLayout = ({ pageTitle, children, location, i18nMessages }) => {
+const DefaultLayout = ({
+  pageTitle,
+  children,
+  location,
+  translations,
+  i18nMessages,
+}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -37,15 +43,44 @@ const DefaultLayout = ({ pageTitle, children, location, i18nMessages }) => {
           getUrlForLang(homeLink, url)
         ).map(item => ({
           ...item,
-          link: item.link.replace(`/${defaultLangKey}/`, "").replace(`//`, "/"),
+          disabled: false,
+          link: item.link
+            .replace("//", "/")
+            .replace(`/${defaultLangKey}/`, "/"),
         }))
+
+        const dynamicLangsMenu = langsMenu.map(item => {
+          const originLangKey = getCurrentLangKey(
+            langs,
+            defaultLangKey,
+            item.link
+          )
+          const originLink = item.link.substr(0, item.link.lastIndexOf("/"))
+
+          const dynamicSlug = translations.find(
+            link => link.langKey === originLangKey
+          )
+
+          if (!dynamicSlug) {
+            return {
+              ...item,
+              disabled: true,
+              link: "/",
+            }
+          }
+
+          return {
+            ...item,
+            link: `${originLink}/${dynamicSlug.slug}`,
+          }
+        })
 
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
               <SEO title={pageTitle} />
               <HorizontalNav
-                langsMenu={langsMenu}
+                langsMenu={dynamicLangsMenu}
                 locale={langKey}
                 homeLink={homeLink}
               />
@@ -61,10 +96,12 @@ const DefaultLayout = ({ pageTitle, children, location, i18nMessages }) => {
 
 DefaultLayout.defaultProps = {
   pageTitle: "",
+  translations: [],
 }
 
 DefaultLayout.propTypes = {
   pageTitle: PropTypes.string,
+  translations: PropTypes.array,
   children: PropTypes.node.isRequired,
 }
 

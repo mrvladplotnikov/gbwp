@@ -43,9 +43,10 @@ const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
           getUrlForLang(homeLink, url)
         ).map(item => ({
           ...item,
-          link: item.link.replace(`/${defaultLangKey}/`, "/"),
+          link: item.link
+            .replace("//", "/")
+            .replace(`/${defaultLangKey}/`, "/"),
         }))
-
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>

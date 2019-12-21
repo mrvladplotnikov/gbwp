@@ -6,11 +6,11 @@ const langs = {
     default: true,
     code: "uk",
   },
-  en_GB: {
+  en: {
     default: false,
     code: "en",
   },
-  ru_RU: {
+  ru: {
     default: false,
     code: "ru",
   },
@@ -154,7 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   const workRUTemplate = path.resolve(`./src/templates/work/work.ru.js`)
-  const worksRU = works.filter(({ node }) => node.lang === "ru_RU")
+  const worksRU = works.filter(({ node }) => node.lang === "ru")
   worksRU.forEach(({ node }, index) => {
     const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({
@@ -168,7 +168,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
   const workENTemplate = path.resolve(`./src/templates/work/work.en.js`)
-  const worksEN = works.filter(({ node }) => node.lang === "en_GB")
+  const worksEN = works.filter(({ node }) => node.lang === "en")
   worksEN.forEach(({ node }, index) => {
     const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({

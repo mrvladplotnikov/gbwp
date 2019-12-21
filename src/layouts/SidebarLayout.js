@@ -42,7 +42,9 @@ const SidebarLayout = ({
           getUrlForLang(homeLink, url)
         ).map(item => ({
           ...item,
-          link: item.link.replace(`/${defaultLangKey}/`, "/"),
+          link: item.link
+            .replace("//", "/")
+            .replace(`/${defaultLangKey}/`, "/"),
         }))
 
         return (
