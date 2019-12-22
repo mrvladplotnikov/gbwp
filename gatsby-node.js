@@ -1,33 +1,6 @@
 const path = require("path")
 const slash = require("slash")
-
-const langs = {
-  uk: {
-    default: true,
-    code: "uk",
-  },
-  en: {
-    default: false,
-    code: "en",
-  },
-  ru: {
-    default: false,
-    code: "ru",
-  },
-}
-
-const generatePath = (langCode, slug, type) => {
-  const lang = langs[langCode]
-  if (!type) {
-    if (!lang || lang.default) return slug
-
-    return `/${lang.code}/${slug}/`
-  }
-
-  if (!lang || lang.default) return `/${type}/${slug}/`
-
-  return `/${lang.code}/${type}/${slug}/`
-}
+const generatePath = require("./src/utils/generatePath")
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig()
@@ -54,30 +27,27 @@ exports.createPages = async ({ graphql, actions }) => {
   // from the fetched data that you can run queries against.
   const result = await graphql(`
     {
-      allWordpressPage {
+      pages: allWordpressPage(sort: { order: ASC, fields: date }) {
         edges {
           node {
             id
             slug
             status
-            template
             lang: polylang_current_lang
           }
         }
       }
-      allWordpressPost {
+      posts: allWordpressPost(sort: { order: ASC, fields: date }) {
         edges {
           node {
             id
             slug
             status
-            template
-            format
             lang: polylang_current_lang
           }
         }
       }
-      allWordpressWpWork(sort: { order: ASC, fields: date }) {
+      works: allWordpressWpWork(sort: { order: ASC, fields: date }) {
         edges {
           node {
             id
@@ -96,13 +66,13 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost, allWordpressWpWork } = result.data
+  const { pages, posts, works } = result.data
 
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   // We want to create a detailed page for each
   // page node. We'll just use the WordPress Slug for the slug.
   // The Page ID is prefixed with 'PAGE_'
-  allWordpressPage.edges.forEach(edge => {
+  pages.edges.forEach(edge => {
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
@@ -125,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // post node. We'll just use the WordPress Slug for the slug.
   // The Post ID is prefixed with 'POST_'
 
-  allWordpressPost.edges.forEach(edge => {
+  posts.edges.forEach(edge => {
     const nodePath = generatePath(edge.node.lang, edge.node.slug)
     createPage({
       path: nodePath,
@@ -136,10 +106,8 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const works = allWordpressWpWork.edges
-
   const workUKTemplate = path.resolve(`./src/templates/work/work.uk.js`)
-  const worksUK = works.filter(({ node }) => node.lang === "uk")
+  const worksUK = works.edges.filter(({ node }) => node.lang === "uk")
   worksUK.forEach(({ node }, index) => {
     const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({
@@ -152,9 +120,8 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
   const workRUTemplate = path.resolve(`./src/templates/work/work.ru.js`)
-  const worksRU = works.filter(({ node }) => node.lang === "ru")
+  const worksRU = works.edges.filter(({ node }) => node.lang === "ru")
   worksRU.forEach(({ node }, index) => {
     const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({
@@ -168,7 +135,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
   const workENTemplate = path.resolve(`./src/templates/work/work.en.js`)
-  const worksEN = works.filter(({ node }) => node.lang === "en")
+  const worksEN = works.edges.filter(({ node }) => node.lang === "en")
   worksEN.forEach(({ node }, index) => {
     const nodePath = generatePath(node.lang, node.slug, "works")
     createPage({

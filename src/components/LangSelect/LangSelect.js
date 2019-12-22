@@ -3,15 +3,14 @@ import classNames from "classnames"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import { Link } from "gatsby"
-import { UK, RU, EN } from "../../utils/langs"
 
-const processLangLabe = langCode => {
+const processLangLable = langCode => {
   switch (langCode) {
-    case UK:
+    case "uk":
       return "Укр"
-    case EN:
+    case "en":
       return "En"
-    case RU:
+    case "ru":
       return "Рус"
     default:
       return "None"
@@ -26,14 +25,14 @@ const LangSelect = ({ langsMenu = [] }) => {
   return (
     <div className={styles.langs}>
       <button className={styles.currentLang} onClick={handleOpen}>
-        /{processLangLabe(currentLang ? currentLang.langKey : UK)}/
+        /{processLangLable(currentLang ? currentLang.langKey : "uk")}/
       </button>
       <ul className={classNames({ [styles.open]: open })}>
         {langsMenu
           .filter(lang => !lang.selected)
           .map(lang => (
             <li key={lang.langKey}>
-              <Link to={lang.link}>{processLangLabe(lang.langKey)}</Link>
+              <Link to={lang.link}>{processLangLable(lang.langKey)}</Link>
             </li>
           ))}
       </ul>

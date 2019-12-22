@@ -60,8 +60,9 @@ const DefaultLayout = ({
           const dynamicSlug = translations.find(
             link => link.langKey === originLangKey
           )
-
-          if (!dynamicSlug) {
+          if (!translations) {
+            return item
+          } else if (!dynamicSlug) {
             return {
               ...item,
               disabled: true,
