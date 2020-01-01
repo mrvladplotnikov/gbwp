@@ -6,15 +6,21 @@ import { Link } from "gatsby"
 import ArrowDown from "../../images/arrow-down.inline.svg"
 
 const NestedNavItem = ({ label = "", child, locale = "uk" }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const handleClick = () => setIsOpen(!isOpen)
+  const [open, setOpen] = useState(false)
+  const handleToogle = () => setOpen(!open)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
-    <li className={styles.dropdown}>
-      <button className={styles.dropdownButton} onClick={handleClick}>
+    <li
+      className={styles.dropdown}
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleClose}
+    >
+      <button className={styles.dropdownButton} onClick={handleToogle}>
         {label} <ArrowDown />
       </button>
-      <ul className={classNames(styles.childList, { [styles.open]: isOpen })}>
+      <ul className={classNames(styles.childList, { [styles.open]: open })}>
         {child.map((childItem, i) => (
           <li key={i}>
             <Link to={childItem.link[locale]}>{childItem.label[locale]}</Link>

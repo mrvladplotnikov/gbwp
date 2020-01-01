@@ -1,14 +1,28 @@
 .langs {
   line-height: 1;
   display: none;
+  position: relative;
 }
 .langs ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   margin-top: 10px;
-  position: relative;
+  position: absolute;
+  bottom: -180%;
+  left: -20%;
   display: none;
+  overflow: hidden;
+}
+.langs ul::before {
+  content: "";
+  position: absolute;
+  top: 42px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.94);
 }
 
 .langs ul.open {
@@ -44,5 +58,6 @@
 @media (min-width: 992px) {
   .langs {
     display: block;
+    padding-bottom: 10px;
   }
 }

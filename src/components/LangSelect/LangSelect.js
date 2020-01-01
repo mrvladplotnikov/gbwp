@@ -17,14 +17,20 @@ const processLangLable = langCode => {
   }
 }
 
-const LangSelect = ({ langsMenu = [] }) => {
+const LangSelect = ({ className = "", langsMenu = [] }) => {
   const currentLang = langsMenu.find(lang => lang.selected === true)
   const [open, setOpen] = useState(false)
-  const handleOpen = () => setOpen(!open)
+  const handleToogle = () => setOpen(!open)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
-    <div className={styles.langs}>
-      <button className={styles.currentLang} onClick={handleOpen}>
+    <div
+      className={classNames(styles.langs, className)}
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleClose}
+    >
+      <button className={styles.currentLang} onClick={handleToogle}>
         /{processLangLable(currentLang ? currentLang.langKey : "uk")}/
       </button>
       <ul className={classNames({ [styles.open]: open })}>
@@ -41,6 +47,7 @@ const LangSelect = ({ langsMenu = [] }) => {
 }
 
 LangSelect.propTypes = {
+  className: PropTypes.string,
   langsMenu: PropTypes.array,
 }
 

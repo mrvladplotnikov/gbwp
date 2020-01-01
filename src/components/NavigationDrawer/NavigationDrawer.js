@@ -1,22 +1,27 @@
-import React from "react"
+import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import styles from "./styles.module.css"
 import HamburgerButton from "../HamburgerButton/HamburgerButton"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useStaticQuery, graphql } from "gatsby"
-
-import NestedNavItem from "./NestedNavItem"
-import NavItem from "./NavItem"
 import Languages from "../Languages"
+import useOutsideClick from "../../hooks/useOutsideClick"
+import SocialLinks from "./SocialLinks"
+import List from "./List"
 
-const FixedNavBar = ({
+const NavigationDrawer = ({
   isOpen = false,
   handleOpen = () => {},
   locale = "uk",
   className = "",
   langsMenu = [],
 }) => {
+  const drawerRef = useRef()
+
+  useOutsideClick(drawerRef, () => {
+    if (isOpen) handleOpen()
+  })
+
   const {
     site: {
       siteMetadata: { socialLinks, navMenu },
@@ -61,59 +66,23 @@ const FixedNavBar = ({
     `
   )
 
+  if (!isOpen) return null
+
   return (
-    <nav
-      className={classNames(styles.menu, className, { [styles.open]: isOpen })}
-    >
+    <nav ref={drawerRef} className={classNames(styles.menu, className)}>
       <HamburgerButton isOpen={isOpen} onClick={handleOpen} />
-
-      <ul className={styles.navigation}>
-        {navMenu.map((item, index) => {
-          if (item.child) {
-            return (
-              <NestedNavItem
-                key={index}
-                label={item.label[locale]}
-                child={item.child}
-                locale={locale}
-              />
-            )
-          }
-
-          return (
-            <NavItem
-              key={index}
-              label={item.label[locale]}
-              link={item.link[locale]}
-            />
-          )
-        })}
-      </ul>
+      <List navMenu={navMenu} locale={locale} />
       <Languages className={styles.langs} langsMenu={langsMenu} />
-
-      <ul className={styles.socialLinks}>
-        {socialLinks.map((item, index) => (
-          <li key={index}>
-            <a
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={item.link}
-            >
-              <FontAwesomeIcon icon={["fab", item.icon]} />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <SocialLinks socialLinks={socialLinks} />
     </nav>
   )
 }
 
-FixedNavBar.propTypes = {
+NavigationDrawer.propTypes = {
   isOpen: PropTypes.bool,
   handleOpen: PropTypes.func,
   locale: PropTypes.string,
   className: PropTypes.string,
 }
 
-export default FixedNavBar
+export default NavigationDrawer

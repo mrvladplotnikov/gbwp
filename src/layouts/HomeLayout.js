@@ -9,13 +9,27 @@ import { IntlProvider } from "react-intl"
 import "intl"
 import Languages from "../components/Languages"
 import HamburgerButton from "../components/HamburgerButton"
-import FixedNavBar from "../components/FixedNavBar"
+import NavigationDrawer from "../components/NavigationDrawer"
+import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const handleMenuToogle = () => {
     setMenuIsOpen(!menuIsOpen)
   }
+  const [hideOnScroll, setHideOnScroll] = useState(false)
+
+  useScrollPosition(
+    ({ currPos }) => {
+      const isShow = currPos.y <= -768
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+    },
+    [hideOnScroll],
+    false,
+    false,
+    300
+  )
 
   return (
     <StaticQuery
@@ -50,14 +64,29 @@ const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
-              <Languages langsMenu={langsMenu} />
-              <HamburgerButton isOpen={menuIsOpen} onClick={handleMenuToogle} />
-              <FixedNavBar
-                isOpen={menuIsOpen}
-                handleOpen={handleMenuToogle}
-                locale={langKey}
-                langsMenu={langsMenu}
-              />
+              {!hideOnScroll ? (
+                <>
+                  <Languages langsMenu={langsMenu} />
+                  <HamburgerButton
+                    isOpen={menuIsOpen}
+                    onClick={handleMenuToogle}
+                    fixed
+                  />
+                  <NavigationDrawer
+                    isOpen={menuIsOpen}
+                    handleOpen={handleMenuToogle}
+                    locale={langKey}
+                    langsMenu={langsMenu}
+                  />{" "}
+                </>
+              ) : (
+                <HorizontalNav
+                  langsMenu={langsMenu}
+                  locale={langKey}
+                  homeLink={homeLink.replace("/uk", "/")}
+                />
+              )}
+
               <SEO title={pageTitle} />
               {children}
               <Footer />

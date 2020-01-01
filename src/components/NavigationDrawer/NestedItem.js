@@ -5,7 +5,7 @@ import styles from "./styles.module.css"
 import { Link } from "gatsby"
 import ArrowDown from "../../images/arrow-down.inline.svg"
 
-const NestedNavItem = ({ label = "", child, locale = "uk" }) => {
+const NestedItem = ({ label = "", child, locale = "uk" }) => {
   const [isOpen, setIsOpen] = useState(false)
   const handleClick = () => setIsOpen(!isOpen)
 
@@ -25,7 +25,7 @@ const NestedNavItem = ({ label = "", child, locale = "uk" }) => {
   )
 }
 
-NestedNavItem.propTypes = {
+NestedItem.propTypes = {
   label: PropTypes.string,
   locale: PropTypes.string,
   child: PropTypes.arrayOf(
@@ -44,4 +44,4 @@ NestedNavItem.propTypes = {
   ),
 }
 
-export default NestedNavItem
+export default NestedItem

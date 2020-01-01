@@ -8,7 +8,7 @@ import NestedNavItem from "./NestedNavItem"
 import NavItem from "./NavItem"
 import LangSelect from "../LangSelect"
 import HamburgerButton from "../HamburgerButton"
-import FixedNavBar from "../FixedNavBar"
+import NavigationDrawer from "../NavigationDrawer"
 
 const HorizontalNav = ({
   langsMenu = [],
@@ -106,13 +106,13 @@ const HorizontalNav = ({
               })}
             </ul>
           </nav>
-          <LangSelect langsMenu={langsMenu} />
+          <LangSelect langsMenu={langsMenu} className={styles.langsSelect} />
           <HamburgerButton
             isOpen={menuIsOpen}
             onClick={handleMenuToogle}
             className={styles.menuButton}
           />
-          <FixedNavBar
+          <NavigationDrawer
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
             langsMenu={langsMenu}
@@ -121,7 +121,7 @@ const HorizontalNav = ({
       ) : (
         <>
           <HamburgerButton isOpen={menuIsOpen} onClick={handleMenuToogle} />
-          <FixedNavBar
+          <NavigationDrawer
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
             langsMenu={langsMenu}
