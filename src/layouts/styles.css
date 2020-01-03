@@ -1,6 +1,27 @@
 @import "~/normalize.css";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap&subset=cyrillic");
 @import "./basic-block-styles.css";
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ef3b0e;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #be503c;
+}
+
 html {
   font-family: sans-serif;
   /* scroll-behavior: smooth; */
@@ -50,4 +71,12 @@ body {
 
 a {
   color: #bebebe;
+}
+
+body svg {
+  display: inline-block;
+  fill: currentColor;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 0;
 }
