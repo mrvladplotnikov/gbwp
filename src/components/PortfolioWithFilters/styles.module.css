@@ -1,0 +1,53 @@
+.resetFilter {
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  min-height: 57px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.resetFilterIcon {
+  color: #933636;
+  transition: color 0.3s ease;
+  margin: 0 20px;
+}
+.resetFilter:hover .resetFilterIcon {
+  color: #ff2d2d;
+}
+
+.resetFilterText {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  transition: color 0.3s ease;
+  color: #939393;
+  margin: 0 20px;
+  margin-left: 0;
+  display: none;
+}
+.resetFilter:hover .resetFilterText {
+  color: #ffffff;
+}
+
+.selectFilter {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .resetFilterText {
+    display: inline-block;
+  }
+  .selectFilter {
+    position: relative;
+    margin-right: 53px;
+  }
+  .selectFilter:last-of-type {
+    margin-right: 0;
+  }
+}

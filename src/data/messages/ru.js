@@ -1,4 +1,7 @@
 module.exports = {
+  categoryFilter: "Категория",
+  serviceFilter: "Услуга",
+  resetFilterButton: "Сбросить фильтры",
   planCardButtonLabel: "Узнать цену",
   contactTitle: "Напишите нам",
   contactText:

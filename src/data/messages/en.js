@@ -1,4 +1,7 @@
 module.exports = {
+  categoryFilter: "Category",
+  serviceFilter: "Service",
+  resetFilterButton: "Reset filters",
   planCardButtonLabel: "Ger price",
   contactTitle: "Write to us",
   contactText:

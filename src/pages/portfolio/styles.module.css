@@ -1,0 +1,24 @@
+.title {
+  margin: 196px 0 100px 0;
+  padding: 0 15px;
+}
+.box {
+  display: none;
+}
+@media (min-width: 992px) {
+  .box {
+    display: block;
+    position: absolute;
+    width: 110.06px;
+    height: 111.89px;
+    z-index: -1;
+  }
+  .box:nth-child(2) {
+    top: 40%;
+    right: 30%;
+  }
+  .box:nth-child(3) {
+    top: -10%;
+    right: 5%;
+  }
+}
