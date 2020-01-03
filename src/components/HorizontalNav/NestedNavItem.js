@@ -16,6 +16,7 @@ const NestedNavItem = ({ label = "", child, locale = "uk" }) => {
       className={styles.dropdown}
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
+      role="presentation"
     >
       <button className={styles.dropdownButton} onClick={handleToogle}>
         {label} <ArrowDown />
