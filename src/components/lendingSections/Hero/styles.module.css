@@ -39,6 +39,8 @@
   display: block;
   width: auto;
   height: 90vh;
+  fill: none;
+  stroke: none;
 }
 
 .logo path {

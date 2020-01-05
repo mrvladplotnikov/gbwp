@@ -29,6 +29,7 @@
 
 .email:hover {
   background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
@@ -41,6 +42,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  column-gap: 60px;
 }
 .socialLinks li {
   line-height: 1.65;
@@ -53,6 +55,9 @@
 .socialLinks li:nth-child(3),
 .socialLinks li:nth-child(6) {
   margin-bottom: 0;
+}
+.socialLinks li:nth-last-child(-n + 3) {
+  text-align: right;
 }
 .link {
   color: #ffffff;
