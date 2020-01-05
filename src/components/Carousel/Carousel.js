@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ReactAliceCarousel from "react-alice-carousel"
-import "react-alice-carousel/lib/alice-carousel.css"
 import "./styles.css"
 
 const Carousel = ({ children }) => (

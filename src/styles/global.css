@@ -65,3 +65,5 @@ body svg {
 @import "./navigationDrawer.css";
 @import "./workCard.css";
 @import "./workCardsList.css";
+@import "./planCard.css";
+@import "./planList.css";

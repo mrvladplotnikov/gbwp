@@ -1,4 +1,5 @@
 module.exports = {
+  allPlans: "Все предложения",
   categoryFilter: "Категорія",
   serviceFilter: "Послуга",
   resetFilterButton: "Скинути фільтри",

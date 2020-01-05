@@ -1,14 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
 import ReactAliceCarousel from "react-alice-carousel"
-import "react-alice-carousel/lib/alice-carousel.css"
-import "./carousel.css"
+import { FormattedMessage } from "react-intl"
 
 const PlanList = ({ children, onClick = null }) => (
-  <div className={styles.container}>
+  <div className="PlanList__container">
     <ReactAliceCarousel
-      className={styles.list}
+      className="PlanList__list"
       buttonsDisabled
       fadeOutAnimation
       infinite={false}
@@ -30,8 +28,8 @@ const PlanList = ({ children, onClick = null }) => (
       {children}
     </ReactAliceCarousel>
     {onClick && (
-      <button type="button" className={styles.button} onClick={onClick}>
-        Все предложения
+      <button type="button" className="PlanList__button" onClick={onClick}>
+        <FormattedMessage id="allPlans" />
       </button>
     )}
   </div>

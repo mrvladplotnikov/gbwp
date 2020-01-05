@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
 import { FormattedMessage } from "react-intl"
 
 const PlanCard = ({
@@ -10,20 +9,20 @@ const PlanCard = ({
   list = [],
   onClick = () => {},
 }) => (
-  <div className={styles.card}>
+  <div className="PlanCard">
     {icon && <img src={icon} alt={title} />}
-    <h3 className={styles.title}>{title}</h3>
-    {subTitle && <h5 className={styles.subTitle}>{subTitle}</h5>}
+    <h3 className="PlanCard__title">{title}</h3>
+    {subTitle && <h5 className="PlanCard__subTitle">{subTitle}</h5>}
     {list && (
-      <ul className={styles.list}>
+      <ul className="PlanCard__list">
         {list.map((item, i) => (
-          <li key={`${item}-${i}`} className={styles.item}>
+          <li key={`${item}-${i}`} className="PlanCard__item">
             {item}
           </li>
         ))}
       </ul>
     )}
-    <button className={styles.button} type="button" onClick={onClick}>
+    <button className="PlanCard__button" type="button" onClick={onClick}>
       <FormattedMessage id="planCardButtonLabel" />
     </button>
   </div>

@@ -1,4 +1,4 @@
-.card {
+.PlanCard {
   border: 1px solid #747474;
   box-sizing: border-box;
   padding: 20px 20px 35px;
@@ -9,7 +9,7 @@
   margin-bottom: 10px;
 }
 
-.title {
+.PlanCard__title {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -17,7 +17,7 @@
   margin: 20px 0 10px;
 }
 
-.subTitle {
+.PlanCard__subTitle {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -27,7 +27,7 @@
   border-bottom: 1px solid #747474;
 }
 
-.list {
+.PlanCard__list {
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
@@ -36,18 +36,18 @@
   padding: 0;
 }
 
-.item {
+.PlanCard__item {
   margin-bottom: 25px;
 }
-.item:last-child {
+.PlanCard__item:last-child {
   margin-bottom: 0;
 }
 
-.item::before {
-  content: url("../../images/check.svg");
+.PlanCard__item::before {
+  content: url("../images/check.svg");
   margin-right: 10px;
 }
-.button {
+.PlanCard__button {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -60,7 +60,7 @@
   border: 1px solid #747474;
   cursor: pointer;
 }
-.button::before {
+.PlanCard__button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -73,23 +73,23 @@
   transform-origin: 0 50%;
   transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.button:hover::before {
+.PlanCard__button:hover::before {
   transform: scaleX(1);
 }
 
 @media (min-width: 992px) {
-  .card {
+  .PlanCard {
     padding: 25px 20px 20px;
     /* margin-right: 10px; */
   }
 
-  .title {
+  .PlanCard__title {
     font-size: 32px;
     line-height: 39px;
     margin: 20px 0;
   }
 
-  .subTitle {
+  .PlanCard__subTitle {
     font-size: 18px;
     line-height: 22px;
     padding-bottom: 20px;
@@ -97,12 +97,12 @@
     border-bottom: 1px solid #747474;
   }
 
-  .list {
+  .PlanCard__list {
     font-size: 16px;
     line-height: 20px;
   }
 
-  .button {
+  .PlanCard__button {
     line-height: 36px;
     font-size: 16px;
   }

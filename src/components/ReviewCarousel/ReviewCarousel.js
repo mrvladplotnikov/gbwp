@@ -1,8 +1,7 @@
 import React from "react"
 import ReactAliceCarousel from "react-alice-carousel"
 import ReviewCarouselItem from "./ReviewCarouselItem"
-import "react-alice-carousel/lib/alice-carousel.css"
-import "./carousel.css"
+import "./review-carousel.css"
 
 const ReviewCarousel = ({ reviews = [] }) => (
   <div className="review-carousel">
