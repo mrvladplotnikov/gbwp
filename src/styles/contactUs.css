@@ -1,22 +1,22 @@
-.container {
+.ContactUs__container {
   display: flex;
 
   flex-direction: column;
 }
-.col:nth-child(1) {
+.ContactUs__col:nth-child(1) {
   flex-grow: 1;
 }
-.title {
+.ContactUs__title {
   margin-top: 0;
   margin-bottom: 25px;
 }
-.text {
+.ContactUs__text {
   color: #bebebe;
   font-size: 14px;
   line-height: 17px;
   margin-bottom: 34px;
 }
-.email {
+.ContactUs__email {
   color: #ffffff;
   font-weight: 600;
   font-size: 20px;
@@ -27,7 +27,7 @@
   display: block;
 }
 
-.email:hover {
+.ContactUs__email:hover {
   background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -37,66 +37,67 @@
   text-shadow: none;
 }
 
-.socialLinks {
+.ContactUs__socialLinks {
   columns: 2;
   list-style: none;
   padding: 0;
   margin: 0;
   column-gap: 60px;
 }
-.socialLinks li {
+.ContactUs__socialLinks li {
   line-height: 1.65;
   margin: 20px 0;
 }
-.socialLinks li:nth-child(1),
-.socialLinks li:nth-child(4) {
+.ContactUs__socialLinks li:nth-child(1),
+.ContactUs__socialLinks li:nth-child(4) {
   margin-top: 0;
 }
-.socialLinks li:nth-child(3),
-.socialLinks li:nth-child(6) {
+.ContactUs__socialLinks li:nth-child(3),
+.ContactUs__socialLinks li:nth-child(6) {
   margin-bottom: 0;
 }
-.socialLinks li:nth-last-child(-n + 3) {
+.ContactUs__socialLinks li:nth-last-child(-n + 3) {
   text-align: right;
 }
-.link {
+.ContactUs__link {
   color: #ffffff;
   text-decoration: none;
   position: relative;
 }
-.link:hover {
+.ContactUs__link:hover {
   background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   box-decoration-break: clone;
   text-shadow: none;
 }
-.link[href=""] {
+.ContactUs__link[href=""] {
   color: #bebebe;
   cursor: default;
   opacity: 0.5;
 }
 
 @media (min-width: 992px) {
-  .container {
+  .ContactUs__container {
     align-items: center;
     flex-direction: row;
   }
-  .title {
+  .ContactUs__title {
     margin-bottom: 20px;
   }
-  .text {
+  .ContactUs__text {
     max-width: 730px;
     font-size: 22px;
     line-height: 27px;
     margin-bottom: 25px;
   }
-  .email {
+  .ContactUs__email {
     font-size: 50px;
     line-height: 61px;
     margin-bottom: 0;
   }
-  .socialLinks li {
+  .ContactUs__socialLinks li {
     margin: 88px 0;
   }
 }

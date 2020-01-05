@@ -1,6 +1,6 @@
 @import "~/normalize.css";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap&subset=cyrillic");
-@import "./basic-block-styles.css";
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -41,35 +41,7 @@ body {
   color: #ffffff;
 }
 
-.main.main--sidebar {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-us-wrapper {
-  padding: 43px 15px 12px 15px;
-}
-
-@media (min-width: 1660px) {
-  .main.main--sidebar {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .site-sidebar {
-    flex: 1;
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-  .contact-us-wrapper {
-    padding: 15px 15px 169px 15px;
-  }
-  .site-content {
-    flex-grow: 2;
-  }
-}
-
-a {
+body a {
   color: #bebebe;
 }
 
@@ -80,3 +52,16 @@ body svg {
   stroke: currentColor;
   stroke-width: 0;
 }
+
+@import "./layout.css";
+@import "./container.css";
+@import "./basic-block-styles.css";
+@import "./headline.css";
+@import "./contactUs.css";
+@import "./contact.css";
+@import "./languages.css";
+@import "./langSelect.css";
+@import "./hamburger.css";
+@import "./navigationDrawer.css";
+@import "./workCard.css";
+@import "./workCardsList.css";

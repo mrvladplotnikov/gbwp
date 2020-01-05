@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import Masonry from "react-masonry-css"
-import styles from "./styles.module.css"
 import WorkCard from "../WorkCard"
 
 const WorkCardsList = ({ className = "", works = [] }) => (
@@ -13,14 +12,14 @@ const WorkCardsList = ({ className = "", works = [] }) => (
       700: 3,
       500: 2,
     }}
-    className={classNames(styles.grid, className)}
-    columnClassName={styles.column}
+    className={classNames("WorkCardsList__grid", className)}
+    columnClassName="WorkCardsList__column"
   >
     {works &&
       works.map(work => (
         <WorkCard
           key={work.id}
-          className={styles.item}
+          className="WorkCardsList__item"
           title={work.title}
           lang={work.lang}
           image={

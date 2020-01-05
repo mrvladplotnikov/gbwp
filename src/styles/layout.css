@@ -1,0 +1,19 @@
+.main.main--sidebar {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1660px) {
+  .main.main--sidebar {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .site-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  .site-content {
+    flex-grow: 2;
+  }
+}

@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 
 const HamburgerButton = ({
   className = "",
@@ -11,17 +10,17 @@ const HamburgerButton = ({
 }) => (
   <button
     type="button"
-    className={classNames(styles.hamburger, className, {
-      [styles.open]: isOpen,
+    className={classNames("hamburger", className, {
+      "hamburger--open": isOpen,
     })}
     style={{
       position: fixed ? "fixed" : "absolute",
     }}
     onClick={onClick}
   >
-    <span className={styles.hamburgerLine}></span>
-    <span className={styles.hamburgerLine}></span>
-    <span className={styles.hamburgerLine}></span>
+    <span className="hamburger__line"></span>
+    <span className="hamburger__line"></span>
+    <span className="hamburger__line"></span>
   </button>
 )
 

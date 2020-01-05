@@ -1,4 +1,4 @@
-.menu {
+.NavigationDrawer {
   background-color: #000000;
   position: fixed;
   top: 0;
@@ -8,7 +8,7 @@
   z-index: 200;
   margin: 0;
 }
-.navigation {
+.NavigationDrawer__list {
   list-style: none;
   font-style: normal;
   font-weight: normal;
@@ -18,45 +18,45 @@
   padding: 90px 90px 30px 50px;
   margin: 0;
 }
-.navigation > li {
+.NavigationDrawer__list > li {
   margin-bottom: 40px;
 }
-.navigation > li:last-child {
+.NavigationDrawer__list > li:last-child {
   margin-bottom: 0;
 }
-.navigation a,
-.navigation button {
+.NavigationDrawer__list a,
+.NavigationDrawer__list button {
   text-decoration: none;
   color: #ffffff;
   opacity: 0.7;
   transition: opacity 0.3s ease-in;
 }
-.navigation button:hover,
-.navigation a:hover {
+.NavigationDrawer__list button:hover,
+.NavigationDrawer__list a:hover {
   opacity: 1;
 }
-.navigation ul {
+.NavigationDrawer__list ul {
   margin-top: 25px;
   list-style: none;
 }
-.navigation ul li {
+.NavigationDrawer__list ul li {
   margin-bottom: 10px;
 }
-.navigation ul li:last-child {
+.NavigationDrawer__list ul li:last-child {
   margin-bottom: 0;
 }
-.navigation ul button .navigation ul a {
+.NavigationDrawer__list ul button .NavigationDrawer__list ul a {
   font-size: 18px;
   line-height: 22px;
   color: #c2c2c2;
 }
 
-.socialLinks {
+.NavigationDrawer__soc-links {
   list-style: none;
   display: flex;
   margin-bottom: 40px;
 }
-.socialLinks li a {
+.NavigationDrawer__soc-links li a {
   font-size: 18px;
   line-height: 21px;
   color: #bebebe;
@@ -67,14 +67,14 @@
   justify-content: center;
   align-items: center;
 }
-.socialLinks li a:hover {
+.NavigationDrawer__soc-links li a:hover {
   color: #ffffff;
 }
-.dropdown {
+.NavigationDrawer__dropdown {
   cursor: pointer;
   opacity: 0.7;
 }
-.dropdownButton {
+.NavigationDrawer__dropdownButton {
   border: none;
   padding: 0;
   background-color: transparent;
@@ -86,15 +86,15 @@
   color: #ffffff;
   cursor: pointer;
 }
-.childList {
+.NavigationDrawer__childList {
   display: none;
   padding-left: 15px;
 }
-.childList.open {
+.NavigationDrawer__childList.NavigationDrawer__open {
   display: block;
 }
 
-.menu .langs {
+.NavigationDrawer .NavigationDrawer__langs {
   position: relative;
   top: auto;
   left: auto;
@@ -103,7 +103,7 @@
 }
 
 @media (min-width: 992px) {
-  .menu {
+  .NavigationDrawer {
     top: 0;
     right: 0;
     left: auto;

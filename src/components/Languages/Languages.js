@@ -1,15 +1,14 @@
 import React, { Fragment } from "react"
-import styles from "./styles.module.css"
 import classNames from "classnames"
 import { Link } from "gatsby"
 
 const Languages = ({ className = "", langsMenu = [] }) => (
-  <div className={classNames(styles.languages, className)}>
+  <div className={classNames("languages", className)}>
     {langsMenu.map((lang, i) => (
       <Fragment key={lang.langKey}>
         <Link
-          className={classNames(styles.language, {
-            [styles.currentLanguage]: lang.selected,
+          className={classNames("language", {
+            currentLanguage: lang.selected,
           })}
           to={lang.link}
         >

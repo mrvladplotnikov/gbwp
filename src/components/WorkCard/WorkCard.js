@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 import { Link } from "gatsby"
 import gPath from "../../utils/generatePath"
 import Img from "gatsby-image"
@@ -13,23 +12,21 @@ const WorkCard = ({
   image = "",
   title = "",
   lang = "",
-}) => {
-  return (
-    <Link
-      className={classNames(styles.WorkCard, className)}
-      to={gPath(lang, `works/${link}`)}
-    >
-      <figure className={styles.container}>
-        {image ? (
-          <Img className={styles.image} fluid={image} alt={title} />
-        ) : (
-          <img src={noImage} className={styles.image} alt="" />
-        )}
-        <figcaption className={styles.title}>{title}</figcaption>
-      </figure>
-    </Link>
-  )
-}
+}) => (
+  <Link
+    className={classNames("WorkCard", className)}
+    to={gPath(lang, `works/${link}`)}
+  >
+    <figure className="WorkCard__container">
+      {image ? (
+        <Img className="WorkCard__image" fluid={image} alt={title} />
+      ) : (
+        <img src={noImage} className="WorkCard__image" alt="" />
+      )}
+      <figcaption className="WorkCard__title">{title}</figcaption>
+    </figure>
+  </Link>
+)
 
 WorkCard.propTypes = {
   className: PropTypes.string,

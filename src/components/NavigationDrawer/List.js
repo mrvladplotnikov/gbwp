@@ -1,11 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
 import NestedItem from "./NestedItem"
 import Item from "./Item"
 
 const List = ({ navMenu = [], locale = "uk" }) => (
-  <ul className={styles.navigation}>
+  <ul className="NavigationDrawer__list">
     {navMenu.map((item, index) => {
       return item.child ? (
         <NestedItem

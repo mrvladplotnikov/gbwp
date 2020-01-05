@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 
 const Headline = ({ Tag, children, className, ...attrs }) => (
-  <Tag className={classNames(styles.headline, className)} {...attrs}>
+  <Tag className={classNames("Headline", className)} {...attrs}>
     {children}
   </Tag>
 )

@@ -1,54 +1,54 @@
-.headline {
+.Headline {
   color: #ffffff;
   font-family: "Montserrat";
 }
 
-h1.headline {
+h1.Headline {
   font-weight: 800;
   font-size: 30px;
   line-height: 37px;
 }
-h2.headline {
+h2.Headline {
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
 }
-h3.headline {
+h3.Headline {
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
 }
-h4.headline {
+h4.Headline {
   font-weight: bold;
   font-size: 14px;
   line-height: 13px;
   letter-spacing: -0.02em;
 }
-h5.headline {
+h5.Headline {
   font-weight: bold;
   font-size: 19px;
   line-height: 23px;
 }
 
 @media (min-width: 992px) {
-  h1.headline {
+  h1.Headline {
     font-size: 100px;
     line-height: 122px;
     text-transform: uppercase;
   }
-  h2.headline {
+  h2.Headline {
     font-size: 70px;
     line-height: 85px;
   }
-  h3.headline {
+  h3.Headline {
     font-size: 32px;
     line-height: 39px;
   }
-  h4.headline {
+  h4.Headline {
     font-size: 36px;
     line-height: 44px;
   }
-  h5.headline {
+  h5.Headline {
     font-size: 30px;
     line-height: 37px;
   }

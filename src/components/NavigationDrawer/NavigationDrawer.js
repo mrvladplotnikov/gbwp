@@ -1,7 +1,6 @@
 import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 import HamburgerButton from "../HamburgerButton/HamburgerButton"
 import { useStaticQuery, graphql } from "gatsby"
 import Languages from "../Languages"
@@ -69,10 +68,10 @@ const NavigationDrawer = ({
   if (!isOpen) return null
 
   return (
-    <nav ref={drawerRef} className={classNames(styles.menu, className)}>
+    <nav ref={drawerRef} className={classNames("NavigationDrawer", className)}>
       <HamburgerButton isOpen={isOpen} onClick={handleOpen} />
       <List navMenu={navMenu} locale={locale} />
-      <Languages className={styles.langs} langsMenu={langsMenu} />
+      <Languages className="NavigationDrawer__langs" langsMenu={langsMenu} />
       <SocialLinks socialLinks={socialLinks} />
     </nav>
   )

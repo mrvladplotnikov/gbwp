@@ -7,15 +7,15 @@
   color: #ffffff;
   -webkit-text-fill-color: #ffffff !important;
 }
-.container {
+.WorkCard__container {
   margin: 0;
 }
-.image {
+.WorkCard__image {
   display: block;
   max-width: 100%;
   height: auto;
 }
-.image::after {
+.WorkCard__image::after {
   content: "";
   position: absolute;
   top: 0;
@@ -32,10 +32,10 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.container:hover .image::after {
+.WorkCard__container:hover .WorkCard__image::after {
   opacity: 1;
 }
-.title {
+.WorkCard__title {
   position: absolute;
   bottom: 7px;
   left: 12px;
@@ -48,7 +48,7 @@
 }
 
 @media (min-width: 992px) {
-  .title {
+  .WorkCard__title {
     bottom: 23px;
     left: 17px;
     font-size: 22px;

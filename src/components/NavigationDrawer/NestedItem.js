@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 import { Link } from "gatsby"
 import ArrowDown from "../../images/arrow-down.inline.svg"
 
@@ -10,11 +9,18 @@ const NestedItem = ({ label = "", child, locale = "uk" }) => {
   const handleClick = () => setIsOpen(!isOpen)
 
   return (
-    <li className={styles.dropdown}>
-      <button className={styles.dropdownButton} onClick={handleClick}>
+    <li className={"NavigationDrawer__dropdown"}>
+      <button
+        className={"NavigationDrawer__dropdownButton"}
+        onClick={handleClick}
+      >
         {label} <ArrowDown />
       </button>
-      <ul className={classNames(styles.childList, { [styles.open]: isOpen })}>
+      <ul
+        className={classNames("NavigationDrawer__childList", {
+          NavigationDrawer__open: isOpen,
+        })}
+      >
         {child.map((childItem, i) => (
           <li key={i}>
             <Link to={childItem.link[locale]}>{childItem.label[locale]}</Link>

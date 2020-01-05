@@ -1,9 +1,0 @@
-.Contacts {
-  padding: 42px 15px 25px 15px;
-}
-
-@media (min-width: 992px) {
-  .Contacts {
-    padding: 142px 15px 140px 15px;
-  }
-}

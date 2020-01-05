@@ -21,7 +21,7 @@
   outline: none;
 }
 
-.hamburger .hamburgerLine {
+.hamburger .hamburger__line {
   display: block;
   width: 30px;
   height: 2px;
@@ -29,25 +29,25 @@
   background: #ffffff;
   transition: transform 0.13s ease-in-out;
 }
-.hamburger .hamburgerLine:nth-child(2) {
+.hamburger .hamburger__line:nth-child(2) {
   width: 20px;
   transition: width 0.13s ease-in-out, transform 0.13s ease-in-out;
 }
-.hamburger .hamburgerLine:nth-child(3) {
+.hamburger .hamburger__line:nth-child(3) {
   opacity: 1;
   transition: opacity 0.13s ease-in-out;
 }
-.hamburger:hover .hamburgerLine:nth-child(2) {
+.hamburger:hover .hamburger__line:nth-child(2) {
   width: 30px;
 }
 
-.hamburger.open .hamburgerLine:nth-child(1) {
+.hamburger.hamburger--open .hamburger__line:nth-child(1) {
   transform: rotateZ(-45deg) translate(-8px, 7px);
 }
-.hamburger.open .hamburgerLine:nth-child(2) {
+.hamburger.hamburger--open .hamburger__line:nth-child(2) {
   transform: rotateZ(45deg) translate(0px, 0px);
   width: 30px;
 }
-.hamburger.open .hamburgerLine:nth-child(3) {
+.hamburger.hamburger--open .hamburger__line:nth-child(3) {
   opacity: 0;
 }

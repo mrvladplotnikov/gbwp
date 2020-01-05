@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
 import { Inner } from "../Container"
 import Headline from "../Headline"
 import { FormattedMessage } from "react-intl"
@@ -28,24 +27,24 @@ const ContactUs = ({ email }) => {
 
   return (
     <Inner>
-      <div className={styles.container}>
-        <div className={styles.col}>
-          <Headline className={styles.title}>
+      <div className="ContactUs__container">
+        <div className="ContactUs__col">
+          <Headline className="ContactUs__title">
             <FormattedMessage id="contactTitle" />
           </Headline>
-          <p className={styles.text}>
+          <p className="ContactUs__text">
             <FormattedMessage id="contactText" />
           </p>
-          <a className={styles.email} href={`mailto:${email}`}>
+          <a className="ContactUs__email" href={`mailto:${email}`}>
             {email}
           </a>
         </div>
-        <div className={styles.col}>
-          <ul className={styles.socialLinks}>
+        <div className="ContactUs__col">
+          <ul className="ContactUs__socialLinks">
             {socialLinks.map((sc, i) => (
               <li key={i}>
                 <a
-                  className={styles.link}
+                  className="ContactUs__link"
                   target="_blank"
                   rel="me noopener noreferrer"
                   href={sc.link}

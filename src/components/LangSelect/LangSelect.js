@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
 import { Link } from "gatsby"
 
 const processLangLable = langCode => {
@@ -26,15 +25,15 @@ const LangSelect = ({ className = "", langsMenu = [] }) => {
 
   return (
     <div
-      className={classNames(styles.langs, className)}
+      className={classNames("LangSelect", className)}
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
       role="presentation"
     >
-      <button className={styles.currentLang} onClick={handleToogle}>
+      <button className="LangSelect--currentLang" onClick={handleToogle}>
         /{processLangLable(currentLang ? currentLang.langKey : "uk")}/
       </button>
-      <ul className={classNames({ [styles.open]: open })}>
+      <ul className={classNames({ "LangSelect--open": open })}>
         {langsMenu
           .filter(lang => !lang.selected)
           .map(lang => (

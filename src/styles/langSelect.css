@@ -1,9 +1,9 @@
-.langs {
+.LangSelect {
   line-height: 1;
   display: none;
   position: relative;
 }
-.langs ul {
+.LangSelect ul {
   list-style: none;
   margin: 0;
   padding: 5px;
@@ -14,7 +14,7 @@
   display: none;
   overflow: hidden;
 }
-.langs ul::before {
+.LangSelect ul::before {
   content: "";
   position: absolute;
   top: 42px;
@@ -25,16 +25,16 @@
   background-color: rgba(0, 0, 0, 0.94);
 }
 
-.langs ul.open {
+.LangSelect ul.LangSelect--open {
   display: block;
 }
 
-.langs li {
+.LangSelect li {
   line-height: 1;
   margin-bottom: 5px;
 }
 
-.langs .currentLang {
+.LangSelect .LangSelect--currentLang {
   display: block;
   cursor: pointer;
   border: none;
@@ -47,7 +47,7 @@
   color: #ffffff;
 }
 
-.langs a {
+.LangSelect a {
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
@@ -56,7 +56,7 @@
 }
 
 @media (min-width: 992px) {
-  .langs {
+  .LangSelect {
     display: block;
     padding-bottom: 10px;
   }

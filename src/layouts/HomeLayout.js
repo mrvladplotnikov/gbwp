@@ -1,17 +1,16 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import "./styles.css"
 import SEO from "../components/seo"
 import Footer from "../components/Footer"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
-import "intl"
 import Languages from "../components/Languages"
 import HamburgerButton from "../components/HamburgerButton"
 import NavigationDrawer from "../components/NavigationDrawer"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
+import "intl"
 
 const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
