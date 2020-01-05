@@ -19,9 +19,23 @@ import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 
 const MusicCreation = ({ data, location }) => {
   const reviews = data.reviews.nodes
-
+  const sidebarImage = data.sidebarImage.childImageSharp.fluid
   return (
-    <Layout Sidebar={<Sidebar />} location={location}>
+    <Layout
+      Sidebar={
+        <Sidebar
+          title="Создание музыки"
+          text="При создании игр, как и при съёмке кино, звук имеет очень
+большое значение. 60 или даже 70% ощущений создаётся именно за
+счёт звука. При этом звук – это не только музыкальное
+сопровождение, но и звуковые эффекты. Их наличие или отсутствие
+очень сильно определяет атмосферу игры."
+          autor="Хидео Кодзима"
+          image={sidebarImage}
+        />
+      }
+      location={location}
+    >
       <ServiceHero>
         <h3>We love music mostly because of its potential.</h3>
         <p>
@@ -245,6 +259,13 @@ export const query = graphql`
         meta: acf {
           company
           position
+        }
+      }
+    }
+    sidebarImage: file(relativePath: { eq: "services/music-creation.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

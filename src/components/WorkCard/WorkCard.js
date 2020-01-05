@@ -5,6 +5,7 @@ import styles from "./styles.module.css"
 import { Link } from "gatsby"
 import gPath from "../../utils/generatePath"
 import Img from "gatsby-image"
+import noImage from "../../images/no-image.png"
 
 const WorkCard = ({
   className = "",
@@ -16,11 +17,14 @@ const WorkCard = ({
   return (
     <Link
       className={classNames(styles.WorkCard, className)}
-      to={gPath(lang, `/works/${link}`)}
-      style={{ backgroundImage: image }}
+      to={gPath(lang, `works/${link}`)}
     >
       <figure className={styles.container}>
-        {image && <Img className={styles.image} fluid={image} alt={title} />}
+        {image ? (
+          <Img className={styles.image} fluid={image} alt={title} />
+        ) : (
+          <img src={noImage} className={styles.image} alt="" />
+        )}
         <figcaption className={styles.title}>{title}</figcaption>
       </figure>
     </Link>

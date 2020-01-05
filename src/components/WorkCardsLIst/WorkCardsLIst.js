@@ -5,7 +5,7 @@ import Masonry from "react-masonry-css"
 import styles from "./styles.module.css"
 import WorkCard from "../WorkCard"
 
-const WorkCardsLIst = ({ className = "", works = [] }) => (
+const WorkCardsList = ({ className = "", works = [] }) => (
   <Masonry
     breakpointCols={{
       default: 5,
@@ -34,8 +34,8 @@ const WorkCardsLIst = ({ className = "", works = [] }) => (
   </Masonry>
 )
 
-WorkCardsLIst.propTypes = {
+WorkCardsList.propTypes = {
   className: PropTypes.string,
 }
 
-export default WorkCardsLIst
+export default WorkCardsList

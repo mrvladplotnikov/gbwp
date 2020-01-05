@@ -25,21 +25,45 @@ module.exports = [
           en: "/en/services/music-сreation",
         },
         label: {
-          uk: "Создание музыки",
+          uk: "Створення музики",
           ru: "Создание музыки",
           en: "Music creation",
         },
       },
       {
         link: {
-          uk: "/",
-          en: "/",
-          ru: "/",
+          uk: "/services/sound-design",
+          ru: "/ru/services/sound-design",
+          en: "/en/services/sound-design",
         },
         label: {
-          uk: "Создание музыки",
-          ru: "Создание музыки",
-          en: "Music creation",
+          uk: "Звуковий дизайн",
+          ru: "Звуковой дизайн",
+          en: "Sound Design",
+        },
+      },
+      {
+        link: {
+          uk: "/services/voice-casting",
+          ru: "/ru/services/voice-casting",
+          en: "/en/services/voice-casting",
+        },
+        label: {
+          uk: "Голосове озвучення",
+          ru: "Голосовое озвучивание",
+          en: "Voice casting",
+        },
+      },
+      {
+        link: {
+          uk: "/services/audio-branding",
+          ru: "/ru/services/audio-branding",
+          en: "/en/services/audio-branding",
+        },
+        label: {
+          uk: "Аудіобрендинг",
+          ru: "Аудиобрендинг",
+          en: "Audio Branding",
         },
       },
     ],

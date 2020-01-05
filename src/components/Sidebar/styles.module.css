@@ -60,8 +60,14 @@
 }
 
 @media (min-width: 1300px) {
+  .container {
+    max-width: 450px;
+    width: 100%;
+    overflow: hidden;
+  }
   .title {
-    font-size: 70px;
-    line-height: 85px;
+    font-size: 49px;
+    line-height: 60px;
+    min-width: 450px;
   }
 }

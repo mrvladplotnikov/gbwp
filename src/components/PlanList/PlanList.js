@@ -5,7 +5,7 @@ import ReactAliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import "./carousel.css"
 
-const PlanList = ({ children, onClick = () => {} }) => (
+const PlanList = ({ children, onClick = null }) => (
   <div className={styles.container}>
     <ReactAliceCarousel
       className={styles.list}
@@ -29,9 +29,11 @@ const PlanList = ({ children, onClick = () => {} }) => (
     >
       {children}
     </ReactAliceCarousel>
-    {/* <button type="button" className={styles.button} onClick={onClick}>
-      Все предложения
-    </button> */}
+    {onClick && (
+      <button type="button" className={styles.button} onClick={onClick}>
+        Все предложения
+      </button>
+    )}
   </div>
 )
 

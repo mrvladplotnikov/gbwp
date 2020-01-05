@@ -24,7 +24,6 @@ const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    color: "#933636",
     cursor: "pointer",
     color: "#ffffff",
     backgroundColor: "transparent",

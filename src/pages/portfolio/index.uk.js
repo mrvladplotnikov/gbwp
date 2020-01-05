@@ -17,6 +17,7 @@ const Portfolio = ({ data, location }) => {
     ...data.allWordpressWpWorkCategory,
     ...data.allWordpressWpWorkService,
   }
+
   return (
     <Layout location={location}>
       <Outer>
@@ -26,7 +27,10 @@ const Portfolio = ({ data, location }) => {
         <PortfolioBox />
         <PortfolioBox />
       </Outer>
-      <WorksList filterOptions={filterOptions} />
+      <WorksList
+        filterOptions={filterOptions}
+        filteredWorks={data.allWordpressWpWork.filteredWorks}
+      />
       <Contacts />
     </Layout>
   )
@@ -50,11 +54,11 @@ export const query = graphql`
       }
     }
 
-    result: allWordpressWpWork(
+    allWordpressWpWork(
       limit: 10
       filter: { polylang_current_lang: { eq: "uk" } }
     ) {
-      nodes {
+      filteredWorks: nodes {
         id
         slug
         title
