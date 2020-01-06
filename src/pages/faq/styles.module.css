@@ -1,0 +1,14 @@
+@media (min-width: 992px) {
+  .title {
+    margin: 196px 0 148px 0;
+    line-height: 1;
+  }
+
+  .box {
+    position: absolute;
+    top: 228px;
+    right: 570px;
+    width: 148px;
+    height: 138px;
+  }
+}
