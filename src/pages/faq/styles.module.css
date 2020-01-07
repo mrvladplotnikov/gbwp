@@ -4,6 +4,10 @@
     line-height: 1;
   }
 
+  .subtitle {
+    margin-top: 130px;
+  }
+
   .box {
     position: absolute;
     top: 228px;
