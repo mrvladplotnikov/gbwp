@@ -4,7 +4,7 @@ import classNames from "classnames"
 import Masonry from "react-masonry-css"
 import WorkCard from "../WorkCard"
 
-const WorkCardsList = ({ className = "", works = [] }) => (
+const WorkCards = ({ className = "", works = [] }) => (
   <Masonry
     breakpointCols={{
       default: 5,
@@ -12,14 +12,14 @@ const WorkCardsList = ({ className = "", works = [] }) => (
       700: 3,
       500: 2,
     }}
-    className={classNames("WorkCardsList__grid", className)}
-    columnClassName="WorkCardsList__column"
+    className={classNames("WorkCards__grid", className)}
+    columnClassName="WorkCards__column"
   >
     {works &&
       works.map(work => (
         <WorkCard
           key={work.id}
-          className="WorkCardsList__item"
+          className="WorkCards__item"
           title={work.title}
           lang={work.lang}
           image={
@@ -33,8 +33,8 @@ const WorkCardsList = ({ className = "", works = [] }) => (
   </Masonry>
 )
 
-WorkCardsList.propTypes = {
+WorkCards.propTypes = {
   className: PropTypes.string,
 }
 
-export default WorkCardsList
+export default WorkCards

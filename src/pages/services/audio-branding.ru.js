@@ -13,7 +13,7 @@ import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
-import WorkCardsList from "../../components/WorkCardsList"
+import WorkCards from "../../components/WorkCards"
 
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -77,7 +77,7 @@ const AudioBranding = ({ data, location }) => {
         </p>
       </ServiceSection>
       <ServiceSection title="Наши работы">
-        <WorkCardsList works={works} />
+        <WorkCards works={works} />
       </ServiceSection>
       <ServiceSection title="Как происходит процесс?">
         <p>

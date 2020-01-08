@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import FilterBar from "./FilterBar"
-import WorkCardsList from "../WorkCardsList"
+import WorkCards from "../WorkCards"
 
 const PortfolioWithFilters = ({ filterOptions, filteredWorks = [] }) => {
   const { categoryOptions, serviceOptions } = filterOptions
@@ -18,7 +18,7 @@ const PortfolioWithFilters = ({ filterOptions, filteredWorks = [] }) => {
         serviceOptions={serviceOptions}
         onChange={handleFilters}
       />
-      <WorkCardsList works={filteredWorks} />
+      <WorkCards works={filteredWorks} />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import styles from "./styles.module.css"
 import { Outer } from "../../Container"
 import Headline from "../../Headline"
 import StyledLink from "../../StyledLink"
-import WorkCardsList from "../../WorkCardsList"
+import WorkCards from "../../WorkCards"
 
 const ChosenWorks = ({
   id = "",
@@ -22,7 +22,7 @@ const ChosenWorks = ({
         </StyledLink>
       )}
     </Outer>
-    <WorkCardsList works={works} />
+    <WorkCards works={works} />
     {linkURL && (
       <div className={styles.mobileButtonContainer}>
         <StyledLink to={linkURL}>{linkLabel}</StyledLink>
