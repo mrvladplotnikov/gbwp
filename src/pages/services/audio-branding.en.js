@@ -192,7 +192,10 @@ const AudioBranding = ({ data, location }) => {
 
 export const query = graphql`
   query AudioBrandingEnPageQuery {
-    reviews: allWordpressWpClientReview {
+    reviews: allWordpressWpClientReview(
+      filter: { polylang_current_lang: { eq: "en" } }
+      limit: 5
+    ) {
       nodes {
         id
         title

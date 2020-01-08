@@ -218,7 +218,10 @@ const SoundDesign = ({ data, location }) => {
 
 export const query = graphql`
   query SoundDesignEnPageQuery {
-    reviews: allWordpressWpClientReview {
+    reviews: allWordpressWpClientReview(
+      filter: { polylang_current_lang: { eq: "en" } }
+      limit: 5
+    ) {
       nodes {
         id
         title

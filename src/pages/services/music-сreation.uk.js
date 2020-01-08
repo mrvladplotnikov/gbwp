@@ -246,7 +246,10 @@ const MusicCreation = ({ data, location }) => {
 
 export const query = graphql`
   query MusicCreationUKPageQuery {
-    reviews: allWordpressWpClientReview {
+    reviews: allWordpressWpClientReview(
+      filter: { polylang_current_lang: { eq: "uk" } }
+      limit: 5
+    ) {
       nodes {
         id
         title
