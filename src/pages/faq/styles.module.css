@@ -1,0 +1,27 @@
+@media (min-width: 992px) {
+  .title {
+    margin: 196px 0 148px 0;
+    line-height: 1;
+  }
+
+  .subtitle {
+    margin-top: 130px;
+  }
+
+  .box {
+    position: absolute;
+
+    width: 148px;
+    height: 138px;
+  }
+
+  .boxFirst {
+    top: 228px;
+    right: 570px;
+  }
+
+  .boxSecond {
+    top: 157px;
+    right: 175px;
+  }
+}

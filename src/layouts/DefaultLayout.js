@@ -80,7 +80,11 @@ const DefaultLayout = ({
             <>
               <SEO title={pageTitle} />
               <HorizontalNav
-                langsMenu={dynamicLangsMenu}
+                langsMenu={
+                  translations && translations.length > 0
+                    ? dynamicLangsMenu
+                    : langsMenu
+                }
                 locale={langKey}
                 homeLink={homeLink}
               />
