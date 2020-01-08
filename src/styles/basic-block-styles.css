@@ -1353,6 +1353,15 @@ pre.wp-block-verse {
   margin-right: 0;
 }
 
+.blocks-gallery-item figure {
+  width: 100%;
+}
+
+.blocks-gallery-item figure img {
+  width: 100%;
+  height: auto;
+}
+
 .wp-block-gallery figure {
   margin: 0;
 }

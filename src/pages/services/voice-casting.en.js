@@ -208,7 +208,10 @@ const VoiceCasting = ({ data, location }) => {
 
 export const query = graphql`
   query VoiceCastingEnPageQuery {
-    reviews: allWordpressWpClientReview {
+    reviews: allWordpressWpClientReview(
+      filter: { polylang_current_lang: { eq: "en" } }
+      limit: 5
+    ) {
       nodes {
         id
         title

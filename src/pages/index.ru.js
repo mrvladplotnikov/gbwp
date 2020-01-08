@@ -81,19 +81,19 @@ const Home = ({ data, location }) => {
         services={[
           {
             title: "Створення музики",
-            link: "/",
+            link: "/ru/services/music-сreation",
           },
           {
             title: "Аудіобрендінг",
-            link: "/",
+            link: "/ru/services/audio-branding",
           },
           {
             title: "Звуковий дизайн",
-            link: "/",
+            link: "/ru/services/sound-design",
           },
           {
             title: "Голосове озвучування",
-            link: "/",
+            link: "/ru/services/voice-casting",
           },
         ]}
       />

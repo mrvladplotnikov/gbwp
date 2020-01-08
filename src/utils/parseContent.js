@@ -9,9 +9,13 @@ export default (content, media) =>
         let image = media.find(
           m => m.node.wordpress_id === parseInt(domNode.attribs["data-id"], 10)
         )
+        if (image) {
+          if (image.node.localFile.childImageSharp) {
+            return <Img fluid={image.node.localFile.childImageSharp.fluid} />
+          }
 
-        if (image)
-          return <Img fluid={image.node.localFile.childImageSharp.fluid} />
+          return domNode
+        }
       }
     },
   })
