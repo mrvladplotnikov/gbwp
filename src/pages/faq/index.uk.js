@@ -6,10 +6,16 @@ import Headline from "../../components/Headline"
 import { Inner } from "../../components/Container"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
-import boxOfDotsLink from "../../images/box-of-dots.svg"
+import boxOfDotsLink from "../../images/icon-box.svg"
+import classNames from "classnames"
 
-const Boxes = () => (
-  <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
+const Boxes = ({ className = "" }) => (
+  <img
+    className={classNames(styles.box, className)}
+    src={boxOfDotsLink}
+    role="presentation"
+    alt=""
+  />
 )
 
 const Faq = ({ location }) => (
@@ -19,9 +25,9 @@ const Faq = ({ location }) => (
         faq
       </Headline>
 
-      <Boxes />
+      <Boxes className={styles.boxFirst} />
 
-      <Boxes />
+      <Boxes className={styles.boxSecond} />
 
       <Headline Tag="h2" className={styles.subtitle}>
         Організаційні питання
