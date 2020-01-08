@@ -70,14 +70,14 @@ module.exports = [
   },
   {
     link: {
-      uk: "/blog",
-      ru: "/blog",
-      en: "/blog",
+      uk: "/faq",
+      ru: "/ru/faq",
+      en: "/en/faq",
     },
     label: {
-      uk: "Блог",
-      ru: "Блог",
-      en: "Blog",
+      uk: "FAQ",
+      ru: "FAQ",
+      en: "FAQ",
     },
   },
   {
