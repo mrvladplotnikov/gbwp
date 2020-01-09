@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Outer } from "../Container"
 import StyledSelect from "../StyledSelect"
@@ -15,22 +15,27 @@ const FilterBar = ({
   service = null,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(category)
+
   const handleChangeCategory = selectedOption => {
     setSelectedCategory(selectedOption)
-    onChange(selectedCategory, setSelectedCategory)
   }
 
   const [selectedService, setSelectedService] = useState(service)
   const handleChangeService = selectedOption => {
     setSelectedService(selectedOption)
-    onChange(selectedCategory, setSelectedCategory)
   }
 
   const handleResetFilters = () => {
     setSelectedCategory(null)
     setSelectedService(null)
-    onChange(selectedCategory, setSelectedCategory)
   }
+
+  useEffect(() => {
+    onChange(
+      selectedCategory ? selectedCategory.value : null,
+      selectedService ? selectedService.value : null
+    )
+  }, [selectedCategory, selectedService, onChange])
 
   return (
     <Outer>
