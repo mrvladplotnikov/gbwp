@@ -80,7 +80,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
         next={next ? next.slug : null}
         prev={prev ? prev.slug : null}
         list="/ru/portfolio"
-        prefix="works"
+        prefix="ru/works"
       />
       <Inner>
         <Contacts />

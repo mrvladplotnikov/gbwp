@@ -48,8 +48,11 @@ const customStyles = {
   }),
   container: provided => ({
     ...provided,
-    minWidth: 164,
     display: "inline-block",
+    minWidth: 132,
+    "@media(min-width: 540px)": {
+      minWidth: 182,
+    },
   }),
   control: (provided, state) => {
     return {
@@ -57,7 +60,7 @@ const customStyles = {
       backgroundColor: state.menuIsOpen ? "rgba(9, 9, 9, 0.98)" : "transparent",
       transition: "background-color 0.3s",
       border: "none",
-      borderRadius: "none",
+      borderRadius: 0,
       color: "#ffffff",
       cursor: "pointer",
     }
@@ -77,6 +80,10 @@ const customStyles = {
     },
   }),
   placeholder: provided => ({ ...provided, color: "#ffffff", fontSize: 16 }),
+  valueContainer: provided => ({
+    ...provided,
+    padding: "2px 15px",
+  }),
 }
 
 const DropdownIndicator = props =>

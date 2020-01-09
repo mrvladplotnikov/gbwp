@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../layouts/uk/default"
-import Contacts from "../../components/lendingSections/Contacts"
 import Headline from "../../components/Headline"
 import { Outer } from "../../components/Container"
 import WorksList from "../../components/PortfolioWithFilters"
@@ -22,7 +21,6 @@ const Portfolio = ({ data, location }) => (
       <PortfolioBox />
     </Outer>
     <WorksList works={data.allWordpressWpWork.works} />
-    <Contacts />
   </Layout>
 )
 

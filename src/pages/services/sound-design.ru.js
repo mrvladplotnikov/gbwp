@@ -78,7 +78,7 @@ const SoundDesign = ({ data, location }) => {
           друга, чтобы картинка выглядела максимально круто.
         </p>
       </ServiceSection>
-      <ServiceSection title="Наши работы">
+      <ServiceSection title="Наши работы" noGatters>
         <WorkCards works={works} />
       </ServiceSection>
       <ServiceSection title="Как происходит процесс?">

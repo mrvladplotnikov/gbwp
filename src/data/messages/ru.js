@@ -1,4 +1,7 @@
 module.exports = {
+  prevWork: "Предыдущая работа",
+  nextWork: "Сдедующая работа",
+  backToWorks: "Вернуться в портфолио",
   loadMoreButton: "Больше",
   noOptionsMessage: "Пусто",
   allPlans: "Все предложения",

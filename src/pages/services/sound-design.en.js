@@ -79,7 +79,7 @@ const SoundDesign = ({ data, location }) => {
           picture looks as cool as possible.
         </p>
       </ServiceSection>
-      <ServiceSection title="Our works">
+      <ServiceSection title="Our works" noGatters>
         <WorkCards works={works} />
       </ServiceSection>
       <ServiceSection title="What is the process like?">

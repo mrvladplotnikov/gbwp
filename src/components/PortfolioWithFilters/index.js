@@ -4,6 +4,7 @@ import FilterBar from "./FilterBar"
 import WorkCards from "../WorkCards"
 import { flatten, uniqBy, chunk } from "lodash/array"
 import { FormattedMessage } from "react-intl"
+import styles from "./styles.module.css"
 
 const handleWorksDividing = (chunks, chunksToShow = 1) => {
   let result = []
@@ -41,7 +42,7 @@ const PortfolioWithFilters = ({ works = [] }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const chunkedWorks = chunk(data, 10)
+  const chunkedWorks = chunk(data, 5)
 
   const paginatedWorks = handleWorksDividing(chunkedWorks, page)
 
@@ -52,9 +53,12 @@ const PortfolioWithFilters = ({ works = [] }) => {
         serviceOptions={getFilterOptions(data, "service")}
         onChange={handleFilters}
       />
-      <WorkCards works={paginatedWorks} />
+      <WorkCards works={paginatedWorks} className={styles.works} />
       {page < chunkedWorks.length && (
-        <button onClick={() => setPage(page + 1)}>
+        <button
+          className={styles.loadMoreButton}
+          onClick={() => setPage(page + 1)}
+        >
           <FormattedMessage id="loadMoreButton" />
         </button>
       )}
