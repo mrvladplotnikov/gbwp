@@ -72,7 +72,7 @@ const AudioBranding = ({ data, location }) => {
           of elements depending on the tasks that need to be solved.
         </p>
       </ServiceSection>
-      <ServiceSection title="Our works">
+      <ServiceSection title="Our works" noGatters>
         <WorkCards works={works} />
       </ServiceSection>
       <ServiceSection title="What is the process like?">

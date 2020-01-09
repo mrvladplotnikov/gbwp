@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import Select, { components } from "react-select"
 import ArrowIcon from "../../images/arrow-down.inline.svg"
 import CloseIcon from "../../images/close.inline.svg"
+import { injectIntl, intlShape } from "react-intl"
+
 const customStyles = {
   indicatorSeparator: () => ({
     display: "none",
@@ -46,8 +48,11 @@ const customStyles = {
   }),
   container: provided => ({
     ...provided,
-    minWidth: 164,
     display: "inline-block",
+    minWidth: 132,
+    "@media(min-width: 540px)": {
+      minWidth: 182,
+    },
   }),
   control: (provided, state) => {
     return {
@@ -55,7 +60,7 @@ const customStyles = {
       backgroundColor: state.menuIsOpen ? "rgba(9, 9, 9, 0.98)" : "transparent",
       transition: "background-color 0.3s",
       border: "none",
-      borderRadius: "none",
+      borderRadius: 0,
       color: "#ffffff",
       cursor: "pointer",
     }
@@ -75,6 +80,10 @@ const customStyles = {
     },
   }),
   placeholder: provided => ({ ...provided, color: "#ffffff", fontSize: 16 }),
+  valueContainer: provided => ({
+    ...provided,
+    padding: "2px 15px",
+  }),
 }
 
 const DropdownIndicator = props =>
@@ -98,9 +107,11 @@ const StyledSelect = ({
   onChange = () => {},
   name = "",
   options = [],
+  intl,
   ...props
 }) => (
   <Select
+    noOptionsMessage={intl.formatMessage({ id: "noOptionsMessage" })}
     placeholder={placeholder}
     isClearable={isClearable}
     value={value}
@@ -117,6 +128,7 @@ const StyledSelect = ({
 )
 
 StyledSelect.propTypes = {
+  intl: intlShape.isRequired,
   placeholder: PropTypes.string,
   isClearable: PropTypes.bool,
   value: PropTypes.any,
@@ -125,4 +137,4 @@ StyledSelect.propTypes = {
   options: PropTypes.array,
 }
 
-export default StyledSelect
+export default injectIntl(StyledSelect)

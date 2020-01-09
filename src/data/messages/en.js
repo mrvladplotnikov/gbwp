@@ -1,4 +1,9 @@
 module.exports = {
+  prevWork: "Previous case",
+  nextWork: "Next case",
+  backToWorks: "Back to Portfolio",
+  loadMoreButton: "More",
+  noOptionsMessage: "No Options",
   allPlans: "Все предложения",
   categoryFilter: "Category",
   serviceFilter: "Service",

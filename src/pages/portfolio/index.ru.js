@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../layouts/uk/default"
+import Layout from "../../layouts/ru/default"
+import Contacts from "../../components/lendingSections/Contacts"
 import Headline from "../../components/Headline"
 import { Outer } from "../../components/Container"
 import WorksList from "../../components/PortfolioWithFilters"
@@ -15,18 +16,19 @@ const Portfolio = ({ data, location }) => (
   <Layout location={location}>
     <Outer>
       <Headline Tag="h1" className={styles.title}>
-        Портфолiо
+        Портфолио
       </Headline>
       <PortfolioBox />
       <PortfolioBox />
     </Outer>
     <WorksList works={data.allWordpressWpWork.works} />
+    <Contacts />
   </Layout>
 )
 
 export const query = graphql`
-  query PortfolioPageUkQuery {
-    allWordpressWpWork(filter: { polylang_current_lang: { eq: "uk" } }) {
+  query PortfolioPageRuQuery {
+    allWordpressWpWork(filter: { polylang_current_lang: { eq: "ru" } }) {
       works: nodes {
         id
         slug

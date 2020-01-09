@@ -1,4 +1,9 @@
 module.exports = {
+  prevWork: "Попередня робота",
+  nextWork: "Наступна робота",
+  backToWorks: "Повернутися в портфоліо",
+  loadMoreButton: "Більше",
+  noOptionsMessage: "Порожньо",
   allPlans: "Все предложения",
   categoryFilter: "Категорія",
   serviceFilter: "Послуга",

@@ -79,7 +79,8 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
       <SingleNavagation
         next={next ? next.slug : null}
         prev={prev ? prev.slug : null}
-        prefix="works"
+        list="/ru/portfolio"
+        prefix="ru/works"
       />
       <Inner>
         <Contacts />

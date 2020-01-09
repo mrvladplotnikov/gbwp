@@ -8,6 +8,7 @@ import ArrowLeftIcon from "../../images/arrow-left.svg"
 import ArrowLeftColorIcon from "../../images/arrow-color-left.svg"
 import ArrowRightIcon from "../../images/arrow-right.svg"
 import ArrowRightColorIcon from "../../images/arrow-color-right.svg"
+import { FormattedMessage } from "react-intl"
 
 const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
   const [prevHovered, setPrevHovered] = useState(false)
@@ -20,7 +21,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
 
   const nextPostLink = prefix ? `/${prefix}/${next}` : `/${next}`
   const prevPostLink = prefix ? `/${prefix}/${prev}` : `/${prev}`
-  const listPostLink = prefix ? `/${prefix}/${list}` : `/${list}`
+  const listPostLink = `/${list}`
 
   return (
     <div className={styles.navigation}>
@@ -38,7 +39,9 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 src={prevHovered ? ArrowLeftColorIcon : ArrowLeftIcon}
                 alt=""
               />
-              <span className={styles.label}>Предыдущая работа</span>
+              <span className={styles.label}>
+                <FormattedMessage id="prevWork" />
+              </span>
             </Link>
             <Link
               className={classNames(styles.list, styles.desktop, {
@@ -46,7 +49,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
               })}
               to={listPostLink}
             >
-              Вернуться в портфолио
+              <FormattedMessage id="backToWorks" />
             </Link>
             <Link
               className={classNames(styles.next, { [styles.disabled]: !next })}
@@ -59,7 +62,9 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 src={nextHovered ? ArrowRightColorIcon : ArrowRightIcon}
                 alt=""
               />
-              <span className={styles.label}>Сдедующая работа</span>
+              <span className={styles.label}>
+                <FormattedMessage id="nextWork" />
+              </span>
             </Link>
           </div>
           <Link
@@ -68,7 +73,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
             })}
             to={listPostLink}
           >
-            Вернуться в портфолио
+            <FormattedMessage id="backToWorks" />
           </Link>
         </div>
       </Inner>

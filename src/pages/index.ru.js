@@ -102,6 +102,8 @@ const Home = ({ data, location }) => {
         portfolioRef={portfolioRef}
         title="Вибрані роботи"
         works={works}
+        linkLabel="Портфолио"
+        linkURL="/ru/portfolio"
       />
       <SectionWithText linkLabel="Наші цінності">
         <h3>

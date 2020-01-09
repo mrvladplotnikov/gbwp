@@ -80,7 +80,7 @@ const AudioBranding = ({ data, location }) => {
           від завдань, які необхідно вирішити.
         </p>
       </ServiceSection>
-      <ServiceSection title="Наші роботи">
+      <ServiceSection title="Наші роботи" noGatters>
         <WorkCards works={works} />
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">

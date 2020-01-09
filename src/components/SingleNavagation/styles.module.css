@@ -75,7 +75,6 @@
   padding: 7px 23px;
   border: 1px solid #747474;
   box-sizing: border-box;
-  visibility: hidden;
   z-index: 1;
 }
 .list::before {

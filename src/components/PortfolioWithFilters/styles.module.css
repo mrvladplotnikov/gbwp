@@ -39,6 +39,30 @@
   position: relative;
 }
 
+.works {
+  margin-top: 10px;
+}
+
+.loadMoreButton {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2.2;
+  text-align: center;
+  max-width: 131px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 55px;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #747474;
+  cursor: pointer;
+  position: relative;
+}
+
 @media (min-width: 992px) {
   .resetFilterText {
     display: inline-block;
@@ -49,5 +73,10 @@
   }
   .selectFilter:last-of-type {
     margin-right: 0;
+  }
+  .loadMoreButton {
+    font-size: 20px;
+    line-height: 2.4;
+    min-width: 210px;
   }
 }
