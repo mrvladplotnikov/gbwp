@@ -1,4 +1,6 @@
 module.exports = {
+  loadMoreButton: "Більше",
+  noOptionsMessage: "Порожньо",
   allPlans: "Все предложения",
   categoryFilter: "Категорія",
   serviceFilter: "Послуга",

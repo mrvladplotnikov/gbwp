@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import FilterBar from "./FilterBar"
 import WorkCards from "../WorkCards"
 import { flatten, uniqBy, chunk } from "lodash/array"
+import { FormattedMessage } from "react-intl"
 
 const handleWorksDividing = (chunks, chunksToShow = 1) => {
   let result = []
@@ -53,7 +54,9 @@ const PortfolioWithFilters = ({ works = [] }) => {
       />
       <WorkCards works={paginatedWorks} />
       {page < chunkedWorks.length && (
-        <button onClick={() => setPage(page + 1)}>Load More</button>
+        <button onClick={() => setPage(page + 1)}>
+          <FormattedMessage id="loadMoreButton" />
+        </button>
       )}
     </div>
   )

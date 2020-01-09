@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import Select, { components } from "react-select"
 import ArrowIcon from "../../images/arrow-down.inline.svg"
 import CloseIcon from "../../images/close.inline.svg"
+import { injectIntl, intlShape } from "react-intl"
+
 const customStyles = {
   indicatorSeparator: () => ({
     display: "none",
@@ -98,9 +100,11 @@ const StyledSelect = ({
   onChange = () => {},
   name = "",
   options = [],
+  intl,
   ...props
 }) => (
   <Select
+    noOptionsMessage={intl.formatMessage({ id: "noOptionsMessage" })}
     placeholder={placeholder}
     isClearable={isClearable}
     value={value}
@@ -117,6 +121,7 @@ const StyledSelect = ({
 )
 
 StyledSelect.propTypes = {
+  intl: intlShape.isRequired,
   placeholder: PropTypes.string,
   isClearable: PropTypes.bool,
   value: PropTypes.any,
@@ -125,4 +130,4 @@ StyledSelect.propTypes = {
   options: PropTypes.array,
 }
 
-export default StyledSelect
+export default injectIntl(StyledSelect)

@@ -103,6 +103,8 @@ const Home = ({ data, location }) => {
         portfolioRef={portfolioRef}
         title="Вибрані роботи"
         works={works}
+        linkLabel="Portfolio"
+        linkURL="/en/portfolio"
       />
       <SectionWithText linkLabel="Наші цінності">
         <h3>

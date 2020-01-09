@@ -1,4 +1,6 @@
 module.exports = {
+  loadMoreButton: "More",
+  noOptionsMessage: "No Options",
   allPlans: "Все предложения",
   categoryFilter: "Category",
   serviceFilter: "Service",
