@@ -151,7 +151,7 @@ const MusicCreation = ({ data, location }) => {
           suitable option for your project.
         </p>
 
-        <PlanList>
+        <PlanList label="All offers" onClick={() => {}}>
           <PlanCard
             title="Standart"
             icon={StandartIcon}

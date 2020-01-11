@@ -4,7 +4,6 @@ module.exports = {
   backToWorks: "Back to Portfolio",
   loadMoreButton: "More",
   noOptionsMessage: "No Options",
-  allPlans: "Все предложения",
   categoryFilter: "Category",
   serviceFilter: "Service",
   resetFilterButton: "Reset filters",

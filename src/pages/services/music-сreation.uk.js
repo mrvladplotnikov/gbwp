@@ -148,7 +148,7 @@ const MusicCreation = ({ data, location }) => {
           оптимальний для вашого проекту варіант.
         </p>
 
-        <PlanList>
+        <PlanList label="Всі пропозиції" onClick={() => {}}>
           <PlanCard
             title="Standart"
             icon={StandartIcon}

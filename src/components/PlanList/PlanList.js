@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ReactAliceCarousel from "react-alice-carousel"
-import { FormattedMessage } from "react-intl"
 
-const PlanList = ({ children, onClick = null }) => (
+const PlanList = ({ children, label = "", onClick = null }) => (
   <div className="PlanList__container">
     <ReactAliceCarousel
       className="PlanList__list"
@@ -29,7 +28,7 @@ const PlanList = ({ children, onClick = null }) => (
     </ReactAliceCarousel>
     {onClick && (
       <button type="button" className="PlanList__button" onClick={onClick}>
-        <FormattedMessage id="allPlans" />
+        {label}
       </button>
     )}
   </div>
@@ -38,6 +37,7 @@ const PlanList = ({ children, onClick = null }) => (
 PlanList.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
+  label: PropTypes.string,
 }
 
 export default PlanList
