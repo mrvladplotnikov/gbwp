@@ -2,24 +2,25 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .item {
-  margin-bottom: 11px;
   width: 100%;
 }
 
-@media (min-width: 992px) {
-  .item {
-    margin-bottom: 33px;
-    width: auto;
+@media (min-width: 768px) {
+  .list {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
   }
-
-  .item:nth-child(3),
-  .item:nth-child(4) {
-    margin-bottom: 0;
+  .item:nth-child(1) > *,
+  .item:nth-child(3) > * {
+    margin-left: auto;
   }
 }

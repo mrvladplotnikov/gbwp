@@ -50,7 +50,6 @@
 .title {
   font-size: 18px;
   line-height: 22px;
-  font-family: "Montserrat";
 }
 
 .icon {
@@ -59,28 +58,35 @@
   margin-right: 20px;
 }
 
-@media (min-width: 570px) {
+@media (min-width: 768px) {
   .Card {
-    padding: 0 60px;
+    padding: 30px 60px;
+  }
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .icon {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .Card {
+    padding: 60px 95px 60px 60px;
     height: 224px;
   }
   .title {
     font-size: 32px;
     line-height: 39px;
-    font-family: "Montserrat";
   }
 
   .icon {
     max-width: 100px;
     max-height: 100px;
     margin-right: 40px;
-  }
-}
-
-@media (min-width: 992px) {
-  .Card {
-    width: 568px;
-    height: 224px;
-    padding: 0 60px;
   }
 }
