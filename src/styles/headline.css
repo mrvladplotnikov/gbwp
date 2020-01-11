@@ -1,18 +1,63 @@
 .Headline {
   color: #ffffff;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
 }
 
 h1.Headline {
   font-weight: 800;
   font-size: 32px;
-  line-height: 37px;
+  line-height: 39px;
 }
+
+@media (min-width: 576px) {
+  h1.Headline {
+    font-size: 56px;
+    line-height: 68px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1.Headline {
+    font-size: 80px;
+    line-height: 98px;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 992px) {
+  h1.Headline {
+    font-size: 100px;
+    line-height: 122px;
+  }
+}
+
 h2.Headline {
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
 }
+
+@media (min-width: 576px) {
+  h2.Headline {
+    font-size: 40px;
+    line-height: 49px;
+  }
+}
+
+@media (min-width: 768px) {
+  h2.Headline {
+    font-size: 56px;
+    line-height: 68px;
+  }
+}
+
+@media (min-width: 992px) {
+  h2.Headline {
+    font-size: 70px;
+    line-height: 85px;
+  }
+}
+
 h3.Headline {
   font-weight: bold;
   font-size: 18px;
@@ -31,15 +76,6 @@ h5.Headline {
 }
 
 @media (min-width: 992px) {
-  h1.Headline {
-    font-size: 100px;
-    line-height: 122px;
-    text-transform: uppercase;
-  }
-  h2.Headline {
-    font-size: 70px;
-    line-height: 85px;
-  }
   h3.Headline {
     font-size: 32px;
     line-height: 39px;

@@ -15,6 +15,12 @@
   position: static;
 }
 
+.outer > * {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .box {
   position: absolute;
   width: 67.94px;
@@ -49,6 +55,10 @@
     font-size: 60px;
     line-height: 73px;
     padding: 319px 15px 177px 15px;
+  }
+  .outer > * {
+    font-size: 60px;
+    line-height: 73px;
   }
   .linkContainer {
     margin-top: 106px;
