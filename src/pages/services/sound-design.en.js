@@ -7,13 +7,16 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 import WorkCards from "../../components/WorkCards"
+
+import PlayerIcon from "../../images/service-icons/player.svg"
+import FileIcon from "../../images/service-icons/file-2.svg"
+import RoomIcon from "../../images/service-icons/room.svg"
 
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -56,15 +59,12 @@ const SoundDesign = ({ data, location }) => {
         <ServiceIconList>
           <ServiceIcon
             title="Sound effects for any media project"
-            icon={GamesIcon}
+            icon={PlayerIcon}
           />
-          <ServiceIcon
-            title="Sound design for motion design"
-            icon={GamesIcon}
-          />
+          <ServiceIcon title="Sound design for motion design" icon={FileIcon} />
           <ServiceIcon
             title="Sound design of the space (quest rooms, installations)"
-            icon={GamesIcon}
+            icon={RoomIcon}
           />
         </ServiceIconList>
 

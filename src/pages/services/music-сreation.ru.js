@@ -7,15 +7,25 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import PlanList from "../../components/PlanList"
 import PlanCard from "../../components/PlanCard"
-import StandartIcon from "../../images/plans/standart.svg"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
+
+import StandartIcon from "../../images/plans/standart.svg"
+import SoftIcon from "../../images/plans/soft.svg"
+import SosIcon from "../../images/plans/sos.svg"
+import PremiumIcon from "../../images/plans/premium.svg"
+
+import GamesIcon from "../../images/service-icons/games.svg"
+import AudioIcon from "../../images/service-icons/audio.svg"
+import FilmIcon from "../../images/service-icons/film.svg"
+import MonsterIcon from "../../images/service-icons/monster.svg"
+import PlayerIcon from "../../images/service-icons/player-2.svg"
+import MasksIcon from "../../images/service-icons/masks.svg"
 
 const MusicCreation = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -56,11 +66,11 @@ const MusicCreation = ({ data, location }) => {
 
         <ServiceIconList>
           <ServiceIcon title="Игр" icon={GamesIcon} />
-          <ServiceIcon title="Рекламных роликов" icon={GamesIcon} />
-          <ServiceIcon title="Фильмов" icon={GamesIcon} />
-          <ServiceIcon title="Мультфильмов" icon={GamesIcon} />
-          <ServiceIcon title="Трейлеров" icon={GamesIcon} />
-          <ServiceIcon title="Театральных постановок" icon={GamesIcon} />
+          <ServiceIcon title="Рекламных роликов" icon={AudioIcon} />
+          <ServiceIcon title="Фильмов" icon={FilmIcon} />
+          <ServiceIcon title="Мультфильмов" icon={MonsterIcon} />
+          <ServiceIcon title="Трейлеров" icon={PlayerIcon} />
+          <ServiceIcon title="Театральных постановок" icon={MasksIcon} />
         </ServiceIconList>
 
         <p>
@@ -163,7 +173,7 @@ const MusicCreation = ({ data, location }) => {
           />
           <PlanCard
             title="Soft Launch"
-            icon={StandartIcon}
+            icon={SoftIcon}
             subTitle="тестируем ваши гипотезы"
             list={[
               "длительность трека — 30 сек",
@@ -175,13 +185,13 @@ const MusicCreation = ({ data, location }) => {
           />
           <PlanCard
             title="S.O.S"
-            icon={StandartIcon}
+            icon={SosIcon}
             subTitle="когда всё горит и пылает"
             list={["срок выполнения — ASAP", "без правок", "полная предоплата"]}
           />
           <PlanCard
-            title="Premium "
-            icon={StandartIcon}
+            title="Premium"
+            icon={PremiumIcon}
             subTitle="да, вы на коне"
             list={[
               "срок выполнения — ASAP",

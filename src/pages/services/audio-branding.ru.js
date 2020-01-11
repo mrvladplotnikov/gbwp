@@ -7,13 +7,18 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 import WorkCards from "../../components/WorkCards"
+
+import FemaleIcon from "../../images/service-icons/female.svg"
+import JingleIcon from "../../images/service-icons/jingle.svg"
+import AudioIcon from "../../images/service-icons/audio.svg"
+import PhoneIcon from "../../images/service-icons/phone.svg"
+import SoundIcon from "../../images/service-icons/sound.svg"
 
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -51,21 +56,20 @@ const AudioBranding = ({ data, location }) => {
       </ServiceHero>
       <ServiceSection title="Что мы делаем?">
         <p>Мы создаём:</p>
-
         <ServiceIconList>
-          <ServiceIcon title="Имиджевую музыку" icon={GamesIcon} />
+          <ServiceIcon title="Имиджевую музыку" icon={FemaleIcon} />
           <ServiceIcon
             title="Джинглы и музыкальные логотипы"
-            icon={GamesIcon}
+            icon={JingleIcon}
           />
-          <ServiceIcon title="Aудиорекламу" icon={GamesIcon} />
+          <ServiceIcon title="Aудиорекламу" icon={AudioIcon} />
           <ServiceIcon
             title="Звуковую айдентику для приложения"
-            icon={GamesIcon}
+            icon={PhoneIcon}
           />
           <ServiceIcon
             title="Другие аудиальные точки контакта с клиентом"
-            icon={GamesIcon}
+            icon={SoundIcon}
           />
         </ServiceIconList>
 

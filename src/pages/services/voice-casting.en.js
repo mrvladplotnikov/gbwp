@@ -7,7 +7,6 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
@@ -15,7 +14,13 @@ import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 import PlanList from "../../components/PlanList"
 import PlanCard from "../../components/PlanCard"
-import StandartIcon from "../../images/plans/standart.svg"
+
+import HouseIcon from "../../images/plans/house.svg"
+import PlanetIcon from "../../images/plans/planet.svg"
+
+import MaleIcon from "../../images/service-icons/male.svg"
+import LaptopIcon from "../../images/service-icons/laptop.svg"
+import FileIcon from "../../images/service-icons/file.svg"
 
 const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -53,12 +58,12 @@ const VoiceCasting = ({ data, location }) => {
         <p>In short, we produce voice-overs, and specifically deal with the:</p>
 
         <ServiceIconList>
-          <ServiceIcon title="Casting voice actors" icon={GamesIcon} />
+          <ServiceIcon title="Casting voice actors" icon={MaleIcon} />
           <ServiceIcon
             title="Organization of the recording process and project management"
-            icon={GamesIcon}
+            icon={LaptopIcon}
           />
-          <ServiceIcon title="Processing audio files" icon={GamesIcon} />
+          <ServiceIcon title="Processing audio files" icon={FileIcon} />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Our works">
@@ -159,13 +164,13 @@ const VoiceCasting = ({ data, location }) => {
         <PlanList>
           <PlanCard
             title="Local voice actors"
-            icon={StandartIcon}
+            icon={HouseIcon}
             subTitle="Available languages"
             list={["Ukrainian", "Russian", "English"]}
           />
           <PlanCard
             title="Foreign voice actors"
-            icon={StandartIcon}
+            icon={PlanetIcon}
             subTitle="Available languages"
             list={["English", "German", "French", "Spanish", "Chinese"]}
           />

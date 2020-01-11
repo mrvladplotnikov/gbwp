@@ -7,15 +7,25 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import PlanList from "../../components/PlanList"
 import PlanCard from "../../components/PlanCard"
-import StandartIcon from "../../images/plans/standart.svg"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
+
+import StandartIcon from "../../images/plans/standart.svg"
+import SoftIcon from "../../images/plans/soft.svg"
+import SosIcon from "../../images/plans/sos.svg"
+import PremiumIcon from "../../images/plans/premium.svg"
+
+import GamesIcon from "../../images/service-icons/games.svg"
+import AudioIcon from "../../images/service-icons/audio.svg"
+import FilmIcon from "../../images/service-icons/film.svg"
+import MonsterIcon from "../../images/service-icons/monster.svg"
+import PlayerIcon from "../../images/service-icons/player-2.svg"
+import MasksIcon from "../../images/service-icons/masks.svg"
 
 const MusicCreation = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -53,16 +63,14 @@ const MusicCreation = ({ data, location }) => {
       </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>We compose soundtracks and create music for:</p>
-
         <ServiceIconList>
           <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Commercials" icon={GamesIcon} />
-          <ServiceIcon title="Films" icon={GamesIcon} />
-          <ServiceIcon title="Animated films/cartoons" icon={GamesIcon} />
-          <ServiceIcon title="Trailers" icon={GamesIcon} />
-          <ServiceIcon title="Theatre" icon={GamesIcon} />
+          <ServiceIcon title="Commercials" icon={AudioIcon} />
+          <ServiceIcon title="Films" icon={FilmIcon} />
+          <ServiceIcon title="Animated films/cartoons" icon={MonsterIcon} />
+          <ServiceIcon title="Trailers" icon={PlayerIcon} />
+          <ServiceIcon title="Theatre" icon={MasksIcon} />
         </ServiceIconList>
-
         <p>
           We also create music for motion design, but it relates more to sound
           design so that you can read about it here.
@@ -164,7 +172,7 @@ const MusicCreation = ({ data, location }) => {
           />
           <PlanCard
             title="Soft Launch"
-            icon={StandartIcon}
+            icon={SoftIcon}
             subTitle="Testing your hypotheses"
             list={[
               "track duration — 30 sec",
@@ -176,14 +184,14 @@ const MusicCreation = ({ data, location }) => {
           />
           <PlanCard
             title="S.O.S"
-            icon={StandartIcon}
-            subTitle="коли все горить і палає"
+            icon={SosIcon}
+            subTitle="When everything is burning"
             list={["completion — ASAP", "without edits", "full prepayment"]}
           />
           <PlanCard
             title="Premium"
-            icon={StandartIcon}
-            subTitle="так, ви на коні"
+            icon={PremiumIcon}
+            subTitle="Yes, you're on a horse"
             list={["completion — ASAP", "five free edits", "50 % prepayment"]}
           />
         </PlanList>

@@ -7,13 +7,16 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 import WorkCards from "../../components/WorkCards"
+
+import PlayerIcon from "../../images/service-icons/player.svg"
+import FileIcon from "../../images/service-icons/file-2.svg"
+import RoomIcon from "../../images/service-icons/room.svg"
 
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -55,19 +58,18 @@ const SoundDesign = ({ data, location }) => {
       </ServiceHero>
       <ServiceSection title="Що ми робимо?">
         <p>Ми створюємо:</p>
-
         <ServiceIconList>
           <ServiceIcon
             title="Звукові ефекти для будь-яких медіа-проектів"
-            icon={GamesIcon}
+            icon={PlayerIcon}
           />
           <ServiceIcon
             title="Звукове оформлення для motion-диЗайну"
-            icon={GamesIcon}
+            icon={FileIcon}
           />
           <ServiceIcon
             title="Звукове оформлення простору (квест-кімнати, інсталяції та інше)"
-            icon={GamesIcon}
+            icon={RoomIcon}
           />
         </ServiceIconList>
 

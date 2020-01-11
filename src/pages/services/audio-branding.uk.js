@@ -7,13 +7,18 @@ import Sidebar from "../../components/Sidebar"
 import ServiceSection from "../../components/ServiceSection"
 import ServiceIconList from "../../components/ServiceIconList"
 import ServiceIcon from "../../components/ServiceIcon"
-import GamesIcon from "../../images/service-icons/games.svg"
 import StyledAccordion from "../../components/StyledAccordion"
 import StyledAccordionItem from "../../components/StyledAccordionItem"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import CardDeck from "../../components/CardDeck/CardDeck"
 import CardDeckItem from "../../components/CardDeckItem/CardDeckItem"
 import WorkCards from "../../components/WorkCards"
+
+import FemaleIcon from "../../images/service-icons/female.svg"
+import JingleIcon from "../../images/service-icons/jingle.svg"
+import AudioIcon from "../../images/service-icons/audio.svg"
+import PhoneIcon from "../../images/service-icons/phone.svg"
+import SoundIcon from "../../images/service-icons/sound.svg"
 
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -51,25 +56,16 @@ const AudioBranding = ({ data, location }) => {
         <p>Ми створюємо:</p>
 
         <ServiceIconList>
+          <ServiceIcon title="Iміджеву музику" icon={FemaleIcon} />
+          <ServiceIcon title="Джингли та музичні логотипи" icon={JingleIcon} />
+          <ServiceIcon title="Аудіорекламу" icon={AudioIcon} />
           <ServiceIcon
-            title="Iміджеву музику
-"
-            icon={GamesIcon}
-          />
-          <ServiceIcon
-            title="Джингли та музичні логотипи
-            "
-            icon={GamesIcon}
-          />
-          <ServiceIcon title="Аудіорекламу" icon={GamesIcon} />
-          <ServiceIcon
-            title="Звукову айдентику для додатків
-            "
-            icon={GamesIcon}
+            title="Звукову айдентику для додатків"
+            icon={PhoneIcon}
           />
           <ServiceIcon
             title="Iнші аудіальні точки контакту з клієнтом"
-            icon={GamesIcon}
+            icon={SoundIcon}
           />
         </ServiceIconList>
 
