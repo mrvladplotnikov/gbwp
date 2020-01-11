@@ -10,3 +10,40 @@
   margin: 0 auto;
   width: 100%;
 }
+
+/* Small */
+@media (min-width: 768px) {
+  .Outer {
+    max-width: 740px;
+  }
+  .Inner {
+    max-width: 720px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .Outer {
+    max-width: 980px;
+  }
+  .Inner {
+    max-width: 960px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .Outer {
+    max-width: 1160px;
+  }
+  .Inner {
+    max-width: 1140px;
+  }
+}
+/* Extra large */
+@media (min-width: 1366px) {
+  .Outer {
+    max-width: 1570px;
+  }
+  .Inner {
+    max-width: 1170px;
+  }
+}
