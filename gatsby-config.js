@@ -47,6 +47,7 @@ module.exports = {
         includedRoutes: [
           "**/client_review",
           "**/work",
+          "**/team",
           "**/media",
           "**/pages",
           "**/posts",

@@ -1,0 +1,120 @@
+.team {
+  display: flex;
+}
+
+.member {
+  color: #ffffff;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  max-height: 290px;
+  width: auto;
+  overflow: hidden;
+}
+
+.photoContainer {
+  width: 100%;
+}
+
+.info {
+  float: right;
+}
+
+.photo img {
+  pointer-events: none;
+}
+
+.name {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  width: auto;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+
+.position {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+  width: auto;
+  margin-bottom: 14px;
+}
+
+.content {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+.content strong {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+.content p {
+  margin: 0.5em 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+.content p:first-child {
+  margin-top: 0;
+}
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .member {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .info {
+    max-width: 564px;
+  }
+
+  .photoContainer {
+    margin-right: 15px;
+    max-width: 570px;
+  }
+
+  .photo {
+    max-height: 100%;
+  }
+
+  .name {
+    font-size: 70px;
+    line-height: 85px;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .position {
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .content {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .content strong {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .content p {
+    margin: 0.5em 0;
+    font-size: 22px;
+    line-height: 27px;
+  }
+}

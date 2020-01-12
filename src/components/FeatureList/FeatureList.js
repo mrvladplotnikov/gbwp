@@ -1,22 +1,20 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import { Inner } from "../Container"
-import FeatureCard from "../FeatureCard"
 
-const FeatureList = ({ features = [] }) => (
+const FeatureList = ({ children }) => (
   <Inner>
     <div className={styles.FeatureList}>
-      {features.map(({ id, image, alt, body }) => (
-        <FeatureCard
-          key={id}
-          img={image}
-          alt={alt}
-          body={body}
-          className={styles.feature}
-        />
-      ))}
+      {React.Children.map(children, child =>
+        React.cloneElement(child, { className: styles.feature })
+      )}
     </div>
   </Inner>
 )
+
+FeatureList.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default FeatureList
