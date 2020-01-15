@@ -5,7 +5,12 @@ import "./review-carousel.css"
 
 const ReviewCarousel = ({ reviews = [] }) => (
   <div className="review-carousel">
-    <ReactAliceCarousel buttonsDisabled fadeOutAnimation infinite={false}>
+    <ReactAliceCarousel
+      mouseDragEnabled
+      buttonsDisabled
+      fadeOutAnimation
+      infinite={false}
+    >
       {reviews.map(review => (
         <ReviewCarouselItem
           key={review.id}
