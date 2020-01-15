@@ -21,6 +21,10 @@
   letter-spacing: -0.02em;
 }
 
+.text a {
+  color: #ffffff;
+}
+
 @media (min-width: 992px) {
   .FeatureCard {
     align-items: flex-start;

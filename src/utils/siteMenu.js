@@ -83,13 +83,13 @@ module.exports = [
   {
     link: {
       uk: "/about",
-      en: "/about",
-      ru: "/about",
+      en: "/en/about",
+      ru: "/ru/about",
     },
     label: {
-      uk: "О компании",
-      ru: "О компании",
-      en: "About",
+      uk: "Про нас",
+      en: "About us",
+      ru: "О нас",
     },
   },
 ]

@@ -43,7 +43,8 @@ body {
 }
 
 body a {
-  color: #bebebe;
+  color: #d2d2d2;
+  text-decoration-line: underline;
 }
 
 body svg {
