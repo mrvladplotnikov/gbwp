@@ -7,6 +7,7 @@
   align-items: center;
   color: #ffffff;
   flex-direction: column;
+  padding: 0 15px;
 }
 
 .nameAndPos {
@@ -54,6 +55,7 @@
 
   .meta {
     margin-right: 85px;
+    min-width: 250px;
   }
 
   .nameAndPos {
