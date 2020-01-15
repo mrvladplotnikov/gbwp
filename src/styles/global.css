@@ -8,7 +8,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 /* Handle */
@@ -43,7 +43,8 @@ body {
 }
 
 body a {
-  color: #bebebe;
+  color: #d2d2d2;
+  text-decoration-line: underline;
 }
 
 body svg {

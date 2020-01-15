@@ -24,8 +24,8 @@ const SectionBox = ({ className }) => {
   )
 }
 
-const SectionWithText = ({ link = "", linkLabel = "", children }) => (
-  <section className={styles.section}>
+const SectionWithText = ({ link = "", linkLabel = "", children, ...props }) => (
+  <section className={styles.section} {...props}>
     <Outer className={styles.outer}>
       <SectionBox className={styles.boxTopLeft} />
       <SectionBox className={styles.boxTopRight} />
