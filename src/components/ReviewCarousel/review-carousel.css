@@ -1,7 +1,7 @@
 .review-carousel .alice-carousel__dots {
   font-size: 0;
   line-height: 0;
-  margin: 20px 15px 35px 0;
+  margin: 20px 15px 35px 15px;
 }
 
 .review-carousel .alice-carousel__dots-item {
@@ -23,7 +23,7 @@
 @media (min-width: 992px) {
   .review-carousel .alice-carousel__dots {
     display: block;
-    margin: 25px 15px 62px 0;
+    margin: 25px 15px 62px 15px;
   }
   .review-carousel .alice-carousel__dots-item {
     width: 108px;

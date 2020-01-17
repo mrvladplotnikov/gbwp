@@ -47,6 +47,31 @@
   text-align: center;
 }
 
+.contentInside {
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.readMoreButton {
+  border: none;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: underline;
+  padding: 0;
+}
+
 @media (min-width: 992px) {
   .review {
     align-items: center;
@@ -70,6 +95,10 @@
     margin-bottom: 25px;
   }
 
+  .thumbnail img {
+    pointer-events: none;
+  }
+
   .company {
     font-weight: 300;
     font-size: 18px;
@@ -81,5 +110,15 @@
     font-size: 22px;
     line-height: 37px;
     text-align: left;
+  }
+
+  .contentInside {
+    max-height: 380px;
+    overflow: hidden;
+  }
+
+  .readMoreButton {
+    font-size: 22px;
+    line-height: 37px;
   }
 }
