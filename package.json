@@ -37,6 +37,7 @@
     "react-helmet": "^5.2.1",
     "react-intl": "2.8.0",
     "react-masonry-css": "^1.0.14",
+    "react-modal": "^3.11.1",
     "react-select": "^3.0.8"
   },
   "devDependencies": {

@@ -30,6 +30,16 @@
   margin-bottom: 12px;
 }
 
+.noImage {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  max-width: 170px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
 .company {
   font-style: normal;
   font-weight: 300;
@@ -45,11 +55,6 @@
   font-size: 14px;
   line-height: 20px;
   text-align: center;
-}
-
-.contentInside {
-  max-height: 110px;
-  overflow: hidden;
 }
 
 .content p:first-child {
@@ -70,6 +75,29 @@
   color: #ffffff;
   text-decoration: underline;
   padding: 0;
+}
+
+.contentInside {
+  max-height: 145px;
+  overflow: hidden;
+}
+
+.closeModalButton {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modalInner .content {
+  margin-bottom: 30px;
+}
+
+.modal {
+  position: relative;
 }
 
 @media (min-width: 992px) {
@@ -95,6 +123,12 @@
     margin-bottom: 25px;
   }
 
+  .noImage {
+    width: 100%;
+    margin-bottom: 25px;
+    object-fit: cover;
+  }
+
   .thumbnail img {
     pointer-events: none;
   }
@@ -112,13 +146,12 @@
     text-align: left;
   }
 
-  .contentInside {
-    max-height: 380px;
-    overflow: hidden;
-  }
-
   .readMoreButton {
     font-size: 22px;
     line-height: 37px;
+  }
+
+  .contentInside {
+    max-height: 160px;
   }
 }

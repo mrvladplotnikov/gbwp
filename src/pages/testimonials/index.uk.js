@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import { graphql } from "gatsby"
@@ -20,7 +20,25 @@ const Box = ({ className = "" }) => (
 )
 
 const Testimonials = ({ data, location }) => {
-  const testimonials = chunk(data.testimonials.nodes, 10)
+  const [longTestimonials, setLongTestimonials] = useState([])
+  const [shortTestimonials, setShortTestimonials] = useState([])
+
+  useEffect(() => {
+    const testimonials = data.testimonials.nodes
+    const long = []
+    const short = []
+
+    testimonials.forEach(testimonial => {
+      if (testimonial.content.length > 200) {
+        long.push(testimonial)
+      } else {
+        short.push(testimonial)
+      }
+    })
+
+    setLongTestimonials(long)
+    setShortTestimonials(short)
+  }, [data])
 
   return (
     <Layout location={location}>
@@ -36,7 +54,10 @@ const Testimonials = ({ data, location }) => {
           <Headline Tag="h2" className={styles.sectionTitle}>
             Відгуки кліентів
           </Headline>
-          {testimonials.map((node, index) => (
+          {chunk(longTestimonials, 5).map((node, index) => (
+            <ReviewCarousel key={index} reviews={node} />
+          ))}
+          {chunk(shortTestimonials, 10).map((node, index) => (
             <ReviewCarousel
               key={index}
               reviews={node}
@@ -66,7 +87,11 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 249, srcSetBreakpoints: [445, 900]) {
+              fluid(
+                maxWidth: 250
+                maxHeight: 250
+                srcSetBreakpoints: [445, 900]
+              ) {
                 ...GatsbyImageSharpFluid
               }
             }
