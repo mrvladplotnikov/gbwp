@@ -11,6 +11,7 @@ import NavigationDrawer from "../components/NavigationDrawer"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import "intl"
+import "normalize.css"
 
 const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)

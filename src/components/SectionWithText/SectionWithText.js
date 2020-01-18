@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 import StyledLink from "../StyledLink"
 import { Outer } from "../Container"
 import boxOfDotsLink from "../../images/box-of-dots.svg"
@@ -12,7 +11,7 @@ const SectionBox = ({ className }) => {
 
   return (
     <img
-      className={classNames(styles.box, className)}
+      className={classNames("SectionWithText__box", className)}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onFocus={() => setHover(true)}
@@ -25,15 +24,15 @@ const SectionBox = ({ className }) => {
 }
 
 const SectionWithText = ({ link = "", linkLabel = "", children, ...props }) => (
-  <section className={styles.section} {...props}>
-    <Outer className={styles.outer}>
-      <SectionBox className={styles.boxTopLeft} />
-      <SectionBox className={styles.boxTopRight} />
-      <SectionBox className={styles.boxBottomLeft} />
-      <SectionBox className={styles.boxBottomRight} />
+  <section className="SectionWithText" {...props}>
+    <Outer className="SectionWithText__outer">
+      <SectionBox className="SectionWithText__box--box-TopLeft" />
+      <SectionBox className="SectionWithText__box--box-TopRight" />
+      <SectionBox className="SectionWithText__box--box-BottomLeft" />
+      <SectionBox className="SectionWithText__box--box-BottomRight" />
       {children}
       {link && (
-        <div className={styles.linkContainer}>
+        <div className="SectionWithText__linkContainer">
           <StyledLink to={link}>{linkLabel}</StyledLink>
         </div>
       )}

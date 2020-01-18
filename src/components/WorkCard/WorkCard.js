@@ -24,7 +24,10 @@ const WorkCard = ({
       ) : (
         <img src={noImage} className="WorkCard__image" alt="" />
       )}
-      <figcaption className="WorkCard__title">{strip(title)}</figcaption>
+      <figcaption
+        className="WorkCard__title"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
     </figure>
   </Link>
 )

@@ -5,13 +5,13 @@
   margin: 0;
 }
 
-.image {
+.FeatureCard__image {
   display: block;
   max-width: 100%;
   width: 36px;
 }
 
-.text {
+.FeatureCard__text {
   width: auto;
   margin: 0;
   margin-left: 15px;
@@ -21,7 +21,7 @@
   letter-spacing: -0.02em;
 }
 
-.text a {
+.FeatureCard__text a {
   color: #ffffff;
 }
 
@@ -29,12 +29,12 @@
   .FeatureCard {
     align-items: flex-start;
   }
-  .image {
+  .FeatureCard__image {
     display: block;
     max-width: 100%;
     width: 80px;
   }
-  .text {
+  .FeatureCard__text {
     width: auto;
     margin-left: 44px;
     font-style: normal;

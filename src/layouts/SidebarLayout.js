@@ -8,6 +8,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import "intl"
+import "normalize.css"
 
 const SidebarLayout = ({
   pageTitle,
