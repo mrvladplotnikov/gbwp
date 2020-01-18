@@ -30,6 +30,16 @@
   margin-bottom: 12px;
 }
 
+.noImage {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  max-width: 170px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
 .company {
   font-style: normal;
   font-weight: 300;
@@ -45,6 +55,56 @@
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.readMoreButton {
+  border: none;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.closeModalButton {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .closeModalButton:hover {
+    color: ;
+  }
+}
+
+.modalInner .content {
+  margin-bottom: 30px;
+}
+
+.modalInner .nameAndPos {
+  text-align: center;
+  width: 100%;
+}
+
+.modal {
+  position: relative;
 }
 
 @media (min-width: 992px) {
@@ -70,6 +130,16 @@
     margin-bottom: 25px;
   }
 
+  .noImage {
+    width: 100%;
+    margin-bottom: 25px;
+    object-fit: cover;
+  }
+
+  .thumbnail img {
+    pointer-events: none;
+  }
+
   .company {
     font-weight: 300;
     font-size: 18px;
@@ -81,5 +151,14 @@
     font-size: 22px;
     line-height: 37px;
     text-align: left;
+  }
+
+  .readMoreButton {
+    font-size: 22px;
+    line-height: 37px;
+  }
+  .modalInner .nameAndPos {
+    text-align: left;
+    width: 100%;
   }
 }

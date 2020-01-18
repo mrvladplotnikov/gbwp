@@ -9,6 +9,7 @@ import Contacts from "../../components/lendingSections/Contacts"
 import parseContent from "../../utils/parseContent"
 import styles from "./styles.module.css"
 import TermItem from "../../components/TermItem"
+import { strip } from "../../utils/htmlHelpers"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
@@ -30,7 +31,10 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     <Layout location={location} translations={translations}>
       <Inner>
         <div className={styles.template}>
-          <h1 className={styles.mainTitle}>{title}</h1>
+          <h1
+            className={styles.mainTitle}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <ul className={styles.meta}>
             <TermItem
               className={styles.metaValues}
@@ -67,7 +71,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             {featured_media && (
               <Img
                 fluid={featured_media.localFile.childImageSharp.fluid}
-                alt={title}
+                alt={strip(title)}
               />
             )}
           </div>

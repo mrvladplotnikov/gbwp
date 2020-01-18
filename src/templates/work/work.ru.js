@@ -30,7 +30,10 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     <Layout location={location} translations={translations}>
       <Inner>
         <div className={styles.template}>
-          <h1 className={styles.mainTitle}>{title}</h1>
+          <h1
+            className={styles.mainTitle}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
 
           <ul className={styles.meta}>
             <TermItem
