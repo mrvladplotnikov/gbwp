@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import gPath from "../../utils/generatePath"
 import Img from "gatsby-image"
 import noImage from "../../images/no-image.png"
+import { strip } from "../../utils/htmlHelpers"
 
 const WorkCard = ({
   className = "",
@@ -19,11 +20,11 @@ const WorkCard = ({
   >
     <figure className="WorkCard__container">
       {image ? (
-        <Img className="WorkCard__image" fluid={image} alt={title} />
+        <Img className="WorkCard__image" fluid={image} alt={strip(title)} />
       ) : (
         <img src={noImage} className="WorkCard__image" alt="" />
       )}
-      <figcaption className="WorkCard__title">{title}</figcaption>
+      <figcaption className="WorkCard__title">{strip(title)}</figcaption>
     </figure>
   </Link>
 )

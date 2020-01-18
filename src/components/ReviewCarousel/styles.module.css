@@ -77,11 +77,6 @@
   padding: 0;
 }
 
-.contentInside {
-  max-height: 145px;
-  overflow: hidden;
-}
-
 .closeModalButton {
   border: none;
   background-color: transparent;
@@ -90,10 +85,22 @@
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .closeModalButton:hover {
+    color: ;
+  }
 }
 
 .modalInner .content {
   margin-bottom: 30px;
+}
+
+.modalInner .nameAndPos {
+  text-align: center;
+  width: 100%;
 }
 
 .modal {
@@ -150,8 +157,8 @@
     font-size: 22px;
     line-height: 37px;
   }
-
-  .contentInside {
-    max-height: 160px;
+  .modalInner .nameAndPos {
+    text-align: left;
+    width: 100%;
   }
 }

@@ -92,4 +92,16 @@ module.exports = [
       ru: "О нас",
     },
   },
+  {
+    link: {
+      uk: "/reviews",
+      en: "/en/reviews",
+      ru: "/ru/reviews",
+    },
+    label: {
+      uk: "Відгуки",
+      en: "Reviews",
+      ru: "Отзывы",
+    },
+  },
 ]

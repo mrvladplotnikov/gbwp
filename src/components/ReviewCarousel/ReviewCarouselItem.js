@@ -7,6 +7,7 @@ import { FormattedMessage } from "react-intl"
 import Modal from "react-modal"
 import NoImage from "../../images/no-image.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { strip } from "../../utils/htmlHelpers"
 
 Modal.setAppElement("#___gatsby")
 
@@ -63,10 +64,7 @@ const ReviewCarouselItem = ({
       </div>
       {review && (
         <div className={classNames(styles.content, classes.content)}>
-          <div
-            className={styles.contentInside}
-            dangerouslySetInnerHTML={{ __html: review }}
-          />
+          {strip(review).slice(0, 333)}{" "}
           {showReadMoreButton && (
             <>
               <button

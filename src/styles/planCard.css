@@ -7,6 +7,10 @@
   max-width: 265px;
   margin: auto;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 562px;
+  align-items: flex-start;
 }
 
 .PlanCard__title {
@@ -60,6 +64,7 @@
   color: #ffffff;
   border: 1px solid #747474;
   cursor: pointer;
+  margin-top: auto;
 }
 .PlanCard__button::before {
   content: "";
@@ -81,7 +86,7 @@
 @media (min-width: 992px) {
   .PlanCard {
     padding: 25px 20px 20px;
-    /* margin-right: 10px; */
+    min-height: 612px;
   }
 
   .PlanCard__title {
