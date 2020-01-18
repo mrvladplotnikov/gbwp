@@ -1,4 +1,4 @@
-.wrapper {
+.StyledLink__wrapper {
   display: inline-block;
 }
 .StyledLink {
@@ -29,26 +29,26 @@
   transform-origin: 0 50%;
   transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.arrowWrapper {
+.StyledLink__arrowWrapper {
   display: flex;
   justify-content: flex-end;
 }
-.arrow {
+.StyledLink__arrow {
   transform: translateX(0);
   transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.arrow path {
+.StyledLink__arrow path {
   stroke: #747474;
   transition: stroke 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
-.wrapper:hover .StyledLink::before {
+.StyledLink__wrapper:hover .StyledLink::before {
   transform: scaleX(1);
 }
-.wrapper:hover .arrow {
+.StyledLink__wrapper:hover .StyledLink__arrow {
   transform: translateX(13px);
 }
-.wrapper:hover .arrow path {
+.StyledLink__wrapper:hover .StyledLink__arrow path {
   stroke: #ffffff;
 }
 @media (min-width: 768px) {

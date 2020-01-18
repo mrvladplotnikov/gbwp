@@ -1,4 +1,4 @@
-.section {
+.SectionWithText {
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -11,76 +11,76 @@
   overflow: hidden;
 }
 
-.outer {
+.SectionWithText__outer {
   position: static;
 }
 
-.outer > * {
+.SectionWithText__outer > * {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
 }
 
-.box {
+.SectionWithText__box {
   position: absolute;
   width: 67.94px;
   height: 69.07px;
 }
 
-.boxTopLeft {
+.SectionWithText__box--box-TopLeft {
   top: 12px;
   left: -25px;
 }
-.boxTopRight {
+.SectionWithText__box--box-TopRight {
   top: 12px;
   right: 8px;
 }
-.boxBottomLeft {
+.SectionWithText__box--box-BottomLeft {
   bottom: 12px;
   left: 7px;
 }
-.boxBottomRight {
+.SectionWithText__box--box-BottomRight {
   bottom: 12px;
   right: -25px;
 }
 
-.linkContainer {
+.SectionWithText__linkContainer {
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
 }
 
 @media (min-width: 992px) {
-  .section {
+  .SectionWithText {
     font-size: 60px;
     line-height: 73px;
     padding: 319px 15px 177px 15px;
   }
-  .outer > * {
+  .SectionWithText__outer > * {
     font-size: 60px;
     line-height: 73px;
   }
-  .linkContainer {
+  .SectionWithText__linkContainer {
     margin-top: 106px;
   }
-  .box {
+  .SectionWithText__box {
     width: 110.06px;
     height: 111.89px;
   }
 
-  .boxTopLeft {
+  .SectionWithText__box--box-TopLeft {
     top: 23px;
     left: -39px;
   }
-  .boxTopRight {
+  .SectionWithText__box--box-TopRight {
     top: 23px;
     right: 15px;
   }
-  .boxBottomLeft {
+  .SectionWithText__box--box-BottomLeft {
     bottom: 15px;
     left: 18px;
   }
-  .boxBottomRight {
+  .SectionWithText__box--box-BottomRight {
     bottom: 15px;
     right: -39px;
   }

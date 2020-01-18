@@ -7,6 +7,7 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
 import "intl"
+import "normalize.css"
 
 const DefaultLayout = ({
   pageTitle,
