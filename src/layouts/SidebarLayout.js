@@ -1,21 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
 import Footer from "../components/Footer"
 import { Inner } from "../components/Container"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
+import SEO from "../components/seo"
 import "intl"
 import "normalize.css"
 
 const SidebarLayout = ({
-  pageTitle,
   Sidebar,
   children,
   location,
   i18nMessages,
+  title,
+  description,
+  meta,
 }) => {
   return (
     <StaticQuery
@@ -50,6 +52,12 @@ const SidebarLayout = ({
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
+              <SEO
+                title={title}
+                description={description}
+                meta={meta}
+                lang={langKey}
+              />
               <HorizontalNav
                 langsMenu={langsMenu}
                 locale={langKey}
@@ -57,7 +65,6 @@ const SidebarLayout = ({
                 hideMenu
               />
               <div className="main main--sidebar">
-                <SEO title={pageTitle} />
                 <aside className="site-sidebar">{Sidebar}</aside>
                 <div className="site-content">
                   <Inner>
@@ -75,11 +82,15 @@ const SidebarLayout = ({
 }
 
 SidebarLayout.defaultProps = {
-  pageTitle: "",
+  title: "",
+  description: "",
+  meta: [],
 }
 
 SidebarLayout.propTypes = {
-  pageTitle: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  meta: PropTypes.array,
   Sidebar: PropTypes.element.isRequired,
   children: PropTypes.node.isRequired,
 }

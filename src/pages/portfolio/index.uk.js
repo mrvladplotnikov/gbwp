@@ -12,7 +12,7 @@ const PortfolioBox = () => (
 )
 
 const Portfolio = ({ data, location }) => (
-  <Layout location={location}>
+  <Layout location={location} title="Портфолiо">
     <Outer>
       <Headline Tag="h1" className={styles.title}>
         Портфолiо

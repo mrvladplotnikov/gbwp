@@ -34,6 +34,7 @@ const SoundDesign = ({ data, location }) => {
         />
       }
       location={location}
+      title="Звуковой дизайн"
     >
       <ServiceHero>
         <h3>

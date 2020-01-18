@@ -36,6 +36,7 @@ const AudioBranding = ({ data, location }) => {
         />
       }
       location={location}
+      title="Audio Branding"
     >
       <ServiceHero>
         <h3>

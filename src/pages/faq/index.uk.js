@@ -19,7 +19,7 @@ const Boxes = ({ className = "" }) => (
 )
 
 const Faq = ({ location }) => (
-  <Layout location={location}>
+  <Layout location={location} title="FAQ">
     <Inner>
       <Headline Tag="h1" className={styles.title}>
         faq

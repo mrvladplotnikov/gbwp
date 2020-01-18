@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import { graphql } from "gatsby"
@@ -20,28 +20,10 @@ const Box = ({ className = "" }) => (
 )
 
 const Testimonials = ({ data, location }) => {
-  const [longTestimonials, setLongTestimonials] = useState([])
-  const [shortTestimonials, setShortTestimonials] = useState([])
-
-  useEffect(() => {
-    const testimonials = data.testimonials.nodes
-    const long = []
-    const short = []
-
-    testimonials.forEach(testimonial => {
-      if (testimonial.content.length > 200) {
-        long.push(testimonial)
-      } else {
-        short.push(testimonial)
-      }
-    })
-
-    setLongTestimonials(long)
-    setShortTestimonials(short)
-  }, [data])
+  const testimonials = chunk(data.testimonials.nodes, 10)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title="Отзывы">
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           Отзывы
@@ -54,10 +36,7 @@ const Testimonials = ({ data, location }) => {
           <Headline Tag="h2" className={styles.sectionTitle}>
             Отзывы клиентов
           </Headline>
-          {chunk(longTestimonials, 5).map((node, index) => (
-            <ReviewCarousel key={index} reviews={node} />
-          ))}
-          {chunk(shortTestimonials, 10).map((node, index) => (
+          {testimonials.map((node, index) => (
             <ReviewCarousel
               key={index}
               reviews={node}

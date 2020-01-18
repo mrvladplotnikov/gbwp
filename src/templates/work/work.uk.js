@@ -28,7 +28,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const Content = parseContent(content, media)
 
   return (
-    <Layout location={location} translations={translations}>
+    <Layout location={location} translations={translations} title={title}>
       <Inner>
         <div className={styles.template}>
           <h1
@@ -84,7 +84,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
       <SingleNavagation
         next={next ? next.slug : null}
         prev={prev ? prev.slug : null}
-        list="/portfolio"
+        list="portfolio"
         prefix="works"
       />
       <Inner>

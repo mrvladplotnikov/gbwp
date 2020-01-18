@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
 import Footer from "../components/Footer"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
@@ -12,8 +11,9 @@ import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import "intl"
 import "normalize.css"
+import SEO from "../components/seo"
 
-const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
+const HomeLayout = ({ children, location, i18nMessages }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const handleMenuToogle = () => {
     setMenuIsOpen(!menuIsOpen)
@@ -64,6 +64,7 @@ const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
+              <SEO lang={langKey} />
               {!hideOnScroll ? (
                 <>
                   <Languages langsMenu={langsMenu} />
@@ -86,8 +87,6 @@ const HomeLayout = ({ pageTitle, children, location, i18nMessages }) => {
                   homeLink={homeLink.replace("/uk", "/")}
                 />
               )}
-
-              <SEO title={pageTitle} />
               {children}
               <Footer />
             </>

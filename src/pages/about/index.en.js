@@ -30,7 +30,7 @@ const About = ({ data, location }) => {
   const team = data.team.members
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title="About us">
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           About us

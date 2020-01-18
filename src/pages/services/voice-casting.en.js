@@ -36,6 +36,7 @@ const VoiceCasting = ({ data, location }) => {
         />
       }
       location={location}
+      title="Voice casting"
     >
       <ServiceHero>
         <h3>

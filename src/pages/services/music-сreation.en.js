@@ -34,7 +34,7 @@ const MusicCreation = ({ data, location }) => {
     <Layout
       Sidebar={
         <Sidebar
-          title="Создание музыки"
+          title="Music creation"
           text="При создании игр, как и при съёмке кино, звук имеет очень
 большое значение. 60 или даже 70% ощущений создаётся именно за
 счёт звука. При этом звук – это не только музыкальное
@@ -45,6 +45,7 @@ const MusicCreation = ({ data, location }) => {
         />
       }
       location={location}
+      title="Music creation"
     >
       <ServiceHero>
         <h3>We love music mostly because of its potential.</h3>

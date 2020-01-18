@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
 import Footer from "../components/Footer"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
@@ -8,13 +7,16 @@ import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
 import "intl"
 import "normalize.css"
+import SEO from "../components/seo"
 
 const DefaultLayout = ({
-  pageTitle,
   children,
   location,
   translations,
   i18nMessages,
+  title,
+  description,
+  meta,
 }) => {
   return (
     <StaticQuery
@@ -75,11 +77,15 @@ const DefaultLayout = ({
             link: `${originLink}/${dynamicSlug.slug}`,
           }
         })
-
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
-              <SEO title={pageTitle} />
+              <SEO
+                title={title}
+                description={description}
+                meta={meta}
+                lang={langKey}
+              />
               <HorizontalNav
                 langsMenu={
                   translations && translations.length > 0
@@ -100,12 +106,16 @@ const DefaultLayout = ({
 }
 
 DefaultLayout.defaultProps = {
-  pageTitle: "",
+  title: "",
+  description: "",
+  meta: [],
   translations: [],
 }
 
 DefaultLayout.propTypes = {
-  pageTitle: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  meta: PropTypes.array,
   translations: PropTypes.array,
   children: PropTypes.node.isRequired,
 }

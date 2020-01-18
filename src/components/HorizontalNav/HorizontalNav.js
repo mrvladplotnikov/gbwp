@@ -116,6 +116,7 @@ const HorizontalNav = ({
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
             langsMenu={langsMenu}
+            locale={locale}
           />
         </>
       ) : (
@@ -125,6 +126,7 @@ const HorizontalNav = ({
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
             langsMenu={langsMenu}
+            locale={locale}
           />
         </>
       )}

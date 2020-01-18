@@ -45,6 +45,7 @@ const MusicCreation = ({ data, location }) => {
         />
       }
       location={location}
+      title="Создание музыки"
     >
       <ServiceHero>
         <h3>Больше всего мы любим музыку за её возможности.</h3>
