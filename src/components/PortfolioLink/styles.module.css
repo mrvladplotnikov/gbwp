@@ -1,4 +1,4 @@
-.PortfolioButton {
+.PortfolioLink {
   background-color: transparent;
   font-style: normal;
   font-weight: normal;
@@ -18,11 +18,11 @@
   bottom: 0;
   left: 28px;
 }
-.PortfolioButton:focus {
+.PortfolioLink:focus {
   outline: none;
 }
 @media (min-width: 992px) {
-  .PortfolioButton {
+  .PortfolioLink {
     left: 32px;
   }
 }

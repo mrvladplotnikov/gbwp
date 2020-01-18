@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../layouts/en/home"
 import Hero from "../components/lendingSections/Hero"
@@ -17,16 +17,12 @@ import icon4 from "../images/vp-icons/icon-4.svg"
 import icon5 from "../images/vp-icons/icon-5.svg"
 import icon6 from "../images/vp-icons/icon-6.svg"
 
-const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
-
 const Home = ({ data, location }) => {
-  const portfolioRef = useRef(null)
-  const executeScroll = () => scrollToRef(portfolioRef)
   const works = data.works.nodes
 
   return (
     <Layout location={location}>
-      <Hero onPortfolioClick={executeScroll} />
+      <Hero link="/en/portfolio" />
       <About
         title="VP Production"
         text="Ми - команда людей, які створюють музику, звуки і продюсує дикторський озвучування на межі чистого творчості і функціональності."
@@ -79,8 +75,6 @@ const Home = ({ data, location }) => {
         ]}
       />
       <ChosenWorks
-        id="portfolio"
-        portfolioRef={portfolioRef}
         title="Вибрані роботи"
         works={works}
         linkLabel="Portfolio"

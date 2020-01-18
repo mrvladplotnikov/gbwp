@@ -2,13 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import SocialLinks from "../../SocialLinks"
-import PortfolioButton from "../../PortfolioButton/PortfolioButton"
+import PortfolioLink from "../../PortfolioLink"
 import HeroLogo from "../../../images/logo.inline.svg"
 
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Hero = ({ onPortfolioClick = () => {} }) => {
+const Hero = ({ link = "/porfolio" }) => {
   const data = useStaticQuery(graphql`
     query {
       bgImage: file(relativePath: { eq: "hero-bg.jpg" }) {
@@ -31,7 +31,7 @@ const Hero = ({ onPortfolioClick = () => {} }) => {
       />
       <div className={styles.overlay}>
         <SocialLinks />
-        <PortfolioButton onClick={onPortfolioClick} />
+        <PortfolioLink link={link} />
         <HeroLogo className={styles.logo} />
       </div>
     </div>
@@ -39,7 +39,7 @@ const Hero = ({ onPortfolioClick = () => {} }) => {
 }
 
 Hero.propTypes = {
-  onPortfolioClick: PropTypes.func,
+  link: PropTypes.string,
 }
 
 export default Hero
