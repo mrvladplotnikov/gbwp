@@ -37,7 +37,7 @@ const ReviewCarouselItem = ({
     setModalIsOpen(false)
   }
 
-  if (review.length > 333 && !showReadMoreButton) {
+  if (review.length > 153 && !showReadMoreButton) {
     setShowReadMoreButton(true)
   }
 
@@ -64,7 +64,7 @@ const ReviewCarouselItem = ({
       </div>
       {review && (
         <div className={classNames(styles.content, classes.content)}>
-          {strip(review).slice(0, 333)}{" "}
+          {strip(review).slice(0, 150)}{" "}
           {showReadMoreButton && (
             <>
               <button
@@ -74,6 +74,7 @@ const ReviewCarouselItem = ({
               >
                 <FormattedMessage id="loadMoreButton" />
               </button>
+
               <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

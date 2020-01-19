@@ -1,0 +1,29 @@
+.loadMoreButton {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2.2;
+  text-align: center;
+  max-width: 131px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 37px;
+  margin-bottom: 45px;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #747474;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .loadMoreButton {
+    font-size: 20px;
+    line-height: 2.4;
+    min-width: 210px;
+    margin-top: 77px;
+    margin-bottom: 78px;
+  }
+}

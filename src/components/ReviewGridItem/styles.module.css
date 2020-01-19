@@ -1,0 +1,16 @@
+.item {
+  position: relative;
+}
+.closeModalButton {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.modal {
+  position: relative;
+}

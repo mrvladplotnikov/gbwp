@@ -88,12 +88,6 @@
   cursor: pointer;
 }
 
-@media (hover: hover) {
-  .closeModalButton:hover {
-    color: ;
-  }
-}
-
 .modalInner .content {
   margin-bottom: 30px;
 }
@@ -107,7 +101,7 @@
   position: relative;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .review {
     align-items: center;
     flex-direction: row;

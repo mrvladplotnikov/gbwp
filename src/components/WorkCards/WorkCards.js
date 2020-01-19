@@ -12,8 +12,8 @@ const WorkCards = ({ className = "", works = [] }) => (
       700: 3,
       500: 2,
     }}
-    className={classNames("WorkCards__grid", className)}
-    columnClassName="WorkCards__column"
+    className={classNames("Cards__grid", className)}
+    columnClassName="Cards__column"
   >
     {works &&
       works.map(work => (

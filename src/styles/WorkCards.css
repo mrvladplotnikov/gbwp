@@ -1,10 +1,10 @@
-.WorkCards__grid {
+.Cards__grid {
   display: flex;
   margin-left: -15px; /* gutter size offset */
   padding: 0 15px;
   width: auto;
 }
-.WorkCards__column {
+.Cards__column {
   padding-left: 15px; /* gutter size */
   background-clip: padding-box;
 }
