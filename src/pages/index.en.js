@@ -25,65 +25,73 @@ const Home = ({ data, location }) => {
       <Hero link="/en/portfolio" />
       <About
         title="VP Production"
-        text="Ми - команда людей, які створюють музику, звуки і продюсує дикторський озвучування на межі чистого творчості і функціональності."
+        text="We are a team of people who create music, sound effects and produce voice-overs on the verge of pure creativity and functionality."
+        linkLabel="About us"
+        linkURL="/en/about"
       />
       <Why>
         <FeatureCard img={icon1}>
-          Ми - партнери наших клієнтів. Нам важливий успіх вашого конкретного
-          проекту, а не нескінченна конвеєрна робота.
+          We are partners of our clients. It is the success of your specific
+          project that is important to us, and not endless samey-same work.
         </FeatureCard>
         <FeatureCard img={icon2}>
-          Ми дивимося глибше технічного завдання і задаємо багато запитань, щоб
-          фінальний звук працював на ваш проект.
+          We look more in-depth than the technical task and ask many questions
+          so that the final sound works for your project.
         </FeatureCard>
         <FeatureCard img={icon3}>
-          За 4 роки роботи ми зірвали 0 дедлайнів. Це найкраща характеристика
-          для нашої команди і менеджерів.
+          For four years of work, we have broken zero deadlines. This describes
+          our team and managers in the best way.
         </FeatureCard>
         <FeatureCard img={icon4}>
-          Завдяки договору від Digilaw ви отримаєте контроль над процесом і
-          необхідні права на результат роботи.
+          Thanks to the{" "}
+          <a href="https://digilaw.pro/" target="__blank" rel="nofollow">
+            Digilaw
+          </a>{" "}
+          contract, you will gain control over the process and the necessary
+          rights to the result of the work.
         </FeatureCard>
         <FeatureCard img={icon5}>
-          Наші роботи вже чули мільйони людей і багато хто з них залишилися
-          задоволені. Переконатися в цьому можна тут.
+          Millions of people have already listened to our work, and many of them
+          were satisfied. You can check this here.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Як щодо безкоштовної консультації або крутого темплейта ТЗ? Ми завжди
-          відкриті до спілкування, так що сміливо пишіть.
+          How about a <a href="/">free consultation</a> or a cool{" "}
+          <a href="/">technical task template</a>? We are always open to
+          communication, so feel free to <a href="/">email us</a>.
         </FeatureCard>
       </Why>
       <Services
-        title="Наші послуги"
+        title="Our services"
         services={[
           {
-            title: "Створення музики",
+            title: "Music Creation",
             link: "/en/services/music-сreation",
           },
           {
-            title: "Аудіобрендінг",
+            title: "Audiobranding",
             link: "/en/services/audio-branding",
           },
           {
-            title: "Звуковий дизайн",
+            title: "Sound design",
             link: "/en/services/sound-design",
           },
           {
-            title: "Голосове озвучування",
+            title: "Voice casting",
             link: "/en/services/voice-casting",
           },
         ]}
       />
       <ChosenWorks
-        title="Вибрані роботи"
+        title="Chosen works"
         works={works}
         linkLabel="Portfolio"
         linkURL="/en/portfolio"
       />
-      <SectionWithText linkLabel="Наші цінності">
+      <SectionWithText linkLabel="Our Values">
         <h3>
-          За допомогою аудіо ми надихаємо слухачів по обидва боки медіапроектів
-          на новий досвід і розкриття власного творчого потенціалу.
+          Using audio, we inspire listeners on both sides of audiovisual
+          projects to live new experiences and discover their creative
+          potential.
         </h3>
       </SectionWithText>
       <Contacts />
@@ -105,7 +113,7 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 249, srcSetBreakpoints: [445, 900], quality: 95) {
+              fluid(maxWidth: 500, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

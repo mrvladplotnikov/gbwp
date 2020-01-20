@@ -3,9 +3,12 @@ import PropTypes from "prop-types"
 import Select, { components } from "react-select"
 import ArrowIcon from "../../images/arrow-down.inline.svg"
 import CloseIcon from "../../images/close.inline.svg"
-import { injectIntl, intlShape } from "react-intl"
 
 const customStyles = {
+  input: provided => ({
+    ...provided,
+    color: "#ffffff",
+  }),
   indicatorSeparator: () => ({
     display: "none",
   }),
@@ -26,14 +29,22 @@ const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
+    position: "relative",
     cursor: "pointer",
     color: "#ffffff",
     backgroundColor: "transparent",
-    textDecoration: state.isSelected || state.isFocused ? "underline" : "none",
-    fontWeight: state.isSelected || state.isFocused ? "600" : "normal",
+    fontWeight: "normal",
     padding: "10px 15px",
     lineHeight: 1.65,
     fontSize: 16,
+    textShadow:
+      state.isSelected || state.isFocused ? "1px 0 0 currentColor" : "none",
+    span: {
+      paddingBottom: "0.3em",
+      borderBottom: "1px solid",
+      borderColor:
+        state.isSelected || state.isFocused ? "#ffffff" : "transparent",
+    },
     "&:first-of-type": {
       padding: "10px 15px",
       paddingTop: "20px",
@@ -44,6 +55,19 @@ const customStyles = {
     },
     "&:active": {
       backgroundColor: "transparent",
+      textDecoration: "none",
+      textShadow: "1px 0 0 currentColor",
+      span: {
+        borderColor: "#ffffff",
+      },
+    },
+    "&:hover": {
+      fontWeight: "normal",
+      textDecoration: "none",
+      textShadow: "1px 0 0 currentColor",
+      span: {
+        borderColor: "#ffffff",
+      },
     },
   }),
   container: provided => ({
@@ -82,6 +106,7 @@ const customStyles = {
   placeholder: provided => ({ ...provided, color: "#ffffff", fontSize: 16 }),
   valueContainer: provided => ({
     ...provided,
+    color: "#ffffff",
     padding: "2px 15px",
   }),
 }
@@ -91,6 +116,13 @@ const DropdownIndicator = props =>
     <components.DropdownIndicator {...props}>
       <ArrowIcon />
     </components.DropdownIndicator>
+  )
+
+const Option = props =>
+  components.Option && (
+    <components.Option {...props}>
+      <span>{props.children}</span>
+    </components.Option>
   )
 
 const ClearIndicator = props =>
@@ -111,7 +143,6 @@ const StyledSelect = ({
   ...props
 }) => (
   <Select
-    noOptionsMessage={intl.formatMessage({ id: "noOptionsMessage" })}
     placeholder={placeholder}
     isClearable={isClearable}
     value={value}
@@ -122,13 +153,13 @@ const StyledSelect = ({
     components={{
       DropdownIndicator,
       ClearIndicator,
+      Option,
     }}
     {...props}
   />
 )
 
 StyledSelect.propTypes = {
-  intl: intlShape.isRequired,
   placeholder: PropTypes.string,
   isClearable: PropTypes.bool,
   value: PropTypes.any,
@@ -137,4 +168,4 @@ StyledSelect.propTypes = {
   options: PropTypes.array,
 }
 
-export default injectIntl(StyledSelect)
+export default StyledSelect

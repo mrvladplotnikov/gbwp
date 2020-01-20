@@ -16,6 +16,8 @@
   min-width: 123px;
   display: inline-block;
   z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
 }
 .StyledLink::before {
   content: "";

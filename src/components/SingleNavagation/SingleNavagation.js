@@ -29,8 +29,8 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
         <div className={styles.container}>
           <div className={styles.topLine}>
             <Link
-              className={classNames(styles.prev, { [styles.disabled]: !prev })}
-              to={prevPostLink}
+              className={classNames(styles.next, { [styles.disabled]: !next })}
+              to={nextPostLink}
               onMouseEnter={handlePrevMouseEnter}
               onMouseLeave={handlePrevMouseLeave}
             >
@@ -40,7 +40,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 alt=""
               />
               <span className={styles.label}>
-                <FormattedMessage id="prevWork" />
+                <FormattedMessage id="nextWork" />
               </span>
             </Link>
             <Link
@@ -52,8 +52,8 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
               <FormattedMessage id="backToWorks" />
             </Link>
             <Link
-              className={classNames(styles.next, { [styles.disabled]: !next })}
-              to={nextPostLink}
+              className={classNames(styles.prev, { [styles.disabled]: !prev })}
+              to={prevPostLink}
               onMouseEnter={handleNextMouseEnter}
               onMouseLeave={handleNextMouseLeave}
             >
@@ -63,7 +63,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 alt=""
               />
               <span className={styles.label}>
-                <FormattedMessage id="nextWork" />
+                <FormattedMessage id="prevWork" />
               </span>
             </Link>
           </div>

@@ -137,8 +137,12 @@ const About = ({ data, location }) => {
           our team and managers in the best way.
         </FeatureCard>
         <FeatureCard img={icon4}>
-          Thanks to the Digilaw contract, you will gain control over the process
-          and the necessary rights to the result of the work.
+          Thanks to the{" "}
+          <a href="https://digilaw.pro/" target="__blank" rel="nofollow">
+            Digilaw
+          </a>{" "}
+          contract, you will gain control over the process and the necessary
+          rights to the result of the work.
         </FeatureCard>
         <FeatureCard img={icon5}>
           Millions of people have already listened to our work, and many of them

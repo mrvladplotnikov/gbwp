@@ -14,6 +14,7 @@
 }
 .desktopButton {
   display: none;
+  margin-top: 1.7em;
 }
 .mobileButtonContainer {
   display: flex;

@@ -45,6 +45,12 @@
   font-size: 14px;
   line-height: 13px;
   color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.WorkCard__container:hover .WorkCard__title {
+  opacity: 1;
 }
 
 @media (min-width: 992px) {

@@ -39,7 +39,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             <TermItem
               className={styles.metaValues}
               terms={work_category}
-              name="Категории"
+              name="Категория"
             />
             <TermItem
               className={styles.metaValues}

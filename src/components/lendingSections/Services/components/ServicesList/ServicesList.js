@@ -21,14 +21,14 @@ const ServicesList = ({ services = [] }) => {
           }
         }
       }
-      image1: file(relativePath: { eq: "services/bg-2.jpg" }) {
+      image1: file(relativePath: { eq: "services/bg-3.jpg" }) {
         childImageSharp {
           fixed(width: 569, height: 236, quality: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
-      image2: file(relativePath: { eq: "services/bg-3.jpg" }) {
+      image2: file(relativePath: { eq: "services/bg-2.jpg" }) {
         childImageSharp {
           fixed(width: 569, height: 236, quality: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64

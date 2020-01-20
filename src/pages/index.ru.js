@@ -25,11 +25,13 @@ const Home = ({ data, location }) => {
       <Hero link="/ru/portfolio" />
       <About
         title="VP Production"
-        text="Ми - команда людей, які створюють музику, звуки і продюсує дикторський озвучування на межі чистого творчості і функціональності."
+        text="Мы — команда людей, которые создают музыку, звуки и продюсируют голосовое озвучивание на грани чистого творчества и функциональности."
+        linkLabel="О нас"
+        linkURL="/ru/about"
       />
       <Why>
         <FeatureCard img={icon1}>
-          Мы – партнёры наших клиентов. Нам важен успех вашего конкретного
+          Мы — партнёры наших клиентов. Нам важен успех вашего конкретного
           проекта, а не бесконечная конвейерная работа.
         </FeatureCard>
         <FeatureCard img={icon2}>
@@ -41,35 +43,40 @@ const Home = ({ data, location }) => {
           нашей команды и менеджеров.
         </FeatureCard>
         <FeatureCard img={icon4}>
-          Благодаря договору от Digilaw вы получите контроль над процессом и
-          необходимые права на результат работы.
+          Благодаря договору от{" "}
+          <a href="https://digilaw.pro/" target="__blank" rel="nofollow">
+            Digilaw
+          </a>{" "}
+          вы получите контроль над процессом и необходимые права на результат
+          работы.
         </FeatureCard>
         <FeatureCard img={icon5}>
           Наши работы уже слышали миллионы людей и многие из них остались
-          довольны. Убедиться в этом можно тут.
+          довольны. Убедиться в этом можно <a href="/">тут</a>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Как насчёт бесплатной консультации или крутого темплейта ТЗ? Мы всегда
-          открыты к общению, так что смело пишите.
+          Как насчёт <a href="/">бесплатной консультации</a> или{" "}
+          <a href="/">крутого темплейта ТЗ</a>? Мы всегда открыты к общению, так
+          что смело <a href="/">пишите</a>.
         </FeatureCard>
       </Why>
       <Services
-        title="Наші послуги"
+        title="Наши услуги"
         services={[
           {
-            title: "Створення музики",
+            title: "Создание музыки",
             link: "/ru/services/music-сreation",
           },
           {
-            title: "Аудіобрендінг",
+            title: "Аудиобрендинг",
             link: "/ru/services/audio-branding",
           },
           {
-            title: "Звуковий дизайн",
+            title: "Звуковой дизайн",
             link: "/ru/services/sound-design",
           },
           {
-            title: "Голосове озвучування",
+            title: "Голосовое озвучивание",
             link: "/ru/services/voice-casting",
           },
         ]}
@@ -82,8 +89,9 @@ const Home = ({ data, location }) => {
       />
       <SectionWithText linkLabel="Наші цінності">
         <h3>
-          За допомогою аудіо ми надихаємо слухачів по обидва боки медіапроектів
-          на новий досвід і розкриття власного творчого потенціалу.
+          С помощью аудио мы вдохновляем слушателей по обе стороны
+          аудиовизуальных проектов на новый опыт и раскрытие собственного
+          творческого потенциала.
         </h3>
       </SectionWithText>
       <Contacts />
@@ -105,7 +113,7 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 249, srcSetBreakpoints: [445, 900], quality: 95) {
+              fluid(maxWidth: 500, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

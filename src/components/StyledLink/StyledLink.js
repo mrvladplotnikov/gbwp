@@ -3,12 +3,18 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-const StyledLink = ({ className, children, to, ...attrs }) => {
+const StyledLink = ({ className, children, to, onClick, ...attrs }) => {
   return (
     <div className={classNames("StyledLink__wrapper", className)}>
-      <Link className="StyledLink" to={to} {...attrs}>
-        {children}
-      </Link>
+      {to ? (
+        <Link className="StyledLink" to={to} {...attrs}>
+          {children}
+        </Link>
+      ) : (
+        <button className="StyledLink" onClick={onClick} {...attrs}>
+          {children}
+        </button>
+      )}
       <div className="StyledLink__arrowWrapper" aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,12 +31,15 @@ const StyledLink = ({ className, children, to, ...attrs }) => {
 }
 
 StyledLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.string,
+  to: PropTypes.string,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
 }
 
 StyledLink.defaultProps = {
-  children: "Link",
+  to: "",
+  children: "link",
+  onClick: () => {},
 }
 
 export default StyledLink

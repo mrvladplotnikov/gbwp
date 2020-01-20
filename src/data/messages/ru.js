@@ -1,4 +1,5 @@
 module.exports = {
+  portfolioLabel: "Портфолио",
   prevWork: "Предыдущая работа",
   nextWork: "Сдедующая работа",
   backToWorks: "Вернуться в портфолио",

@@ -42,16 +42,16 @@
   height: auto;
 }
 
-.prev .icon {
+.next .icon {
   margin-right: 10px;
 }
 
-.next .label {
+.prev .label {
   text-align: right;
   margin-right: 10px;
 }
 
-.next {
+.prev {
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
@@ -120,10 +120,10 @@
     max-width: 42px;
     height: auto;
   }
-  .prev .icon {
+  .next .icon {
     margin-right: 15px;
   }
-  .next .label {
+  .prev .label {
     margin-right: 15px;
   }
   .label {

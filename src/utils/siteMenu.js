@@ -6,7 +6,7 @@ module.exports = [
       en: "/en/portfolio",
     },
     label: {
-      uk: "Портфолио",
+      uk: "Портфоліо",
       ru: "Портфолио",
       en: "Portfolio",
     },

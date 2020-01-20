@@ -1,4 +1,5 @@
 module.exports = {
+  portfolioLabel: "Portfolio",
   prevWork: "Previous case",
   nextWork: "Next case",
   backToWorks: "Back to Portfolio",

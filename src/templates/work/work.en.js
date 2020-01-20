@@ -39,32 +39,32 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             <TermItem
               className={styles.metaValues}
               terms={work_category}
-              name="Категории"
+              name="Category"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_service}
-              name="Услуга"
+              name="Service"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_genre}
-              name="Жанр"
+              name="Genre"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_platform}
-              name="Платформа"
+              name="Platform"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_developer}
-              name="Разработчик"
+              name="Developer"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_authors}
-              name="Работа над проектом"
+              name="Work on the project"
             />
           </ul>
           <div className={styles.featuredImage}>

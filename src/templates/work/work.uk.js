@@ -40,12 +40,12 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             <TermItem
               className={styles.metaValues}
               terms={work_category}
-              name="Категории"
+              name="Категорія"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_service}
-              name="Услуга"
+              name="Послуга"
             />
             <TermItem
               className={styles.metaValues}
@@ -60,12 +60,12 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             <TermItem
               className={styles.metaValues}
               terms={work_developer}
-              name="Разработчик"
+              name="Розробник"
             />
             <TermItem
               className={styles.metaValues}
               terms={work_authors}
-              name="Работа над проектом"
+              name="Робота над проектом"
             />
           </ul>
 
