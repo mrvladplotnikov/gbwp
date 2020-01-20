@@ -7,7 +7,7 @@
   grid-template-rows: auto;
   grid-gap: 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
 }
 
 .item {

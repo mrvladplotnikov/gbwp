@@ -1,7 +1,6 @@
 .Cards__grid {
   display: flex;
   margin-left: -15px; /* gutter size offset */
-  padding: 0 15px;
   width: auto;
 }
 .Cards__column {

@@ -1,5 +1,5 @@
 .ChosenWorks {
-  padding: 44px 0 25px 0;
+  padding: 44px 15px 25px 15px;
   background-color: #090909;
 }
 
@@ -11,7 +11,6 @@
 .title {
   margin: 0;
   margin-bottom: 30px;
-  padding: 0 15px;
 }
 .desktopButton {
   display: none;
@@ -25,7 +24,7 @@
 
 @media (min-width: 992px) {
   .ChosenWorks {
-    padding: 123px 0 126px 0;
+    padding: 123px 15px 126px 15px;
   }
   .desktopButton {
     display: block;

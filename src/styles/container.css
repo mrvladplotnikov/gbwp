@@ -39,7 +39,7 @@
   }
 }
 /* Extra large */
-@media (min-width: 1366px) {
+@media (min-width: 1600px) {
   .Outer {
     max-width: 1570px;
   }
