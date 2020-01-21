@@ -11,7 +11,7 @@ const About = ({ title = "", text = "", linkLabel = "", linkURL = null }) => {
     query {
       placeholderImage: file(relativePath: { eq: "about.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1170) {
+          fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }

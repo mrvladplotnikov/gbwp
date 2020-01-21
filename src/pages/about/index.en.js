@@ -53,10 +53,12 @@ const About = ({ data, location }) => {
                 He was always a musician: the first concert on a broom at three
                 years old, a music school instead of football, endless solfeggio
                 lessons, and a youthful rock riot, which later became the{" "}
-                <a href="/">Total-Empty</a>. And although Vlad received his
-                higher education in a completely different field, he still did
-                not go for a «serious» and stable job. At the decisive moment,
-                he chose the music.
+                <a href="https://total-empty.bandcamp.com/" target="__blank">
+                  Total-Empty
+                </a>
+                . And although Vlad received his higher education in a
+                completely different field, he still did not go for a «serious»
+                and stable job. At the decisive moment, he chose the music.
               </p>
               <p>
                 Initially, VP Production was one person who created music and
@@ -104,6 +106,7 @@ const About = ({ data, location }) => {
       </SectionWithText>
       <Services
         title="Our services"
+        className={styles.services}
         services={[
           {
             title: "Music Creation",
@@ -133,7 +136,7 @@ const About = ({ data, location }) => {
           so that the final sound works for your project.
         </FeatureCard>
         <FeatureCard img={icon3}>
-          For four years of work, we have broken zero deadlines. It describes
+          For four years of work, we have broken zero deadlines. This describes
           our team and managers in the best way.
         </FeatureCard>
         <FeatureCard img={icon4}>
@@ -146,12 +149,12 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Millions of people have already listened to our work, and many of them
-          were satisfied. You can check this <a href="/">here</a>.
+          were satisfied. You can check this here.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          How about a <a href="/">free consultation</a> or a{" "}
-          <a href="/">cool technical task template</a>? We are always open to
-          communication, so feel free to <a href="/">write</a>.
+          How about a <a href="/">free consultation</a> or a cool{" "}
+          <a href="/">technical task template</a>? We are always open to
+          communication, so feel free to <a href="/">email us</a>.
         </FeatureCard>
       </Why>
       <SectionWithText

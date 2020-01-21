@@ -99,6 +99,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

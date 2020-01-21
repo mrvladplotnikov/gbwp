@@ -10,6 +10,10 @@
   padding: 0 15px;
 }
 
+.meta a {
+  color: #ffffff;
+}
+
 .nameAndPos {
   font-style: normal;
   font-weight: bold;
@@ -27,7 +31,7 @@
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
 }
 
 .thumbnail img {
@@ -107,7 +111,7 @@
 
 @media (min-width: 1200px) {
   .review {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
   }
 
@@ -120,7 +124,8 @@
   }
 
   .thumbnail {
-    margin: 0 0 12px 0;
+    margin: 0 0 17px 0;
+    max-width: initial;
   }
 
   .content {
@@ -133,7 +138,7 @@
   }
 }
 
-@media (min-width: 1600px) {
+/* @media (min-width: 1600px) {
   .meta {
     margin-right: 23px;
     min-width: 250px;
@@ -169,4 +174,4 @@
     font-size: 22px;
     line-height: 37px;
   }
-}
+} */

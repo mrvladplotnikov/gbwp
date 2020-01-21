@@ -8,9 +8,13 @@ const TermItem = ({ className = "", terms = [], name }) => {
     <li>
       {`${name}: `}
       <ul className={className}>
-        {terms.map(({ name, id }, i) => (
-          <li key={id}>{(i ? ", " : "") + name}</li>
-        ))}
+        {terms.map(({ name, id }, i) => {
+          if (terms.length === i + 1) {
+            return <li key={id}>{name}</li>
+          }
+
+          return <li key={id}>{`${name}, `}</li>
+        })}
       </ul>
     </li>
   )

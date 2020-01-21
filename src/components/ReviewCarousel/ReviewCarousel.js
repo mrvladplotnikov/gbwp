@@ -32,6 +32,7 @@ const ReviewCarousel = ({
           position={review.meta.position}
           company={review.meta.company}
           review={review.content}
+          link={review.meta.link}
           classes={classes}
         />
       ))}

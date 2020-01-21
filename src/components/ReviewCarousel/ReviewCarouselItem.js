@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
@@ -8,12 +8,18 @@ import Modal from "react-modal"
 import NoImage from "../../images/no-image.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { strip } from "../../utils/htmlHelpers"
+import useBreakpoint from "../../hooks/useBreakpoint"
 
 Modal.setAppElement("#___gatsby")
+
+const queries = {
+  md: "(min-width: 720px)",
+}
 
 const ReviewCarouselItem = ({
   thumbnail = null,
   review = "",
+  link = "",
   position = "",
   name = "",
   company = "",
@@ -26,8 +32,18 @@ const ReviewCarouselItem = ({
     content: "",
   },
 }) => {
+  const [previewLen, setPreviewLen] = useState(120)
   const [showReadMoreButton, setShowReadMoreButton] = useState(false)
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const matchPoints = useBreakpoint(queries)
+
+  useLayoutEffect(() => {
+    if (!matchPoints) return
+
+    if (matchPoints.md) {
+      setPreviewLen(320)
+    }
+  }, [matchPoints])
 
   const handleReadMore = () => {
     setModalIsOpen(true)
@@ -37,25 +53,46 @@ const ReviewCarouselItem = ({
     setModalIsOpen(false)
   }
 
-  if (review.length > 153 && !showReadMoreButton) {
+  if (review.length >= previewLen && !showReadMoreButton) {
     setShowReadMoreButton(true)
+  } else if (review.length <= previewLen && showReadMoreButton) {
+    setShowReadMoreButton(false)
   }
 
   return (
     <div className={classNames(styles.review, classes.review)}>
       <div className={classNames(styles.meta, classes.meta)}>
-        {thumbnail ? (
-          <Img
-            fluid={thumbnail.localFile.childImageSharp.fluid}
-            alt={thumbnail.name}
-            className={classNames(styles.thumbnail, classes.thumbnail)}
-          />
+        {link ? (
+          <a href={link} target="__blank" rel="nofollow noindex">
+            {thumbnail ? (
+              <Img
+                fluid={thumbnail.localFile.childImageSharp.fluid}
+                alt={thumbnail.name}
+                className={classNames(styles.thumbnail, classes.thumbnail)}
+              />
+            ) : (
+              <img src={NoImage} className={styles.noImage} alt={name} />
+            )}
+            <h4
+              className={classNames(styles.nameAndPos, classes.name)}
+            >{`${name}, ${position}`}</h4>
+          </a>
         ) : (
-          <img src={NoImage} className={styles.noImage} alt={name} />
+          <>
+            {thumbnail ? (
+              <Img
+                fluid={thumbnail.localFile.childImageSharp.fluid}
+                alt={thumbnail.name}
+                className={classNames(styles.thumbnail, classes.thumbnail)}
+              />
+            ) : (
+              <img src={NoImage} className={styles.noImage} alt={name} />
+            )}
+            <h4
+              className={classNames(styles.nameAndPos, classes.name)}
+            >{`${name}, ${position}`}</h4>
+          </>
         )}
-        <h4
-          className={classNames(styles.nameAndPos, classes.name)}
-        >{`${name}, ${position}`}</h4>
         {company && (
           <h5 className={classNames(styles.company, classes.company)}>
             {company}
@@ -64,7 +101,7 @@ const ReviewCarouselItem = ({
       </div>
       {review && (
         <div className={classNames(styles.content, classes.content)}>
-          {strip(review).slice(0, 150)}{" "}
+          {strip(review).slice(0, previewLen)}{" "}
           {showReadMoreButton && (
             <>
               <button
@@ -137,6 +174,7 @@ ReviewCarouselItem.propTypes = {
   thumbnail: PropTypes.object,
   review: PropTypes.string,
   position: PropTypes.string,
+  link: PropTypes.string,
   name: PropTypes.string,
   company: PropTypes.string,
   classes: PropTypes.shape({

@@ -34,6 +34,9 @@
 .ourTeamSection h2 {
   margin-left: 15px;
 }
+.services {
+  position: relative;
+}
 
 @media (min-width: 992px) {
   .title {
@@ -65,5 +68,8 @@
   .aboutImage {
     margin-left: 158px;
     display: block;
+  }
+  .services {
+    padding: 155px 15px 80px 15px !important;
   }
 }
