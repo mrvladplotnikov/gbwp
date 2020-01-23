@@ -34,6 +34,7 @@
     position: absolute;
     right: 15px;
     bottom: 0;
+
     transform: translateY(50%);
   }
 }
@@ -45,33 +46,51 @@
     padding-bottom: 250px;
   }
 
-  .largeText {
+  .module .largeText {
     display: flex;
     justify-content: flex-start;
+    font-size: 70px;
     line-height: 122px;
+    text-transform: uppercase;
   }
 
   .largeText:first-child {
     margin-top: 0;
   }
 
-  .text {
+  .module .text {
     font-weight: bold;
     font-size: 70px;
     line-height: 85px;
   }
 
-  .rectImg::before {
+  .module.rectImg::before {
     content: url("../../images/who-we-are/square.svg");
     position: absolute;
     top: 213px;
     right: 175px;
   }
 
-  .rectImg::after {
+  .module.rectImg::after {
     content: url("../../images/who-we-are/square.svg");
     position: absolute;
     right: 294px;
     bottom: 211px;
+  }
+
+  .container > .module:nth-child(even)::before {
+    content: url("../../images/who-we-are/V.svg");
+    position: absolute;
+    left: 15px;
+    top: 0;
+    transform: translateY(-40%);
+  }
+
+  .container > .module:nth-child(even)::after {
+    content: url("../../images/who-we-are/P.svg");
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    transform: translateY(50%);
   }
 }
