@@ -1,0 +1,77 @@
+.container > .module:nth-child(even) {
+  background-color: #090909;
+}
+
+@media (min-width: 320px) {
+  .module {
+    position: relative;
+    padding: 145px 15px;
+  }
+
+  .module .largeText {
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  .module .text {
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: bold;
+  }
+
+  .container > .module:nth-child(even)::before {
+    content: url("../../images/who-we-are/mobile/V.svg");
+    position: absolute;
+    left: 15px;
+    top: 0;
+    transform: translateY(-40%);
+  }
+
+  .container > .module:nth-child(even)::after {
+    content: url("../../images/who-we-are/mobile/P.svg");
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+}
+
+@media (min-width: 992px) {
+  .module {
+    position: relative;
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  .largeText {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 122px;
+  }
+
+  .largeText:first-child {
+    margin-top: 0;
+  }
+
+  .text {
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 85px;
+  }
+
+  .rectImg::before {
+    content: url("../../images/who-we-are/square.svg");
+    position: absolute;
+    top: 213px;
+    right: 175px;
+  }
+
+  .rectImg::after {
+    content: url("../../images/who-we-are/square.svg");
+    position: absolute;
+    right: 294px;
+    bottom: 211px;
+  }
+}
