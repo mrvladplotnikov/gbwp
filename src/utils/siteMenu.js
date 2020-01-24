@@ -20,14 +20,14 @@ module.exports = [
     child: [
       {
         link: {
-          uk: "/services/music-сreation",
-          ru: "/ru/services/music-сreation",
-          en: "/en/services/music-сreation",
+          uk: "/services/music-composing",
+          ru: "/ru/services/music-composing",
+          en: "/en/services/music-composing",
         },
         label: {
           uk: "Створення музики",
           ru: "Создание музыки",
-          en: "Music creation",
+          en: "Music composing",
         },
       },
       {

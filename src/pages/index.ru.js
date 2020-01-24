@@ -65,7 +65,7 @@ const Home = ({ data, location }) => {
         services={[
           {
             title: "Создание музыки",
-            link: "/ru/services/music-сreation",
+            link: "/ru/services/music-composing",
           },
           {
             title: "Аудиобрендинг",

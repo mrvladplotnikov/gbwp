@@ -30,8 +30,8 @@ const AudioBranding = ({ data, location }) => {
       Sidebar={
         <Sidebar
           title="Аудіобрендiнг"
-          text="В современном мире бренды должны относиться к звуку с той же тщательностью и дисциплиной, что и к графическим стандартам и визуальному построению бренда. Если вы застряли в мире исключительно визуального брендинга, то соревнуетесь вы с одной завязанной за спиной рукой."
-          autor="Лоуренс Мински, Коллин Фэйхи"
+          text="У сучасному світі бренди повинні ставитися до звуку з тією ж ретельністю й дисципліною, що й до графічних стандартів та візуальної побудови бренду. Якщо ви застрягли у світі виключно візуального брендингу, то змагаєтеся ви з однією зав’язаною за спиною рукою."
+          autor="Лоуренс Мінскі, Коллін Фейхі"
           image={sidebarImage}
         />
       }
@@ -78,7 +78,15 @@ const AudioBranding = ({ data, location }) => {
         </p>
       </ServiceSection>
       <ServiceSection title="Наші роботи" noGatters>
-        <WorkCards works={works} />
+        <WorkCards
+          works={works}
+          breakpoints={{
+            default: 3,
+            1100: 3,
+            700: 3,
+            500: 2,
+          }}
+        />
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">
         <p>
@@ -231,8 +239,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 10
-      filter: { polylang_current_lang: { eq: "uk" } }
+      limit: 6
+      filter: {
+        work_service: { elemMatch: { slug: { eq: "audio-branding" } } }
+        polylang_current_lang: { eq: "uk" }
+      }
     ) {
       nodes {
         id

@@ -28,8 +28,8 @@ const SoundDesign = ({ data, location }) => {
       Sidebar={
         <Sidebar
           title="Звуковой дизайн"
-          text="В современном мире бренды должны относиться к звуку с той же тщательностью и дисциплиной, что и к графическим стандартам и визуальному построению бренда. Если вы застряли в мире исключительно визуального брендинга, то соревнуетесь вы с одной завязанной за спиной рукой."
-          autor="Лоуренс Мински, Коллин Фэйхи"
+          text="При создании игр, как и при съёмке кино, звук имеет очень большое значение. 60 или даже 70% ощущений создаётся именно за счёт звука. При этом звук – это не только музыкальное сопровождение, но и звуковые эффекты. Их наличие или отсутствие очень сильно определяет атмосферу игры."
+          autor="Хидео Кодзима"
           image={sidebarImage}
         />
       }
@@ -82,7 +82,15 @@ const SoundDesign = ({ data, location }) => {
         </p>
       </ServiceSection>
       <ServiceSection title="Наши работы" noGatters>
-        <WorkCards works={works} />
+        <WorkCards
+          works={works}
+          breakpoints={{
+            default: 3,
+            1100: 3,
+            700: 3,
+            500: 2,
+          }}
+        />
       </ServiceSection>
       <ServiceSection title="Как происходит процесс?">
         <p>
@@ -243,8 +251,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 10
-      filter: { polylang_current_lang: { eq: "uk" } }
+      limit: 6
+      filter: {
+        work_service: { elemMatch: { slug: { eq: "sound-design" } } }
+        polylang_current_lang: { eq: "ru" }
+      }
     ) {
       nodes {
         id

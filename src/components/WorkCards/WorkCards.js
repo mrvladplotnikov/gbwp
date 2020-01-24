@@ -4,14 +4,20 @@ import classNames from "classnames"
 import Masonry from "react-masonry-css"
 import WorkCard from "../WorkCard"
 
-const WorkCards = ({ className = "", works = [] }) => (
+const defaultBreakpoint = {
+  default: 5,
+  1100: 5,
+  700: 3,
+  500: 2,
+}
+
+const WorkCards = ({
+  className = "",
+  works = [],
+  breakpoints = defaultBreakpoint,
+}) => (
   <Masonry
-    breakpointCols={{
-      default: 5,
-      1100: 5,
-      700: 3,
-      500: 2,
-    }}
+    breakpointCols={breakpoints}
     className={classNames("Cards__grid", className)}
     columnClassName="Cards__column"
   >
@@ -35,6 +41,12 @@ const WorkCards = ({ className = "", works = [] }) => (
 
 WorkCards.propTypes = {
   className: PropTypes.string,
+  breakpoints: PropTypes.shape({
+    default: PropTypes.number,
+    1100: PropTypes.number,
+    700: PropTypes.number,
+    500: PropTypes.number,
+  }),
 }
 
 export default WorkCards

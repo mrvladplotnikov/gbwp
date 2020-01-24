@@ -162,7 +162,10 @@ const Faq = ({ location }) => (
         </StyledAccordionItem>
       </StyledAccordion>
 
-      <Contacts />
+      <Contacts>
+        Не знайшли відповідь на важливе для вас питання? Обов’язково запитайте
+        його в нас — ми будемо раді познайомитися з вами й допомогти.
+      </Contacts>
     </Inner>
   </Layout>
 )

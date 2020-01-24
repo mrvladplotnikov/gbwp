@@ -1,18 +1,21 @@
 import React from "react"
+import PropTypes from "prop-types"
 import ContactUs from "../../ContactUs/ContactUs"
 
-const Contacts = () => (
+const Contacts = ({ title, children }) => (
   <section className="Contacts">
-    <ContactUs
-      email="vpsoundprod@gmail.com"
-      facebook="#"
-      soundcloud="#"
-      twitter="#"
-      instagram="#"
-      vimeo="#"
-      linkedin="#"
-    />
+    <ContactUs email="vpsoundprod@gmail.com" title={title} content={children} />
   </section>
 )
+
+Contacts.defaultProps = {
+  title: "",
+  children: "",
+}
+
+Contacts.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+}
 
 export default Contacts

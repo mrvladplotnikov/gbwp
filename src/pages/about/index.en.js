@@ -110,7 +110,7 @@ const About = ({ data, location }) => {
         services={[
           {
             title: "Music Creation",
-            link: "/en/services/music-сreation",
+            link: "/en/services/music-composing",
           },
           {
             title: "Audiobranding",
@@ -166,7 +166,12 @@ const About = ({ data, location }) => {
           live new experiences and discover their creative potential.
         </h3>
       </SectionWithText>
-      <Contacts />
+      <Contacts>
+        Tell us about your project, product, or idea. Ask for advice, or get a
+        full free consultation. Find out the cost, specify a vital question, or
+        maybe you want to become part of our team? Anything you want! We will be
+        happy to get to know you and help.
+      </Contacts>
     </Layout>
   )
 }

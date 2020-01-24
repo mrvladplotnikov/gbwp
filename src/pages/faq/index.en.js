@@ -163,7 +163,10 @@ const Faq = ({ location }) => (
         </StyledAccordionItem>
       </StyledAccordion>
 
-      <Contacts />
+      <Contacts>
+        Did not find the answer to an essential question for you? Don't hesitate
+        to ask us directly, and we will be happy to help you.
+      </Contacts>
     </Inner>
   </Layout>
 )

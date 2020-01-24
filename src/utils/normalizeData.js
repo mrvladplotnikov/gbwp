@@ -123,6 +123,20 @@ function workService(entities) {
   })
 }
 
+function workOrder(entities) {
+  return entities.map(e => {
+    if (e.__type === `wordpress__wp_work`) {
+      if (e.acf && !e.acf.order) {
+        e.acf.order = 0
+      }
+      if (e.acf && e.acf.order) {
+        e.acf.order = parseInt(e.acf.order, 10)
+      }
+    }
+    return e
+  })
+}
+
 module.exports = ({ entities }) => {
   const fncList = [
     workCategory,
@@ -131,6 +145,7 @@ module.exports = ({ entities }) => {
     workDevelopers,
     workGenre,
     workService,
+    workOrder,
   ]
   const result = fncList.reduce(
     (accumulator, func) => func(accumulator),

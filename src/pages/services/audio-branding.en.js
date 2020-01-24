@@ -30,8 +30,8 @@ const AudioBranding = ({ data, location }) => {
       Sidebar={
         <Sidebar
           title="Audio Branding"
-          text="В современном мире бренды должны относиться к звуку с той же тщательностью и дисциплиной, что и к графическим стандартам и визуальному построению бренда. Если вы застряли в мире исключительно визуального брендинга, то соревнуетесь вы с одной завязанной за спиной рукой."
-          autor="Лоуренс Мински, Коллин Фэйхи"
+          text="In today’s world, brands must now treat the sound with the same care and discipline as they do their graphic standards and visual brand-building. If you’re stuck in the visual-only branding world, you are competing with one hand tied behind your back."
+          autor="Laurence Minsky, Colleen Fahey"
           image={sidebarImage}
         />
       }
@@ -79,7 +79,15 @@ const AudioBranding = ({ data, location }) => {
         </p>
       </ServiceSection>
       <ServiceSection title="Our works" noGatters>
-        <WorkCards works={works} />
+        <WorkCards
+          works={works}
+          breakpoints={{
+            default: 3,
+            1100: 3,
+            700: 3,
+            500: 2,
+          }}
+        />
       </ServiceSection>
       <ServiceSection title="What is the process like?">
         <p>
@@ -226,8 +234,7 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 10
-      filter: { polylang_current_lang: { eq: "uk" } }
+      filter: { wordpress_id: { in: [266, 122, 99, 183, 40, 175] } }
     ) {
       nodes {
         id
@@ -237,7 +244,11 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 249, srcSetBreakpoints: [445, 900], quality: 95) {
+              fluid(
+                maxWidth: 500
+                srcSetBreakpoints: [445, 900]
+                quality: 100
+              ) {
                 ...GatsbyImageSharpFluid
               }
             }

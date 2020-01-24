@@ -30,8 +30,8 @@ const VoiceCasting = ({ data, location }) => {
       Sidebar={
         <Sidebar
           title="Voice casting"
-          text="В современном мире бренды должны относиться к звуку с той же тщательностью и дисциплиной, что и к графическим стандартам и визуальному построению бренда. Если вы застряли в мире исключительно визуального брендинга, то соревнуетесь вы с одной завязанной за спиной рукой."
-          autor="Лоуренс Мински, Коллин Фэйхи"
+          text="The tongue can paint what the eyes cannot see."
+          autor="Chinese Proverb"
           image={sidebarImage}
         />
       }
