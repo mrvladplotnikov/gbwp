@@ -228,8 +228,11 @@ const SoundDesign = ({ data, location }) => {
 export const query = graphql`
   query SoundDesignEnPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "en" } }
-      limit: 5
+      filter: {
+        acf: { sound_design: { sound_design_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "en" }
+      }
+      sort: { fields: acf___sound_design___sound_design_order, order: DESC }
     ) {
       nodes {
         id
@@ -255,11 +258,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 6
       filter: {
-        work_service: { elemMatch: { slug: { eq: "sound-design" } } }
+        acf: { sound_design: { sound_design_visibility: { eq: true } } }
         polylang_current_lang: { eq: "en" }
       }
+      sort: { fields: acf___sound_design___sound_design_order, order: DESC }
     ) {
       nodes {
         id

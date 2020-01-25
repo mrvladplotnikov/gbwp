@@ -81,7 +81,7 @@ const VoiceCasting = ({ data, location }) => {
           scrolling="no"
           frameBorder="no"
           allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/303617614%3Fsecret_token%3Ds-Vofl0&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/303617614%3Fsecret_token%3Ds-5OnLL&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
       </ServiceSection>
       <ServiceSection title="What is the process like?">
@@ -215,8 +215,11 @@ const VoiceCasting = ({ data, location }) => {
 export const query = graphql`
   query VoiceCastingEnPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "en" } }
-      limit: 5
+      filter: {
+        acf: { vice_over: { vice_over_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "en" }
+      }
+      sort: { fields: acf___vice_over___vice_over_order, order: DESC }
     ) {
       nodes {
         id

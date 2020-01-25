@@ -87,6 +87,15 @@ const AudioBranding = ({ data, location }) => {
             500: 2,
           }}
         />
+        <iframe
+          title="Наші роботи"
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/758338767&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">
         <p>
@@ -205,8 +214,11 @@ const AudioBranding = ({ data, location }) => {
 export const query = graphql`
   query AudioBrandingUkPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "uk" } }
-      limit: 5
+      filter: {
+        acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "uk" }
+      }
+      sort: { fields: acf___audiobrending___audiobrending_order, order: DESC }
     ) {
       nodes {
         id
@@ -239,11 +251,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 6
       filter: {
-        work_service: { elemMatch: { slug: { eq: "audio-branding" } } }
+        acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
         polylang_current_lang: { eq: "uk" }
       }
+      sort: { fields: acf___audiobrending___audiobrending_order, order: DESC }
     ) {
       nodes {
         id

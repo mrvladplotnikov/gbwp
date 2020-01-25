@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/uk/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
@@ -63,7 +63,7 @@ const MusicCreation = ({ data, location }) => {
 
         <ServiceIconList>
           <ServiceIcon title="Iгр" icon={GamesIcon} />
-          <ServiceIcon title="Рекламних роликів" icon={AudioIcon} />
+          <ServiceIcon title="Брендів та реклами" icon={AudioIcon} />
           <ServiceIcon title="Фільмів" icon={FilmIcon} />
           <ServiceIcon title="Мультфільмів" icon={MonsterIcon} />
           <ServiceIcon title="Трейлерів" icon={PlayerIcon} />
@@ -71,16 +71,25 @@ const MusicCreation = ({ data, location }) => {
         </ServiceIconList>
 
         <p>
-          Також ми створюємо музику для motion-дизайну, але вона швидше належить
+          Також ми створюємо музику для motion-графіки, але вона швидше належить
           до звукового дизайну, так що про неї можете прочитати ось тут.
         </p>
         <p>
           Ми не пишемо «мінусовки» та пісні для корпоративів. А ось корпоративні
-          гімни — це ми з радістю, докладніше дивіться тут.
+          гімни — це ми з радістю, докладніше дивіться{" "}
+          <Link to="/services/audio-branding">тут</Link>.
         </p>
       </ServiceSection>
       <ServiceSection title="Кращі саундтреки">
-        ссылка на виджет soundcloud
+        <iframe
+          title="Кращі саундтреки"
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/174940453&color=%23f23b0d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">
         <p>
@@ -254,8 +263,14 @@ const MusicCreation = ({ data, location }) => {
 export const query = graphql`
   query MusicCreationUKPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "uk" } }
-      limit: 5
+      filter: {
+        acf: { music_composing: { music_composing_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "uk" }
+      }
+      sort: {
+        fields: acf___music_composing___music_composing_order
+        order: DESC
+      }
     ) {
       nodes {
         id

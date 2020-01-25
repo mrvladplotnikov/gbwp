@@ -32,6 +32,18 @@ module.exports = [
       },
       {
         link: {
+          uk: "/services/audio-branding",
+          ru: "/ru/services/audio-branding",
+          en: "/en/services/audio-branding",
+        },
+        label: {
+          uk: "Аудіобрендинг",
+          ru: "Аудиобрендинг",
+          en: "Audio Branding",
+        },
+      },
+      {
+        link: {
           uk: "/services/sound-design",
           ru: "/ru/services/sound-design",
           en: "/en/services/sound-design",
@@ -52,18 +64,6 @@ module.exports = [
           uk: "Голосове озвучення",
           ru: "Голосовое озвучивание",
           en: "Voice casting",
-        },
-      },
-      {
-        link: {
-          uk: "/services/audio-branding",
-          ru: "/ru/services/audio-branding",
-          en: "/en/services/audio-branding",
-        },
-        label: {
-          uk: "Аудіобрендинг",
-          ru: "Аудиобрендинг",
-          en: "Audio Branding",
         },
       },
     ],

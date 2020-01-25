@@ -101,8 +101,11 @@ const Home = ({ data, location }) => {
 export const query = graphql`
   query HomePageUkQuery {
     works: allWordpressWpWork(
-      limit: 10
-      filter: { polylang_current_lang: { eq: "uk" } }
+      filter: {
+        acf: { front_page: { front_page_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "uk" }
+      }
+      sort: { fields: acf___front_page___front_page_order, order: DESC }
     ) {
       nodes {
         id

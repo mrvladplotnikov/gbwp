@@ -26,7 +26,10 @@ const Portfolio = ({ data, location }) => (
 
 export const query = graphql`
   query PortfolioPageUkQuery {
-    allWordpressWpWork(filter: { polylang_current_lang: { eq: "uk" } }) {
+    allWordpressWpWork(
+      filter: { polylang_current_lang: { eq: "uk" } }
+      sort: { fields: acf___order, order: DESC }
+    ) {
       works: nodes {
         id
         slug

@@ -123,14 +123,71 @@ function workService(entities) {
   })
 }
 
+function nozmalizeOrder(order) {
+  if (!order) return 0
+
+  return parseInt(order, 10)
+}
+
 function workOrder(entities) {
   return entities.map(e => {
-    if (e.__type === `wordpress__wp_work`) {
-      if (e.acf && !e.acf.order) {
-        e.acf.order = 0
+    if (e.__type === `wordpress__wp_work` && e.acf) {
+      e.acf.order = nozmalizeOrder(e.acf.order)
+      if (e.acf.front_page) {
+        e.acf.front_page.front_page_order = nozmalizeOrder(
+          e.acf.front_page.front_page_order
+        )
       }
-      if (e.acf && e.acf.order) {
-        e.acf.order = parseInt(e.acf.order, 10)
+      if (e.acf.music_composing) {
+        e.acf.music_composing.music_composing_order = nozmalizeOrder(
+          e.acf.music_composing.music_composing_order
+        )
+      }
+      if (e.acf.sound_design) {
+        e.acf.sound_design.sound_design_order = nozmalizeOrder(
+          e.acf.sound_design.sound_design_order
+        )
+      }
+      if (e.acf.vice_over) {
+        e.acf.vice_over.vice_over_order = nozmalizeOrder(
+          e.acf.vice_over.vice_over_order
+        )
+      }
+      if (e.acf.audiobrending) {
+        e.acf.audiobrending.audiobrending_order = nozmalizeOrder(
+          e.acf.audiobrending.audiobrending_order
+        )
+      }
+    }
+    return e
+  })
+}
+
+function reviews(entities) {
+  return entities.map(e => {
+    if (e.__type === `wordpress__wp_client_review` && e.acf) {
+      if (e.acf.music_composing) {
+        e.acf.music_composing.music_composing_order = nozmalizeOrder(
+          e.acf.music_composing.music_composing_order
+        )
+      }
+      if (e.acf.sound_design) {
+        e.acf.sound_design.sound_design_order = nozmalizeOrder(
+          e.acf.sound_design.sound_design_order
+        )
+      }
+      if (e.acf.vice_over) {
+        e.acf.vice_over.vice_over_order = nozmalizeOrder(
+          e.acf.vice_over.vice_over_order
+        )
+      }
+      if (e.acf.audiobrending) {
+        e.acf.audiobrending.audiobrending_order = nozmalizeOrder(
+          e.acf.audiobrending.audiobrending_order
+        )
+      }
+      if (e.acf.project) {
+        e.acf.project = parseInt(e.acf.project[0], 10)
       }
     }
     return e
@@ -146,6 +203,7 @@ module.exports = ({ entities }) => {
     workGenre,
     workService,
     workOrder,
+    reviews,
   ]
   const result = fncList.reduce(
     (accumulator, func) => func(accumulator),

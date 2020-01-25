@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/en/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
@@ -62,7 +62,7 @@ const MusicCreation = ({ data, location }) => {
         <p>We compose soundtracks and create music for:</p>
         <ServiceIconList>
           <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Commercials" icon={AudioIcon} />
+          <ServiceIcon title="Brands and commercials" icon={AudioIcon} />
           <ServiceIcon title="Films" icon={FilmIcon} />
           <ServiceIcon title="Animated films/cartoons" icon={MonsterIcon} />
           <ServiceIcon title="Trailers" icon={PlayerIcon} />
@@ -74,11 +74,20 @@ const MusicCreation = ({ data, location }) => {
         </p>
         <p>
           We do not compose backing tracks and songs for corporate parties. But
-          we do write corporate hymns — you can read more about it here.
+          we do write corporate hymns — you can read more about it{" "}
+          <Link to="/en/services/audio-branding">here</Link>.
         </p>
       </ServiceSection>
       <ServiceSection title="Our Best Soundtracks">
-        ссылка на виджет soundcloud
+        <iframe
+          title="Our Best Soundtracks"
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/174940453&color=%23f23b0d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
       </ServiceSection>
       <ServiceSection title="What is the process like?">
         <p>
@@ -248,8 +257,14 @@ const MusicCreation = ({ data, location }) => {
 export const query = graphql`
   query MusicCreationENPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "en" } }
-      limit: 5
+      filter: {
+        acf: { music_composing: { music_composing_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "en" }
+      }
+      sort: {
+        fields: acf___music_composing___music_composing_order
+        order: DESC
+      }
     ) {
       nodes {
         id

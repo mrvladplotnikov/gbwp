@@ -62,7 +62,7 @@ const SoundDesign = ({ data, location }) => {
             icon={PlayerIcon}
           />
           <ServiceIcon
-            title="Звуковое оформление для motion-дизайна"
+            title="Звуковое оформление для motion-графики"
             icon={FileIcon}
           />
           <ServiceIcon
@@ -77,7 +77,7 @@ const SoundDesign = ({ data, location }) => {
         <p>
           Ещё мы создаём атмосферные эмбиенты и легко превращаем музыку в один
           из элементов звукового дизайна. Последнее актуально для
-          motion-дизайна, когда музыка и звуки переплетаются и дополняют друг
+          motion-графики, когда музыка и звуки переплетаются и дополняют друг
           друга, чтобы картинка выглядела максимально круто.
         </p>
       </ServiceSection>
@@ -224,8 +224,11 @@ const SoundDesign = ({ data, location }) => {
 export const query = graphql`
   query SoundDesignRuPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "ru" } }
-      limit: 5
+      filter: {
+        acf: { sound_design: { sound_design_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "ru" }
+      }
+      sort: { fields: acf___sound_design___sound_design_order, order: DESC }
     ) {
       nodes {
         id
@@ -251,11 +254,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      limit: 6
       filter: {
-        work_service: { elemMatch: { slug: { eq: "sound-design" } } }
+        acf: { sound_design: { sound_design_visibility: { eq: true } } }
         polylang_current_lang: { eq: "ru" }
       }
+      sort: { fields: acf___sound_design___sound_design_order, order: DESC }
     ) {
       nodes {
         id

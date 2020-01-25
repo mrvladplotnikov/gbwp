@@ -88,6 +88,15 @@ const AudioBranding = ({ data, location }) => {
             500: 2,
           }}
         />
+        <iframe
+          title="Our works"
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/758338767&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
       </ServiceSection>
       <ServiceSection title="What is the process like?">
         <p>
@@ -207,8 +216,11 @@ const AudioBranding = ({ data, location }) => {
 export const query = graphql`
   query AudioBrandingEnPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "en" } }
-      limit: 5
+      filter: {
+        acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "en" }
+      }
+      sort: { fields: acf___audiobrending___audiobrending_order, order: DESC }
     ) {
       nodes {
         id
@@ -234,7 +246,11 @@ export const query = graphql`
       }
     }
     works: allWordpressWpWork(
-      filter: { wordpress_id: { in: [266, 122, 99, 183, 40, 175] } }
+      filter: {
+        acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "en" }
+      }
+      sort: { fields: acf___audiobrending___audiobrending_order, order: DESC }
     ) {
       nodes {
         id

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/ru/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
@@ -63,7 +63,7 @@ const MusicCreation = ({ data, location }) => {
 
         <ServiceIconList>
           <ServiceIcon title="Игр" icon={GamesIcon} />
-          <ServiceIcon title="Рекламных роликов" icon={AudioIcon} />
+          <ServiceIcon title="Брендов и рекламы" icon={AudioIcon} />
           <ServiceIcon title="Фильмов" icon={FilmIcon} />
           <ServiceIcon title="Мультфильмов" icon={MonsterIcon} />
           <ServiceIcon title="Трейлеров" icon={PlayerIcon} />
@@ -71,16 +71,25 @@ const MusicCreation = ({ data, location }) => {
         </ServiceIconList>
 
         <p>
-          Ещё мы создаём музыку для motion-дизайна, но она скорее относится к
+          Ещё мы создаём музыку для motion-графики, но она скорее относится к
           звуковому дизайну, так что о ней можете прочесть вот здесь.
         </p>
         <p>
           Мы не пишем «минусовки» и песни для корпоративов. А вот корпоративные
-          гимны — это мы с радостью, подробнее смотрите тут.
+          гимны — это мы с радостью, подробнее смотрите{" "}
+          <Link to="/ru/services/audio-branding">тут</Link>.
         </p>
       </ServiceSection>
       <ServiceSection title="Лучшие саундтреки">
-        ссылка на виджет soundcloud
+        <iframe
+          title="Лучшие саундтреки"
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/174940453&color=%23f23b0d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
       </ServiceSection>
       <ServiceSection title="Как происходит процесс?">
         <p>
@@ -252,8 +261,14 @@ const MusicCreation = ({ data, location }) => {
 export const query = graphql`
   query MusicCreationRUPageQuery {
     reviews: allWordpressWpClientReview(
-      filter: { polylang_current_lang: { eq: "ru" } }
-      limit: 5
+      filter: {
+        acf: { music_composing: { music_composing_visibility: { eq: true } } }
+        polylang_current_lang: { eq: "ru" }
+      }
+      sort: {
+        fields: acf___music_composing___music_composing_order
+        order: DESC
+      }
     ) {
       nodes {
         id
