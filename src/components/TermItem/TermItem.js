@@ -13,7 +13,11 @@ const TermItem = ({ className = "", terms = [], name }) => {
             return <li key={id}>{name}</li>
           }
 
-          return <li key={id}>{`${name}, `}</li>
+          return (
+            <>
+              <li key={id}>{`${name},`}</li>{" "}
+            </>
+          )
         })}
       </ul>
     </li>

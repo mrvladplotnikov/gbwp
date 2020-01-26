@@ -1,5 +1,6 @@
 .item {
   position: relative;
+  cursor: pointer;
 }
 .closeModalButton {
   border: none;
