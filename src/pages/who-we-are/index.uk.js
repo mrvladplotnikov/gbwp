@@ -4,7 +4,6 @@ import Layout from "../../layouts/uk/default"
 import Headline from "../../components/Headline"
 import { Inner } from "../../components/Container"
 import classNames from "classnames"
-// import rectItem from "../../images/cards-bg-vectors/rect.svg"
 
 const WhoWeAre = ({ location }) => (
   <Layout location={location}>
