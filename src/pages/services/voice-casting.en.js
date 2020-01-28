@@ -22,6 +22,8 @@ import MaleIcon from "../../images/service-icons/male.svg"
 import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -95,11 +97,12 @@ const VoiceCasting = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              you write to us and get a free consultation in a convenient form
-              so that we learn about your project. In this way, we get to know
-              each other and understand if we are ready to cooperate. We need to
-              match with the client in the general vision and principles of
-              work.
+              you write to us and get a{" "}
+              <a href={mailTo.mail.en}>free consultation</a> in a convenient
+              form so that we learn about your project. In this way, we get to
+              know each other and understand if we are ready to cooperate. We
+              need to match with the client in the general vision and principles
+              of work.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">

@@ -18,6 +18,8 @@ import PlayerIcon from "../../images/service-icons/player.svg"
 import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -103,8 +105,9 @@ const SoundDesign = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знайомство">
             <p>
-              ви пишете нам і отримуєте в зручній формі безплатну консультацію,
-              а ми дізнаємося про ваш проект. Так ми знайомимося один з одним і
+              ви пишете нам і отримуєте в зручній формі{" "}
+              <a href={mailTo.mail.uk}>безплатну консультацію</a>, а ми
+              дізнаємося про ваш проект. Так ми знайомимося один з одним і
               розуміємо, наскільки готові до співпраці. Для нас важливо
               збігатися з клієнтом у загальному баченні і принципах роботи.
             </p>
@@ -177,8 +180,8 @@ const SoundDesign = ({ data, location }) => {
           тут враховується складність картинки і тривалість відео.
         </p>
         <p>
-          Напишіть нам, щоби дізнатися точну вартість звукового дизайну для
-          вашого конкретного проекту.
+          <a href={mailTo.soundDesign.uk}>Напишіть нам</a>, щоби дізнатися точну
+          вартість звукового дизайну для вашого конкретного проекту.
         </p>
       </ServiceSection>
       <ServiceSection title="Наш підхід">

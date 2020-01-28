@@ -18,6 +18,8 @@ import PlayerIcon from "../../images/service-icons/player.svg"
 import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -102,10 +104,12 @@ const SoundDesign = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              You write to us and get a free consultation in a convenient form
-              so that we learn about your project. In this way, we get to know
-              each other and understand if we are ready to cooperate. We need to
-              match with the client in the general vision and principles of work
+              You write to us and get a{" "}
+              <a href={mailTo.mail.en}>free consultation</a> in a convenient
+              form so that we learn about your project. In this way, we get to
+              know each other and understand if we are ready to cooperate. We
+              need to match with the client in the general vision and principles
+              of work
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
@@ -182,8 +186,8 @@ const SoundDesign = ({ data, location }) => {
           the video are taken into account.
         </p>
         <p>
-          Please email us to find out the exact cost of sound design for your
-          specific project.
+          Please <a href={mailTo.soundDesign.en}>email us</a> to find out the
+          exact cost of sound design for your specific project.
         </p>
       </ServiceSection>
       <ServiceSection title="Our approach">

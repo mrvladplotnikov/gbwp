@@ -9,6 +9,8 @@ import StyledAccordionItem from "../../components/StyledAccordionItem"
 import boxOfDotsLink from "../../images/icon-box.svg"
 import classNames from "classnames"
 
+import mailTo from "../../utils/mailTo"
+
 const Boxes = ({ className = "" }) => (
   <img
     className={classNames(styles.box, className)}
@@ -36,9 +38,10 @@ const Faq = ({ location }) => (
         <StyledAccordionItem title="Що потрібно аби ви могли почати роботу?">
           <p>
             Спершу нам потрібно познайомитися з вами і вашим проектом. Для цього
-            ви заповнюєте бриф, а ми проводимо для вас безплатну консультацію.
-            Якщо ми з вами збігатемося характерами, залишиться тільки скласти
-            технічне завдання й підписати договір.
+            ви заповнюєте бриф, а ми проводимо для вас{" "}
+            <a href={mailTo.mail.uk}>безплатну консультацію</a>. Якщо ми з вами
+            збігатемося характерами, залишиться тільки скласти технічне завдання
+            й підписати договір.
           </p>
         </StyledAccordionItem>
         <StyledAccordionItem title="А що робити, якщо мій проект під NDA?">

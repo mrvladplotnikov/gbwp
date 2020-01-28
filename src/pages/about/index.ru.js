@@ -22,6 +22,8 @@ import icon6 from "../../images/vp-icons/icon-6.svg"
 import logoWithSlogan from "../../images/logo-with-slogan.svg"
 import TeamCarousel from "../../components/TeamCarousel"
 
+import mailTo from "../../utils/mailTo"
+
 const Box = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
@@ -155,7 +157,7 @@ const About = ({ data, location }) => {
           довольны. Убедиться в этом можно <a href="/">тут</a>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Как насчёт <a href="/">бесплатной консультации</a> или{" "}
+          Как насчёт <a href={mailTo.mail.ru}>бесплатной консультации</a> или{" "}
           <a href="/">крутого темплейта ТЗ</a>? Мы всегда открыты к общению, так
           что смело <a href="/">пишите</a>.
         </FeatureCard>
@@ -171,9 +173,10 @@ const About = ({ data, location }) => {
       </SectionWithText>
       <Contacts>
         Расскажите нам о своём проекте, продукте или идее. Спросите совет или
-        получите полноценную бесплатную консультацию. Узнайте цены, уточните
-        важный вопрос, или, может, вы хотите стать частью нашей команды? Да что
-        угодно! Мы будем рады с вами познакомиться и помочь.
+        получите полноценную{" "}
+        <a href={mailTo.mail.ru}>бесплатную консультацию</a>. Узнайте цены,
+        уточните важный вопрос, или, может, вы хотите стать частью нашей
+        команды? Да что угодно! Мы будем рады с вами познакомиться и помочь.
       </Contacts>
     </Layout>
   )

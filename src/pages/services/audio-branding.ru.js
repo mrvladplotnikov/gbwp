@@ -20,6 +20,8 @@ import AudioIcon from "../../images/service-icons/audio.svg"
 import PhoneIcon from "../../images/service-icons/phone.svg"
 import SoundIcon from "../../images/service-icons/sound.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -112,10 +114,11 @@ const AudioBranding = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знакомство">
             <p>
-              вы пишете нам и получаете в удобной форме бесплатную консультацию,
-              а мы узнаём о вашем бренде. Так мы знакомимся друг с другом и
-              понимаем, насколько готовы сотрудничать. Для нас важно совпадать с
-              клиентом в общем видении и принципах работы.
+              вы пишете нам и получаете в удобной форме{" "}
+              <a href={mailTo.mail.ru}>бесплатную консультацию</a>, а мы узнаём
+              о вашем бренде. Так мы знакомимся друг с другом и понимаем,
+              насколько готовы сотрудничать. Для нас важно совпадать с клиентом
+              в общем видении и принципах работы.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Подготовка">
@@ -165,9 +168,10 @@ const AudioBranding = ({ data, location }) => {
       <ServiceSection title="Стоимость">
         <p>
           Стоимость разработки аудио бренда зависит от набора элементов, которые
-          вам нужно получить в итоге. Напишите нам и расскажите о вашем бренде и
-          его потребностях, а мы подскажем, что стоит делать и сколько это будет
-          стоить.
+          вам нужно получить в итоге.{" "}
+          <a href={mailTo.audioBranding.ru}>Напишите нам</a> и расскажите о
+          вашем бренде и его потребностях, а мы подскажем, что стоит делать и
+          сколько это будет стоить.
         </p>
       </ServiceSection>
       <ServiceSection title="Наш подход">

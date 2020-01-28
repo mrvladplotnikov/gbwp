@@ -17,6 +17,8 @@ import icon4 from "../images/vp-icons/icon-4.svg"
 import icon5 from "../images/vp-icons/icon-5.svg"
 import icon6 from "../images/vp-icons/icon-6.svg"
 
+import mailTo from "../utils/mailTo"
+
 const Home = ({ data, location }) => {
   const works = data.works.nodes
 
@@ -55,7 +57,7 @@ const Home = ({ data, location }) => {
           довольны. Убедиться в этом можно <a href="/">тут</a>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Как насчёт <a href="/">бесплатной консультации</a> или{" "}
+          Как насчёт <a href={mailTo.mail.ru}>бесплатной консультации</a> или{" "}
           <a href="/">крутого темплейта ТЗ</a>? Мы всегда открыты к общению, так
           что смело <a href="/">пишите</a>.
         </FeatureCard>

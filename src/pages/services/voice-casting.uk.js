@@ -22,6 +22,8 @@ import MaleIcon from "../../images/service-icons/male.svg"
 import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -101,8 +103,9 @@ const VoiceCasting = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знайомство">
             <p>
-              ви пишете нам і отримуєте в зручній формі безплатну консультацію,
-              а ми дізнаємося про ваш проект. Так ми знайомимося один з одним і
+              ви пишете нам і отримуєте в зручній формі{" "}
+              <a href={mailTo.mail.uk}>безплатну консультацію</a>, а ми
+              дізнаємося про ваш проект. Так ми знайомимося один з одним і
               розуміємо, наскільки готові до співпраці. Для нас важливо
               збігатися з клієнтом у загальному баченні і принципах роботи.
             </p>

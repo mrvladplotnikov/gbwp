@@ -22,6 +22,8 @@ import MaleIcon from "../../images/service-icons/male.svg"
 import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -102,10 +104,11 @@ const VoiceCasting = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знакомство">
             <p>
-              вы пишете нам и получаете в удобной форме бесплатную консультацию,
-              а мы узнаём о вашем проекте. Так мы знакомимся друг с другом и
-              понимаем, насколько готовы сотрудничать. Для нас важно совпадать с
-              клиентом в общем видении и принципах работы.
+              вы пишете нам и получаете в удобной форме{" "}
+              <a href={mailTo.mail.ru}>бесплатную консультацию</a>, а мы узнаём
+              о вашем проекте. Так мы знакомимся друг с другом и понимаем,
+              насколько готовы сотрудничать. Для нас важно совпадать с клиентом
+              в общем видении и принципах работы.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Подготовка">

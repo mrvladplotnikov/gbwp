@@ -27,6 +27,8 @@ import MonsterIcon from "../../images/service-icons/monster.svg"
 import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const MusicCreation = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -102,7 +104,8 @@ const MusicCreation = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знайомство">
             <p>
-              ви заповнюєте бриф і отримуєте безплатну консультацію. Ми
+              ви заповнюєте бриф і отримуєте{" "}
+              <a href={mailTo.mail.uk}>безплатну консультацію</a>. Ми
               знайомимося один з одним і розуміємо, наскільки готові до
               співпраці. Для нас важливо збігатися з клієнтом у загальному
               баченні і принципах роботи.

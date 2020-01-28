@@ -18,6 +18,8 @@ import PlayerIcon from "../../images/service-icons/player.svg"
 import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -103,10 +105,11 @@ const SoundDesign = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знакомство">
             <p>
-              вы пишете нам и получаете в удобной форме бесплатную консультацию,
-              а мы узнаём о вашем проекте. Так мы знакомимся друг с другом и
-              понимаем, насколько готовы сотрудничать. Для нас важно совпадать с
-              клиентом в общем видении и принципах работы.
+              вы пишете нам и получаете в удобной форме{" "}
+              <a href={mailTo.mail.ru}>бесплатную консультацию</a>, а мы узнаём
+              о вашем проекте. Так мы знакомимся друг с другом и понимаем,
+              насколько готовы сотрудничать. Для нас важно совпадать с клиентом
+              в общем видении и принципах работы.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Подготовка">
@@ -179,8 +182,8 @@ const SoundDesign = ({ data, location }) => {
           здесь учитывается сложность картинки и длительность видео.
         </p>
         <p>
-          Напишите нам, чтобы узнать точную стоимость звукового дизайна для
-          вашего конкретного проекта.
+          <a href={mailTo.soundDesign.ru}>Напишите нам</a>, чтобы узнать точную
+          стоимость звукового дизайна для вашего конкретного проекта.
         </p>
       </ServiceSection>
       <ServiceSection title="Наш подход">

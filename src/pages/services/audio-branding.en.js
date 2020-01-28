@@ -20,6 +20,8 @@ import AudioIcon from "../../images/service-icons/audio.svg"
 import PhoneIcon from "../../images/service-icons/phone.svg"
 import SoundIcon from "../../images/service-icons/sound.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -109,11 +111,12 @@ const AudioBranding = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              You write to us and get a free consultation in a convenient form
-              so that we learn about your brand. In this way, we get to know
-              each other and understand if we are ready to cooperate. We need to
-              match with the client in the general vision and principles of
-              work.
+              You write to us and get a{" "}
+              <a href={mailTo.mail.en}>free consultation</a> in a convenient
+              form so that we learn about your brand. In this way, we get to
+              know each other and understand if we are ready to cooperate. We
+              need to match with the client in the general vision and principles
+              of work.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
@@ -167,9 +170,10 @@ const AudioBranding = ({ data, location }) => {
       <ServiceSection title="Cost">
         <p>
           The cost of developing an audio brand depends on the set of elements
-          that you need to get as a result. Email us and tell about your brand
-          and its needs, and we will notify you of what needs to be done and how
-          much it costs.
+          that you need to get as a result.{" "}
+          <a href={mailTo.audioBranding.en}>Email us</a> and tell about your
+          brand and its needs, and we will notify you of what needs to be done
+          and how much it costs.
         </p>
       </ServiceSection>
       <ServiceSection title="Our approach">

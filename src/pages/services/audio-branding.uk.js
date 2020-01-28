@@ -20,6 +20,8 @@ import AudioIcon from "../../images/service-icons/audio.svg"
 import PhoneIcon from "../../images/service-icons/phone.svg"
 import SoundIcon from "../../images/service-icons/sound.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -108,8 +110,9 @@ const AudioBranding = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Знайомство">
             <p>
-              ви пишете нам і отримуєте в зручній формі безплатну консультацію,
-              а ми дізнаємося про ваш бренд. Так ми знайомимося один з одним і
+              ви пишете нам і отримуєте в зручній формі{" "}
+              <a href={mailTo.mail.uk}>безплатну консультацію</a>, а ми
+              дізнаємося про ваш бренд. Так ми знайомимося один з одним і
               розуміємо, наскільки готові до співпраці. Для нас важливо
               збігатися з клієнтом у загальному баченні і принципах роботи.
             </p>
@@ -166,9 +169,10 @@ const AudioBranding = ({ data, location }) => {
       <ServiceSection title="Вартість">
         <p>
           Вартість розробки аудіобренду залежить від набору елементів, які вам
-          потрібно отримати в результаті. Напишіть нам і розкажіть про ваш бренд
-          і його потреби, а ми підкажемо, що варто створити і скільки це буде
-          коштувати.
+          потрібно отримати в результаті.{" "}
+          <a href={mailTo.audioBranding.uk}>Напишіть нам</a> і розкажіть про ваш
+          бренд і його потреби, а ми підкажемо, що варто створити і скільки це
+          буде коштувати.
         </p>
       </ServiceSection>
       <ServiceSection title="Наш підхід">

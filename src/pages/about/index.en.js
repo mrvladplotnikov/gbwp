@@ -22,6 +22,8 @@ import icon6 from "../../images/vp-icons/icon-6.svg"
 import logoWithSlogan from "../../images/logo-with-slogan.svg"
 import TeamCarousel from "../../components/TeamCarousel"
 
+import mailTo from "../../utils/mailTo"
+
 const Box = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
@@ -152,7 +154,7 @@ const About = ({ data, location }) => {
           were satisfied. You can check this here.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          How about a <a href="/">free consultation</a> or a cool{" "}
+          How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
           <a href="/">technical task template</a>? We are always open to
           communication, so feel free to <a href="/">email us</a>.
         </FeatureCard>
@@ -168,9 +170,9 @@ const About = ({ data, location }) => {
       </SectionWithText>
       <Contacts>
         Tell us about your project, product, or idea. Ask for advice, or get a
-        full free consultation. Find out the cost, specify a vital question, or
-        maybe you want to become part of our team? Anything you want! We will be
-        happy to get to know you and help.
+        full <a href={mailTo.mail.en}>free consultation</a>. Find out the cost,
+        specify a vital question, or maybe you want to become part of our team?
+        Anything you want! We will be happy to get to know you and help.
       </Contacts>
     </Layout>
   )

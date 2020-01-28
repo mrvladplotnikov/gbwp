@@ -27,6 +27,8 @@ import MonsterIcon from "../../images/service-icons/monster.svg"
 import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
+import mailTo from "../../utils/mailTo"
+
 const MusicCreation = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
@@ -100,10 +102,11 @@ const MusicCreation = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              Acquaintance: you fill out a brief and get a free consultation. We
-              will get to know each other and understand if we are ready to
-              cooperate. We need to match with the client in the general vision
-              and principles of work.
+              Acquaintance: you fill out a brief and get a{" "}
+              <a href={mailTo.mail.en}>free consultation</a>. We will get to
+              know each other and understand if we are ready to cooperate. We
+              need to match with the client in the general vision and principles
+              of work.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
