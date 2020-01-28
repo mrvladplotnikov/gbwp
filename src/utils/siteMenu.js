@@ -94,6 +94,18 @@ module.exports = [
   },
   {
     link: {
+      uk: "/our-values",
+      en: "/en/our-values",
+      ru: "/ru/our-values",
+    },
+    label: {
+      uk: " Наші цінності",
+      en: "Our values",
+      ru: "Наши ценности",
+    },
+  },
+  {
+    link: {
       uk: "/reviews",
       en: "/en/reviews",
       ru: "/ru/reviews",
