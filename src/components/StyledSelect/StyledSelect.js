@@ -143,6 +143,7 @@ const StyledSelect = ({
   ...props
 }) => (
   <Select
+    isSearchable={false}
     placeholder={placeholder}
     isClearable={isClearable}
     value={value}
