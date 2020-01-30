@@ -22,7 +22,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     work_genre,
     work_platform,
     work_developer,
-    work_authors,
+    acf,
   } = data.wordpressWpWork
   const media = data.allWordpressWpMedia.edges
   const Content = parseContent(content, media)
@@ -64,7 +64,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
             />
             <TermItem
               className={styles.metaValues}
-              terms={work_authors}
+              terms={acf.autors}
               name="Робота над проектом"
             />
           </ul>
@@ -106,6 +106,9 @@ export const pageQuery = graphql`
     wordpressWpWork(id: { eq: $id }) {
       title
       content
+      acf {
+        autors
+      }
       work_developer {
         id
         name
@@ -115,10 +118,6 @@ export const pageQuery = graphql`
         name
       }
       work_platform {
-        id
-        name
-      }
-      work_authors {
         id
         name
       }
