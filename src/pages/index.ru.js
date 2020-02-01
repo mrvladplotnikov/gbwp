@@ -84,7 +84,7 @@ const Home = ({ data, location }) => {
         ]}
       />
       <ChosenWorks
-        title="Вибрані роботи"
+        title="Избранные работы"
         works={works}
         linkLabel="Портфолио"
         linkURL="/ru/portfolio"

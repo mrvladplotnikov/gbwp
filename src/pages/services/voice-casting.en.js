@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../layouts/uk/sidebar"
+import Layout from "../../layouts/en/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
 import Sidebar from "../../components/Sidebar"
