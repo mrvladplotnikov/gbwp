@@ -88,7 +88,7 @@ const MusicCreation = ({ data, location }) => {
           width="100%"
           height="450"
           scrolling="no"
-          frameborder="no"
+          frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/174940453&color=%23f23b0d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
@@ -266,6 +266,7 @@ const MusicCreation = ({ data, location }) => {
 export const query = graphql`
   query MusicCreationUKPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { music_composing: { music_composing_visibility: { eq: true } } }
         polylang_current_lang: { eq: "uk" }
@@ -282,12 +283,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -295,6 +292,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

@@ -218,6 +218,7 @@ const VoiceCasting = ({ data, location }) => {
 export const query = graphql`
   query VoiceCastingEnPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { vice_over: { vice_over_visibility: { eq: true } } }
         polylang_current_lang: { eq: "en" }
@@ -231,12 +232,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -244,6 +241,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

@@ -94,7 +94,7 @@ const AudioBranding = ({ data, location }) => {
           width="100%"
           height="450"
           scrolling="no"
-          frameborder="no"
+          frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/758338767&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
@@ -218,6 +218,7 @@ const AudioBranding = ({ data, location }) => {
 export const query = graphql`
   query AudioBrandingUkPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
         polylang_current_lang: { eq: "uk" }
@@ -231,11 +232,7 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
+              fluid(maxWidth: 250, maxHeight: 250) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -244,6 +241,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

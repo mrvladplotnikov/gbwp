@@ -232,6 +232,7 @@ const SoundDesign = ({ data, location }) => {
 export const query = graphql`
   query SoundDesignEnPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { sound_design: { sound_design_visibility: { eq: true } } }
         polylang_current_lang: { eq: "en" }
@@ -245,12 +246,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -258,6 +255,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }
