@@ -8,6 +8,7 @@ import { IntlProvider } from "react-intl"
 import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
+import useDetectKeyboard from "../utils/useDetectKeyboard"
 
 const DefaultLayout = ({
   children,
@@ -18,6 +19,7 @@ const DefaultLayout = ({
   description,
   meta,
 }) => {
+  useDetectKeyboard()
   return (
     <StaticQuery
       query={graphql`

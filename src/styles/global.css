@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap&subset=cyrillic");
 
+*:focus {
+  outline: 0;
+}
+
+.keyboard input:focus,
+.keyboard button:focus,
+.keyboard *[role="button"]:focus,
+.keyboard a:focus {
+  box-shadow: 0 0 0 2px #f2390b;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -19,6 +30,13 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #be503c;
+}
+
+::-moz-selection {
+  background: #f2390b;
+}
+::selection {
+  background: #f2390b;
 }
 
 html {

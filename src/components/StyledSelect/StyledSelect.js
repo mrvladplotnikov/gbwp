@@ -87,6 +87,7 @@ const customStyles = {
       borderRadius: 0,
       color: "#ffffff",
       cursor: "pointer",
+      boxShadow: state.isFocused ? "0 0 0 1px #f2390b" : "none",
     }
   },
   singleValue: (provided, state) => {

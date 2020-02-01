@@ -9,6 +9,7 @@ import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import SEO from "../components/seo"
 import "intl"
 import "normalize.css"
+import useDetectKeyboard from "../utils/useDetectKeyboard"
 
 const SidebarLayout = ({
   Sidebar,
@@ -19,6 +20,8 @@ const SidebarLayout = ({
   description,
   meta,
 }) => {
+  useDetectKeyboard()
+
   return (
     <StaticQuery
       query={graphql`
