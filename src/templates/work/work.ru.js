@@ -30,50 +30,54 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     <Layout location={location} translations={translations} title={title}>
       <Inner>
         <div className={styles.template}>
-          <h1
-            className={styles.mainTitle}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-
-          <ul className={styles.meta}>
-            <TermItem
-              className={styles.metaValues}
-              terms={work_category}
-              name="Категория"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_service}
-              name="Услуга"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_genre}
-              name="Жанр"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_platform}
-              name="Платформа"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_developer}
-              name="Разработчик"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={acf.autors}
-              name="Работа над проектом"
-            />
-          </ul>
-          <div className={styles.featuredImage}>
-            {featured_media && (
-              <Img
-                fluid={featured_media.localFile.childImageSharp.fluid}
-                alt={title}
+          <div className={styles.heading}>
+            <div className={styles.featuredImage}>
+              {featured_media && (
+                <Img
+                  fluid={featured_media.localFile.childImageSharp.fluid}
+                  alt={title}
+                />
+              )}
+            </div>
+            <div>
+              <h1
+                className={styles.mainTitle}
+                dangerouslySetInnerHTML={{ __html: title }}
               />
-            )}
+
+              <ul className={styles.meta}>
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_category}
+                  name="Категория"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_service}
+                  name="Услуга"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_genre}
+                  name="Жанр"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_platform}
+                  name="Платформа"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_developer}
+                  name="Разработчик"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={acf.autors}
+                  name="Работа над проектом"
+                />
+              </ul>
+            </div>
           </div>
 
           <div className={styles.content}>{Content}</div>
