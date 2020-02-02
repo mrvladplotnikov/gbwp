@@ -18,6 +18,7 @@ import icon5 from "../images/vp-icons/icon-5.svg"
 import icon6 from "../images/vp-icons/icon-6.svg"
 
 import mailTo from "../utils/mailTo"
+import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
 
 const Home = ({ data, location }) => {
   const works = data.works.nodes
@@ -31,6 +32,7 @@ const Home = ({ data, location }) => {
         linkLabel="Про нас"
         linkURL="/about"
       />
+      <ModalContactForm open={true} onClose={() => console.log("log")} />
       <Why>
         <FeatureCard img={icon1}>
           Ми — партнери наших клієнтів. Нам важливий успіх вашого конкретного

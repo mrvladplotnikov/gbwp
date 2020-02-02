@@ -5,17 +5,17 @@ import classNames from "classnames"
 const FormButton = props => {
   const {
     children,
-    onClick,
     disabled = false,
     loading = false,
     className = "",
+    ...rest
   } = props
 
   return (
     <button
       className={classNames("form-button", className)}
       disabled={disabled}
-      onClick={onClick}
+      {...rest}
     >
       {loading ? "Loading..." : children}
     </button>
@@ -24,7 +24,6 @@ const FormButton = props => {
 
 FormButton.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   className: PropTypes.string,

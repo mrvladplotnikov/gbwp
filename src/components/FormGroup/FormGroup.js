@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classnames from "classnames"
+import classNames from "classnames"
 
 const FormGroup = props => {
   const {
@@ -14,7 +14,7 @@ const FormGroup = props => {
     error,
     helpText,
     disabled,
-    ...props
+    ...rest
   } = props
 
   return (
@@ -34,12 +34,12 @@ const FormGroup = props => {
           value={value}
           onChange={onChange}
           disabled={disabled}
-          {...props}
+          {...rest}
         />
       </label>
       {error && (
         <small
-          className={classnames(
+          className={classNames(
             "form-group__text",
             "form-group__text--error",
             classes.error
@@ -49,7 +49,7 @@ const FormGroup = props => {
         </small>
       )}
       {helpText && (
-        <small className={classnames("form-group__text", classes.helpText)}>
+        <small className={classNames("form-group__text", classes.helpText)}>
           {helpText}
         </small>
       )}
@@ -63,7 +63,7 @@ FormGroup.defaultProps = {
   onChange: () => {},
   placeholder: "",
   label: "",
-  id: "",
+  id: null,
   classes: {
     group: "",
     label: "",

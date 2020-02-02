@@ -1,0 +1,46 @@
+.form-group {
+  max-width: 570px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.form-group--disabled {
+}
+.form-group__label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group__control {
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #fff;
+  font-size: 14px;
+  line-height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  color: #fff;
+}
+
+.form-group--error .form-group__label {
+  color: red;
+}
+.form-group--error .form-group__control {
+  border-color: red;
+}
+
+.form-group__text {
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1;
+  color: blue;
+}
+.form-group__text--error {
+  color: red;
+}

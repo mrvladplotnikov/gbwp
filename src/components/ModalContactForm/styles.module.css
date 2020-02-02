@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.closeModalButton {
+  margin-left: auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10vh;
+}
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form {
+  margin-top: 40px;
+}
+
+.actions p {
+  font-weight: 300;
+}
+body .actions a {
+  font-weight: normal;
+  color: #ffffff;
+}
