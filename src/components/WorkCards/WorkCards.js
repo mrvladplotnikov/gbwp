@@ -7,7 +7,8 @@ import WorkCard from "../WorkCard"
 const defaultBreakpoint = {
   default: 5,
   1100: 5,
-  700: 3,
+  992: 4,
+  768: 3,
   500: 2,
 }
 
