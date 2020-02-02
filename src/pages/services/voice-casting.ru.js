@@ -64,16 +64,22 @@ const VoiceCasting = ({ data, location }) => {
           конкретно занимаемся:
         </p>
 
-        <ServiceIconList>
+        <ServiceIconList align="space-evenly">
           <ServiceIcon
             title="Кастингом актёров голосового озвучивания"
             icon={MaleIcon}
+            style={{ maxWidth: 200 }}
           />
           <ServiceIcon
             title="Организацией процесса записи и ведением проекта"
             icon={LaptopIcon}
+            style={{ maxWidth: 200 }}
           />
-          <ServiceIcon title="Обработкой аудио файлов" icon={FileIcon} />
+          <ServiceIcon
+            title="Обработкой аудио файлов"
+            icon={FileIcon}
+            style={{ maxWidth: 200 }}
+          />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Наши работы">

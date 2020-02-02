@@ -60,13 +60,22 @@ const VoiceCasting = ({ data, location }) => {
       <ServiceSection title="What are we doing?">
         <p>In short, we produce voice-overs, and specifically deal with the:</p>
 
-        <ServiceIconList>
-          <ServiceIcon title="Casting voice actors" icon={MaleIcon} />
+        <ServiceIconList align="space-evenly">
+          <ServiceIcon
+            title="Casting voice actors"
+            icon={MaleIcon}
+            style={{ maxWidth: 200 }}
+          />
           <ServiceIcon
             title="Organization of the recording process and project management"
             icon={LaptopIcon}
+            style={{ maxWidth: 200 }}
           />
-          <ServiceIcon title="Processing audio files" icon={FileIcon} />
+          <ServiceIcon
+            title="Processing audio files"
+            icon={FileIcon}
+            style={{ maxWidth: 200 }}
+          />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Our works">

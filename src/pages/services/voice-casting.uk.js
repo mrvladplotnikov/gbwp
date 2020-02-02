@@ -63,16 +63,22 @@ const VoiceCasting = ({ data, location }) => {
           Якщо говорити коротко — ми продюсуємо голосове озвучення, а конкретно
           займаємося:
         </p>
-        <ServiceIconList>
+        <ServiceIconList align="space-evenly">
           <ServiceIcon
             title="Кастингом акторів голосового озвучення"
             icon={MaleIcon}
+            style={{ maxWidth: 200 }}
           />
           <ServiceIcon
             title="Організацією процесу запису і веденням проекту"
             icon={LaptopIcon}
+            style={{ maxWidth: 200 }}
           />
-          <ServiceIcon title="Обробкою аудіо файлів" icon={FileIcon} />
+          <ServiceIcon
+            title="Обробкою аудіо файлів"
+            icon={FileIcon}
+            style={{ maxWidth: 200 }}
+          />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Наші роботи">

@@ -63,9 +63,12 @@ const AudioBranding = ({ data, location }) => {
         <p>We create:</p>
 
         <ServiceIconList>
-          <ServiceIcon title="Image music" icon={FemaleIcon} />
-          <ServiceIcon title="Jingles and music logos" icon={JingleIcon} />
-          <ServiceIcon title="Audio advertising" icon={AudioIcon} />
+          <ServiceIcon title="Audio strategies for brands" icon={FemaleIcon} />
+          <ServiceIcon title="Audio logos and jingles" icon={JingleIcon} />
+          <ServiceIcon
+            title="Audio advertising and brand music"
+            icon={AudioIcon}
+          />
           <ServiceIcon title="Sound identity for the apps" icon={PhoneIcon} />
           <ServiceIcon
             title="Other audio contact points with a customer"
@@ -76,8 +79,9 @@ const AudioBranding = ({ data, location }) => {
         <p>
           Each audio brand is unique, as is the brand itself. Each business has
           its own needs, and there is no universal formula and composition of
-          the audio brand. Therefore, for each project, we create a personal set
-          of elements depending on the tasks that need to be solved.
+          the audio brand. Therefore, for each project, we create a personal
+          strategy and a set of elements depending on the tasks that need to be
+          solved.
         </p>
       </ServiceSection>
       <ServiceSection title="Our works" noGatters>
@@ -186,10 +190,10 @@ const AudioBranding = ({ data, location }) => {
           </CardDeckItem>
           <CardDeckItem variant="full-waves" textAlign="left">
             We think about not only how, but where and when your brand will
-            sound. Initially, we create an image track or jingle that determines
-            what all the other elements of the audio brand will sound like.
-            Often the jingle transforms into a variety of forms, even into the
-            sound of notifications on the phone.
+            sound. We first develop audio DNA, a central music theme that
+            reflects the ideology and distinctive features of the brand. It
+            defines what all other audio brand elements will sound like, meaning
+            audio logo, brand tracks, jingles, app notifications, and so on.
           </CardDeckItem>
           <CardDeckItem variant="waves" textAlign="left">
             We carefully study your brand, get into the very depths of your
@@ -199,11 +203,10 @@ const AudioBranding = ({ data, location }) => {
             even more precisely.
           </CardDeckItem>
           <CardDeckItem variant="rect-revers" textAlign="center">
-            But it would be best if you certainly were prepared for the fact
-            that we need some creative freedom. Because music and sound are art
-            forms, after all, and should go beyond a rigid framework. At some
-            point, you will have to trust us so we can find a voice for your
-            brand.
+            We believe that music and sound are art forms, after all, and should
+            go beyond a rigid framework. But we know how to work with them so
+            that you get a potent competitive advantage at the edge of
+            functionality and emotions.
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>

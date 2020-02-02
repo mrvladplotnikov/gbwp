@@ -61,13 +61,19 @@ const SoundDesign = ({ data, location }) => {
 
         <ServiceIconList>
           <ServiceIcon
-            title="Sound effects for any media project"
-            icon={PlayerIcon}
+            title="Sound effects for audiovisual projects"
+            icon={FileIcon}
+            style={{ maxWidth: 260 }}
           />
-          <ServiceIcon title="Sound design for motion design" icon={FileIcon} />
+          <ServiceIcon
+            title="Sound design for motion graphics"
+            icon={PlayerIcon}
+            style={{ maxWidth: 260 }}
+          />
           <ServiceIcon
             title="Sound design of the space (quest rooms, installations)"
             icon={RoomIcon}
+            style={{ maxWidth: 260 }}
           />
         </ServiceIconList>
 

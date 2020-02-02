@@ -76,8 +76,8 @@ const About = ({ data, location }) => {
                 дело. Будь то создание музыки, звуковой дизайн, голосовое
                 озвучивание, проектный менеджмент или маркетинг — мы не можем
                 этим не заниматься. Поэтому каждый день мы вдохновляем
-                слушателей по обе стороны медиапроектов и получаем от этого
-                удовольствие.
+                слушателей по обе стороны аудиовизуальных проектов и получаем от
+                этого удовольствие.
               </p>
             </div>
             <div className={styles.aboutCol}>
@@ -164,6 +164,7 @@ const About = ({ data, location }) => {
       </Why>
       <SectionWithText
         linkLabel="Наши ценности"
+        link="/ru/our-values"
         style={{ backgroundColor: "#090909" }}
       >
         <h3>
@@ -188,10 +189,7 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageRuQuery {
-    team: allWordpressWpTeam(
-      limit: 5
-      filter: { polylang_current_lang: { eq: "ru" } }
-    ) {
+    team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "ru" } }) {
       members: nodes {
         id
         name: title

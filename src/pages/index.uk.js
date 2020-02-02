@@ -70,7 +70,7 @@ const Home = ({ data, location }) => {
             link: "/services/music-composing",
           },
           {
-            title: "Аудіобрендінг",
+            title: "Аудіобрендинг",
             link: "/services/audio-branding",
           },
           {

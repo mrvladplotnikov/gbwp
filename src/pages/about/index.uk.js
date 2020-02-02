@@ -118,7 +118,7 @@ const About = ({ data, location }) => {
             link: "/services/music-composing",
           },
           {
-            title: "Аудіобрендінг",
+            title: "Аудіобрендинг",
             link: "/services/audio-branding",
           },
           {
@@ -164,6 +164,7 @@ const About = ({ data, location }) => {
       </Why>
       <SectionWithText
         linkLabel="Наші цінності"
+        link="/our-values"
         style={{ backgroundColor: "#090909" }}
       >
         <h3>
@@ -188,10 +189,7 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageUkQuery {
-    team: allWordpressWpTeam(
-      limit: 5
-      filter: { polylang_current_lang: { eq: "uk" } }
-    ) {
+    team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "uk" } }) {
       members: nodes {
         id
         name: title

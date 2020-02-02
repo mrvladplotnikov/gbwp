@@ -1,6 +1,5 @@
 .list {
   display: flex;
-  justify-content: space-around;
   padding: 25px 0;
   flex-wrap: wrap;
 }

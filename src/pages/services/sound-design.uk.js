@@ -59,16 +59,19 @@ const SoundDesign = ({ data, location }) => {
         <p>Ми створюємо:</p>
         <ServiceIconList>
           <ServiceIcon
-            title="Звукові ефекти для будь-яких медіа-проектів"
-            icon={PlayerIcon}
+            title="Звукові ефекти для аудіовізуальних проектів"
+            icon={FileIcon}
+            style={{ maxWidth: 260 }}
           />
           <ServiceIcon
             title="Звукове оформлення для motion-графіки"
-            icon={FileIcon}
+            icon={PlayerIcon}
+            style={{ maxWidth: 260 }}
           />
           <ServiceIcon
             title="Звукове оформлення простору (квест-кімнати, інсталяції та інше)"
             icon={RoomIcon}
+            style={{ maxWidth: 260 }}
           />
         </ServiceIconList>
 
