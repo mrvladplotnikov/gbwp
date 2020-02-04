@@ -34,6 +34,7 @@
   text-align: right;
   position: relative;
 }
+
 .arrow {
   margin-top: 7px;
   display: block;
@@ -94,3 +95,4 @@
   background-color: #0da6f2;
   opacity: 1;
 }
+ 
