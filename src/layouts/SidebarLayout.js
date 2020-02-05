@@ -10,9 +10,15 @@ import SEO from "../components/seo"
 import "intl"
 import "normalize.css"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
+import useBreakpoint from "../hooks/useBreakpoint"
+
+const queries = {
+  lg: "(min-width: 1660px)",
+}
 
 const SidebarLayout = ({
   Sidebar,
+  ServiceHero,
   children,
   location,
   i18nMessages,
@@ -21,6 +27,10 @@ const SidebarLayout = ({
   meta,
 }) => {
   useDetectKeyboard()
+
+  const matchPoints = useBreakpoint(queries)
+
+  const largeS = matchPoints && matchPoints.lg ? true : false
 
   return (
     <StaticQuery
@@ -68,13 +78,31 @@ const SidebarLayout = ({
                 hideMenu
               />
               <div className="main main--sidebar">
-                <aside className="site-sidebar">{Sidebar}</aside>
-                <div className="site-content">
-                  <Inner>
-                    {children}
-                    <Footer />
-                  </Inner>
-                </div>
+                {largeS ? (
+                  <>
+                    <aside className="site-sidebar">{Sidebar}</aside>
+                    <div className="site-content">
+                      <Inner>
+                        {ServiceHero}
+                        {children}
+                        <Footer />
+                      </Inner>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="site-hero">
+                      <aside className="site-sidebar">{Sidebar}</aside>
+                      <Inner className="site-herocontent">{ServiceHero}</Inner>
+                    </div>
+                    <div className="site-content">
+                      <Inner>
+                        {children}
+                        <Footer />
+                      </Inner>
+                    </div>
+                  </>
+                )}
               </div>
             </>
           </IntlProvider>
@@ -95,6 +123,7 @@ SidebarLayout.propTypes = {
   description: PropTypes.string,
   meta: PropTypes.array,
   Sidebar: PropTypes.element.isRequired,
+  ServiceHero: PropTypes.element.isRequired,
   children: PropTypes.node.isRequired,
 }
 

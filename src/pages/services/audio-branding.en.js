@@ -37,28 +37,30 @@ const AudioBranding = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            For people who create sound, we are too fascinated by marketing.
+          </h3>
+          <p>
+            It seems to us a kind of modern art form, very sophisticated and
+            truly functional. And we love to create something that is on the
+            verge of pure creativity and functionality, so we started to develop
+            audio branding.
+          </p>
+          <p>
+            The potential of sound is often not fully utilized to support
+            brands, and we want to change that. After all, the right audio brand
+            helps to build the necessary associations within the consumers’
+            minds and strengthens their connection with the product or company.
+            It will become what makes a person instantly recognize your brand,
+            even if he or she has not yet seen it.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Audio Branding"
     >
-      <ServiceHero>
-        <h3>
-          For people who create sound, we are too fascinated by marketing.
-        </h3>
-        <p>
-          It seems to us a kind of modern art form, very sophisticated and truly
-          functional. And we love to create something that is on the verge of
-          pure creativity and functionality, so we started to develop audio
-          branding.
-        </p>
-        <p>
-          The potential of sound is often not fully utilized to support brands,
-          and we want to change that. After all, the right audio brand helps to
-          build the necessary associations within the consumers’ minds and
-          strengthens their connection with the product or company. It will
-          become what makes a person instantly recognize your brand, even if he
-          or she has not yet seen it.
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>We create:</p>
 

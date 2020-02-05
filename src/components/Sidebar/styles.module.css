@@ -1,9 +1,11 @@
 .container {
-  padding: 108px 15px 75px;
+  padding: 104px 15px 128px 15px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 .title {
@@ -11,6 +13,7 @@
   font-size: 32px;
   line-height: 39px;
   color: #f2f2f2;
+  margin-top: 0;
 }
 
 .quote {
@@ -38,13 +41,11 @@
 
 @media (min-width: 992px) {
   .container {
-    width: auto;
-    padding: 1px 15px;
-    height: 100vh;
+    padding: 340px 15px 320px 15px;
   }
 
   .title {
-    font-size: 55px;
+    font-size: 40px;
     line-height: 1.2;
   }
 
@@ -60,11 +61,6 @@
 }
 
 @media (min-width: 1660px) {
-  .container {
-    max-width: 450px;
-    width: 100%;
-    overflow: hidden;
-  }
   .title {
     font-size: 49px;
     line-height: 60px;

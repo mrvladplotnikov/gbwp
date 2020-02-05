@@ -2,18 +2,39 @@
   display: flex;
   flex-direction: column;
 }
+
+.main.main--sidebar .site-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .main.main--sidebar .site-hero {
+    flex-direction: row;
+  }
+  .main.main--sidebar .site-sidebar {
+    flex: 1;
+    min-height: 455px;
+  }
+  .main.main--sidebar .site-hero div {
+    flex: 2 2;
+  }
+}
+
 @media (min-width: 1660px) {
   .main.main--sidebar {
     flex-direction: row;
     align-items: flex-start;
   }
   .site-sidebar {
-    flex: 1;
     position: sticky;
     top: 0;
     left: 0;
+    display: block;
+    max-width: 470px;
+    min-height: auto;
   }
   .site-content {
-    flex-grow: 2;
+    flex: 4 4;
   }
 }

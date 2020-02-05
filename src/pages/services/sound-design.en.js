@@ -35,27 +35,29 @@ const SoundDesign = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            If music is art, then the sound is a way of transmitting information
+            in the first place.
+          </h3>
+          <p>
+            Moreover, it’s one of the oldest ones. But this does not mean that
+            music is only emotional, and sound is only informative. A short
+            sound indeed can be emotional and directly affect a person’s
+            emotions, just like music does.
+          </p>
+          <p>
+            Whether we want it or not, an alarming sound will make us wary. And
+            for this kind of thing, we love sound design. For how he transforms
+            any picture, adds life to it, helps the viewer to believe what is
+            happening. Magic itself!
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Sound Design"
     >
-      <ServiceHero>
-        <h3>
-          If music is art, then the sound is a way of transmitting information
-          in the first place.
-        </h3>
-        <p>
-          Moreover, it’s one of the oldest ones. But this does not mean that
-          music is only emotional, and sound is only informative. A short sound
-          indeed can be emotional and directly affect a person’s emotions, just
-          like music does.
-        </p>
-        <p>
-          Whether we want it or not, an alarming sound will make us wary. And
-          for this kind of thing, we love sound design. For how he transforms
-          any picture, adds life to it, helps the viewer to believe what is
-          happening. Magic itself!
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>We create:</p>
 
