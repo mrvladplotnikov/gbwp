@@ -37,26 +37,31 @@ const VoiceCasting = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            We like to think of the human voice as the perfect musical
+            instrument.
+          </h3>
+          <p>
+            We do not know any other instrument that reveals the message of the
+            author, convey the whole spectrum of emotions, and the elusive
+            nuances of mood in such an accurate way. And if vocals are one of
+            the crucial elements of music, then voice acting is an independent
+            art form.
+          </p>
+          <p>
+            The correct voice-over is not just a recitation of the necessary
+            text with a well-set voice. It is more about managing the attention
+            of the listener, revealing the characters, and creating an
+            atmosphere. The right voice is what makes people listen and believe
+            what they hear.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Voice casting"
     >
-      <ServiceHero>
-        <h3>
-          We like to think of the human voice as the perfect musical instrument.
-        </h3>
-        <p>
-          We do not know any other instrument that reveals the message of the
-          author, convey the whole spectrum of emotions, and the elusive nuances
-          of mood in such an accurate way. And if vocals are one of the crucial
-          elements of music, then voice acting is an independent art form.
-        </p>
-        <p>
-          The correct voice-over is not just a recitation of the necessary text
-          with a well-set voice. It is more about managing the attention of the
-          listener, revealing the characters, and creating an atmosphere. The
-          right voice is what makes people listen and believe what they hear.
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>In short, we produce voice-overs, and specifically deal with the:</p>
 

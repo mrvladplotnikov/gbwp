@@ -7,7 +7,7 @@ const Sidebar = ({ title = "", text = "", autor = "", image }) => (
   <BackgroundImage
     className={styles.container}
     fluid={image}
-    backgroundColor="#5a0f34"
+    backgroundColor="#000000"
   >
     <h1 className={styles.title}>{title}</h1>
     <figure className={styles.quote}>

@@ -42,24 +42,26 @@ const MusicCreation = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>We love music mostly because of its potential.</h3>
+          <p>
+            After all, this is the most potent form of art if we compare them
+            all by their emotional impact. Do you know how one song entirely
+            changes your mood?
+          </p>
+          <p>
+            Just a couple of notes, the correct rhythmic pattern, and a person
+            is now ready for great deals. And then you slightly change the
+            arrangement, and the very same person is now suddenly all in sad
+            memories. It fascinates and captures us, and makes us do what we do
+            every day. Listen, study and, ultimately, compose music.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Music composing"
     >
-      <ServiceHero>
-        <h3>We love music mostly because of its potential.</h3>
-        <p>
-          After all, this is the most potent form of art if we compare them all
-          by their emotional impact. Do you know how one song entirely changes
-          your mood?
-        </p>
-        <p>
-          Just a couple of notes, the correct rhythmic pattern, and a person is
-          now ready for great deals. And then you slightly change the
-          arrangement, and the very same person is now suddenly all in sad
-          memories. It fascinates and captures us, and makes us do what we do
-          every day. Listen, study and, ultimately, compose music.
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>We compose soundtracks and create music for:</p>
         <ServiceIconList>
