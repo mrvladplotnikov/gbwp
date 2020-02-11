@@ -79,6 +79,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://gmail.us5.list-manage.com/subscribe/post?u=8732b4c1da6a45c651f346f66&amp;id=2d067d850a", // add your MC list endpoint here; see instructions below
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

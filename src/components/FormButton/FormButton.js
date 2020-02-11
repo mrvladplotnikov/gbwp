@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
+import { FormattedMessage } from "react-intl"
 
 const FormButton = props => {
   const {
@@ -14,10 +15,10 @@ const FormButton = props => {
   return (
     <button
       className={classNames("form-button", className)}
-      disabled={disabled}
+      disabled={disabled || loading}
       {...rest}
     >
-      {loading ? "Loading..." : children}
+      {loading ? <FormattedMessage id="loadingMessage" /> : children}
     </button>
   )
 }

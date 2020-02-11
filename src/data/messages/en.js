@@ -1,4 +1,14 @@
 module.exports = {
+  subscriptionTitle: "Темплейт технического задания",
+  subscriptionSubTitle: `Мы уверены, что правильно составленное ТЗ повышает шансы на успех
+  проекта. Поэтому с радостью делимся тем, что работает для нас!`,
+  firstName: "FirstName",
+  subscriptionPrivacy: `<p>
+  Отправляя эту форму, вы соглашаетесь с
+  <a href="/">нашей политикой конфиденциальности</a>.
+</p>`,
+  loadingMessage: "Loading...",
+  submit: "Send",
   portfolioLabel: "Portfolio",
   prevWork: "Previous case",
   nextWork: "Next case",

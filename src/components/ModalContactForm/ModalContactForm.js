@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Modal from "react-modal"
 import { useFormik } from "formik"
@@ -9,8 +9,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./styles.module.css"
 import { Outer } from "../Container"
 import Headline from "../Headline"
+import addToMailchimp from "gatsby-plugin-mailchimp"
+import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
 
 Modal.setAppElement("#___gatsby")
+
+const renderFormStatusMessage = result => {
+  if (result.result === "success")
+    return <span className={styles.formMsgSuccess}>Успех</span>
+
+  if (result.msg.includes("already subscribed"))
+    return <span className={styles.formMsg}>Уже подписан</span>
+
+  return (
+    <span className={styles.formMsgError}>
+      Ошибка, попробуйте позже или свяжитесь с нами
+    </span>
+  )
+}
 
 const validationSchema = object({
   firstName: string()
@@ -21,14 +37,26 @@ const validationSchema = object({
     .required("Required"),
 })
 
-const ModalContactForm = ({ open, onClose }) => {
+const ModalContactForm = ({ open, onClose, intl }) => {
+  const [formResult, setFormResult] = useState(null)
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
       email: "",
     },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+    onSubmit: async (values, actions) => {
+      const result = await addToMailchimp(values.email, {
+        FNAME: values.firstName,
+        LANG: intl.locale,
+      })
+      setFormResult(result)
+      actions.setSubmitting(false)
+      if (result.result === "success") {
+        setTimeout(() => {
+          onClose()
+        }, 1000)
+      }
     },
     validationSchema,
   })
@@ -72,17 +100,19 @@ const ModalContactForm = ({ open, onClose }) => {
           <FontAwesomeIcon icon={["fas", "times"]} />
         </button>
         <Headline className={styles.title} Tag="h2">
-          Темплейт технического задания
+          {intl.formatHTMLMessage({ id: "subscriptionTitle" })}
         </Headline>
         <p className={styles.subTitle}>
-          Мы уверены, что правильно составленное ТЗ повышает шансы на успех
-          проекта. Поэтому с радостью делимся тем, что работает для нас!
+          {intl.formatHTMLMessage({ id: "subscriptionSubTitle" })}
         </p>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
+          <div className={styles.formState}>
+            {formResult && renderFormStatusMessage(formResult)}
+          </div>
           <div className={styles.formGroups}>
             <FormGroup
               name="firstName"
-              label="First name"
+              label={intl.formatMessage({ id: "firstName" })}
               type="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -100,12 +130,9 @@ const ModalContactForm = ({ open, onClose }) => {
             />
           </div>
           <div className={styles.actions}>
-            <p>
-              Отправляя эту форму, вы соглашаетесь с{" "}
-              <a href="/">нашей политикой конфиденциальности</a>.
-            </p>
-            <FormButton type="submit" disabled={formik.isSubmitting}>
-              Submit
+            <FormattedHTMLMessage id="subscriptionPrivacy" />
+            <FormButton type="submit" loading={formik.isSubmitting}>
+              {intl.formatMessage({ id: "submit" })}
             </FormButton>
           </div>
         </form>
@@ -122,6 +149,7 @@ ModalContactForm.defaultProps = {
 ModalContactForm.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
+  intl: intlShape,
 }
 
-export default ModalContactForm
+export default injectIntl(ModalContactForm)

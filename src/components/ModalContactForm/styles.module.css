@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  max-width: 568px;
 }
 
 .closeModalButton {
@@ -10,12 +11,14 @@
 .title {
   text-align: center;
   margin-top: 10vh;
+  font-size: 24px;
 }
 p {
   font-size: 14px;
   line-height: 1.5;
 }
 .form {
+  margin: 0 auto;
   margin-top: 40px;
 }
 
@@ -25,4 +28,13 @@ p {
 body .actions a {
   font-weight: normal;
   color: #ffffff;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 769px) {
+  .title {
+    font-size: 24px;
+  }
 }
