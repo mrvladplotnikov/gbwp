@@ -26,15 +26,15 @@
     flex-direction: row;
     align-items: flex-start;
   }
-  .site-sidebar {
+  .main.main--sidebar .site-sidebar {
     position: sticky;
     top: 0;
     left: 0;
     display: block;
     max-width: 470px;
-    min-height: auto;
+    min-height: 100vh;
   }
-  .site-content {
+  .main.main--sidebar .site-content {
     flex: 4 4;
   }
 }

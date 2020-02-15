@@ -61,6 +61,11 @@
 }
 
 @media (min-width: 1660px) {
+  .container {
+    min-height: 100vh;
+    justify-content: unset;
+  }
+
   .title {
     font-size: 49px;
     line-height: 60px;
