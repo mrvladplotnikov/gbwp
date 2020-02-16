@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useLayoutEffect } from "react"
 import PropTypes from "prop-types"
 import Footer from "../components/Footer"
 import { Inner } from "../components/Container"
@@ -27,10 +27,16 @@ const SidebarLayout = ({
   meta,
 }) => {
   useDetectKeyboard()
-
   const matchPoints = useBreakpoint(queries)
+  const [isScreenLg, setIsScreenLg] = useState(true)
 
-  const largeS = matchPoints && matchPoints.lg ? true : false
+  useLayoutEffect(() => {
+    if (matchPoints && matchPoints.lg) {
+      setIsScreenLg(true)
+    } else {
+      setIsScreenLg(false)
+    }
+  }, [matchPoints])
 
   return (
     <StaticQuery
@@ -78,7 +84,7 @@ const SidebarLayout = ({
                 hideMenu
               />
               <div className="main main--sidebar">
-                {largeS ? (
+                {isScreenLg ? (
                   <>
                     <aside className="site-sidebar">{Sidebar}</aside>
                     <div className="site-content">

@@ -63,7 +63,7 @@
     font-size: 22px;
     line-height: 35px;
     text-align: justify;
-    padding: 340px 15px 320px 15px;
+    padding: 340px 100px 320px 100px;
     margin-bottom: 125px;
   }
   .section h1 {
@@ -105,5 +105,11 @@
   .boxBottomRight {
     bottom: 15px;
     right: -39px;
+  }
+}
+
+@media (min-width: 1660px) {
+  .section {
+    padding: 340px 15px 320px 15px;
   }
 }
