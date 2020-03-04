@@ -27,7 +27,7 @@ const Home = ({ data, location }) => {
       <Hero link="/en/portfolio" />
       <About
         title="VP Production"
-        text="We are a team of people who create music, sound effects and produce voice-overs on the verge of pure creativity and functionality."
+        text="We are a team that creates music, sound effects and produces voice-overs on the verge of pure creativity and functionality."
         linkLabel="About us"
         linkURL="/en/about"
       />
@@ -38,7 +38,7 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon2}>
           We look more in-depth than the technical task and ask many questions
-          so that the final sound works for your project.
+          so that the final sound works for your audience.
         </FeatureCard>
         <FeatureCard img={icon3}>
           For four years of work, we have broken zero deadlines. This describes
@@ -70,21 +70,21 @@ const Home = ({ data, location }) => {
             link: "/en/services/music-composing",
           },
           {
-            title: "Audiobranding",
+            title: "Audio Branding",
             link: "/en/services/audio-branding",
           },
           {
-            title: "Sound design",
+            title: "Sound Design",
             link: "/en/services/sound-design",
           },
           {
-            title: "Voice casting",
+            title: "Voice Casting",
             link: "/en/services/voice-casting",
           },
         ]}
       />
       <ChosenWorks
-        title="Chosen works"
+        title="Featured Works"
         works={works}
         linkLabel="Portfolio"
         linkURL="/en/portfolio"
