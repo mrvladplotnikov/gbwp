@@ -1,4 +1,18 @@
 module.exports = {
+  successMailSend: "Успішно відправлено",
+  errorMailSend: "Помилка, спробуйте пізніше",
+  invalidemail: "Невірна адреса пошти",
+  required: "Обов'язкове",
+  subscriptionTitle: "Темплейт технічного завдання",
+  subscriptionSubTitle: `Ми впевнені, що правильно складене ТЗ підвищує шанси на успіх
+  проекту. Тому з радістю ділимося тим, що працює для нас!`,
+  firstName: "Ім'я",
+  subscriptionPrivacy: `<p>
+  Відправляючи цю форму, ви погоджуєтеся з
+  <a href="/">нашою політикою конфіденційності</a>.
+</p>`,
+  loadingMessage: "Завантаження...",
+  submit: "Відправити",
   portfolioLabel: "Портфоліо",
   prevWork: "Попередня робота",
   nextWork: "Наступна робота",

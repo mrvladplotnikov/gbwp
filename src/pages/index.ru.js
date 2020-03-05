@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../layouts/ru/home"
 import Hero from "../components/lendingSections/Hero"
@@ -18,8 +18,12 @@ import icon5 from "../images/vp-icons/icon-5.svg"
 import icon6 from "../images/vp-icons/icon-6.svg"
 
 import mailTo from "../utils/mailTo"
+import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
+import InlineButton from "../components/InlineButton"
 
 const Home = ({ data, location }) => {
+  const [showFrom, setShowForm] = useState(false)
+
   const works = data.works.nodes
 
   return (
@@ -58,10 +62,18 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Как насчёт <a href={mailTo.mail.ru}>бесплатной консультации</a> или{" "}
-          <a href="/">крутого темплейта ТЗ</a>? Мы всегда открыты к общению, так
-          что смело <a href="/">пишите</a>.
+          <InlineButton onClick={() => setShowForm(true)}>
+            крутого темплейта ТЗ
+          </InlineButton>
+          ? Мы всегда открыты к общению, так что смело <a href="/">пишите</a>.
         </FeatureCard>
       </Why>
+      <ModalContactForm
+        title="Темплейт технического задания"
+        subTitle="Мы уверены, что правильно составленное ТЗ повышает шансы на успех проекта. Поэтому с радостью делимся тем, что работает для нас!"
+        open={showFrom}
+        onClose={() => setShowForm(false)}
+      />
       <Services
         title="Наши услуги"
         services={[

@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Footer from "../components/Footer"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
+import { SnackbarProvider } from "react-snackbar-alert"
 import { IntlProvider } from "react-intl"
 import Languages from "../components/Languages"
 import HamburgerButton from "../components/HamburgerButton"
@@ -90,7 +91,13 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
                   homeLink={homeLink.replace("/uk", "/")}
                 />
               )}
-              {children}
+              <SnackbarProvider
+                position="top"
+                pauseOnHover={true}
+                dismissable={false}
+              >
+                {children}
+              </SnackbarProvider>
               <Footer />
             </>
           </IntlProvider>

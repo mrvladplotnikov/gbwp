@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { SnackbarProvider } from "react-snackbar-alert"
 import Footer from "../components/Footer"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
@@ -97,7 +98,13 @@ const DefaultLayout = ({
                 locale={langKey}
                 homeLink={homeLink}
               />
-              {children}
+              <SnackbarProvider
+                position="top"
+                pauseOnHover={true}
+                dismissable={false}
+              >
+                {children}
+              </SnackbarProvider>
               <Footer />
             </>
           </IntlProvider>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../../layouts/ru/sidebar"
 import ServiceHero from "../../components/ServiceHero"
@@ -23,8 +23,31 @@ import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
 import mailTo from "../../utils/mailTo"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const VoiceCasting = ({ data, location }) => {
+  const [showForm, setShowForm] = useState(false)
+  const [formTitle, setFromTitle] = useState("")
+  const [formSubTitle, setFromSubTitle] = useState("")
+  const [formKey, setFromKey] = useState("")
+
+  const handleFormShow = (title = "", subTitle = "", key = "") => {
+    setFromTitle(title)
+    setFromSubTitle(subTitle)
+    setFromKey(key)
+    setShowForm(true)
+  }
+
+  const handleFormClose = () => {
+    setShowForm(false)
+
+    setTimeout(() => {
+      setFromTitle("")
+      setFromSubTitle("")
+      setFromKey("")
+    }, 500)
+  }
+
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   return (
@@ -184,6 +207,13 @@ const VoiceCasting = ({ data, location }) => {
             icon={HouseIcon}
             subTitle="Доступные языки"
             list={["украинский", "русский", "английский"]}
+            onClick={() =>
+              handleFormShow(
+                "Узнать стоимость",
+                "Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам наши предложения по голосовому озвучиванию.",
+                "local-voice-casting"
+              )
+            }
           />
           <PlanCard
             title="Иностранные актёры озвучивания"
@@ -196,6 +226,13 @@ const VoiceCasting = ({ data, location }) => {
               "испанский",
               "китайский",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Узнать стоимость",
+                "Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам наши предложения по голосовому озвучиванию.",
+                "foreign-voice-casting"
+              )
+            }
           />
         </PlanList>
         <p>
@@ -203,6 +240,13 @@ const VoiceCasting = ({ data, location }) => {
           напишите нам и мы подберём нужного актёра.
         </p>
       </ServiceSection>
+      <ModalContactForm
+        title={formTitle}
+        subTitle={formSubTitle}
+        customLocation={formKey}
+        open={showForm}
+        onClose={handleFormClose}
+      />
       <ServiceSection title="Наш подход">
         <CardDeck>
           <CardDeckItem variant="rect" textAlign="left">

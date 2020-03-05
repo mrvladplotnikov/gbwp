@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from "react"
 import PropTypes from "prop-types"
+import { SnackbarProvider } from "react-snackbar-alert"
 import Footer from "../components/Footer"
 import { Inner } from "../components/Container"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
@@ -90,7 +91,13 @@ const SidebarLayout = ({
                     <div className="site-content">
                       <Inner>
                         {ServiceHero}
-                        {children}
+                        <SnackbarProvider
+                          position="top"
+                          pauseOnHover={true}
+                          dismissable={false}
+                        >
+                          {children}
+                        </SnackbarProvider>
                         <Footer />
                       </Inner>
                     </div>
@@ -103,7 +110,13 @@ const SidebarLayout = ({
                     </div>
                     <div className="site-content">
                       <Inner>
-                        {children}
+                        <SnackbarProvider
+                          position="top"
+                          pauseOnHover={true}
+                          dismissable={false}
+                        >
+                          {children}
+                        </SnackbarProvider>
                         <Footer />
                       </Inner>
                     </div>

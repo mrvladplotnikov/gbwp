@@ -1,0 +1,74 @@
+.ModalContactForm__container {
+  display: flex;
+  flex-direction: column;
+}
+.ModalContactForm__container .ModalContactForm__title {
+  text-align: center;
+  font-size: 24px;
+}
+.ModalContactForm__container p {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+.ModalContactForm__form {
+  margin: 0 auto;
+}
+.ModalContactForm__actions p {
+  font-weight: 300;
+}
+body .actions a {
+  font-weight: normal;
+  color: #ffffff;
+}
+
+@media (min-width: 769px) {
+  .ModalContactForm__container .ModalContactForm__title {
+    font-size: 24px;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  .ModalContactForm__container p {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .ModalContactForm__container .ModalContactForm__title {
+    max-width: 80%;
+    font-size: 56px;
+    line-height: 85px;
+    margin-bottom: 35px;
+  }
+  .ModalContactForm__container p {
+    max-width: 80%;
+    margin-bottom: 35px;
+  }
+  .ModalContactForm__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .ModalContactForm__formGroups {
+    display: flex;
+    width: 100%;
+  }
+  .ModalContactForm__actions {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .ModalContactForm__actions span {
+    flex: 3 3 700px;
+  }
+  .ModalContactForm__actions button {
+    flex: 1 1 210px;
+  }
+  .ModalContactForm__actions p {
+    max-width: initial;
+    width: auto;
+    display: inline-block;
+    text-align: left;
+  }
+}

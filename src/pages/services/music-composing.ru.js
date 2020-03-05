@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/ru/sidebar"
 import ServiceHero from "../../components/ServiceHero"
@@ -28,8 +28,31 @@ import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
 import mailTo from "../../utils/mailTo"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const MusicCreation = ({ data, location }) => {
+  const [showForm, setShowForm] = useState(false)
+  const [formTitle, setFromTitle] = useState("")
+  const [formSubTitle, setFromSubTitle] = useState("")
+  const [formKey, setFromKey] = useState("")
+
+  const handleFormShow = (title = "", subTitle = "", key = "") => {
+    setFromTitle(title)
+    setFromSubTitle(subTitle)
+    setFromKey(key)
+    setShowForm(true)
+  }
+
+  const handleFormClose = () => {
+    setShowForm(false)
+
+    setTimeout(() => {
+      setFromTitle("")
+      setFromSubTitle("")
+      setFromKey("")
+    }, 500)
+  }
+
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   return (
@@ -171,7 +194,16 @@ const MusicCreation = ({ data, location }) => {
           выбрать подходящий для вашего проекта вариант.
         </p>
 
-        <PlanList label="Все предложения" onClick={() => {}}>
+        <PlanList
+          label="Все предложения"
+          onClick={() =>
+            handleFormShow(
+              "Сравнить пакеты",
+              "Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам стоимость всех наших пакетов по созданию музыки.",
+              "all"
+            )
+          }
+        >
           <PlanCard
             title="Standart"
             icon={StandartIcon}
@@ -181,6 +213,13 @@ const MusicCreation = ({ data, location }) => {
               "5 бесплатных правок",
               "предоплата 50 %",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Пакет Standard",
+                "Отличный выбор! Наш стандарт никогда не подводит. Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам сравнение стоимости этого пакета с другими.",
+                "standart"
+              )
+            }
           />
           <PlanCard
             title="Soft Launch"
@@ -193,12 +232,26 @@ const MusicCreation = ({ data, location }) => {
               "предоплата 50 %",
               "при дальнейшем заказе пакетов Standart / Premium на этот же трек, стоимость Soft Launch включена",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Пакет Soft Launch",
+                "Кто сказал, что осторожничать – скучно? Мы с ним не согласны, поэтому и разработали предложение специально для Soft Launch. Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам сравнение стоимости этого пакета с другими.",
+                "soft-launch"
+              )
+            }
           />
           <PlanCard
             title="S.O.S"
             icon={SosIcon}
             subTitle="когда всё горит и пылает"
             list={["срок выполнения — ASAP", "без правок", "полная предоплата"]}
+            onClick={() =>
+              handleFormShow(
+                "Пакет S.O.S",
+                "Если все шутки про горящие дедлайны для вас – не шутки, то сейчас вы сделали правильный выбор! Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам сравнение стоимости этого пакета с другими.",
+                "s-o-s"
+              )
+            }
           />
           <PlanCard
             title="Premium"
@@ -209,9 +262,23 @@ const MusicCreation = ({ data, location }) => {
               "5 бесплатных правок",
               "предоплата 50 %",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Пакет Premium",
+                "Говорят, невозможно получить всё и сразу. Но мы постарались и подготовили такое предложение. Пожалуйста, оставьте нам свой email и мы с радостью вышлем вам сравнение стоимости этого пакета с другими.",
+                "premium"
+              )
+            }
           />
         </PlanList>
       </ServiceSection>
+      <ModalContactForm
+        title={formTitle}
+        subTitle={formSubTitle}
+        customLocation={formKey}
+        open={showForm}
+        onClose={handleFormClose}
+      />
       <ServiceSection title="Наш подход">
         <CardDeck>
           <CardDeckItem variant="rect" textAlign="left">

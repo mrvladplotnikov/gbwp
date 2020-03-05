@@ -1,0 +1,28 @@
+.form-button {
+  border: 1px solid #ffffff;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  color: #ffffff;
+  background-color: transparent;
+  max-width: 569px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.form-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(90.32deg, #f2390b 0.07%, #1897d9 99.93%);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.form-button:hover::before {
+  transform: scaleX(1);
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../layouts/en/home"
 import Hero from "../components/lendingSections/Hero"
@@ -18,8 +18,12 @@ import icon5 from "../images/vp-icons/icon-5.svg"
 import icon6 from "../images/vp-icons/icon-6.svg"
 
 import mailTo from "../utils/mailTo"
+import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
+import InlineButton from "../components/InlineButton"
 
 const Home = ({ data, location }) => {
+  const [showFrom, setShowForm] = useState(false)
+
   const works = data.works.nodes
 
   return (
@@ -58,10 +62,19 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
-          <a href="/">technical task template</a>? We are always open to
-          communication, so feel free to <a href="/">email us</a>.
+          <InlineButton onClick={() => setShowForm(true)}>
+            technical task template
+          </InlineButton>
+          ? We are always open to communication, so feel free to{" "}
+          <a href="/">email us</a>.
         </FeatureCard>
       </Why>
+      <ModalContactForm
+        title="Technical task template"
+        subTitle="We are confident that a correctly made technical task increases the chances of success of the project. Therefore, we are happy to share what works for us!"
+        open={showFrom}
+        onClose={() => setShowForm(false)}
+      />
       <Services
         title="Our services"
         services={[
