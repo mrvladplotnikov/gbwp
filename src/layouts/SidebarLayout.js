@@ -91,7 +91,13 @@ const SidebarLayout = ({
                     <div className="site-content">
                       <Inner>
                         {ServiceHero}
-                        {children}
+                        <SnackbarProvider
+                          position="top"
+                          pauseOnHover={true}
+                          dismissable={false}
+                        >
+                          {children}
+                        </SnackbarProvider>
                         <Footer />
                       </Inner>
                     </div>
@@ -104,7 +110,13 @@ const SidebarLayout = ({
                     </div>
                     <div className="site-content">
                       <Inner>
-                        {children}
+                        <SnackbarProvider
+                          position="top"
+                          pauseOnHover={true}
+                          dismissable={false}
+                        >
+                          {children}
+                        </SnackbarProvider>
                         <Footer />
                       </Inner>
                     </div>
