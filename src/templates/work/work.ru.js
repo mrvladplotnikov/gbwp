@@ -21,7 +21,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     work_genre,
     work_platform,
     work_developer,
-    work_authors,
+    acf,
   } = data.wordpressWpWork
   const media = data.allWordpressWpMedia.edges
   const Content = parseContent(content, media)
@@ -30,50 +30,54 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     <Layout location={location} translations={translations} title={title}>
       <Inner>
         <div className={styles.template}>
-          <h1
-            className={styles.mainTitle}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-
-          <ul className={styles.meta}>
-            <TermItem
-              className={styles.metaValues}
-              terms={work_category}
-              name="Категория"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_service}
-              name="Услуга"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_genre}
-              name="Жанр"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_platform}
-              name="Платформа"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_developer}
-              name="Разработчик"
-            />
-            <TermItem
-              className={styles.metaValues}
-              terms={work_authors}
-              name="Работа над проектом"
-            />
-          </ul>
-          <div className={styles.featuredImage}>
-            {featured_media && (
-              <Img
-                fluid={featured_media.localFile.childImageSharp.fluid}
-                alt={title}
+          <div className={styles.heading}>
+            <div className={styles.featuredImage}>
+              {featured_media && (
+                <Img
+                  fluid={featured_media.localFile.childImageSharp.fluid}
+                  alt={title}
+                />
+              )}
+            </div>
+            <div>
+              <h1
+                className={styles.mainTitle}
+                dangerouslySetInnerHTML={{ __html: title }}
               />
-            )}
+
+              <ul className={styles.meta}>
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_category}
+                  name="Категория"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_service}
+                  name="Услуга"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_genre}
+                  name="Жанр"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_platform}
+                  name="Платформа"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={work_developer}
+                  name="Разработчик"
+                />
+                <TermItem
+                  className={styles.metaValues}
+                  terms={acf.autors}
+                  name="Работа над проектом"
+                />
+              </ul>
+            </div>
           </div>
 
           <div className={styles.content}>{Content}</div>
@@ -104,6 +108,9 @@ export const pageQuery = graphql`
     wordpressWpWork(id: { eq: $id }) {
       title
       content
+      acf {
+        autors
+      }
       work_developer {
         id
         name
@@ -113,10 +120,6 @@ export const pageQuery = graphql`
         name
       }
       work_platform {
-        id
-        name
-      }
-      work_authors {
         id
         name
       }

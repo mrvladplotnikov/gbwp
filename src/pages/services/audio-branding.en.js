@@ -37,35 +37,40 @@ const AudioBranding = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            For people who create sound, we are too fascinated by marketing.
+          </h3>
+          <p>
+            It seems to us a kind of modern art form, very sophisticated and
+            truly functional. And we love to create something that is on the
+            verge of pure creativity and functionality, so we started to develop
+            audio branding.
+          </p>
+          <p>
+            The potential of sound is often not fully utilized to support
+            brands, and we want to change that. After all, the right audio brand
+            helps to build the necessary associations within the consumers’
+            minds and strengthens their connection with the product or company.
+            It will become what makes a person instantly recognize your brand,
+            even if he or she has not yet seen it.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Audio Branding"
     >
-      <ServiceHero>
-        <h3>
-          For people who create sound, we are too fascinated by marketing.
-        </h3>
-        <p>
-          It seems to us a kind of modern art form, very sophisticated and truly
-          functional. And we love to create something that is on the verge of
-          pure creativity and functionality, so we started to develop audio
-          branding.
-        </p>
-        <p>
-          The potential of sound is often not fully utilized to support brands,
-          and we want to change that. After all, the right audio brand helps to
-          build the necessary associations within the consumers’ minds and
-          strengthens their connection with the product or company. It will
-          become what makes a person instantly recognize your brand, even if he
-          or she has not yet seen it.
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>We create:</p>
 
         <ServiceIconList>
-          <ServiceIcon title="Image music" icon={FemaleIcon} />
-          <ServiceIcon title="Jingles and music logos" icon={JingleIcon} />
-          <ServiceIcon title="Audio advertising" icon={AudioIcon} />
+          <ServiceIcon title="Audio strategies for brands" icon={FemaleIcon} />
+          <ServiceIcon title="Audio logos and jingles" icon={JingleIcon} />
+          <ServiceIcon
+            title="Audio advertising and brand music"
+            icon={AudioIcon}
+          />
           <ServiceIcon title="Sound identity for the apps" icon={PhoneIcon} />
           <ServiceIcon
             title="Other audio contact points with a customer"
@@ -76,8 +81,9 @@ const AudioBranding = ({ data, location }) => {
         <p>
           Each audio brand is unique, as is the brand itself. Each business has
           its own needs, and there is no universal formula and composition of
-          the audio brand. Therefore, for each project, we create a personal set
-          of elements depending on the tasks that need to be solved.
+          the audio brand. Therefore, for each project, we create a personal
+          strategy and a set of elements depending on the tasks that need to be
+          solved.
         </p>
       </ServiceSection>
       <ServiceSection title="Our works" noGatters>
@@ -186,10 +192,10 @@ const AudioBranding = ({ data, location }) => {
           </CardDeckItem>
           <CardDeckItem variant="full-waves" textAlign="left">
             We think about not only how, but where and when your brand will
-            sound. Initially, we create an image track or jingle that determines
-            what all the other elements of the audio brand will sound like.
-            Often the jingle transforms into a variety of forms, even into the
-            sound of notifications on the phone.
+            sound. We first develop audio DNA, a central music theme that
+            reflects the ideology and distinctive features of the brand. It
+            defines what all other audio brand elements will sound like, meaning
+            audio logo, brand tracks, jingles, app notifications, and so on.
           </CardDeckItem>
           <CardDeckItem variant="waves" textAlign="left">
             We carefully study your brand, get into the very depths of your
@@ -199,11 +205,10 @@ const AudioBranding = ({ data, location }) => {
             even more precisely.
           </CardDeckItem>
           <CardDeckItem variant="rect-revers" textAlign="center">
-            But it would be best if you certainly were prepared for the fact
-            that we need some creative freedom. Because music and sound are art
-            forms, after all, and should go beyond a rigid framework. At some
-            point, you will have to trust us so we can find a voice for your
-            brand.
+            We believe that music and sound are art forms, after all, and should
+            go beyond a rigid framework. But we know how to work with them so
+            that you get a potent competitive advantage at the edge of
+            functionality and emotions.
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
@@ -220,6 +225,7 @@ const AudioBranding = ({ data, location }) => {
 export const query = graphql`
   query AudioBrandingEnPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { audiobrending: { audiobrending_visibility: { eq: true } } }
         polylang_current_lang: { eq: "en" }
@@ -233,12 +239,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -246,6 +248,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

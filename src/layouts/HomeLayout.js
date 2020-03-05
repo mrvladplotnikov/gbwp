@@ -13,6 +13,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
+import useDetectKeyboard from "../utils/useDetectKeyboard"
 
 const HomeLayout = ({ children, location, i18nMessages }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -20,6 +21,8 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
     setMenuIsOpen(!menuIsOpen)
   }
   const [hideOnScroll, setHideOnScroll] = useState(false)
+
+  useDetectKeyboard()
 
   useScrollPosition(
     ({ currPos }) => {

@@ -25,6 +25,7 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
+  margin-top: 0;
 }
 
 .box {
@@ -62,21 +63,24 @@
     font-size: 22px;
     line-height: 35px;
     text-align: justify;
-    padding: 340px 15px 320px 15px;
+    padding: 340px 100px 320px 100px;
     margin-bottom: 125px;
   }
   .section h1 {
     font-size: 100px;
     line-height: 122px;
     text-transform: uppercase;
+    text-align: left;
   }
   .section h2 {
     font-size: 70px;
     line-height: 85px;
+    text-align: left;
   }
   .section h3 {
     font-size: 32px;
     line-height: 37px;
+    text-align: left;
   }
   .linkContainer {
     margin-top: 106px;
@@ -101,5 +105,11 @@
   .boxBottomRight {
     bottom: 15px;
     right: -39px;
+  }
+}
+
+@media (min-width: 1660px) {
+  .section {
+    padding: 340px 15px 320px 15px;
   }
 }

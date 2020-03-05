@@ -1,9 +1,30 @@
-import React from "react"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 
-const TermItem = ({ className = "", terms = [], name }) => {
+const TermItem = ({ className = "", terms, name }) => {
   if (!terms) return null
 
+  if (typeof terms === "string") {
+    const splitTerms = terms.split(",")
+    return (
+      <li>
+        {`${name}: `}
+        <ul className={className}>
+          {splitTerms.map((name, i) => {
+            if (splitTerms.length === i + 1) {
+              return <li key={i}>{name}</li>
+            }
+
+            return (
+              <Fragment key={i}>
+                <li>{`${name},`}</li>{" "}
+              </Fragment>
+            )
+          })}
+        </ul>
+      </li>
+    )
+  }
   return (
     <li>
       {`${name}: `}
@@ -14,9 +35,9 @@ const TermItem = ({ className = "", terms = [], name }) => {
           }
 
           return (
-            <>
-              <li key={id}>{`${name},`}</li>{" "}
-            </>
+            <Fragment key={id}>
+              <li>{`${name},`}</li>{" "}
+            </Fragment>
           )
         })}
       </ul>
@@ -26,12 +47,15 @@ const TermItem = ({ className = "", terms = [], name }) => {
 
 TermItem.propTypes = {
   className: PropTypes.string,
-  terms: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
+  terms: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+    PropTypes.string,
+  ]),
   name: PropTypes.string.isRequired,
 }
 

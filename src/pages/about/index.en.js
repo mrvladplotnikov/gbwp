@@ -77,7 +77,7 @@ const About = ({ data, location }) => {
                 or her job. Whether it is music composing, sound design, voice
                 acting, project management, or marketing — we cannot imagine our
                 lives without it. That is why every day we inspire listeners on
-                both sides of media projects and enjoy it.
+                both sides of audiovisual projects and enjoy it.
               </p>
             </div>
             <div className={styles.aboutCol}>
@@ -166,7 +166,8 @@ const About = ({ data, location }) => {
         </FeatureCard>
       </Why>
       <SectionWithText
-        linkLabel="Наши ценности"
+        linkLabel="Our values"
+        link="/en/our-values"
         style={{ backgroundColor: "#090909" }}
       >
         <h3>
@@ -196,10 +197,7 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageEnQuery {
-    team: allWordpressWpTeam(
-      limit: 5
-      filter: { polylang_current_lang: { eq: "en" } }
-    ) {
+    team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "en" } }) {
       members: nodes {
         id
         name: title

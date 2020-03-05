@@ -35,41 +35,46 @@ const SoundDesign = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            Если музыка — это искусство, то звук — изначально способ передачи
+            информации.
+          </h3>
+          <p>
+            Притом, один из самых древних. Но это не значит, что музыка — только
+            эмоциональна, а звук — только информативен. Секундный звук тоже
+            может быть эмоционален и точно как и музыка напрямую воздействовать
+            на эмоции человека.
+          </p>
+          <p>
+            Хотим мы этого или нет, но тревожный звук заставит нас
+            насторожиться. Именно за подобные вещи мы и обожаем звуковой дизайн.
+            А ещё за то, как он преображает любую картинку, добавляет в неё
+            жизни, помогает зрителю поверить в происходящее. Магия!
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Звуковой дизайн"
     >
-      <ServiceHero>
-        <h3>
-          Если музыка — это искусство, то звук — изначально способ передачи
-          информации.
-        </h3>
-        <p>
-          Притом, один из самых древних. Но это не значит, что музыка — только
-          эмоциональна, а звук — только информативен. Секундный звук тоже может
-          быть эмоционален и точно как и музыка напрямую воздействовать на
-          эмоции человека.
-        </p>
-        <p>
-          Хотим мы этого или нет, но тревожный звук заставит нас насторожиться.
-          Именно за подобные вещи мы и обожаем звуковой дизайн. А ещё за то, как
-          он преображает любую картинку, добавляет в неё жизни, помогает зрителю
-          поверить в происходящее. Магия!
-        </p>
-      </ServiceHero>
       <ServiceSection title="Что мы делаем?">
         <p>Мы создаём:</p>
         <ServiceIconList>
           <ServiceIcon
-            title="Звуковые эффекты для любых медиа-проектов"
-            icon={PlayerIcon}
+            title="Звуковые эффекты для аудиовизуальных проектов"
+            icon={FileIcon}
+            style={{ maxWidth: 260 }}
           />
           <ServiceIcon
             title="Звуковое оформление для motion-графики"
-            icon={FileIcon}
+            icon={PlayerIcon}
+            style={{ maxWidth: 260 }}
           />
           <ServiceIcon
             title="Звуковое оформление пространства (квест-комнаты, инсталляции и прочее)"
             icon={RoomIcon}
+            style={{ maxWidth: 260 }}
           />
         </ServiceIconList>
         <p>
@@ -227,6 +232,7 @@ const SoundDesign = ({ data, location }) => {
 export const query = graphql`
   query SoundDesignRuPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { sound_design: { sound_design_visibility: { eq: true } } }
         polylang_current_lang: { eq: "ru" }
@@ -240,12 +246,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -253,6 +255,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

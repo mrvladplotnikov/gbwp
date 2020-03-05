@@ -65,24 +65,26 @@ const MusicCreation = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>Больше всего мы любим музыку за её возможности.</h3>
+          <p>
+            Это ведь самый сильный вид искусства, если сравнивать их всех по
+            эмоциональному воздействию. Знаете, как это бывает, когда одна песня
+            меняет ваше настроение?
+          </p>
+          <p>
+            Всего пару нот, правильный ритмический рисунок и вот уже человек
+            готов к великим свершениям. А стоит слегка изменить аранжировку — и
+            он внезапно предаётся грустным воспоминаниям. Всё это захватывает
+            нас и заставляет каждый день делать то, что мы делаем. Слушать,
+            изучать и, в конце-концов, создавать музыку.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Создание музыки"
     >
-      <ServiceHero>
-        <h3>Больше всего мы любим музыку за её возможности.</h3>
-        <p>
-          Это ведь самый сильный вид искусства, если сравнивать их всех по
-          эмоциональному воздействию. Знаете, как это бывает, когда одна песня
-          меняет ваше настроение?
-        </p>
-        <p>
-          Всего пару нот, правильный ритмический рисунок и вот уже человек готов
-          к великим свершениям. А стоит слегка изменить аранжировку — и он
-          внезапно предаётся грустным воспоминаниям. Всё это захватывает нас и
-          заставляет каждый день делать то, что мы делаем. Слушать, изучать и, в
-          конце-концов, создавать музыку.
-        </p>
-      </ServiceHero>
       <ServiceSection title="Что мы делаем?">
         <p>Мы пишем саундтреки и создаём музыку для:</p>
 
@@ -331,6 +333,7 @@ const MusicCreation = ({ data, location }) => {
 export const query = graphql`
   query MusicCreationRUPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { music_composing: { music_composing_visibility: { eq: true } } }
         polylang_current_lang: { eq: "ru" }
@@ -347,12 +350,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -360,6 +359,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

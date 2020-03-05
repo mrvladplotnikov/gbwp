@@ -4,7 +4,12 @@ import { Link } from "gatsby"
 
 const NavItem = ({ label = "", link = "" }) => (
   <li>
-    <Link to={link}>{label}</Link>
+    <Link to={link}>
+      <span>
+        {label}
+        <span className="navigationDrawerArrow"></span>
+      </span>
+    </Link>
   </li>
 )
 

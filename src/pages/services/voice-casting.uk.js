@@ -60,42 +60,50 @@ const VoiceCasting = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            Нам подобається думати про людський голос як про найдосконаліший
+            музичний інструмент.
+          </h3>
+          <p>
+            Ми не знаємо іншого інструменту, який здатний так точно розкрити
+            посил автора, передати весь спектр емоцій і невловимі нюанси
+            настрою. І якщо вокал — це один зі значущих елементів музики, то
+            голосове озвучення — це самостійний вид мистецтва.
+          </p>
+          <p>
+            Правильне голосове озвучення або озвучування — це не просто начитка
+            потрібного тексту добре поставленим голосом. Це імовірніше про
+            управління увагою слухача, розкриття персонажів і створення
+            атмосфери. Це те, що змушує людину слухати і вірити почутому.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Голосове озвучення"
     >
-      <ServiceHero>
-        <h3>
-          Нам подобається думати про людський голос як про найдосконаліший
-          музичний інструмент.
-        </h3>
-        <p>
-          Ми не знаємо іншого інструменту, який здатний так точно розкрити посил
-          автора, передати весь спектр емоцій і невловимі нюанси настрою. І якщо
-          вокал — це один зі значущих елементів музики, то голосове озвучення —
-          це самостійний вид мистецтва.
-        </p>
-        <p>
-          Правильне голосове озвучення або озвучування — це не просто начитка
-          потрібного тексту добре поставленим голосом. Це імовірніше про
-          управління увагою слухача, розкриття персонажів і створення атмосфери.
-          Це те, що змушує людину слухати і вірити почутому.
-        </p>
-      </ServiceHero>
       <ServiceSection title="Що ми робимо?">
         <p>
           Якщо говорити коротко — ми продюсуємо голосове озвучення, а конкретно
           займаємося:
         </p>
-        <ServiceIconList>
+        <ServiceIconList align="space-evenly">
           <ServiceIcon
             title="Кастингом акторів голосового озвучення"
             icon={MaleIcon}
+            style={{ maxWidth: 200 }}
           />
           <ServiceIcon
             title="Організацією процесу запису і веденням проекту"
             icon={LaptopIcon}
+            style={{ maxWidth: 200 }}
           />
-          <ServiceIcon title="Обробкою аудіо файлів" icon={FileIcon} />
+          <ServiceIcon
+            title="Обробкою аудіо файлів"
+            icon={FileIcon}
+            style={{ maxWidth: 200 }}
+          />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Наші роботи">
@@ -272,6 +280,7 @@ const VoiceCasting = ({ data, location }) => {
 export const query = graphql`
   query VoiceCastingUkPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { vice_over: { vice_over_visibility: { eq: true } } }
         polylang_current_lang: { eq: "uk" }
@@ -285,12 +294,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -298,6 +303,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

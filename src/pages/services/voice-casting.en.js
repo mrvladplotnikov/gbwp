@@ -60,36 +60,50 @@ const VoiceCasting = ({ data, location }) => {
           image={sidebarImage}
         />
       }
+      ServiceHero={
+        <ServiceHero>
+          <h3>
+            We like to think of the human voice as the perfect musical
+            instrument.
+          </h3>
+          <p>
+            We do not know any other instrument that reveals the message of the
+            author, convey the whole spectrum of emotions, and the elusive
+            nuances of mood in such an accurate way. And if vocals are one of
+            the crucial elements of music, then voice acting is an independent
+            art form.
+          </p>
+          <p>
+            The correct voice-over is not just a recitation of the necessary
+            text with a well-set voice. It is more about managing the attention
+            of the listener, revealing the characters, and creating an
+            atmosphere. The right voice is what makes people listen and believe
+            what they hear.
+          </p>
+        </ServiceHero>
+      }
       location={location}
       title="Voice casting"
     >
-      <ServiceHero>
-        <h3>
-          We like to think of the human voice as the perfect musical instrument.
-        </h3>
-        <p>
-          We do not know any other instrument that reveals the message of the
-          author, convey the whole spectrum of emotions, and the elusive nuances
-          of mood in such an accurate way. And if vocals are one of the crucial
-          elements of music, then voice acting is an independent art form.
-        </p>
-        <p>
-          The correct voice-over is not just a recitation of the necessary text
-          with a well-set voice. It is more about managing the attention of the
-          listener, revealing the characters, and creating an atmosphere. The
-          right voice is what makes people listen and believe what they hear.
-        </p>
-      </ServiceHero>
       <ServiceSection title="What are we doing?">
         <p>In short, we produce voice-overs, and specifically deal with the:</p>
 
-        <ServiceIconList>
-          <ServiceIcon title="Casting voice actors" icon={MaleIcon} />
+        <ServiceIconList align="space-evenly">
+          <ServiceIcon
+            title="Casting voice actors"
+            icon={MaleIcon}
+            style={{ maxWidth: 200 }}
+          />
           <ServiceIcon
             title="Organization of the recording process and project management"
             icon={LaptopIcon}
+            style={{ maxWidth: 200 }}
           />
-          <ServiceIcon title="Processing audio files" icon={FileIcon} />
+          <ServiceIcon
+            title="Processing audio files"
+            icon={FileIcon}
+            style={{ maxWidth: 200 }}
+          />
         </ServiceIconList>
       </ServiceSection>
       <ServiceSection title="Our works">
@@ -262,6 +276,7 @@ const VoiceCasting = ({ data, location }) => {
 export const query = graphql`
   query VoiceCastingEnPageQuery {
     reviews: allWordpressWpClientReview(
+      limit: 5
       filter: {
         acf: { vice_over: { vice_over_visibility: { eq: true } } }
         polylang_current_lang: { eq: "en" }
@@ -275,12 +290,8 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -288,6 +299,7 @@ export const query = graphql`
         meta: acf {
           company
           position
+          link: s_link
         }
       }
     }

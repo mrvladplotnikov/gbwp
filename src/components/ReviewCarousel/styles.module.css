@@ -14,6 +14,11 @@
   color: #ffffff;
 }
 
+.review .meta a:hover {
+  background: transparent;
+  -webkit-text-fill-color: currentColor;
+}
+
 .nameAndPos {
   font-style: normal;
   font-weight: bold;
@@ -63,6 +68,7 @@
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  max-width: 710px;
 }
 
 .content p:first-child {
@@ -123,9 +129,13 @@
     text-align: left;
   }
 
+  .meta {
+    max-width: 220px;
+    margin-right: 0;
+  }
+
   .thumbnail {
     margin: 0 0 17px 0;
-    max-width: initial;
   }
 
   .content {
@@ -137,41 +147,3 @@
     width: 100%;
   }
 }
-
-/* @media (min-width: 1600px) {
-  .meta {
-    margin-right: 23px;
-    min-width: 250px;
-  }
-
-  .nameAndPos {
-    text-align: left;
-  }
-
-  .thumbnail {
-    max-width: 250px;
-    margin-bottom: 25px;
-  }
-
-  .noImage {
-    width: 100%;
-    margin-bottom: 25px;
-    object-fit: cover;
-  }
-
-  .company {
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .content {
-    font-size: 22px;
-    line-height: 37px;
-  }
-
-  .readMoreButton {
-    font-size: 22px;
-    line-height: 37px;
-  }
-} */
