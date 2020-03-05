@@ -6,7 +6,6 @@ import { object, string } from "yup"
 import { wrapComponent } from "react-snackbar-alert"
 import FormGroup from "../FormGroup"
 import FormButton from "../FormButton"
-import styles from "./styles.module.css"
 import { Outer } from "../Container"
 import Headline from "../Headline"
 import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
@@ -107,7 +106,6 @@ const ModalContactForm = ({
       isOpen={open}
       onRequestClose={handleClose}
       contentLabel="Details"
-      className={styles.modal}
       closeTimeoutMS={300}
       style={{
         overlay: {
@@ -133,13 +131,13 @@ const ModalContactForm = ({
         },
       }}
     >
-      <Outer className={styles.container}>
-        <Headline className={styles.title} Tag="h2">
+      <Outer className="ModalContactForm__container">
+        <Headline className="ModalContactForm__title" Tag="h2">
           {title}
         </Headline>
-        <p className={styles.subTitle}>{subTitle}</p>
-        <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <div className={styles.formGroups}>
+        <p className="ModalContactForm__subTitle">{subTitle}</p>
+        <form className="ModalContactForm__form" onSubmit={formik.handleSubmit}>
+          <div className="ModalContactForm__formGroups">
             <FormGroup
               name="firstName"
               label={intl.formatMessage({ id: "firstName" })}
@@ -159,7 +157,7 @@ const ModalContactForm = ({
               error={formik.touched.email && formik.errors.email}
             />
           </div>
-          <div className={styles.actions}>
+          <div className="ModalContactForm__actions">
             <FormattedHTMLMessage id="subscriptionPrivacy" />
             <FormButton type="submit" loading={formik.isSubmitting}>
               {intl.formatMessage({ id: "submit" })}

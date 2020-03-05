@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import styles from "./styles.module.css"
 
 const InlineButton = ({
   className = "",
@@ -12,7 +11,7 @@ const InlineButton = ({
   return (
     <button
       onClick={onClick}
-      className={classNames(styles.button, className)}
+      className={classNames("InlineButton", className)}
       {...rest}
     >
       {children}
