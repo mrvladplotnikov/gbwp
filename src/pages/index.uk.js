@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../layouts/uk/home"
 import Hero from "../components/lendingSections/Hero"
@@ -19,8 +19,11 @@ import icon6 from "../images/vp-icons/icon-6.svg"
 
 import mailTo from "../utils/mailTo"
 import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
+import InlineButton from "../components/InlineButton"
 
 const Home = ({ data, location }) => {
+  const [showFrom, setShowForm] = useState(false)
+
   const works = data.works.nodes
 
   return (
@@ -32,7 +35,6 @@ const Home = ({ data, location }) => {
         linkLabel="Про нас"
         linkURL="/about"
       />
-      <ModalContactForm open={true} onClose={() => console.log("log")} />
       <Why>
         <FeatureCard img={icon1}>
           Ми — партнери наших клієнтів. Нам важливий успіх вашого конкретного
@@ -60,10 +62,19 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Як щодо <a href={mailTo.mail.uk}>безкоштовної консультації</a> або{" "}
-          <a href="/">крутого темплейта ТЗ</a>? Ми завжди відкриті до
-          спілкування, так що сміливо <a href="/">пишіть</a>.
+          <InlineButton onClick={() => setShowForm(true)}>
+            крутого темплейта ТЗ
+          </InlineButton>
+          ? Ми завжди відкриті до спілкування, так що сміливо{" "}
+          <a href="/">пишіть</a>.
         </FeatureCard>
       </Why>
+      <ModalContactForm
+        title="Темплейт технічного завдання"
+        subTitle="Ми впевнені, що правильно складене ТЗ підвищує шанси на успіх проекту. Тому з радістю ділимося тим, що працює для нас!"
+        open={showFrom}
+        onClose={() => setShowForm(false)}
+      />
       <Services
         title="Наші послуги"
         services={[

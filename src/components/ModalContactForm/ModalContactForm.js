@@ -1,70 +1,111 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Modal from "react-modal"
 import { useFormik } from "formik"
 import { object, string } from "yup"
+import { wrapComponent } from "react-snackbar-alert"
 import FormGroup from "../FormGroup"
 import FormButton from "../FormButton"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./styles.module.css"
 import { Outer } from "../Container"
 import Headline from "../Headline"
-import addToMailchimp from "gatsby-plugin-mailchimp"
 import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
 
 Modal.setAppElement("#___gatsby")
 
-const renderFormStatusMessage = result => {
-  if (result.result === "success")
-    return <span className={styles.formMsgSuccess}>Успех</span>
+const sendMail = async ({ name = "", email = "", lang = "", url = "" }) => {
+  try {
+    const response = await fetch("https://vp-production.com/mail/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+      },
+      body: new URLSearchParams({
+        name,
+        email,
+        lang,
+        url,
+      }),
+    })
 
-  if (result.msg.includes("already subscribed"))
-    return <span className={styles.formMsg}>Уже подписан</span>
+    const result = await response.json()
 
-  return (
-    <span className={styles.formMsgError}>
-      Ошибка, попробуйте позже или свяжитесь с нами
-    </span>
-  )
+    if (result.status === "Ok") {
+      return {
+        status: "Ok",
+      }
+    }
+
+    return {
+      status: "Error",
+    }
+  } catch (error) {
+    console.error(error)
+    return {
+      status: "Error",
+    }
+  }
 }
 
-const validationSchema = object({
-  firstName: string()
-    .max(15, "Must be 15 characters or less")
-    .required("Required"),
-  email: string()
-    .email("Invalid email address")
-    .required("Required"),
-})
-
-const ModalContactForm = ({ open, onClose, intl }) => {
-  const [formResult, setFormResult] = useState(null)
+const ModalContactForm = ({
+  open,
+  onClose,
+  intl,
+  title,
+  subTitle,
+  customLocation,
+  createSnackbar,
+}) => {
+  const validationSchema = object({
+    firstName: string().required(intl.formatMessage({ id: "required" })),
+    email: string()
+      .email(intl.formatMessage({ id: "invalidemail" }))
+      .required(intl.formatMessage({ id: "required" })),
+  })
 
   const formik = useFormik({
     initialValues: {
       firstName: "",
       email: "",
     },
-    onSubmit: async (values, actions) => {
-      const result = await addToMailchimp(values.email, {
-        FNAME: values.firstName,
-        LANG: intl.locale,
+    onSubmit: async ({ firstName, email }, actions) => {
+      const result = await sendMail({
+        name: firstName,
+        email,
+        lang: intl.locale,
+        url: !customLocation
+          ? window.location.href
+          : `${window.location.href}/${customLocation}`,
       })
-      setFormResult(result)
-      actions.setSubmitting(false)
-      if (result.result === "success") {
-        setTimeout(() => {
-          onClose()
-        }, 1000)
+
+      if (result.status === "Ok") {
+        createSnackbar({
+          message: intl.formatMessage({ id: "successMailSend" }),
+          theme: "success",
+        })
+      } else {
+        createSnackbar({
+          message: intl.formatMessage({ id: "errorMailSend" }),
+          theme: "error",
+        })
       }
+
+      actions.setSubmitting(false)
+      actions.resetForm()
+      onClose()
     },
     validationSchema,
   })
 
+  const handleClose = () => {
+    formik.resetForm()
+    onClose()
+  }
+
   return (
     <Modal
       isOpen={open}
-      onRequestClose={onClose}
+      onRequestClose={handleClose}
       contentLabel="Details"
       className={styles.modal}
       closeTimeoutMS={300}
@@ -86,29 +127,18 @@ const ModalContactForm = ({ open, onClose, intl }) => {
           outline: "none",
           top: 0,
           left: 0,
+          width: "100%",
           right: 0,
           bottom: 0,
         },
       }}
     >
       <Outer className={styles.container}>
-        <button
-          type="button"
-          onClick={onClose}
-          className={styles.closeModalButton}
-        >
-          <FontAwesomeIcon icon={["fas", "times"]} />
-        </button>
         <Headline className={styles.title} Tag="h2">
-          {intl.formatHTMLMessage({ id: "subscriptionTitle" })}
+          {title}
         </Headline>
-        <p className={styles.subTitle}>
-          {intl.formatHTMLMessage({ id: "subscriptionSubTitle" })}
-        </p>
+        <p className={styles.subTitle}>{subTitle}</p>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <div className={styles.formState}>
-            {formResult && renderFormStatusMessage(formResult)}
-          </div>
           <div className={styles.formGroups}>
             <FormGroup
               name="firstName"
@@ -144,12 +174,18 @@ const ModalContactForm = ({ open, onClose, intl }) => {
 ModalContactForm.defaultProps = {
   open: false,
   onClose: () => {},
+  title: "",
+  subTitle: "",
+  customLocation: "",
 }
 
 ModalContactForm.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
+  title: PropTypes.node,
+  subTitle: PropTypes.node,
   intl: intlShape,
+  customLocation: PropTypes.string,
 }
 
-export default injectIntl(ModalContactForm)
+export default wrapComponent(injectIntl(ModalContactForm))

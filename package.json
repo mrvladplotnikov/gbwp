@@ -16,7 +16,6 @@
     "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-i18n": "^1.0.1",
-    "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-react-helmet": "^3.1.18",
@@ -41,7 +40,9 @@
     "react-masonry-css": "^1.0.14",
     "react-modal": "^3.11.1",
     "react-select": "^3.0.8",
+    "react-snackbar-alert": "^2.1.0",
     "react-transition-group": "^4.3.0",
+    "styled-components": "^5.0.1",
     "yup": "^0.28.1"
   },
   "devDependencies": {

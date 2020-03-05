@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { SnackbarProvider } from "react-snackbar-alert"
 import { getCurrentLangKey } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from "react-intl"
@@ -43,7 +44,13 @@ const EmptyLayout = ({
               meta={meta}
               lang={langKey}
             />
-            {children}
+            <SnackbarProvider
+              position="top"
+              pauseOnHover={true}
+              dismissable={false}
+            >
+              {children}
+            </SnackbarProvider>
           </>
         </IntlProvider>
       )

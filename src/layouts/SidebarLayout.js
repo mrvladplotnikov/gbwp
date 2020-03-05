@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { SnackbarProvider } from "react-snackbar-alert"
 import Footer from "../components/Footer"
 import { Inner } from "../components/Container"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
@@ -68,7 +69,13 @@ const SidebarLayout = ({
                 <aside className="site-sidebar">{Sidebar}</aside>
                 <div className="site-content">
                   <Inner>
-                    {children}
+                    <SnackbarProvider
+                      position="top"
+                      pauseOnHover={true}
+                      dismissable={false}
+                    >
+                      {children}
+                    </SnackbarProvider>
                     <Footer />
                   </Inner>
                 </div>

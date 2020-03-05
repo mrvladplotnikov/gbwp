@@ -44,3 +44,12 @@
 .form-group__text--error {
   color: red;
 }
+
+@media (min-width: 1200px) {
+  .form-group {
+    max-width: initial;
+  }
+  .form-group:first-child {
+    margin-right: 30px;
+  }
+}

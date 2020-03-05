@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../../layouts/uk/default"
@@ -23,12 +23,16 @@ import logoWithSlogan from "../../images/logo-with-slogan.svg"
 import TeamCarousel from "../../components/TeamCarousel"
 
 import mailTo from "../../utils/mailTo"
+import InlineButton from "../../components/InlineButton"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const Box = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
 
 const About = ({ data, location }) => {
+  const [showFrom, setShowForm] = useState(false)
+
   const team = data.team.members
 
   return (
@@ -158,8 +162,11 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Як щодо <a href={mailTo.mail.uk}>безкоштовної консультації</a> або{" "}
-          <a href="/">крутого темплейта ТЗ</a>? Ми завжди відкриті до
-          спілкування, так що сміливо <a href="/">пишіть</a>.
+          <InlineButton onClick={() => setShowForm(true)}>
+            крутого темплейта ТЗ
+          </InlineButton>
+          ? Ми завжди відкриті до спілкування, так що сміливо{" "}
+          <a href="/">пишіть</a>.
         </FeatureCard>
       </Why>
       <SectionWithText
@@ -178,6 +185,12 @@ const About = ({ data, location }) => {
         стати частиною нашої команди? Та що завгодно! Ми будемо раді з вами
         познайомитися й допомогти.
       </Contacts>
+      <ModalContactForm
+        title="Темплейт технічного завдання"
+        subTitle="Ми впевнені, що правильно складене ТЗ підвищує шанси на успіх проекту. Тому з радістю ділимося тим, що працює для нас!"
+        open={showFrom}
+        onClose={() => setShowForm(false)}
+      />
     </Layout>
   )
 }

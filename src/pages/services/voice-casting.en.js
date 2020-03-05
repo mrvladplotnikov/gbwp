@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
-import Layout from "../../layouts/uk/sidebar"
+import Layout from "../../layouts/en/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
 import Sidebar from "../../components/Sidebar"
@@ -23,8 +23,31 @@ import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
 import mailTo from "../../utils/mailTo"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const VoiceCasting = ({ data, location }) => {
+  const [showForm, setShowForm] = useState(false)
+  const [formTitle, setFromTitle] = useState("")
+  const [formSubTitle, setFromSubTitle] = useState("")
+  const [formKey, setFromKey] = useState("")
+
+  const handleFormShow = (title = "", subTitle = "", key = "") => {
+    setFromTitle(title)
+    setFromSubTitle(subTitle)
+    setFromKey(key)
+    setShowForm(true)
+  }
+
+  const handleFormClose = () => {
+    setShowForm(false)
+
+    setTimeout(() => {
+      setFromTitle("")
+      setFromSubTitle("")
+      setFromKey("")
+    }, 500)
+  }
+
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   return (
@@ -171,12 +194,26 @@ const VoiceCasting = ({ data, location }) => {
             icon={HouseIcon}
             subTitle="Available languages"
             list={["Ukrainian", "Russian", "English"]}
+            onClick={() =>
+              handleFormShow(
+                "Find out the cost",
+                "Please leave us your email, and we will be happy to send you our voice casting offers.",
+                "local-voice-casting"
+              )
+            }
           />
           <PlanCard
             title="Foreign voice actors"
             icon={PlanetIcon}
             subTitle="Available languages"
             list={["English", "German", "French", "Spanish", "Chinese"]}
+            onClick={() =>
+              handleFormShow(
+                "Find out the cost",
+                "Please leave us your email, and we will be happy to send you our voice casting offers.",
+                "foreign-voice-casting"
+              )
+            }
           />
         </PlanList>
         <p>
@@ -185,6 +222,13 @@ const VoiceCasting = ({ data, location }) => {
           talent.
         </p>
       </ServiceSection>
+      <ModalContactForm
+        title={formTitle}
+        subTitle={formSubTitle}
+        customLocation={formKey}
+        open={showForm}
+        onClose={handleFormClose}
+      />
       <ServiceSection title="Our approach">
         <CardDeck>
           <CardDeckItem variant="rect" textAlign="left">

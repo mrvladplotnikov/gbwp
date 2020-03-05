@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../../layouts/en/default"
@@ -23,12 +23,15 @@ import logoWithSlogan from "../../images/logo-with-slogan.svg"
 import TeamCarousel from "../../components/TeamCarousel"
 
 import mailTo from "../../utils/mailTo"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
+import InlineButton from "../../components/InlineButton"
 
 const Box = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
 
 const About = ({ data, location }) => {
+  const [showFrom, setShowForm] = useState(false)
   const team = data.team.members
 
   return (
@@ -155,8 +158,11 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
-          <a href="/">technical task template</a>? We are always open to
-          communication, so feel free to <a href="/">email us</a>.
+          <InlineButton onClick={() => setShowForm(true)}>
+            technical task template
+          </InlineButton>
+          ? We are always open to communication, so feel free to{" "}
+          <a href="/">email us</a>.
         </FeatureCard>
       </Why>
       <SectionWithText
@@ -174,6 +180,12 @@ const About = ({ data, location }) => {
         specify a vital question, or maybe you want to become part of our team?
         Anything you want! We will be happy to get to know you and help.
       </Contacts>
+      <ModalContactForm
+        title="Technical task template"
+        subTitle="We are confident that a correctly made technical task increases the chances of success of the project. Therefore, we are happy to share what works for us!"
+        open={showFrom}
+        onClose={() => setShowForm(false)}
+      />
     </Layout>
   )
 }

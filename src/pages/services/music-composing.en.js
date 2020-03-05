@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/en/sidebar"
 import ServiceHero from "../../components/ServiceHero"
@@ -28,8 +28,31 @@ import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
 import mailTo from "../../utils/mailTo"
+import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const MusicCreation = ({ data, location }) => {
+  const [showForm, setShowForm] = useState(false)
+  const [formTitle, setFromTitle] = useState("")
+  const [formSubTitle, setFromSubTitle] = useState("")
+  const [formKey, setFromKey] = useState("")
+
+  const handleFormShow = (title = "", subTitle = "", key = "") => {
+    setFromTitle(title)
+    setFromSubTitle(subTitle)
+    setFromKey(key)
+    setShowForm(true)
+  }
+
+  const handleFormClose = () => {
+    setShowForm(false)
+
+    setTimeout(() => {
+      setFromTitle("")
+      setFromSubTitle("")
+      setFromKey("")
+    }, 500)
+  }
+
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   return (
@@ -86,7 +109,7 @@ const MusicCreation = ({ data, location }) => {
           width="100%"
           height="450"
           scrolling="no"
-          frameborder="no"
+          frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/174940453&color=%23f23b0d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
@@ -168,7 +191,16 @@ const MusicCreation = ({ data, location }) => {
           suitable option for your project.
         </p>
 
-        <PlanList label="All offers" onClick={() => {}}>
+        <PlanList
+          label="All offers"
+          onClick={() =>
+            handleFormShow(
+              "Compare packages",
+              "Please leave us your email, and we will gladly send you the cost of all our music composing packages.",
+              "all"
+            )
+          }
+        >
           <PlanCard
             title="Standart"
             icon={StandartIcon}
@@ -178,6 +210,13 @@ const MusicCreation = ({ data, location }) => {
               "five free edits",
               "50 % prepayment",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Standard package",
+                "Great choice! Our standard never fails. Please leave us your email, and we will gladly send you the comparison of this package cost with others.",
+                "standart"
+              )
+            }
           />
           <PlanCard
             title="Soft Launch"
@@ -190,21 +229,49 @@ const MusicCreation = ({ data, location }) => {
               "50 % prepayment",
               "upon further ordering of Standard / Premium packages for the same track, Soft Launch price is included",
             ]}
+            onClick={() =>
+              handleFormShow(
+                "Soft Launch Package",
+                "Who says it is boring to play it safe? We do not agree with that person, and therefore developed a proposal specifically for Soft Launch. Please leave us your email, and we will gladly send you the comparison of this package cost with others.",
+                "soft-launch"
+              )
+            }
           />
           <PlanCard
             title="S.O.S"
             icon={SosIcon}
             subTitle="When everything is burning"
             list={["completion — ASAP", "without edits", "full prepayment"]}
+            onClick={() =>
+              handleFormShow(
+                "S.O.S Package",
+                "If all the jokes about burning deadlines are not jokes for you, then right now, you have made the right choice! Please leave us your email, and we will gladly send you the comparison of this package cost with others.",
+                "s-o-s"
+              )
+            }
           />
           <PlanCard
             title="Premium"
             icon={PremiumIcon}
             subTitle="Yes, you're on a horse"
             list={["completion — ASAP", "five free edits", "50 % prepayment"]}
+            onClick={() =>
+              handleFormShow(
+                "Premium Package",
+                "They say it’s impossible to get everything at once. But we made an effort and prepared such a proposal. Please leave us your email, and we will gladly send you the comparison of this package cost with others.",
+                "premium"
+              )
+            }
           />
         </PlanList>
       </ServiceSection>
+      <ModalContactForm
+        title={formTitle}
+        subTitle={formSubTitle}
+        customLocation={formKey}
+        open={showForm}
+        onClose={handleFormClose}
+      />
       <ServiceSection title="Our approach">
         <CardDeck>
           <CardDeckItem variant="rect" textAlign="left">

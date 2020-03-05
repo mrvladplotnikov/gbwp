@@ -21,6 +21,11 @@
   background: #be503c;
 }
 
+input:focus,
+button:focus {
+  outline-color: #ef3b0e;
+}
+
 html {
   font-family: sans-serif;
   /* scroll-behavior: smooth; */
