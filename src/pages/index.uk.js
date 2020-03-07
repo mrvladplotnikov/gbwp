@@ -102,7 +102,7 @@ const Home = ({ data, location }) => {
         linkLabel="Портфолiо"
         linkURL="/portfolio"
       />
-      <SectionWithText linkLabel="Наші цінності">
+      <SectionWithText linkLabel="Наші цінності" link="/our-values">
         <h3>
           Завдяки аудіо ми надихаємо слухачів по обидві сторони аудіовізуальних
           проєктів на новий досвід і розкриття власного творчого потенціалу.

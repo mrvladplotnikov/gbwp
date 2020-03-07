@@ -102,7 +102,7 @@ const Home = ({ data, location }) => {
         linkLabel="Portfolio"
         linkURL="/en/portfolio"
       />
-      <SectionWithText linkLabel="Our Values">
+      <SectionWithText linkLabel="Our Values" link="/en/our-values">
         <h3>
           Using audio, we inspire listeners on both sides of audiovisual
           projects to live new experiences and discover their creative
