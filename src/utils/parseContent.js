@@ -17,5 +17,22 @@ export default (content, media) =>
           return domNode
         }
       }
+
+      if (domNode.name === "iframe") {
+        if (domNode.attribs.allowfullscreen !== undefined) {
+          return (
+            <div className="video-wrapper">
+              <iframe
+                {...domNode.attribs}
+                className="video"
+                width="100%"
+                height="100%"
+                allowFullScreen={true}
+                frameBorder="0"
+              />
+            </div>
+          )
+        }
+      }
     },
   })

@@ -82,6 +82,19 @@ body svg {
   stroke-width: 0;
 }
 
+body .video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+body .video-wrapper .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 @import "./layout.css";
 @import "./styledLink.css";
 @import "./container.css";
