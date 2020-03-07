@@ -75,7 +75,8 @@ const ReviewCarouselItem = ({
             )}
             <h4
               className={classNames(styles.nameAndPos, classes.name)}
-            >{`${name}, ${position}`}</h4>
+              dangerouslySetInnerHTML={{ __html: `${name}, ${position}` }}
+            />
           </a>
         ) : (
           <>
