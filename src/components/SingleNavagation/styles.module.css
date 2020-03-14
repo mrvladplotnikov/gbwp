@@ -5,10 +5,6 @@
 
 .container {
   padding: 0 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .topLine {
@@ -24,6 +20,8 @@
   display: flex;
   text-decoration: none;
   color: #ffffff;
+  max-width: 155px;
+  width: 100%;
 }
 
 .disabled {
@@ -76,6 +74,9 @@
   border: 1px solid #747474;
   box-sizing: border-box;
   z-index: 1;
+  max-width: 235px;
+  width: 100%;
+  margin: 0 auto;
 }
 .list::before {
   content: "";
@@ -97,15 +98,17 @@
   transform: scaleX(0);
 }
 .list.mobile {
-  display: inline-block;
+  display: block;
 }
 .list.desktop {
   display: none;
+  width: auto;
+  max-width: 100%;
 }
 
 @media (min-width: 574px) {
   .list.desktop {
-    display: inline-block;
+    display: block;
   }
   .list.mobile {
     display: none;
