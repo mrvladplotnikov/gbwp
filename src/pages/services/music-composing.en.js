@@ -60,8 +60,8 @@ const MusicCreation = ({ data, location }) => {
       Sidebar={
         <Sidebar
           title="Music composing"
-          text="When creating games, as when shooting a movie, the sound is significant. 60 or even 70% of sensations are created precisely due to sound. At the same time, the sound is not only musical accompaniment but also sound effects. Their presence or absence very much determines the atmosphere of the game."
-          autor="Hideo Kojima"
+          text="Where words are powerless, shows up the more expressive language — music."
+          autor="Peter Tchaikovsky"
           image={sidebarImage}
         />
       }
@@ -70,8 +70,7 @@ const MusicCreation = ({ data, location }) => {
           <h3>We love music mostly because of its potential.</h3>
           <p>
             After all, this is the most potent form of art if we compare them
-            all by their emotional impact. Do you know how one song entirely
-            changes your mood?
+            all by their emotional impact. Do you know how one song can entirely change your mood?
           </p>
           <p>
             Just a couple of notes, the correct rhythmic pattern, and a person
@@ -96,12 +95,12 @@ const MusicCreation = ({ data, location }) => {
           <ServiceIcon title="Theatre" icon={MasksIcon} />
         </ServiceIconList>
         <p>
-          We also create music for motion design, but it relates more to sound
+          We also create music for motion graphics, but it relates more to sound
           design so that you can read about it here.
         </p>
         <p>
           We do not compose backing tracks and songs for corporate parties. But
-          we do write corporate hymns — you can read more about it{" "}
+          we do write corporate anthems — you can read more about it{" "}
           <Link to="/en/services/audio-branding">here</Link>.
         </p>
       </ServiceSection>
@@ -127,7 +126,7 @@ const MusicCreation = ({ data, location }) => {
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              Acquaintance: you fill out a brief and get a{" "}
+              You fill out a brief and get a{" "}
               <a href={mailTo.mail.en}>free consultation</a>. We will get to
               know each other and understand if we are ready to cooperate. We
               need to match with the client in the general vision and principles
@@ -136,23 +135,24 @@ const MusicCreation = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
             <p>
-              at this stage, you create the technical task, and we help you with
+              At this stage, you create the technical task, and we help you with
               this if needed. You can read about why we do not do the technical
-              task by ourselves here. At the same time, we select references for
+              task by ourselves here.  </p>
+            <p> At the same time, we select references for
               the future track and prepare a contract with lawyers. We discuss
               and coordinate everything with you and proceed to the next stage.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Launch">
             <p>
-              together, we sign a contract, and you send us an advance payment,
+              Together, we sign a contract, and you send us an advance payment,
               then we proceed to the sketches. We usually create them in the
               form of a 30-second demo of the main theme of the track.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Production">
             <p>
-              this stage is the most crucial. We send you demos and get feedback
+              This stage is the most crucial. We send you demos and get feedback
               from you. Here you will need maximum concentration on the process
               because the fate of the composition depends on your wishes. We
               modify the track according to the proposals and send it back to
@@ -165,7 +165,7 @@ const MusicCreation = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Project acceptance">
             <p>
-              after all approvals, we send you the final file with the track.
+              After all approvals, we send you the final file with the track.
               This moment is the last chance to take advantage of free edits.
             </p>
             <p>
@@ -176,7 +176,7 @@ const MusicCreation = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Support">
             <p>
-              most often, this stage is needed for the big game projects and is
+              Most often, this stage is needed for the big game projects and is
               negotiated separately. We will only say that we are always happy
               for long-term cooperation.
             </p>
@@ -188,7 +188,7 @@ const MusicCreation = ({ data, location }) => {
         <p style={{ marginBottom: 60 }}>
           Apart from an easy-to-understand cooperation framework, we also
           developed some easy-to-understand music composing packages. We
-          analyzed the experience of previous projects, clients' reviews. We
+          analyzed the experience of previous projects and clients' reviews. We
           realized that this would be a much easier way for you to choose the
           suitable option for your project.
         </p>
@@ -204,13 +204,13 @@ const MusicCreation = ({ data, location }) => {
           }
         >
           <PlanCard
-            title="Standart"
+            title="Standard"
             icon={StandartIcon}
             subTitle="The naming is boring, the package is cool"
             list={[
               "completion — up to 7 business days",
               "five free edits",
-              "50 % prepayment",
+              "50% prepayment",
             ]}
             onClick={() =>
               handleFormShow(
@@ -228,7 +228,7 @@ const MusicCreation = ({ data, location }) => {
               "track duration — 30 sec",
               "completion — up to 5 business days",
               "five free edits",
-              "50 % prepayment",
+              "50% prepayment",
               "upon further ordering of Standard / Premium packages for the same track, Soft Launch price is included",
             ]}
             onClick={() =>
@@ -256,7 +256,7 @@ const MusicCreation = ({ data, location }) => {
             title="Premium"
             icon={PremiumIcon}
             subTitle="Yes, you're on a horse"
-            list={["completion — ASAP", "five free edits", "50 % prepayment"]}
+            list={["completion — ASAP", "five free edits", "50% prepayment"]}
             onClick={() =>
               handleFormShow(
                 "Premium Package",
@@ -285,7 +285,7 @@ const MusicCreation = ({ data, location }) => {
           </CardDeckItem>
           <CardDeckItem variant="full-waves" textAlign="left">
             There is such a thing as pure inspiration. This state is familiar to
-            everyone. It is like someone else who creates something cool with
+            everyone. It feels like someone else creates something cool with
             your hands: a song, a picture, a poem, or something else. An
             incredible and rare experience, clearly not suitable for work. :)
           </CardDeckItem>
