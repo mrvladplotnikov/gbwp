@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      works: allWordpressWpWork(sort: { order: ASC, fields: date }) {
+      works: allWordpressWpWork(sort: { fields: acf___order, order: DESC }) {
         edges {
           node {
             id

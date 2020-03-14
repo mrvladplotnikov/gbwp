@@ -40,9 +40,10 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 alt=""
               />
               <span className={styles.label}>
-                <FormattedMessage id="nextWork" />
+                <FormattedMessage id="prevWork" />
               </span>
             </Link>
+
             <Link
               className={classNames(styles.list, styles.desktop, {
                 [styles.disabled]: !list,
@@ -63,7 +64,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
                 alt=""
               />
               <span className={styles.label}>
-                <FormattedMessage id="prevWork" />
+                <FormattedMessage id="nextWork" />
               </span>
             </Link>
           </div>
