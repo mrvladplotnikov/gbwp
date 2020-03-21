@@ -58,13 +58,13 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000;
   font-weight: 300;
-  font-size: 20px;
-  line-height: 45px;
+  font-size: 0.875rem;
+  line-height: 1.65;
   color: #ffffff;
   overflow-x: hidden;
 }

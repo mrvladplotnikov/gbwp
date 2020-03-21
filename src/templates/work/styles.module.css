@@ -20,7 +20,6 @@
 }
 
 .mainTitle {
-  font-family: "Montserrat", "Arial", sans-serif;
   width: 100%;
   font-weight: 800;
   font-size: 2rem;
@@ -35,10 +34,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", "Arial", sans-serif;
   font-weight: bold;
-  font-size: 0.875rem;
-  line-height: 1.65;
   color: #ffffff;
 }
 
@@ -63,12 +59,9 @@
 }
 
 .content {
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 22px;
-  line-height: 35px;
-  text-align: justify;
   color: #ffffff;
 }
 
@@ -78,16 +71,17 @@
 
 .content h1,
 .content h2 {
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 1.5rem;
+  line-height: 1.4;
   margin-top: 1.5em;
   margin-bottom: 0.4em;
+  font-weight: 900;
 }
 
 .content h3,
 .content h4 {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.125rem;
+  line-height: 1.4;
   margin-top: 1.5em;
   margin-bottom: 0.4em;
 }
