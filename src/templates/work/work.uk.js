@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
+
 import Layout from "../../layouts/uk/default"
 import { Inner } from "../../components/Container"
 import SingleNavagation from "../../components/SingleNavagation"
 import Contacts from "../../components/lendingSections/Contacts"
 import parseContent from "../../utils/parseContent"
 import TermItem from "../../components/TermItem"
+import { HeadingWithMeta, HeadingWithHero } from "../../components/WorkHeading"
 
 import styles from "./styles.module.css"
 
@@ -15,6 +17,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
     title,
     content,
+    format,
     translations,
     featured_media,
     work_category,
@@ -26,60 +29,62 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   } = data.wordpressWpWork
   const media = data.allWordpressWpMedia.edges
   const Content = parseContent(content, media)
+  const isHeroFormat = format === "link"
 
   return (
     <Layout location={location} translations={translations} title={title}>
+      {isHeroFormat && featured_media && (
+        <BackgroundImage
+          Tag="div"
+          className={styles.heroImage}
+          backgroundColor="#000000"
+          fluid={featured_media.localFile.childImageSharp.fluid}
+        />
+      )}
       <Inner>
         <div className={styles.template}>
-          <div className={styles.heading}>
-            <div className={styles.featuredImage}>
-              {featured_media && (
-                <Img
-                  fluid={featured_media.localFile.childImageSharp.fluid}
-                  alt={title}
-                />
-              )}
-            </div>
-            <div>
-              <h1
-                className={styles.mainTitle}
-                dangerouslySetInnerHTML={{ __html: title }}
-              />
-
-              <ul className={styles.meta}>
-                <TermItem
-                  className={styles.metaValues}
-                  terms={work_category}
-                  name="Категорія"
-                />
-                <TermItem
-                  className={styles.metaValues}
-                  terms={work_service}
-                  name="Послуга"
-                />
-                <TermItem
-                  className={styles.metaValues}
-                  terms={work_genre}
-                  name="Жанр"
-                />
-                <TermItem
-                  className={styles.metaValues}
-                  terms={work_platform}
-                  name="Платформа"
-                />
-                <TermItem
-                  className={styles.metaValues}
-                  terms={work_developer}
-                  name="Розробник"
-                />
-                <TermItem
-                  className={styles.metaValues}
-                  terms={acf.autors}
-                  name="Робота над проектом"
-                />
-              </ul>
-            </div>
-          </div>
+          {isHeroFormat ? (
+            <HeadingWithHero title={title} />
+          ) : (
+            <HeadingWithMeta
+              image={featured_media}
+              title={title}
+              terms={
+                <>
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={work_category}
+                    name="Категорія"
+                  />
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={work_service}
+                    name="Послуга"
+                  />
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={work_genre}
+                    name="Жанр"
+                  />
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={work_platform}
+                    name="Платформа"
+                  />
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={work_developer}
+                    name="Розробник"
+                  />
+                  <TermItem
+                    className={styles.metaValues}
+                    terms={acf.autors}
+                    name="Робота над проектом"
+                  />
+                </>
+              }
+            />
+          )}
 
           <div className={styles.content}>{Content}</div>
         </div>
@@ -109,6 +114,7 @@ export const pageQuery = graphql`
     wordpressWpWork(id: { eq: $id }) {
       title
       content
+      format
       acf {
         autors
       }
@@ -139,7 +145,7 @@ export const pageQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 570, maxHeight: 570, quality: 100) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
