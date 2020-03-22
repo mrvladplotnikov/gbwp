@@ -15,9 +15,14 @@
 .team-carousel .alice-carousel__dots-item:not(:last-child) {
   margin-right: 5px;
 }
-.team-carousel .alice-carousel__dots-item:hover,
 .team-carousel .alice-carousel__dots-item.__active {
   background: linear-gradient(90deg, #f3461b -0.37%, #0da6f2 99.72%);
+}
+
+@media (hover: hover) {
+  .team-carousel .alice-carousel__dots-item:hover {
+    background: linear-gradient(90deg, #f3461b -0.37%, #0da6f2 99.72%);
+  }
 }
 
 @media (min-width: 1024px) {
