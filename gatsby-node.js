@@ -68,24 +68,42 @@ exports.createPages = async ({ graphql, actions }) => {
   // Access query results via object destructuring
   const { pages, posts, works } = result.data
 
-  const pageTemplate = path.resolve(`./src/templates/page.js`)
-  // We want to create a detailed page for each
-  // page node. We'll just use the WordPress Slug for the slug.
-  // The Page ID is prefixed with 'PAGE_'
-  pages.edges.forEach(edge => {
-    // Gatsby uses Redux to manage its internal state.
-    // Plugins and sites can use functions like "createPage"
-    // to interact with Gatsby.
-    const nodePath = generatePath(edge.node.lang, edge.node.slug)
+  const pageTemplateUK = path.resolve(`./src/templates/page/index.uk.js`)
+  const pageTemplateRU = path.resolve(`./src/templates/page/index.ru.js`)
+  const pageTemplateEN = path.resolve(`./src/templates/page/index.en.js`)
+
+  const pagesUK = pages.edges.filter(({ node }) => node.lang === "uk")
+  pagesUK.forEach(({ node }) => {
+    const nodePath = generatePath(node.lang, node.slug)
     createPage({
-      // Each page is required to have a `path` as well
-      // as a template component. The `context` is
-      // optional but is often necessary so the template
-      // can query data specific to each page.
       path: nodePath,
-      component: slash(pageTemplate),
+      component: slash(pageTemplateUK),
       context: {
-        id: edge.node.id,
+        id: node.id,
+      },
+    })
+  })
+
+  const pagesRU = pages.edges.filter(({ node }) => node.lang === "ru")
+  pagesRU.forEach(({ node }) => {
+    const nodePath = generatePath(node.lang, node.slug)
+    createPage({
+      path: nodePath,
+      component: slash(pageTemplateRU),
+      context: {
+        id: node.id,
+      },
+    })
+  })
+
+  const pagesEN = pages.edges.filter(({ node }) => node.lang === "en")
+  pagesEN.forEach(({ node }) => {
+    const nodePath = generatePath(node.lang, node.slug)
+    createPage({
+      path: nodePath,
+      component: slash(pageTemplateEN),
+      context: {
+        id: node.id,
       },
     })
   })

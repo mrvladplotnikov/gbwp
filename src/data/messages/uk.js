@@ -9,7 +9,7 @@ module.exports = {
   firstName: "Ім'я",
   subscriptionPrivacy: `<p>
   Відправляючи цю форму, ви погоджуєтеся з
-  <a href="/">нашою політикою конфіденційності</a>.
+  <a href="/privacy-policy">нашою політикою конфіденційності</a>.
 </p>`,
   loadingMessage: "Завантаження...",
   submit: "Відправити",

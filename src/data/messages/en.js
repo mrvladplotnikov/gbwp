@@ -9,7 +9,7 @@ module.exports = {
   firstName: "FirstName",
   subscriptionPrivacy: `<p>
   By submitting this form, you agree to our
-  <a href="/">privacy policy</a>.
+  <a href="/privacy-policy">privacy policy</a>.
 </p>`,
   loadingMessage: "Loading...",
   submit: "Send",

@@ -42,12 +42,14 @@
 
 .footerLinks li {
   line-height: 1.65;
-  margin: 5px 10px;
+  margin: 5px;
 }
 
 .link {
   cursor: pointer;
   display: block;
+  min-width: 25px;
+  text-align: center;
 }
 
 .link[href=""] {
@@ -108,15 +110,6 @@
     max-width: 105px;
   }
 
-  .footerLinks li:nth-child(1),
-  .footerLinks li:nth-child(4) {
-    margin-left: 0;
-  }
-
-  .footerLinks li:nth-child(3),
-  .footerLinks li:nth-child(6) {
-    margin-right: 0;
-  }
   .privacyPolicy {
     margin-bottom: 0;
   }
