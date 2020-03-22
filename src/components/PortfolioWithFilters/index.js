@@ -16,7 +16,9 @@ const handleWorksDividing = (chunks, chunksToShow = 1) => {
 }
 const getFilterOptions = (array = [], optionName) => {
   const raw = array.map(work => work[optionName])
-  return uniqBy(flatten(raw), "value")
+  const flattenOptions = uniqBy(flatten(raw), "value")
+
+  return flattenOptions.filter(option => option !== null)
 }
 
 const PortfolioWithFilters = ({ works = [] }) => {
@@ -28,15 +30,19 @@ const PortfolioWithFilters = ({ works = [] }) => {
     let filteredWorks = [...data]
 
     if (category) {
-      filteredWorks = filteredWorks.filter(item =>
-        item.category.some(({ value }) => value === category)
-      )
+      filteredWorks = filteredWorks.filter(item => {
+        if (!item.category) return
+
+        return item.category.some(({ value }) => value === category)
+      })
     }
 
     if (service) {
-      filteredWorks = filteredWorks.filter(item =>
-        item.service.some(({ value }) => value === service)
-      )
+      filteredWorks = filteredWorks.filter(item => {
+        if (!item.service) return
+
+        return item.service.some(({ value }) => value === service)
+      })
     }
     setPage(1)
     setData(filteredWorks)

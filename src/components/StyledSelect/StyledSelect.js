@@ -110,6 +110,16 @@ const customStyles = {
     color: "#ffffff",
     padding: "2px 15px",
   }),
+  dropdownIndicator: (provided, { hasValue }) => {
+    if (hasValue)
+      return {
+        display: "none",
+      }
+
+    return {
+      ...provided,
+    }
+  },
 }
 
 const DropdownIndicator = props =>
