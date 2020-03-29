@@ -39,7 +39,7 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         baseUrl: "gb.vp-production.com",
-        debug: true,
+        debug: false,
         hostingWPCOM: false,
         protocol: "https",
         useACF: false,

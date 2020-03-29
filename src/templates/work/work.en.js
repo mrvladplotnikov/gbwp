@@ -12,12 +12,15 @@ import { HeadingWithMeta, HeadingWithHero } from "../../components/WorkHeading"
 import TermItem from "../../components/TermItem"
 
 import styles from "./styles.module.css"
+import Headline from "../../components/Headline"
+import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
     title,
     content,
     format,
+    wordpress_id,
     translations,
     featured_media,
     work_category,
@@ -30,6 +33,9 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const media = data.allWordpressWpMedia.edges
   const Content = parseContent(content, media)
   const isHeroFormat = format === "link"
+  const reviews =
+    data.reviews.nodes &&
+    data.reviews.nodes.filter(r => r.meta.project === wordpress_id)
 
   return (
     <Layout location={location} translations={translations} title={title}>
@@ -85,7 +91,26 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
               }
             />
           )}
-          <div className={styles.content}>{Content}</div>
+          <div
+            className={styles.content}
+            style={{
+              marginBottom: reviews.length ? "0" : "10rem",
+            }}
+          >
+            {Content}
+          </div>
+          {reviews.length > 0 && (
+            <>
+              <Headline Tag="h2">Customer feedback about the project</Headline>
+              <div
+                style={{
+                  marginBottom: "2rem",
+                }}
+              >
+                <ReviewCarousel reviews={reviews} />
+              </div>
+            </>
+          )}
         </div>
       </Inner>
       <SingleNavagation
@@ -111,6 +136,7 @@ export default WorkTemplate
 export const pageQuery = graphql`
   query($id: String!) {
     wordpressWpWork(id: { eq: $id }) {
+      wordpress_id
       title
       content
       format
@@ -154,6 +180,30 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    reviews: allWordpressWpClientReview(
+      filter: { polylang_current_lang: { eq: "en" } }
+    ) {
+      nodes {
+        id
+        title
+        content
+        featured_media {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 250, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        meta: acf {
+          company
+          position
+          link: s_link
+          project
+        }
       }
     }
     allWordpressWpMedia {
