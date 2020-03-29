@@ -19,12 +19,12 @@
 .ContactUs__email {
   color: #ffffff;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5;
   letter-spacing: -0.01em;
   text-decoration: none;
-  margin-bottom: 24px;
-  display: block;
+  margin-bottom: 1.5rem;
+  display: inline-block;
 }
 
 .ContactUs__email:hover {
@@ -98,8 +98,7 @@
     margin-bottom: 25px;
   }
   .ContactUs__email {
-    font-size: 40px;
-    line-height: 1;
+    font-size: 2.5rem;
     margin-bottom: 0;
   }
   .ContactUs__socialLinks li {

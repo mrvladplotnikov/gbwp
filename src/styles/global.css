@@ -4,11 +4,6 @@
   outline: 0;
 }
 
-* {
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
 .keyboard input:focus,
 .keyboard button:focus,
 .keyboard *[role="button"]:focus,
