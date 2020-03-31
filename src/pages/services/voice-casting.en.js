@@ -106,10 +106,10 @@ const VoiceCasting = ({ data, location }) => {
           />
         </ServiceIconList>
       </ServiceSection>
-      <ServiceSection title="Our works">
+      <ServiceSection title="Voice Base">
         <p>
           Over the years, we have formed a base of voice talents. Each of them
-          is a carrier of a wide variety of languages ​​and accents, timbres,
+          is a carrier of a wide variety of languages and accents, timbres,
           and intonations. You can hear it for yourself, a complete playlist
           with examples of actors’ voices is below.
         </p>
@@ -128,13 +128,13 @@ const VoiceCasting = ({ data, location }) => {
           Over the past few years, we have developed a simple framework for
           cooperation. So that at each stage, you will understand what is
           happening, and you will have control over the process. And at that
-          time, we could provide the necessary voice-overs for your project.
+          time, we can provide the necessary voice-overs for your project.
         </p>
         <p>There are only six stages:</p>
         <StyledAccordion>
           <StyledAccordionItem title="Acquaintance">
             <p>
-              you write to us and get a{" "}
+              You write to us and get a{" "}
               <a href={mailTo.mail.en}>free consultation</a> in a convenient
               form so that we learn about your project. In this way, we get to
               know each other and understand if we are ready to cooperate. We
@@ -144,7 +144,7 @@ const VoiceCasting = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
             <p>
-              at this stage, you create the technical task. It should be in the
+              At this stage, you create the technical task. It should be in the
               form of a script and have a description of voices and all
               necessary explanations for the actors.
             </p>
@@ -160,14 +160,14 @@ const VoiceCasting = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Launch">
             <p>
-              together we sign a contract, you send us a full prepayment for the
+              Together we sign a contract, you send us a full prepayment for the
               project, we sign a contract with the actor and transfer the script
               to him or her.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Production">
             <p>
-              the voice talent sends us a complete record, we check it for
+              The voice talent sends us a complete record, we check it for
               compliance with the requirements and, if all sounds good, send it
               to you. If it seems to you that the actor has not correctly
               conveyed any intonations or general message, you can make up to
@@ -181,16 +181,13 @@ const VoiceCasting = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Project acceptance">
             <p>
-              після всіх погоджень ми висилаємо вам кінцеві файли. Цей момент —
-              останній шанс скористатися безплатними правками.
+         After all approvals, we will send you the final files. This moment is the last chance to take advantage of free edits.
             </p>
-            <p>Коли все готово, ми з вами підписуємо Акт прийому-передачі.</p>
+            <p>When everything is ready, together, we sign the Acceptance Certificate.</p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Support">
             <p>
-              найчастіше цей етап потрібен для ігрових «довгобудів» або
-              випадків, коли обраний актор озвучує персонажів для подальших
-              релізів.
+              Most often, this stage is needed for the big game projects or cases when the selected actor further voices the same characters and is negotiated separately.
             </p>
           </StyledAccordionItem>
         </StyledAccordion>

@@ -43,8 +43,7 @@ const AudioBranding = ({ data, location }) => {
             For people who create sound, we are too fascinated by marketing.
           </h3>
           <p>
-            It seems to us a kind of modern art form, very sophisticated and
-            truly functional. And we love to create something that is on the
+            We see it as a modern art form, very sophisticated, and truly functional. And we love to create something that is on the
             verge of pure creativity and functionality, so we started to develop
             audio branding.
           </p>
@@ -81,9 +80,7 @@ const AudioBranding = ({ data, location }) => {
         <p>
           Each audio brand is unique, as is the brand itself. Each business has
           its own needs, and there is no universal formula and composition of
-          the audio brand. Therefore, for each project, we create a personal
-          strategy and a set of elements depending on the tasks that need to be
-          solved.
+          the audio brand. Therefore, for each project, we create a personal strategy and a set of elements depending on which tasks need to be solved.
         </p>
       </ServiceSection>
       <ServiceSection title="Our works" noGatters>
@@ -129,7 +126,8 @@ const AudioBranding = ({ data, location }) => {
             <p>
               At this stage, we study up your brand; you tell us about your
               marketing activities, and together we determine the role and
-              significance of the future audio brand. At the same time, we
+              significance of the future audio brand.  </p>
+            <p> At the same time, we
               prepare a contract with lawyers. We discuss and coordinate
               everything with you and proceed to the next stage.
             </p>
@@ -165,7 +163,7 @@ const AudioBranding = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Support">
             <p>
-              if in the future, your brand has new points of contact with the
+              If in the future, your brand has new points of contact with the
               audience which need sound, we will help you. We are always happy
               for long-term cooperation.
             </p>

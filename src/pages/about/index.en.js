@@ -73,7 +73,7 @@ const About = ({ data, location }) => {
                 cool people. And so began the path of our company.
               </p>
               <p>
-                Now VP Production is a team of people where everyone loves his
+                Now VP Production is a team where everyone loves his
                 or her job. Whether it is music composing, sound design, voice
                 acting, project management, or marketing — we cannot imagine our
                 lives without it. That is why every day we inspire listeners on
@@ -105,7 +105,7 @@ const About = ({ data, location }) => {
           principles of work.
         </h3>
         <h3>
-          We are improving everything that can be improved, even if the result
+          We improve everything that can be improved, even if the result
           is already paid for and accepted.
         </h3>
       </SectionWithText>
@@ -114,19 +114,19 @@ const About = ({ data, location }) => {
         className={styles.services}
         services={[
           {
-            title: "Music Creation",
+            title: "Music Composing",
             link: "/en/services/music-composing",
           },
           {
-            title: "Audiobranding",
+            title: "Audio Branding",
             link: "/en/services/audio-branding",
           },
           {
-            title: "Sound design",
+            title: "Sound Design",
             link: "/en/services/sound-design",
           },
           {
-            title: "Voice casting",
+            title: "Voice Casting",
             link: "/en/services/voice-casting",
           },
         ]}
@@ -138,7 +138,7 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon2}>
           We look more in-depth than the technical task and ask many questions
-          so that the final sound works for your project.
+          so that the final sound works for your audience.
         </FeatureCard>
         <FeatureCard img={icon3}>
           For four years of work, we have broken zero deadlines. This describes
