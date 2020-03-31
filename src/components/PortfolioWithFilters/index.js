@@ -31,7 +31,7 @@ const PortfolioWithFilters = ({ works = [] }) => {
 
     if (category) {
       filteredWorks = filteredWorks.filter(item => {
-        if (!item.category) return
+        if (!item.category) return []
 
         return item.category.some(({ value }) => value === category)
       })
@@ -39,7 +39,7 @@ const PortfolioWithFilters = ({ works = [] }) => {
 
     if (service) {
       filteredWorks = filteredWorks.filter(item => {
-        if (!item.service) return
+        if (!item.service) return []
 
         return item.service.some(({ value }) => value === service)
       })

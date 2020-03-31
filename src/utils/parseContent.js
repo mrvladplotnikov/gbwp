@@ -20,7 +20,7 @@ export default (content, media) =>
 
       if (domNode.name === "iframe") {
         if (domNode.attribs.allowfullscreen !== undefined) {
-          const { src = "" } = domNode.attribs
+          const { src = "", title = "post-iframe" } = domNode.attribs
 
           return (
             <div className="video-wrapper">
@@ -32,6 +32,7 @@ export default (content, media) =>
                 allowFullScreen={true}
                 frameBorder="0"
                 scrolling="no"
+                title={title}
               />
             </div>
           )

@@ -5,16 +5,17 @@ import Headline from "../Headline"
 import { FormattedMessage } from "react-intl"
 import { graphql, useStaticQuery } from "gatsby"
 
-const ContactUs = ({ title, content, email }) => {
+const ContactUs = ({ title, content }) => {
   const {
     site: {
-      siteMetadata: { socialLinks },
+      siteMetadata: { socialLinks, adminEmail },
     },
   } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
+            adminEmail
             socialLinks {
               name
               link
@@ -35,8 +36,8 @@ const ContactUs = ({ title, content, email }) => {
           <p className="ContactUs__text">
             {content ? content : <FormattedMessage id="contactText" />}
           </p>
-          <a className="ContactUs__email" href={`mailto:${email}`}>
-            {email}
+          <a className="ContactUs__email" href={`mailto:${adminEmail}`}>
+            {adminEmail}
           </a>
         </div>
         <div className="ContactUs__col">
@@ -75,13 +76,11 @@ const ContactUs = ({ title, content, email }) => {
 ContactUs.defaultProps = {
   title: "",
   content: "",
-  email: "",
 }
 
 ContactUs.propTypes = {
   title: PropTypes.string,
   content: PropTypes.node,
-  email: PropTypes.string,
 }
 
 export default ContactUs

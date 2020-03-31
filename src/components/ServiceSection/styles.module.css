@@ -1,40 +1,45 @@
 .section {
-  margin: 0;
   position: relative;
-  padding: 0 0 50px 0;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3rem;
+}
+
+.section:last-child {
+  padding-bottom: 0;
 }
 
 .gutters {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .section h1 {
   font-weight: 800;
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 2rem;
+  line-height: 1.2;
 }
 .section h2 {
   font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 .section h3 {
   font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.125rem;
+  line-height: 1.2;
 }
 
 .title {
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .content {
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.65;
   color: #ffffff;
 }
 
@@ -56,27 +61,30 @@
 
 @media (min-width: 992px) {
   .section {
-    padding-bottom: 124px;
+    padding-bottom: 7.75rem;
+  }
+  .section:last-child {
+    padding-bottom: 0;
   }
   .section h1 {
-    font-size: 100px;
-    line-height: 122px;
+    font-size: 6.25rem;
+    line-height: 1.65;
     text-transform: uppercase;
   }
   .section h2 {
-    font-size: 70px;
-    line-height: 85px;
+    font-size: 4.375rem;
+    line-height: 1.2;
   }
   .section h3 {
-    font-size: 32px;
-    line-height: 37px;
+    font-size: 2rem;
+    line-height: 1.2;
   }
   .title {
-    margin-bottom: 92px;
+    margin-bottom: 5.75rem;
   }
   .content {
     font-weight: 300;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 1.375rem;
+    line-height: 1.65;
   }
 }

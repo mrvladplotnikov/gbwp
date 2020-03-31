@@ -4,11 +4,7 @@ import ContactUs from "../../ContactUs/ContactUs"
 
 const Contacts = ({ title, children }) => (
   <section className="Contacts">
-    <ContactUs
-      email="connect@vp-production.com"
-      title={title}
-      content={children}
-    />
+    <ContactUs title={title} content={children} />
   </section>
 )
 

@@ -11,6 +11,7 @@ module.exports = {
     author: `@tarotum`,
     navMenu: siteMenu,
     socialLinks: siteSocialLinks,
+    adminEmail: "connect@vp-production.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
