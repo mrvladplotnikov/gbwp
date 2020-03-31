@@ -49,9 +49,7 @@ const SoundDesign = ({ data, location }) => {
           </p>
           <p>
             Whether we want it or not, an alarming sound will make us wary. And
-            for this kind of thing, we love sound design. For how he transforms
-            any picture, adds life to it, helps the viewer to believe what is
-            happening. Magic itself!
+            for this kind of thing, we love sound design. For how it transforms any picture, adds life to it, helps the viewer to believe what is happening. Magic itself!
           </p>
         </ServiceHero>
       }
@@ -84,8 +82,7 @@ const SoundDesign = ({ data, location }) => {
           suit your project and fulfill their function.
         </p>
         <p>
-          We also create atmospheric ambients and quickly turn music into one of
-          the elements of sound design. The latter is relevant for motion design
+         We also create atmospheric ambients and easily turn music into one of the elements of sound design. The latter is relevant for motion design
           when music and sounds intertwine and complement each other so that the
           picture looks as cool as possible.
         </p>
@@ -105,8 +102,7 @@ const SoundDesign = ({ data, location }) => {
         <p>
           Over the past few years, we have developed a simple framework for
           cooperation. So that at each stage, you will understand what is
-          happening, and you will have control over the process. And at the same
-          time, we could create the right sound design for your project.
+          happening, and you will have control over the process. And at the same time, we can create the right sound design for your project.
         </p>
         <p>There are only six stages:</p>
         <StyledAccordion>
@@ -117,12 +113,12 @@ const SoundDesign = ({ data, location }) => {
               form so that we learn about your project. In this way, we get to
               know each other and understand if we are ready to cooperate. We
               need to match with the client in the general vision and principles
-              of work
+              of work.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">
             <p>
-              t this stage, you create the technical task, and we help you with
+              At this stage, you create the technical task, and we help you with
               this if needed. You can read about why we do not do the technical
               task by ourselves here.
             </p>
@@ -189,9 +185,7 @@ const SoundDesign = ({ data, location }) => {
           necessary, is calculated separately.
         </p>
         <p>
-          As for motion-design videos’ sound design, the cost is calculated
-          differently: here, the complexity of the picture and the duration of
-          the video are taken into account.
+          As for motion graphic videos’ sound design, the cost is calculated differently: here, the complexity of the picture and the duration of the video are taken into account.
         </p>
         <p>
           Please <a href={mailTo.soundDesign.en}>email us</a> to find out the
@@ -203,7 +197,7 @@ const SoundDesign = ({ data, location }) => {
           <CardDeckItem variant="rect" textAlign="left">
             We consider sound design to be functional art, a space for searching
             and experimenting, and a crucial part of any media project. We
-            approach the creation of music with «all our heart,» but the sound
+            approach the creation of music with «all our heart», but the sound
             design we approach with pragmatism and imagination.
           </CardDeckItem>
           <CardDeckItem variant="full-waves" textAlign="left">
