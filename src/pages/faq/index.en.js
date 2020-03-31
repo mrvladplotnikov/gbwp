@@ -79,7 +79,7 @@ const Faq = ({ location }) => {
           <StyledAccordionItem title="Who prepares the technical task for the project?">
             <p>
               Ideally, it is a client who prepares the technical task for the
-              project. In this case, both sides initially have cristal clear
+              project. In this case, both sides initially have crystal clear
               expectations from the results of cooperation. It helps to select
               the desired vector and lays a solid foundation for successful
               work.
