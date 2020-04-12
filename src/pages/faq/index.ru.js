@@ -12,6 +12,7 @@ import classNames from "classnames"
 import mailTo from "../../utils/mailTo"
 import InlineButton from "../../components/InlineButton"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
+import { Link } from "gatsby"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -51,8 +52,8 @@ const Faq = ({ location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="А что делать, если мой проект под NDA?">
             <p>
-              Напишите нам, мы подпишем соответствующие документы и сможем
-              свободно всё обсудить.
+              <a href={mailTo.mail.ru}>Напишите нам</a>, мы подпишем
+              соответствующие документы и сможем свободно всё обсудить.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Вы делаете тестовые задания?">
@@ -71,7 +72,8 @@ const Faq = ({ location }) => {
             <p>
               Тем не менее, мы готовы сделать исключение в том случае, если
               перед нами интересный инди проект, который обращается к нам за
-              помощью и круто себя презентует. Если это о вас — смело пишите!
+              помощью и круто себя презентует. Если это о вас —{" "}
+              <a href={mailTo.mail.ru}>смело пишите</a>!
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Кто составляет техническое задание на проект?">
@@ -99,8 +101,12 @@ const Faq = ({ location }) => {
 
             <p>
               Как организован процесс работы для каждой из наших услуг, можно
-              подробно прочитать на страницах создание музыки, звуковой дизайн,
-              аудиобрендинг и голосовое озвучивание.
+              подробно прочитать на страницах{" "}
+              <Link to="/ru/services/music-composing">создание музыки</Link>,{" "}
+              <Link to="/ru/services/sound-design">звуковой дизайн</Link>,{" "}
+              <Link to="/ru/services/audio-branding">аудиобрендинг</Link> и{" "}
+              <Link to="/ru/services/voice-casting">голосовое озвучивание</Link>
+              .
             </p>
           </StyledAccordionItem>
         </StyledAccordion>

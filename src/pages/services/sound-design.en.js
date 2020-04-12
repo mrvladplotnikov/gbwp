@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/en/sidebar"
 import ServiceHero from "../../components/ServiceHero"
 import ContactUs from "../../components/ContactUs"
@@ -49,7 +49,9 @@ const SoundDesign = ({ data, location }) => {
           </p>
           <p>
             Whether we want it or not, an alarming sound will make us wary. And
-            for this kind of thing, we love sound design. For how it transforms any picture, adds life to it, helps the viewer to believe what is happening. Magic itself!
+            for this kind of thing, we love sound design. For how it transforms
+            any picture, adds life to it, helps the viewer to believe what is
+            happening. Magic itself!
           </p>
         </ServiceHero>
       }
@@ -82,7 +84,8 @@ const SoundDesign = ({ data, location }) => {
           suit your project and fulfill their function.
         </p>
         <p>
-         We also create atmospheric ambients and easily turn music into one of the elements of sound design. The latter is relevant for motion design
+          We also create atmospheric ambients and easily turn music into one of
+          the elements of sound design. The latter is relevant for motion design
           when music and sounds intertwine and complement each other so that the
           picture looks as cool as possible.
         </p>
@@ -102,7 +105,8 @@ const SoundDesign = ({ data, location }) => {
         <p>
           Over the past few years, we have developed a simple framework for
           cooperation. So that at each stage, you will understand what is
-          happening, and you will have control over the process. And at the same time, we can create the right sound design for your project.
+          happening, and you will have control over the process. And at the same
+          time, we can create the right sound design for your project.
         </p>
         <p>There are only six stages:</p>
         <StyledAccordion>
@@ -120,7 +124,7 @@ const SoundDesign = ({ data, location }) => {
             <p>
               At this stage, you create the technical task, and we help you with
               this if needed. You can read about why we do not do the technical
-              task by ourselves here.
+              task by ourselves <Link to="/en/faq">here</Link>.
             </p>
             <p>
               At the same time, we select sound style references and prepare a
@@ -185,7 +189,9 @@ const SoundDesign = ({ data, location }) => {
           necessary, is calculated separately.
         </p>
         <p>
-          As for motion graphic videos’ sound design, the cost is calculated differently: here, the complexity of the picture and the duration of the video are taken into account.
+          As for motion graphic videos’ sound design, the cost is calculated
+          differently: here, the complexity of the picture and the duration of
+          the video are taken into account.
         </p>
         <p>
           Please <a href={mailTo.soundDesign.en}>email us</a> to find out the

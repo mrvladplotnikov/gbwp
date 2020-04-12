@@ -109,9 +109,9 @@ const VoiceCasting = ({ data, location }) => {
       <ServiceSection title="Voice Base">
         <p>
           Over the years, we have formed a base of voice talents. Each of them
-          is a carrier of a wide variety of languages and accents, timbres,
-          and intonations. You can hear it for yourself, a complete playlist
-          with examples of actors’ voices is below.
+          is a carrier of a wide variety of languages and accents, timbres, and
+          intonations. You can hear it for yourself, a complete playlist with
+          examples of actors’ voices is below.
         </p>
         <iframe
           title="Example of voice acting"
@@ -181,13 +181,19 @@ const VoiceCasting = ({ data, location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="Project acceptance">
             <p>
-         After all approvals, we will send you the final files. This moment is the last chance to take advantage of free edits.
+              After all approvals, we will send you the final files. This moment
+              is the last chance to take advantage of free edits.
             </p>
-            <p>When everything is ready, together, we sign the Acceptance Certificate.</p>
+            <p>
+              When everything is ready, together, we sign the Acceptance
+              Certificate.
+            </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Support">
             <p>
-              Most often, this stage is needed for the big game projects or cases when the selected actor further voices the same characters and is negotiated separately.
+              Most often, this stage is needed for the big game projects or
+              cases when the selected actor further voices the same characters
+              and is negotiated separately.
             </p>
           </StyledAccordionItem>
         </StyledAccordion>
@@ -229,8 +235,8 @@ const VoiceCasting = ({ data, location }) => {
         </PlanList>
         <p>
           If you did not find the language you need in the list of available
-          languages, be sure to email us, and we will provide you the right
-          talent.
+          languages, be sure to <a href={mailTo.mail.en}>email us</a>, and we
+          will provide you the right talent.
         </p>
       </ServiceSection>
       <ModalContactForm

@@ -70,7 +70,8 @@ const MusicCreation = ({ data, location }) => {
           <h3>We love music mostly because of its potential.</h3>
           <p>
             After all, this is the most potent form of art if we compare them
-            all by their emotional impact. Do you know how one song can entirely change your mood?
+            all by their emotional impact. Do you know how one song can entirely
+            change your mood?
           </p>
           <p>
             Just a couple of notes, the correct rhythmic pattern, and a person
@@ -137,10 +138,13 @@ const MusicCreation = ({ data, location }) => {
             <p>
               At this stage, you create the technical task, and we help you with
               this if needed. You can read about why we do not do the technical
-              task by ourselves here.  </p>
-            <p> At the same time, we select references for
-              the future track and prepare a contract with lawyers. We discuss
-              and coordinate everything with you and proceed to the next stage.
+              task by ourselves <Link to="/en/faq">here</Link>.
+            </p>
+            <p>
+              {" "}
+              At the same time, we select references for the future track and
+              prepare a contract with lawyers. We discuss and coordinate
+              everything with you and proceed to the next stage.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Launch">

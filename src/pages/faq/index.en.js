@@ -12,6 +12,7 @@ import classNames from "classnames"
 import mailTo from "../../utils/mailTo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../../components/InlineButton"
+import { Link } from "gatsby"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -51,8 +52,9 @@ const Faq = ({ location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="What if my project is under the NDA?">
             <p>
-              You can email us, we will sign all the documents needed, and we
-              will be able to discuss everything freely.
+              You can <a href={mailTo.mail.en}>email us</a>, we will sign all
+              the documents needed, and we will be able to discuss everything
+              freely.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Do you do test tasks?">
@@ -73,7 +75,7 @@ const Faq = ({ location }) => {
               Nevertheless, we are ready to make an exception. For example, if
               we see an exciting indie project that appeals to us for help and
               presents itself in a great way. If this is about you — feel free
-              to write to us!
+              to <a href={mailTo.mail.en}>write to us</a>!
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Who prepares the technical task for the project?">
@@ -107,8 +109,11 @@ const Faq = ({ location }) => {
 
             <p>
               You can read in detail how the work process is organized for each
-              of our services on the following pages: music composing, sound
-              design, audio branding, and voice casting.
+              of our services on the following pages:{" "}
+              <Link to="/en/services/music-composing">music composing</Link>,{" "}
+              <Link to="/en/services/sound-design">sound design</Link>,{" "}
+              <Link to="/en/services/audio-branding">audio branding</Link> and{" "}
+              <Link to="/en/services/voice-casting">voice casting</Link>.
             </p>
           </StyledAccordionItem>
         </StyledAccordion>

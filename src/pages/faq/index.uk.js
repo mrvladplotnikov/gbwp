@@ -12,6 +12,7 @@ import classNames from "classnames"
 import mailTo from "../../utils/mailTo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../../components/InlineButton"
+import { Link } from "gatsby"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -51,8 +52,8 @@ const Faq = ({ location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="А що робити, якщо мій проєкт під NDA?">
             <p>
-              Напишіть нам, ми підпишемо відповідні документи і зможемо вільно
-              все обговорити.
+              <a href={mailTo.mail.uk}>Напишіть нам</a>, ми підпишемо відповідні
+              документи і зможемо вільно все обговорити.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Ви робите тестові завдання?">
@@ -71,7 +72,8 @@ const Faq = ({ location }) => {
             <p>
               Проте, ми готові зробити виняток у тому випадку, якщо перед нами
               цікавий інді проєкт, який звертається до нас по допомогу і круто
-              себе презентує. Якщо це про вас — сміливо пишіть!
+              себе презентує. Якщо це про вас —{" "}
+              <a href={mailTo.mail.uk}>сміливо пишіть</a>!
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Хто складає технічне завдання на проєкт?">
@@ -104,8 +106,11 @@ const Faq = ({ location }) => {
 
             <p>
               Як організований процес роботи для кожної з наших послуг, можна
-              детально прочитати на сторінках створення музики, звуковий дизайн,
-              аудіобрендинг і голосове озвучення.
+              детально прочитати на сторінках{" "}
+              <Link to="/services/music-composing">створення музики</Link>,{" "}
+              <Link to="/services/sound-design">звуковий дизайн</Link>,{" "}
+              <Link to="/services/audio-branding">аудіобрендинг</Link> і{" "}
+              <Link to="/services/voice-casting">голосове озвучення</Link>.
             </p>
           </StyledAccordionItem>
         </StyledAccordion>
@@ -123,9 +128,8 @@ const Faq = ({ location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="У яких випадках передоплата становить 100 %?">
             <p>
-              Повна передоплата потрібна у разі замовлення голосового
-              озвучення, а також якщо ви обирете пакет S.O.S для створення
-              музики.
+              Повна передоплата потрібна у разі замовлення голосового озвучення,
+              а також якщо ви обирете пакет S.O.S для створення музики.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Як можна оплатити ваші послуги?">
