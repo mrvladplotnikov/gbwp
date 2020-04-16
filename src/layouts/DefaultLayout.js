@@ -80,6 +80,7 @@ const DefaultLayout = ({
             link: `${originLink}/${dynamicSlug.slug}`,
           }
         })
+
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
@@ -88,6 +89,12 @@ const DefaultLayout = ({
                 description={description}
                 meta={meta}
                 lang={langKey}
+                pathname={url}
+                langsMenu={
+                  translations && translations.length > 0
+                    ? dynamicLangsMenu
+                    : langsMenu
+                }
               />
               <HorizontalNav
                 langsMenu={

@@ -12,9 +12,11 @@ module.exports = {
     navMenu: siteMenu,
     socialLinks: siteSocialLinks,
     adminEmail: "connect@vp-production.com",
+    siteUrl: process.env.SITE_URL || "http://localhost:8000/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

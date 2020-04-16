@@ -77,6 +77,8 @@ const SidebarLayout = ({
                 description={description}
                 meta={meta}
                 lang={langKey}
+                pathname={url}
+                langsMenu={langsMenu}
               />
               <HorizontalNav
                 langsMenu={langsMenu}
