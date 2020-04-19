@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../layouts/uk/home"
 import Hero from "../components/lendingSections/Hero"
 import About from "../components/lendingSections/About"
@@ -58,7 +58,8 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Наші роботи вже чули мільйони людей і багато з них залишилися
-          задоволеними. Переконатися в цьому можна тут.
+          задоволеними. Переконатися в цьому можна{" "}
+          <Link to="/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
           Як щодо <a href={mailTo.mail.uk}>безкоштовної консультації</a> або{" "}
@@ -66,7 +67,7 @@ const Home = ({ data, location }) => {
             крутого темплейта ТЗ
           </InlineButton>
           ? Ми завжди відкриті до спілкування, так що сміливо{" "}
-          <a href="/">пишіть</a>.
+          <a href={mailTo.mail.uk}>пишіть</a>.
         </FeatureCard>
       </Why>
       <ModalContactForm

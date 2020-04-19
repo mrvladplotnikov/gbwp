@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../layouts/ru/home"
 import Hero from "../components/lendingSections/Hero"
 import About from "../components/lendingSections/About"
@@ -58,14 +58,15 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Наши работы уже слышали миллионы людей и многие из них остались
-          довольны. Убедиться в этом можно <a href="/">тут</a>.
+          довольны. Убедиться в этом можно <Link to="/ru/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
           Как насчёт <a href={mailTo.mail.ru}>бесплатной консультации</a> или{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>
-          ? Мы всегда открыты к общению, так что смело <a href="/">пишите</a>.
+          ? Мы всегда открыты к общению, так что смело{" "}
+          <a href={mailTo.mail.ru}>пишите</a>.
         </FeatureCard>
       </Why>
       <ModalContactForm

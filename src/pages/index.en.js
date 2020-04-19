@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../layouts/en/home"
 import Hero from "../components/lendingSections/Hero"
 import About from "../components/lendingSections/About"
@@ -58,7 +58,7 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Millions of people have already listened to our work, and many of them
-          were satisfied. You can check this here.
+          were satisfied. You can check this <Link to="/en/reviews">here</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
@@ -66,7 +66,7 @@ const Home = ({ data, location }) => {
             technical task template
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
-          <a href="/">email us</a>.
+          <a href={mailTo.mail.en}>email us</a>.
         </FeatureCard>
       </Why>
       <ModalContactForm
