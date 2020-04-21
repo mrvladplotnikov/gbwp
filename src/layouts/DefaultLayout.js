@@ -5,11 +5,12 @@ import Footer from "../components/Footer"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
-import { IntlProvider } from "react-intl"
+import { IntlProvider, FormattedMessage } from "react-intl"
 import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
+import InfoBadge from "../components/InfoBadge"
 
 const DefaultLayout = ({
   children,
@@ -105,6 +106,9 @@ const DefaultLayout = ({
               >
                 {children}
               </SnackbarProvider>
+              <InfoBadge isOpenDefault>
+                <FormattedMessage id="work-in-progress-message" />
+              </InfoBadge>
               <Footer />
             </>
           </IntlProvider>

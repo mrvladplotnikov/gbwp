@@ -1,0 +1,46 @@
+.info-badge__container {
+  position: fixed;
+  bottom: 15vh;
+  right: 0;
+  z-index: 200;
+}
+
+.info-badge__content {
+  padding: 0.25rem 0.5rem;
+  background-color: #ef3b0e;
+  font-size: 1rem;
+  line-height: 1.65;
+  display: flex;
+  align-items: center;
+}
+
+.info-badge__closeButton {
+  margin-right: 0.5rem;
+  background-color: unset;
+  border: unset;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.25s;
+}
+.info-badge__closeButton:hover {
+  color: black;
+}
+
+.info-badge-enter {
+  opacity: 0;
+}
+.info-badge-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.info-badge-exit {
+  opacity: 1;
+}
+.info-badge-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}

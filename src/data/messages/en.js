@@ -1,4 +1,5 @@
 module.exports = {
+  "work-in-progress-message": "Site under test stage",
   successMailSend: "Successfully sent",
   errorMailSend: "Error, try again later",
   invalidemail: "Invalid email address",
