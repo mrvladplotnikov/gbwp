@@ -3,9 +3,19 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-const StyledLink = ({ className, children, to, onClick, ...attrs }) => {
+const StyledLink = ({
+  className,
+  children,
+  to,
+  onClick,
+  containerAttrs,
+  ...attrs
+}) => {
   return (
-    <div className={classNames("StyledLink__wrapper", className)}>
+    <div
+      className={classNames("StyledLink__wrapper", className)}
+      {...containerAttrs}
+    >
       {to ? (
         <Link className="StyledLink" to={to} {...attrs}>
           {children}
@@ -34,12 +44,14 @@ StyledLink.propTypes = {
   to: PropTypes.string,
   children: PropTypes.node,
   onClick: PropTypes.func,
+  containerAttrs: PropTypes.object,
 }
 
 StyledLink.defaultProps = {
   to: "",
   children: "link",
   onClick: () => {},
+  containerAttrs: {},
 }
 
 export default StyledLink

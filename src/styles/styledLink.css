@@ -19,6 +19,16 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.StyledLink__wrapper a.StyledLink {
+  text-decoration: none;
+}
+.StyledLink__wrapper a.StyledLink:hover {
+  text-decoration: none;
+  color: inherit;
+  -webkit-text-fill-color: unset;
+}
+
 .StyledLink::before {
   content: "";
   position: absolute;
