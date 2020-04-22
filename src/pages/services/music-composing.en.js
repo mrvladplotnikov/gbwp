@@ -97,7 +97,8 @@ const MusicCreation = ({ data, location }) => {
         </ServiceIconList>
         <p>
           We also create music for motion graphics, but it relates more to sound
-          design so that you can read about it here.
+          design so that you can read about it{" "}
+          <Link to="/en/works/audio-for-motion-design">here</Link>.
         </p>
         <p>
           We do not compose backing tracks and songs for corporate parties. But

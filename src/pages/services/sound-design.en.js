@@ -85,8 +85,9 @@ const SoundDesign = ({ data, location }) => {
         </p>
         <p>
           We also create atmospheric ambients and easily turn music into one of
-          the elements of sound design. The latter is relevant for motion design
-          when music and sounds intertwine and complement each other so that the
+          the elements of sound design. The latter is relevant for{" "}
+          <Link to="/en/works/audio-for-motion-design">motion design</Link> when
+          music and sounds intertwine and complement each other so that the
           picture looks as cool as possible.
         </p>
       </ServiceSection>
