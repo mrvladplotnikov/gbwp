@@ -54,7 +54,7 @@ const VoiceCasting = ({ data, location }) => {
     <Layout
       Sidebar={
         <Sidebar
-          title="Voice casting"
+          title="Voice Casting"
           text="The tongue can paint what the eyes cannot see."
           autor="Chinese Proverb"
           image={sidebarImage}
