@@ -36,7 +36,7 @@ const Testimonials = ({ data, location }) => {
       <section>
         <Inner>
           <Headline Tag="h2" className={styles.sectionTitle}>
-            Customer reviews
+            Customer testimonials
           </Headline>
           {testimonials.map((node, index) => (
             <ReviewCarousel
@@ -47,7 +47,7 @@ const Testimonials = ({ data, location }) => {
             />
           ))}
           <Headline Tag="h2" className={styles.sectionTitle}>
-            Listeners reviews
+            Listeners' reviews
           </Headline>
         </Inner>
         <ReviewGrid images={userReviews} />
