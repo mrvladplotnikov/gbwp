@@ -1,5 +1,5 @@
 module.exports = {
-  "work-in-progress-message": "Сайт в стадії тестування",
+  "work-in-progress-message": `Наразі ми тестуємо сайт. Якщо ви знайшли баг або помилку, будь ласка, <a href="mailto:connect@vp-production.com">повідомте про це нам</a>.`,
   successMailSend: "Успішно відправлено",
   errorMailSend: "Помилка, спробуйте пізніше",
   invalidemail: "Невірна адреса пошти",

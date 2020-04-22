@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { SnackbarProvider } from "react-snackbar-alert"
-import { IntlProvider, FormattedMessage } from "react-intl"
+import { IntlProvider, FormattedHTMLMessage } from "react-intl"
 import Languages from "../components/Languages"
 import HamburgerButton from "../components/HamburgerButton"
 import NavigationDrawer from "../components/NavigationDrawer"
@@ -101,7 +101,7 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
               </SnackbarProvider>
               <Footer />
               <InfoBadge isOpenDefault>
-                <FormattedMessage id="work-in-progress-message" />
+                <FormattedHTMLMessage id="work-in-progress-message" />
               </InfoBadge>
             </>
           </IntlProvider>

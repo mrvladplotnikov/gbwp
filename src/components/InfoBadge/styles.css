@@ -1,20 +1,31 @@
 .info-badge__container {
   position: fixed;
-  bottom: 15vh;
+  bottom: 0;
   right: 0;
   z-index: 200;
 }
 
+@media (min-width: 500px) {
+  .info-badge__container {
+    bottom: 10vh;
+  }
+}
+
 .info-badge__content {
-  padding: 0.25rem 0.5rem;
+  padding: 1rem 0.5rem;
   background-color: #ef3b0e;
   font-size: 1rem;
   line-height: 1.65;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  max-width: 320px;
+}
+.info-badge__content a {
+  color: inherit;
 }
 
 .info-badge__closeButton {
+  padding-top: 0.25rem;
   margin-right: 0.5rem;
   background-color: unset;
   border: unset;
@@ -31,16 +42,20 @@
 }
 
 .info-badge-enter {
-  opacity: 0;
+  opacity: 1;
+  transform: translateX(80%);
 }
 .info-badge-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transform: translateX(0);
+  transition: opacity 0.4s, transform 0.3s;
 }
 .info-badge-exit {
+  transform: translateX(0);
   opacity: 1;
 }
 .info-badge-exit-active {
-  opacity: 0;
-  transition: opacity 200ms;
+  opacity: 1;
+  transform: translateX(80%);
+  transition: opacity 0.4s, transform 0.3s;
 }
