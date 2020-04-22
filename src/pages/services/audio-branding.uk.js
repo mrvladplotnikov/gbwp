@@ -165,7 +165,7 @@ const AudioBranding = ({ data, location }) => {
               переходимо до наступного етапу.
             </p>
           </StyledAccordionItem>
-          <StyledAccordionItem title="Прийом проекту">
+          <StyledAccordionItem title="Прийом проєкту">
             <p>
               Після всіх погоджень ми висилаємо вам кінцеві файли. Цей момент —
               останній шанс скористатися безплатними правками.{" "}

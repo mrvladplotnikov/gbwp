@@ -23,7 +23,7 @@ module.exports = {
   categoryFilter: "Category",
   serviceFilter: "Service",
   resetFilterButton: "Reset filters",
-  planCardButtonLabel: "Ger price",
+  planCardButtonLabel: "Get price",
   whyTitle: "Why us?",
   contactTitle: "Write to us",
   contactText:

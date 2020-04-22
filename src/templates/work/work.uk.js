@@ -84,7 +84,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
                   <TermItem
                     className={styles.metaValues}
                     terms={acf.autors}
-                    name="Робота над проектом"
+                    name="Робота над проєктом"
                   />
                 </>
               }
@@ -101,7 +101,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
           </div>
           {reviews.length > 0 && (
             <>
-              <Headline Tag="h2">Відгук клієнта про проект</Headline>
+              <Headline Tag="h2">Відгук клієнта про проєкт</Headline>
               <div
                 style={{
                   marginBottom: "2rem",
