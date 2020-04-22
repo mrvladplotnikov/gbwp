@@ -62,7 +62,7 @@ const Home = ({ data, location }) => {
           <Link to="/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Як щодо <a href={mailTo.mail.uk}>безкоштовної консультації</a> або{" "}
+          Як щодо <a href={mailTo.mail.uk}>безплатної консультації</a> або{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>

@@ -79,7 +79,7 @@ const Home = ({ data, location }) => {
         title="Our services"
         services={[
           {
-            title: "Music Creation",
+            title: "Music Composing",
             link: "/en/services/music-composing",
           },
           {

@@ -59,7 +59,7 @@ const MusicCreation = ({ data, location }) => {
     <Layout
       Sidebar={
         <Sidebar
-          title="Music composing"
+          title="Music Composing"
           text="Where words are powerless, shows up the more expressive language — music."
           autor="Peter Tchaikovsky"
           image={sidebarImage}
