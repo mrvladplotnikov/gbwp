@@ -27,7 +27,7 @@ module.exports = [
         label: {
           uk: "Створення музики",
           ru: "Создание музыки",
-          en: "Music composing",
+          en: "Music Composing",
         },
       },
       {
@@ -63,7 +63,7 @@ module.exports = [
         label: {
           uk: "Голосове озвучення",
           ru: "Голосовое озвучивание",
-          en: "Voice casting",
+          en: "Voice Casting",
         },
       },
     ],
@@ -99,7 +99,7 @@ module.exports = [
       ru: "/ru/our-values",
     },
     label: {
-      uk: " Наші цінності",
+      uk: "Наші цінності",
       en: "Our values",
       ru: "Наши ценности",
     },
