@@ -161,7 +161,7 @@ const About = ({ data, location }) => {
           задоволеними. Переконатися в цьому можна тут.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Як щодо <a href={mailTo.mail.uk}>безкоштовної консультації</a> або{" "}
+          Як щодо <a href={mailTo.mail.uk}>безплатної консультації</a> або{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>
