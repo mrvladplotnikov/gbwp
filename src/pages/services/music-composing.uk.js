@@ -284,6 +284,7 @@ const MusicCreation = ({ data, location }) => {
       </ServiceSection>
       <ModalContactForm
         title={formTitle}
+        type="package-request"
         subTitle={formSubTitle}
         customLocation={formKey}
         open={showForm}

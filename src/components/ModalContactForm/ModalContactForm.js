@@ -48,6 +48,7 @@ const sendMail = async ({ name = "", email = "", lang = "", url = "" }) => {
 
 const ModalContactForm = ({
   open,
+  type,
   onClose,
   intl,
   title,
@@ -69,6 +70,7 @@ const ModalContactForm = ({
     },
     onSubmit: async ({ firstName, email }, actions) => {
       const result = await sendMail({
+        type,
         name: firstName,
         email,
         lang: intl.locale,
@@ -170,6 +172,7 @@ const ModalContactForm = ({
 }
 
 ModalContactForm.defaultProps = {
+  type: "",
   open: false,
   onClose: () => {},
   title: "",
@@ -178,6 +181,7 @@ ModalContactForm.defaultProps = {
 }
 
 ModalContactForm.propTypes = {
+  type: PropTypes.string,
   open: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.node,
