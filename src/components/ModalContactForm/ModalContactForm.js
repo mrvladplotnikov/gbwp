@@ -12,7 +12,13 @@ import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
 
 Modal.setAppElement("#___gatsby")
 
-const sendMail = async ({ name = "", email = "", lang = "", url = "" }) => {
+const sendMail = async ({
+  name = "",
+  email = "",
+  lang = "",
+  url = "",
+  type = "",
+}) => {
   try {
     const response = await fetch("https://vp-production.com/mail/", {
       method: "POST",
@@ -24,6 +30,7 @@ const sendMail = async ({ name = "", email = "", lang = "", url = "" }) => {
         email,
         lang,
         url,
+        type,
       }),
     })
 
