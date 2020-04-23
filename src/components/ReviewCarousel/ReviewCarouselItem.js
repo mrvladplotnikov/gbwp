@@ -64,7 +64,7 @@ const ReviewCarouselItem = ({
       <div className={classNames(styles.meta, classes.meta)}>
         {link ? (
           <a href={link} target="__blank" rel="nofollow noindex">
-            {thumbnail ? (
+            {thumbnail && thumbnail.localFile ? (
               <Img
                 fluid={thumbnail.localFile.childImageSharp.fluid}
                 alt={thumbnail.name}
@@ -80,7 +80,7 @@ const ReviewCarouselItem = ({
           </a>
         ) : (
           <>
-            {thumbnail ? (
+            {thumbnail && thumbnail.localFile ? (
               <Img
                 fluid={thumbnail.localFile.childImageSharp.fluid}
                 alt={thumbnail.name}

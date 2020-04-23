@@ -30,7 +30,7 @@ const WorkCards = ({
           title={work.title}
           lang={work.lang}
           image={
-            work.featured_media
+            work.featured_media.localFile
               ? work.featured_media.localFile.childImageSharp.fluid
               : ""
           }
