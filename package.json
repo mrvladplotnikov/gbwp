@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.9.0",
+    "gatsby-plugin-remove-trailing-slashes": "^2.2.4",
     "prettier": "^1.18.2"
   },
   "keywords": [
