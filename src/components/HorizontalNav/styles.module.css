@@ -10,6 +10,12 @@
   background-color: rgba(0, 0, 0, 0.94);
 }
 
+@media (max-width: 768px) {
+  .container {
+    background-color: rgba(0, 0, 0, 0.94) !important;
+  }
+}
+
 .logo {
   display: block;
   line-height: 1;
