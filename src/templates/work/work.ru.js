@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../../layouts/ru/default"
 import { Inner } from "../../components/Container"
@@ -38,13 +37,17 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     data.reviews.nodes.filter(r => r.meta.project === wordpress_id)
   return (
     <Layout location={location} translations={translations} title={title}>
-      {isHeroFormat && featured_media && (
-        <BackgroundImage
-          Tag="div"
-          className={styles.heroImage}
-          backgroundColor="#000000"
-          fluid={featured_media.localFile.childImageSharp.fluid}
-        />
+      {isHeroFormat && acf.work_video && (
+        <div className={styles.videoBGWrapper}>
+          <div className={styles.videoBG}>
+            <iframe
+              src={`https://player.vimeo.com/video/${acf.work_video}?background=1&autoplay=1&loop=1&byline=0&title=0`}
+              frameBorder="0"
+              allowFullScreen
+              title={`${title} - video bg`}
+            ></iframe>
+          </div>
+        </div>
       )}
       <Inner>
         <div className={styles.template}>
@@ -142,6 +145,7 @@ export const pageQuery = graphql`
       format
       acf {
         autors
+        work_video
       }
       work_developer {
         id
