@@ -102,7 +102,14 @@ const ReviewCarouselItem = ({
       </div>
       {review && (
         <div className={classNames(styles.content, classes.content)}>
-          {strip(review).slice(0, previewLen)}{" "}
+          <p
+            dangerouslySetInnerHTML={{
+              __html: `${strip(review).slice(0, previewLen)}${
+                showReadMoreButton ? "..." : ""
+              }`,
+            }}
+          />
+
           {showReadMoreButton && (
             <>
               <button
