@@ -17,6 +17,16 @@
 .ModalContactForm__actions p {
   font-weight: 300;
 }
+.ModalContactForm__closeButton {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
 body .actions a {
   font-weight: normal;
   color: #ffffff;
@@ -43,6 +53,7 @@ body .actions a {
   .ModalContactForm__container p {
     max-width: 80%;
     margin-bottom: 35px;
+    font-size: 1rem;
   }
   .ModalContactForm__form {
     display: flex;

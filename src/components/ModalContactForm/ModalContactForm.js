@@ -9,6 +9,7 @@ import FormButton from "../FormButton"
 import { Outer } from "../Container"
 import Headline from "../Headline"
 import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 Modal.setAppElement("#___gatsby")
 
@@ -113,13 +114,13 @@ const ModalContactForm = ({
   return (
     <Modal
       isOpen={open}
-      onRequestClose={handleClose}
+      // onRequestClose={handleClose}
       contentLabel="Details"
       closeTimeoutMS={300}
       style={{
         overlay: {
           zIndex: 2001,
-          background: "rgba(0, 0, 0, 0.86)",
+          background: "rgba(0, 0, 0, 0.94)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -141,6 +142,13 @@ const ModalContactForm = ({
       }}
     >
       <Outer className="ModalContactForm__container">
+        <button
+          type="button"
+          onClick={handleClose}
+          className="ModalContactForm__closeButton"
+        >
+          <FontAwesomeIcon icon={["fas", "times"]} />
+        </button>
         <Headline className="ModalContactForm__title" Tag="h2">
           {title}
         </Headline>
