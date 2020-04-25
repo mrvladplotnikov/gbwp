@@ -12,6 +12,12 @@
 
 .aboutTitle {
   padding: 0 15px;
+  position: sticky;
+  top: 4.4rem;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+  padding-bottom: 1rem;
+  margin-bottom: 0;
 }
 .aboutCol {
   max-width: 100%;
@@ -67,6 +73,9 @@
     font-size: 22px;
     line-height: 35px;
     text-align: justify;
+  }
+  .aboutTitle {
+    top: 5rem;
   }
   .aboutImage {
     margin-left: 158px;

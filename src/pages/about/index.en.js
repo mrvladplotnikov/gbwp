@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/en/default"
 import { Outer, Inner } from "../../components/Container"
 import Headline from "../../components/Headline"
@@ -154,7 +154,7 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Millions of people have already listened to our work, and many of them
-          were satisfied. You can check this here.
+          were satisfied. You can check this <Link to="/en/reviews">here</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a{" "}
@@ -166,7 +166,10 @@ const About = ({ data, location }) => {
             technical task template
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
-          <a href="/">email us</a>.
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+            email us
+          </a>
+          .
         </FeatureCard>
       </Why>
       <SectionWithText
@@ -213,7 +216,11 @@ export const query = graphql`
         photo: featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 570, srcSetBreakpoints: [445, 900]) {
+              fluid(
+                maxWidth: 570
+                srcSetBreakpoints: [445, 900]
+                quality: 100
+              ) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

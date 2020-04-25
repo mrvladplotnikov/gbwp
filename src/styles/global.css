@@ -69,6 +69,23 @@ body a {
   text-decoration-line: underline;
 }
 
+body p > a:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f3461b),
+    color-stop(97.79%, #0da6f2)
+  );
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
+
 body svg {
   display: inline-block;
   fill: currentColor;

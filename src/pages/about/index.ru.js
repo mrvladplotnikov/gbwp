@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../layouts/ru/default"
 import { Outer, Inner } from "../../components/Container"
 import Headline from "../../components/Headline"
@@ -158,7 +158,7 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Наши работы уже слышали миллионы людей и многие из них остались
-          довольны. Убедиться в этом можно <a href="/">тут</a>.
+          довольны. Убедиться в этом можно <Link to="/ru/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
           Как насчёт{" "}
@@ -169,7 +169,11 @@ const About = ({ data, location }) => {
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>
-          ? Мы всегда открыты к общению, так что смело <a href="/">пишите</a>.
+          ? Мы всегда открыты к общению, так что смело{" "}
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+            пишите
+          </a>
+          .
         </FeatureCard>
       </Why>
       <SectionWithText
@@ -216,7 +220,11 @@ export const query = graphql`
         photo: featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 570, srcSetBreakpoints: [445, 900]) {
+              fluid(
+                maxWidth: 570
+                srcSetBreakpoints: [445, 900]
+                quality: 100
+              ) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
