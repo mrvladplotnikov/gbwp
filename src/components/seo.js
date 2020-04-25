@@ -76,14 +76,14 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
       link={[
         {
           rel: "canonical",
-          key: `${site.siteMetadata.siteUrl}${pathname}`,
-          href: `${site.siteMetadata.siteUrl}${pathname}`,
+          key: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
+          href: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
         },
         ...langsMenu.map(lang => ({
           rel: "alternate",
           hreflang: lang.langKey,
           key: lang.langKey,
-          href: `${site.siteMetadata.siteUrl}${lang.link}`,
+          href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
         })),
       ]}
     />
