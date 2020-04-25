@@ -45,16 +45,21 @@ const Faq = ({ location }) => {
             <p>
               First of all, we need to get to know you and your project. To do
               this, you fill out a brief, and we conduct a{" "}
-              <a href={mailTo.mail.en}>free consultation</a> for you. If
-              everything is good, it remains only to prepare the technical task
-              and sign the contract.
+              <a target="_blank" href={mailTo.mail.en}>
+                free consultation
+              </a>{" "}
+              for you. If everything is good, it remains only to prepare the
+              technical task and sign the contract.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="What if my project is under the NDA?">
             <p>
-              You can <a href={mailTo.mail.en}>email us</a>, we will sign all
-              the documents needed, and we will be able to discuss everything
-              freely.
+              You can{" "}
+              <a target="_blank" href={mailTo.mail.en}>
+                email us
+              </a>
+              , we will sign all the documents needed, and we will be able to
+              discuss everything freely.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Do you do test tasks?">
@@ -75,7 +80,11 @@ const Faq = ({ location }) => {
               Nevertheless, we are ready to make an exception. For example, if
               we see an exciting indie project that appeals to us for help and
               presents itself in a great way. If this is about you — feel free
-              to <a href={mailTo.mail.en}>write to us</a>!
+              to{" "}
+              <a target="_blank" href={mailTo.mail.en}>
+                write to us
+              </a>
+              !
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Who prepares the technical task for the project?">

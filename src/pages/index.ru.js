@@ -70,7 +70,10 @@ const Home = ({ data, location }) => {
             крутого темплейта ТЗ
           </InlineButton>
           ? Мы всегда открыты к общению, так что смело{" "}
-          <a href={mailTo.mail.ru}>пишите</a>.
+          <a target="_blank" href={mailTo.mail.ru}>
+            пишите
+          </a>
+          .
         </FeatureCard>
       </Why>
       <ModalContactForm

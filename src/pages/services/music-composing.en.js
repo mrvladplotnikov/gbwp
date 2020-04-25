@@ -129,10 +129,12 @@ const MusicCreation = ({ data, location }) => {
           <StyledAccordionItem title="Acquaintance">
             <p>
               You fill out a brief and get a{" "}
-              <a href={mailTo.mail.en}>free consultation</a>. We will get to
-              know each other and understand if we are ready to cooperate. We
-              need to match with the client in the general vision and principles
-              of work.
+              <a target="_blank" href={mailTo.mail.en}>
+                free consultation
+              </a>
+              . We will get to know each other and understand if we are ready to
+              cooperate. We need to match with the client in the general vision
+              and principles of work.
             </p>
           </StyledAccordionItem>
           <StyledAccordionItem title="Preparation">

@@ -61,12 +61,19 @@ const Home = ({ data, location }) => {
           were satisfied. You can check this <Link to="/en/reviews">here</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
+          How about a{" "}
+          <a target="_blank" href={mailTo.mail.en}>
+            free consultation
+          </a>{" "}
+          or a cool{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             technical task template
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
-          <a href={mailTo.mail.en}>email us</a>.
+          <a target="_blank" href={mailTo.mail.en}>
+            email us
+          </a>
+          .
         </FeatureCard>
       </Why>
       <ModalContactForm

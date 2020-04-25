@@ -73,11 +73,11 @@ const About = ({ data, location }) => {
                 cool people. And so began the path of our company.
               </p>
               <p>
-                Now VP Production is a team where everyone loves his
-                or her job. Whether it is music composing, sound design, voice
-                acting, project management, or marketing — we cannot imagine our
-                lives without it. That is why every day we inspire listeners on
-                both sides of audiovisual projects and enjoy it.
+                Now VP Production is a team where everyone loves his or her job.
+                Whether it is music composing, sound design, voice acting,
+                project management, or marketing — we cannot imagine our lives
+                without it. That is why every day we inspire listeners on both
+                sides of audiovisual projects and enjoy it.
               </p>
             </div>
             <div className={styles.aboutCol}>
@@ -105,8 +105,8 @@ const About = ({ data, location }) => {
           principles of work.
         </h3>
         <h3>
-          We improve everything that can be improved, even if the result
-          is already paid for and accepted.
+          We improve everything that can be improved, even if the result is
+          already paid for and accepted.
         </h3>
       </SectionWithText>
       <Services
@@ -157,7 +157,11 @@ const About = ({ data, location }) => {
           were satisfied. You can check this here.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          How about a <a href={mailTo.mail.en}>free consultation</a> or a cool{" "}
+          How about a{" "}
+          <a target="_blank" href={mailTo.mail.en}>
+            free consultation
+          </a>{" "}
+          or a cool{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             technical task template
           </InlineButton>
@@ -177,9 +181,13 @@ const About = ({ data, location }) => {
       </SectionWithText>
       <Contacts>
         Tell us about your project, product, or idea. Ask for advice, or get a
-        full <a href={mailTo.mail.en}>free consultation</a>. Find out the cost,
-        specify a vital question, or maybe you want to become part of our team?
-        Anything you want! We will be happy to get to know you and help.
+        full{" "}
+        <a target="_blank" href={mailTo.mail.en}>
+          free consultation
+        </a>
+        . Find out the cost, specify a vital question, or maybe you want to
+        become part of our team? Anything you want! We will be happy to get to
+        know you and help.
       </Contacts>
       <ModalContactForm
         title="Technical task template"

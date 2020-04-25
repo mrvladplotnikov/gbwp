@@ -62,12 +62,19 @@ const Home = ({ data, location }) => {
           <Link to="/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Як щодо <a href={mailTo.mail.uk}>безплатної консультації</a> або{" "}
+          Як щодо{" "}
+          <a target="_blank" href={mailTo.mail.uk}>
+            безплатної консультації
+          </a>{" "}
+          або{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>
           ? Ми завжди відкриті до спілкування, так що сміливо{" "}
-          <a href={mailTo.mail.uk}>пишіть</a>.
+          <a target="_blank" href={mailTo.mail.uk}>
+            пишіть
+          </a>
+          .
         </FeatureCard>
       </Why>
       <ModalContactForm
