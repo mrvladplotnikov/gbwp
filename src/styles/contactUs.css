@@ -8,22 +8,22 @@
 }
 .ContactUs__title {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 2rem;
 }
 .ContactUs__text {
   color: #bebebe;
   font-size: 14px;
   line-height: 17px;
-  margin-bottom: 34px;
+  margin-bottom: 1rem;
 }
 .ContactUs__email {
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
   letter-spacing: -0.01em;
   text-decoration: none;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   display: inline-block;
 }
 
@@ -37,26 +37,26 @@
   text-shadow: none;
 }
 
-.ContactUs__socialLinks {
+.ContactUs__contactsLinks {
   columns: 2;
   list-style: none;
   padding: 0;
   margin: 0;
   column-gap: 60px;
 }
-.ContactUs__socialLinks li {
+.ContactUs__contactsLinks li {
   line-height: 1.65;
   margin: 20px 0;
 }
-.ContactUs__socialLinks li:nth-child(1),
-.ContactUs__socialLinks li:nth-child(4) {
+.ContactUs__contactsLinks li:nth-child(1),
+.ContactUs__contactsLinks li:nth-child(4) {
   margin-top: 0;
 }
-.ContactUs__socialLinks li:nth-child(3),
-.ContactUs__socialLinks li:nth-child(6) {
+.ContactUs__contactsLinks li:nth-child(3),
+.ContactUs__contactsLinks li:nth-child(6) {
   margin-bottom: 0;
 }
-.ContactUs__socialLinks li:nth-last-child(-n + 3) {
+.ContactUs__contactsLinks li:nth-last-child(-n + 3) {
   text-align: right;
 }
 .ContactUs__link {
@@ -101,7 +101,7 @@
     font-size: 2.5rem;
     margin-bottom: 0;
   }
-  .ContactUs__socialLinks li {
+  .ContactUs__contactsLinks li {
     margin: 88px 0;
   }
 }

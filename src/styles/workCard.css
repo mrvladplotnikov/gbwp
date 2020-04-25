@@ -4,6 +4,7 @@
   position: relative;
   margin-bottom: 15px;
   text-decoration: none;
+  text-decoration-line: none !important;
 }
 .WorkCard:hover {
   color: #ffffff;

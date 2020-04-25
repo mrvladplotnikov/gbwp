@@ -61,7 +61,11 @@ const Home = ({ data, location }) => {
           довольны. Убедиться в этом можно <Link to="/ru/reviews">тут</Link>.
         </FeatureCard>
         <FeatureCard img={icon6}>
-          Как насчёт <a href={mailTo.mail.ru}>бесплатной консультации</a> или{" "}
+          Как насчёт{" "}
+          <a target="_blank" href={mailTo.mail.ru}>
+            бесплатной консультации
+          </a>{" "}
+          или{" "}
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>

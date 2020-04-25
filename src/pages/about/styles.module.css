@@ -29,6 +29,9 @@
 
 .aboutImage {
   display: none;
+  position: sticky;
+  top: 10rem;
+  left: 0;
 }
 
 .ourTeamSection h2 {

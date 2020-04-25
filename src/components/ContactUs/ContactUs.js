@@ -41,13 +41,13 @@ const ContactUs = ({ title, content }) => {
           </a>
         </div>
         <div className="ContactUs__col">
-          <ul className="ContactUs__socialLinks">
+          <ul className="ContactUs__contactsLinks">
             {socialLinks.map((sc, i) => (
               <li key={i}>
                 <a
                   className="ContactUs__link"
                   target="_blank"
-                  rel="me noopener noreferrer"
+                  rel="noopener noreferrer"
                   href={sc.link}
                 >
                   {sc.name}{" "}
