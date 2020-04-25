@@ -16,29 +16,29 @@ const ServicesList = ({ services = [] }) => {
     query {
       image0: file(relativePath: { eq: "services/bg-1.jpg" }) {
         childImageSharp {
-          fixed(width: 569, height: 236, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
+          fluid(quality: 100, maxWidth: 768) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       image1: file(relativePath: { eq: "services/bg-3.jpg" }) {
         childImageSharp {
-          fixed(width: 569, height: 236, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
+          fluid(quality: 100, maxWidth: 768) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       image2: file(relativePath: { eq: "services/bg-2.jpg" }) {
         childImageSharp {
-          fixed(width: 569, height: 236, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
+          fluid(quality: 100, maxWidth: 768) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       image3: file(relativePath: { eq: "services/bg-4.jpg" }) {
         childImageSharp {
-          fixed(width: 569, height: 236, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
+          fluid(quality: 100, maxWidth: 768) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -53,7 +53,7 @@ const ServicesList = ({ services = [] }) => {
             key={i}
             className={styles.item}
             title={service.title}
-            bgPath={data[`image${i}`].childImageSharp.fixed}
+            bgPath={data[`image${i}`].childImageSharp.fluid}
             iconPath={icons[i]}
             link={service.link}
           />
