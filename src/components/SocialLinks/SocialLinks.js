@@ -34,7 +34,7 @@ const SocialLinks = () => {
               className={styles.link}
               href={sc.link}
               target="_blank"
-              rel="me noopener noreferrer"
+              rel="noopener noreferrer nofollow"
             >
               {sc.name}
               <span className={styles.arrow}></span>

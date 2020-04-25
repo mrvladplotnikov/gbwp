@@ -47,7 +47,7 @@ const ContactUs = ({ title, content }) => {
                 <a
                   className="ContactUs__link"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   href={sc.link}
                 >
                   {sc.name}{" "}

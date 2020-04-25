@@ -60,7 +60,11 @@ const About = ({ data, location }) => {
                 музична школа замість футболу, нескінченні уроки сольфеджіо
                 (обов’язково в суботу вранці, коли нормальні діти сплять) і
                 юнацький рок-бунт, який потім переріс у проєкт{" "}
-                <a href="https://total-empty.bandcamp.com/" target="__blank">
+                <a
+                  href="https://total-empty.bandcamp.com/"
+                  rel="nofollow"
+                  target="__blank"
+                >
                   Total-Empty
                 </a>
                 . І хоча Влад здобув вищу освіту зовсім в іншій сфері, на

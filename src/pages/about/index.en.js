@@ -58,7 +58,11 @@ const About = ({ data, location }) => {
                 He was always a musician: the first concert on a broom at three
                 years old, a music school instead of football, endless solfeggio
                 lessons, and a youthful rock riot, which later became the{" "}
-                <a href="https://total-empty.bandcamp.com/" target="__blank">
+                <a
+                  href="https://total-empty.bandcamp.com/"
+                  rel="nofollow"
+                  target="__blank"
+                >
                   Total-Empty
                 </a>
                 . And although Vlad received his higher education in a

@@ -9,7 +9,11 @@ const SocialLinks = ({ socialLinks = [] }) => {
     <ul className={"NavigationDrawer__soc-links"}>
       {socialLinks.map((item, index) => (
         <li key={index}>
-          <a target="_blank" rel="noopener noreferrer" href={item.link}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            href={item.link}
+          >
             <FontAwesomeIcon icon={["fab", item.icon]} />
           </a>
         </li>

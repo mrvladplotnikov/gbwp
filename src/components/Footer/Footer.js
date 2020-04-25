@@ -38,7 +38,7 @@ const Footer = () => {
                   <a
                     className={styles.link}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     href={item.link}
                   >
                     <FontAwesomeIcon icon={["fab", item.icon]} />
