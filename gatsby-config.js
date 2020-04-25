@@ -12,6 +12,7 @@ module.exports = {
     navMenu: siteMenu,
     socialLinks: siteSocialLinks,
     adminEmail: "connect@vp-production.com",
+    siteUrl: process.env.SITE_URL || "http://localhost:8000/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -39,7 +40,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "gb.vp-production.com",
+        baseUrl: process.env.BASE_DATA_URL || "gb.vp-production.com",
         debug: false,
         hostingWPCOM: false,
         protocol: "https",
