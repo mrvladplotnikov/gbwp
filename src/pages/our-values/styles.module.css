@@ -1,3 +1,7 @@
+.container {
+  overflow-y: hidden;
+}
+
 .container > .module:nth-child(even) {
   background-color: #090909;
 }
