@@ -66,10 +66,11 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
             .replace("//", "/")
             .replace(`/${defaultLangKey}/`, "/"),
         }))
+
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
-              <SEO lang={langKey} />
+              <SEO lang={langKey} pathname={url} langsMenu={langsMenu} />
               {!hideOnScroll ? (
                 <>
                   <Languages langsMenu={langsMenu} />

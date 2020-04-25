@@ -44,6 +44,7 @@ const EmptyLayout = ({
               description={description}
               meta={meta}
               lang={langKey}
+              pathname={url}
             />
             <SnackbarProvider
               position="top"

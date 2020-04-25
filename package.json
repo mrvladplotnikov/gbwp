@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
@@ -21,6 +21,7 @@
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.28",
+    "gatsby-plugin-sitemap": "^2.3.3",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-source-wordpress": "^3.1.39",
     "gatsby-transformer-sharp": "^2.2.20",
