@@ -126,7 +126,11 @@ const SoundDesign = ({ data, location }) => {
           <StyledAccordionItem title="Acquaintance">
             <p>
               You write to us and get a{" "}
-              <a target="_blank" href={mailTo.mail.en}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.en}
+              >
                 free consultation
               </a>{" "}
               in a convenient form so that we learn about your project. In this

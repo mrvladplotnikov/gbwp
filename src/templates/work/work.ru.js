@@ -13,6 +13,7 @@ import { HeadingWithMeta, HeadingWithHero } from "../../components/WorkHeading"
 import styles from "./styles.module.css"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import Headline from "../../components/Headline"
+import mailTo from "../../utils/mailTo"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
@@ -123,7 +124,15 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
         prefix="ru/works"
       />
       <Inner>
-        <Contacts />
+        <Contacts>
+          Расскажите нам о своём проекте, продукте или идее. Спросите совет или
+          получите полноценную{" "}
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+            бесплатную консультацию
+          </a>
+          . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с
+          вами познакомиться и помочь.
+        </Contacts>
       </Inner>
     </Layout>
   )

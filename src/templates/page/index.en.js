@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../layouts/en/default"
 import { Inner } from "../../components/Container"
 import Contacts from "../../components/lendingSections/Contacts"
+import mailTo from "../../utils/mailTo"
 
 const PageTemplate = ({ data, location }) => {
   const currentPage = data.wordpressPage
@@ -19,7 +20,15 @@ const PageTemplate = ({ data, location }) => {
           <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
         </div>
       </Inner>
-      <Contacts />
+      <Contacts>
+        Tell us about your project, product, or idea. Ask for advice, or get a
+        full{" "}
+        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          free consultation
+        </a>
+        . Find out the cost, specify a vital question, well anything you want!
+        We will be happy to get to know you and help.
+      </Contacts>
     </Layout>
   )
 }

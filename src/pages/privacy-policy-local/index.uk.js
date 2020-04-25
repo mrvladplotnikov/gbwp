@@ -122,7 +122,7 @@ const PrivacyPolicy = ({ location }) => {
       <Contacts>
         Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
         отримайте повноцінну{" "}
-        <a target="_blank" href={mailTo.mail.uk}>
+        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
           безплатну консультацію
         </a>
         . Дізнайтеся вартість, уточніть важливе питання, чи, може, ви хочете

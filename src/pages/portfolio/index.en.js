@@ -7,6 +7,7 @@ import { Outer } from "../../components/Container"
 import WorksList from "../../components/PortfolioWithFilters"
 import boxOfDotsLink from "../../images/box-of-dots.svg"
 import styles from "./styles.module.css"
+import mailTo from "../../utils/mailTo"
 
 const PortfolioBox = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
@@ -22,7 +23,15 @@ const Portfolio = ({ data, location }) => (
       <PortfolioBox />
     </Outer>
     <WorksList works={data.allWordpressWpWork.works} />
-    <Contacts />
+    <Contacts>
+      Tell us about your project, product, or idea. Ask for advice, or get a
+      full{" "}
+      <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+        free consultation
+      </a>
+      . Find out the cost, specify a vital question, well anything you want! We
+      will be happy to get to know you and help.
+    </Contacts>
   </Layout>
 )
 

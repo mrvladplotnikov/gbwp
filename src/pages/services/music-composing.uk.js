@@ -131,7 +131,11 @@ const MusicCreation = ({ data, location }) => {
           <StyledAccordionItem title="Знайомство">
             <p>
               Ви заповнюєте бриф і отримуєте{" "}
-              <a target="_blank" href={mailTo.mail.uk}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.uk}
+              >
                 безплатну консультацію
               </a>
               . Ми знайомимося один з одним і розуміємо, наскільки готові до

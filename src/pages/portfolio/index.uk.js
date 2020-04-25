@@ -6,6 +6,8 @@ import { Outer } from "../../components/Container"
 import WorksList from "../../components/PortfolioWithFilters"
 import boxOfDotsLink from "../../images/box-of-dots.svg"
 import styles from "./styles.module.css"
+import mailTo from "../../utils/mailTo"
+import Contacts from "../../components/lendingSections/Contacts"
 
 const PortfolioBox = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
@@ -21,6 +23,15 @@ const Portfolio = ({ data, location }) => (
       <PortfolioBox />
     </Outer>
     <WorksList works={data.allWordpressWpWork.works} />
+    <Contacts>
+      Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
+      отримайте повноцінну{" "}
+      <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+        безплатну консультацію
+      </a>
+      . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми будемо
+      раді з вами познайомитися й допомогти.
+    </Contacts>
   </Layout>
 )
 

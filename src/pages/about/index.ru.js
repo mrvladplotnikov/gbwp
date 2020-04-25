@@ -162,7 +162,7 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Как насчёт{" "}
-          <a target="_blank" href={mailTo.mail.ru}>
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
             бесплатной консультации
           </a>{" "}
           или{" "}
@@ -185,7 +185,7 @@ const About = ({ data, location }) => {
       <Contacts>
         Расскажите нам о своём проекте, продукте или идее. Спросите совет или
         получите полноценную{" "}
-        <a target="_blank" href={mailTo.mail.ru}>
+        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
           бесплатную консультацию
         </a>
         . Узнайте цены, уточните важный вопрос, или, может, вы хотите стать

@@ -135,7 +135,11 @@ const VoiceCasting = ({ data, location }) => {
           <StyledAccordionItem title="Acquaintance">
             <p>
               You write to us and get a{" "}
-              <a target="_blank" href={mailTo.mail.en}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.en}
+              >
                 free consultation
               </a>{" "}
               in a convenient form so that we learn about your project. In this
@@ -238,7 +242,7 @@ const VoiceCasting = ({ data, location }) => {
         <p>
           If you did not find the language you need in the list of available
           languages, be sure to{" "}
-          <a target="_blank" href={mailTo.mail.en}>
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
             email us
           </a>
           , and we will provide you the right talent.

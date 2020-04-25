@@ -129,7 +129,11 @@ const MusicCreation = ({ data, location }) => {
           <StyledAccordionItem title="Acquaintance">
             <p>
               You fill out a brief and get a{" "}
-              <a target="_blank" href={mailTo.mail.en}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.en}
+              >
                 free consultation
               </a>
               . We will get to know each other and understand if we are ready to

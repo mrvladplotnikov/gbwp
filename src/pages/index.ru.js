@@ -62,7 +62,7 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Как насчёт{" "}
-          <a target="_blank" href={mailTo.mail.ru}>
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
             бесплатной консультации
           </a>{" "}
           или{" "}
@@ -70,7 +70,7 @@ const Home = ({ data, location }) => {
             крутого темплейта ТЗ
           </InlineButton>
           ? Мы всегда открыты к общению, так что смело{" "}
-          <a target="_blank" href={mailTo.mail.ru}>
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
             пишите
           </a>
           .
@@ -116,7 +116,15 @@ const Home = ({ data, location }) => {
           творческого потенциала.
         </h3>
       </SectionWithText>
-      <Contacts />
+      <Contacts>
+        Расскажите нам о своём проекте, продукте или идее. Спросите совет или
+        получите полноценную{" "}
+        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+          бесплатную консультацию
+        </a>
+        . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с
+        вами познакомиться и помочь.
+      </Contacts>
     </Layout>
   )
 }

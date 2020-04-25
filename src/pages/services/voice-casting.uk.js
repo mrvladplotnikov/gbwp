@@ -135,7 +135,11 @@ const VoiceCasting = ({ data, location }) => {
           <StyledAccordionItem title="Знайомство">
             <p>
               Ви пишете нам і отримуєте в зручній формі{" "}
-              <a target="_blank" href={mailTo.mail.uk}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.uk}
+              >
                 безплатну консультацію
               </a>
               , а ми дізнаємося про ваш проєкт. Так ми знайомимося один з одним
@@ -238,7 +242,7 @@ const VoiceCasting = ({ data, location }) => {
         </PlanList>
         <p>
           Якщо в списку доступних мов ви не знайшли потрібну вам — обов’язково{" "}
-          <a target="_blank" href={mailTo.mail.uk}>
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
             напишіть нам
           </a>{" "}
           і ми підберемо потрібного актора.

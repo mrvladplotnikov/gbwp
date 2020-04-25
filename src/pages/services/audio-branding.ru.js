@@ -128,7 +128,11 @@ const AudioBranding = ({ data, location }) => {
           <StyledAccordionItem title="Знакомство">
             <p>
               Вы пишете нам и получаете в удобной форме{" "}
-              <a target="_blank" href={mailTo.mail.ru}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.ru}
+              >
                 бесплатную консультацию
               </a>
               , а мы узнаём о вашем бренде. Так мы знакомимся друг с другом и

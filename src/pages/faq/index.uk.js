@@ -45,7 +45,11 @@ const Faq = ({ location }) => {
             <p>
               Спершу нам потрібно познайомитися з вами і вашим проєктом. Для
               цього ви заповнюєте бриф, а ми проводимо для вас{" "}
-              <a target="_blank" href={mailTo.mail.uk}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.uk}
+              >
                 безплатну консультацію
               </a>
               . Якщо ми з вами збігатемося характерами, залишиться тільки
@@ -54,7 +58,11 @@ const Faq = ({ location }) => {
           </StyledAccordionItem>
           <StyledAccordionItem title="А що робити, якщо мій проєкт під NDA?">
             <p>
-              <a target="_blank" href={mailTo.mail.uk}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.uk}
+              >
                 Напишіть нам
               </a>
               , ми підпишемо відповідні документи і зможемо вільно все
@@ -78,7 +86,11 @@ const Faq = ({ location }) => {
               Проте, ми готові зробити виняток у тому випадку, якщо перед нами
               цікавий інді проєкт, який звертається до нас по допомогу і круто
               себе презентує. Якщо це про вас —{" "}
-              <a target="_blank" href={mailTo.mail.uk}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mailTo.mail.uk}
+              >
                 сміливо пишіть
               </a>
               !

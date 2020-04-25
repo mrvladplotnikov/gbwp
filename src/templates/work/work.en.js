@@ -13,6 +13,7 @@ import TermItem from "../../components/TermItem"
 import styles from "./styles.module.css"
 import Headline from "../../components/Headline"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
+import mailTo from "../../utils/mailTo"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
@@ -123,7 +124,15 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
         prefix="en/works"
       />
       <Inner>
-        <Contacts />
+        <Contacts>
+          Tell us about your project, product, or idea. Ask for advice, or get a
+          full{" "}
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+            free consultation
+          </a>
+          . Find out the cost, specify a vital question, well anything you want!
+          We will be happy to get to know you and help.
+        </Contacts>
       </Inner>
     </Layout>
   )
