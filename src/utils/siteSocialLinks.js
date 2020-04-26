@@ -8,13 +8,13 @@ module.exports = [
   {
     name: "instagram",
     showOnHome: true,
-    link: "https://www.instagram.com/vpproduction.audio",
+    link: "https://www.instagram.com/vpproduction.audio/",
     icon: "instagram",
   },
   {
     name: "soundcloud",
     showOnHome: false,
-    link: "https://soundcloud.com/vpproduction.audio",
+    link: "https://soundcloud.com/vpproductionaudio",
     icon: "soundcloud",
   },
   {
