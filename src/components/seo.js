@@ -28,8 +28,14 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-
+  /**
+   * remove noindex
+   */
   const metaProp = [
+    {
+      name: "robots",
+      content: "noindex",
+    },
     {
       name: `description`,
       content: metaDescription,

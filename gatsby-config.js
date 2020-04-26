@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: process.env.BASE_DATA_URL || "gb.vp-production.com",
+        baseUrl: process.env.BASE_DATA_URL || "vpcontent.biz.ua",
         debug: false,
         hostingWPCOM: false,
         protocol: "https",
