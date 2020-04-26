@@ -4,7 +4,7 @@ import ContactUs from "../../ContactUs/ContactUs"
 
 const Contacts = ({ title, children }) => (
   <section className="Contacts">
-    <ContactUs title={title} content={children} />
+    <ContactUs title={title}>{children}</ContactUs>
   </section>
 )
 

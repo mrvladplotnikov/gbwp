@@ -336,7 +336,15 @@ const MusicCreation = ({ data, location }) => {
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">
-        <ContactUs />
+        <ContactUs>
+          Расскажите нам о своём проекте, продукте или идее. Спросите совет или
+          получите полноценную{" "}
+          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+            бесплатную консультацию
+          </a>
+          . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с
+          вами познакомиться и помочь.
+        </ContactUs>
       </div>
     </Layout>
   )
