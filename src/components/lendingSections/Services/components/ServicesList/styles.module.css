@@ -16,7 +16,7 @@
 
 @media (min-width: 768px) {
   .list {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
   .item:nth-child(1) > *,
