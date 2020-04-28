@@ -10,6 +10,8 @@ import { Outer } from "../Container"
 import Headline from "../Headline"
 import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import axios from "axios"
+import ReCAPTCHA from "react-google-recaptcha"
 
 Modal.setAppElement("#___gatsby")
 
@@ -21,23 +23,21 @@ const sendMail = async ({
   type = "",
 }) => {
   try {
-    const response = await fetch("https://vp-production.com/mail/", {
-      method: "POST",
+    const response = await axios(process.env.MAILER_ENDPOINT, {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+        "Content-Type": "application/json",
       },
-      body: new URLSearchParams({
+      method: "POST",
+      data: {
         name,
         email,
         lang,
         url,
         type,
-      }),
+      },
     })
 
-    const result = await response.json()
-
-    if (result.status === "Ok") {
+    if (response.status === 200) {
       return {
         status: "Ok",
       }
@@ -75,6 +75,7 @@ const ModalContactForm = ({
     initialValues: {
       firstName: "",
       email: "",
+      captcha: "",
     },
     onSubmit: async ({ firstName, email }, actions) => {
       const result = await sendMail({
@@ -111,10 +112,13 @@ const ModalContactForm = ({
     onClose()
   }
 
+  const handleCaptchaChange = value => {
+    formik.setFieldValue("captcha", value)
+  }
+
   return (
     <Modal
       isOpen={open}
-      // onRequestClose={handleClose}
       contentLabel="Details"
       closeTimeoutMS={300}
       style={{
@@ -174,9 +178,23 @@ const ModalContactForm = ({
               error={formik.touched.email && formik.errors.email}
             />
           </div>
+
+          <div className="ModalContactForm__captcha">
+            <ReCAPTCHA
+              sitekey={process.env.RECAPTCHA_SITE_KEY}
+              onChange={handleCaptchaChange}
+              theme="dark"
+              hl={intl.locale}
+            />
+          </div>
+
           <div className="ModalContactForm__actions">
             <FormattedHTMLMessage id="subscriptionPrivacy" />
-            <FormButton type="submit" loading={formik.isSubmitting}>
+            <FormButton
+              disabled={!formik.values.captcha}
+              type="submit"
+              loading={formik.isSubmitting}
+            >
               {intl.formatMessage({ id: "submit" })}
             </FormButton>
           </div>
@@ -187,7 +205,7 @@ const ModalContactForm = ({
 }
 
 ModalContactForm.defaultProps = {
-  type: "",
+  type: "reference",
   open: false,
   onClose: () => {},
   title: "",

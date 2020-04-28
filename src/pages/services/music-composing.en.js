@@ -254,7 +254,7 @@ const MusicCreation = ({ data, location }) => {
             title="S.O.S"
             icon={SosIcon}
             subTitle="When everything is burning"
-            list={["completion — ASAP", "without edits", "full prepayment"]}
+            list={["completion — ASAP", "no edits", "full prepayment"]}
             onClick={() =>
               handleFormShow(
                 "S.O.S Package",
@@ -280,7 +280,7 @@ const MusicCreation = ({ data, location }) => {
       </ServiceSection>
       <ModalContactForm
         title={formTitle}
-        type="package-request"
+        type="music"
         subTitle={formSubTitle}
         customLocation={formKey}
         open={showForm}
@@ -328,7 +328,7 @@ const MusicCreation = ({ data, location }) => {
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
-      <ServiceSection title="Customer reviews">
+      <ServiceSection title="Clients’ and partners’ testimonials">
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">

@@ -285,7 +285,7 @@ const MusicCreation = ({ data, location }) => {
       </ServiceSection>
       <ModalContactForm
         title={formTitle}
-        type="package-request"
+        type="music"
         subTitle={formSubTitle}
         customLocation={formKey}
         open={showForm}
@@ -332,7 +332,7 @@ const MusicCreation = ({ data, location }) => {
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
-      <ServiceSection title="Отзывы клиентов">
+      <ServiceSection title="Отзывы клиентов и партнёров">
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">

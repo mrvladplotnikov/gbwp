@@ -250,7 +250,7 @@ const VoiceCasting = ({ data, location }) => {
       </ServiceSection>
       <ModalContactForm
         title={formTitle}
-        type="package-request"
+        type="voice-casting"
         subTitle={formSubTitle}
         customLocation={formKey}
         open={showForm}
@@ -276,7 +276,7 @@ const VoiceCasting = ({ data, location }) => {
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
-      <ServiceSection title="Відгуки клієнтів">
+      <ServiceSection title="Відгуки клієнтів і партнерів">
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">

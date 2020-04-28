@@ -1,3 +1,4 @@
+const { createProxyMiddleware } = require("http-proxy-middleware")
 const languages = require("./src/utils/languages")
 const siteMenu = require("./src/utils/siteMenu.js")
 const siteSocialLinks = require("./src/utils/siteSocialLinks.js")
@@ -85,4 +86,15 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:34567",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
 }

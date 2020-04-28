@@ -1,6 +1,5 @@
 require("dotenv").config()
 const fs = require("fs")
-const path = require("path")
 const nodemailer = require("nodemailer")
 
 const emailsSubjects = {
@@ -56,9 +55,7 @@ exports.handler = function(event, context, callback) {
     to: data.email,
     subject: emailsSubjects[data.type][data.lang],
     html: fs
-      .readFileSync(
-        path.join(process.cwd(), "emails", data.type, `${data.lang}.html`)
-      )
+      .readFileSync(require.resolve(`./emails/${data.type}/${data.lang}.html`))
       .toString("utf8"),
   }
 

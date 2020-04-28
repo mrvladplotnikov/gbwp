@@ -70,3 +70,5 @@ yarn-error.log
 
 #builded lambda functions
 actions
+# Local Netlify folder
+.netlify

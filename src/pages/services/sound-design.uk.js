@@ -243,7 +243,7 @@ const SoundDesign = ({ data, location }) => {
           </CardDeckItem>
         </CardDeck>
       </ServiceSection>
-      <ServiceSection title="Відгуки клієнтів">
+      <ServiceSection title="Відгуки клієнтів і партнерів">
         <ReviewCarousel reviews={reviews} />
       </ServiceSection>
       <div className="contact-us-wrapper">

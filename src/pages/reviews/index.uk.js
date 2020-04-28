@@ -36,7 +36,7 @@ const Testimonials = ({ data, location }) => {
       <section>
         <Inner>
           <Headline Tag="h2" className={styles.sectionTitle}>
-            Відгуки клієнтів
+            Відгуки клієнтів і партнерів
           </Headline>
           {testimonials.map((node, index) => (
             <ReviewCarousel
