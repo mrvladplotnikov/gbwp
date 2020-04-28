@@ -1,0 +1,3 @@
+[build]
+  functions = "actions"
+  Command   = "npm run prod"
