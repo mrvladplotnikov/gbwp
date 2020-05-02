@@ -1,7 +1,2 @@
 [build]
     functions = "functions"
-[[redirects]]
-  from = "https://sound.vp-production.com/"
-  to = "https://sound.vpcontent.biz.ua/"
-  status = 301
-  force = true
