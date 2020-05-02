@@ -5,7 +5,6 @@ import Hero from "../components/lendingSections/Hero"
 import About from "../components/lendingSections/About"
 import Why from "../components/lendingSections/Why"
 import Services from "../components/lendingSections/Services"
-import ChosenWorks from "../components/lendingSections/ChosenWorks"
 import Contacts from "../components/lendingSections/Contacts"
 import SectionWithText from "../components/SectionWithText"
 import FeatureCard from "../components/FeatureCard"
@@ -23,8 +22,6 @@ import InlineButton from "../components/InlineButton"
 
 const Home = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
-
-  const works = data.works.nodes
 
   return (
     <Layout location={location}>
@@ -103,12 +100,6 @@ const Home = ({ data, location }) => {
           },
         ]}
       />
-      <ChosenWorks
-        title="Featured Works"
-        works={works}
-        linkLabel="Portfolio"
-        linkURL="/en/portfolio"
-      />
       <SectionWithText linkLabel="Our Values" link="/en/our-values">
         <h3>
           Using audio, we inspire listeners on both sides of audiovisual
@@ -128,33 +119,5 @@ const Home = ({ data, location }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  query HomePageEnQuery {
-    works: allWordpressWpWork(
-      filter: {
-        acf: { front_page: { front_page_visibility: { eq: true } } }
-        polylang_current_lang: { eq: "en" }
-      }
-      sort: { fields: acf___front_page___front_page_order, order: DESC }
-    ) {
-      nodes {
-        id
-        slug
-        title
-        lang: polylang_current_lang
-        featured_media {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default Home

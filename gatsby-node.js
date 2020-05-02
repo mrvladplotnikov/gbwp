@@ -52,16 +52,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      works: allWordpressWpWork(sort: { fields: acf___order, order: DESC }) {
-        edges {
-          node {
-            id
-            slug
-            status
-            lang: polylang_current_lang
-          }
-        }
-      }
     }
   `)
 
@@ -71,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { pages, posts, works } = result.data
+  const { pages, posts } = result.data
 
   const pageTemplateUK = path.resolve(`./src/templates/page/index.uk.js`)
   const pageTemplateRU = path.resolve(`./src/templates/page/index.ru.js`)
@@ -125,49 +115,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: slash(postTemplate),
       context: {
         id: edge.node.id,
-      },
-    })
-  })
-
-  const workUKTemplate = path.resolve(`./src/templates/work/work.uk.js`)
-  const worksUK = works.edges.filter(({ node }) => node.lang === "uk")
-  worksUK.forEach(({ node }, index) => {
-    const nodePath = generatePath(node.lang, node.slug, "works")
-    createPage({
-      path: nodePath,
-      component: slash(workUKTemplate),
-      context: {
-        id: node.id,
-        prev: index === 0 ? null : worksUK[index - 1].node,
-        next: index === worksUK.length - 1 ? null : worksUK[index + 1].node,
-      },
-    })
-  })
-  const workRUTemplate = path.resolve(`./src/templates/work/work.ru.js`)
-  const worksRU = works.edges.filter(({ node }) => node.lang === "ru")
-  worksRU.forEach(({ node }, index) => {
-    const nodePath = generatePath(node.lang, node.slug, "works")
-    createPage({
-      path: nodePath,
-      component: slash(workRUTemplate),
-      context: {
-        id: node.id,
-        prev: index === 0 ? null : worksRU[index - 1].node,
-        next: index === worksRU.length - 1 ? null : worksRU[index + 1].node,
-      },
-    })
-  })
-  const workENTemplate = path.resolve(`./src/templates/work/work.en.js`)
-  const worksEN = works.edges.filter(({ node }) => node.lang === "en")
-  worksEN.forEach(({ node }, index) => {
-    const nodePath = generatePath(node.lang, node.slug, "works")
-    createPage({
-      path: nodePath,
-      component: slash(workENTemplate),
-      context: {
-        id: node.id,
-        prev: index === 0 ? null : worksEN[index - 1].node,
-        next: index === worksEN.length - 1 ? null : worksEN[index + 1].node,
       },
     })
   })
