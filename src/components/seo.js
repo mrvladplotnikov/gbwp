@@ -47,6 +47,10 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
         : site.siteMetadata.title,
     },
     {
+      property: `og:site_name`,
+      content: site.siteMetadata.title,
+    },
+    {
       property: `og:description`,
       content: metaDescription,
     },
