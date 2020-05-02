@@ -6,7 +6,7 @@ const normalizer = require("./src/utils/normalizeData.js")
 
 module.exports = {
   siteMetadata: {
-    title: `VP Production `,
+    title: `VP Production`,
     description: `Мы – команда людей, которые создают музыку, звуки и продюсируют дикторское озвучивание на грани чистого творчества и функциональности.`,
     languages,
     author: `@tarotum`,

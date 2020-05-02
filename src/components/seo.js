@@ -42,7 +42,9 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
     },
     {
       property: `og:title`,
-      content: title,
+      content: title
+        ? `${title} | ${site.siteMetadata.title}`
+        : site.siteMetadata.title,
     },
     {
       property: `og:description`,
