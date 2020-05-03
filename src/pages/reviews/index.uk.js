@@ -25,7 +25,11 @@ const Testimonials = ({ data, location }) => {
   const userReviews = data.userReviews.nodes
 
   return (
-    <Layout location={location} title="Відгуки">
+    <Layout
+      location={location}
+      title="Відгуки"
+      description="🎧 Наші роботи чули мільйони людей. 💬 Відгуки деяких із них — на цій сторінці. 🤝 Відгуки клієнтів та партнерів — теж тут."
+    >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           Відгуки

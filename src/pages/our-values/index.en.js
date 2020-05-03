@@ -6,7 +6,11 @@ import Headline from "../../components/Headline"
 import { Inner } from "../../components/Container"
 
 const OurValues = ({ location }) => (
-  <Layout location={location}>
+  <Layout
+    location={location}
+    title="Our values"
+    description="🙌 Our beliefs. Our manifesto. What defines our approach to creating audio and doing business in general. 🤝 It will allow you to get to know us even better."
+  >
     <div className={styles.container}>
       <div className={classNames(styles.module, styles.rectImg)}>
         <Inner>

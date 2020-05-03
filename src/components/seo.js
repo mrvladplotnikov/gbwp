@@ -63,12 +63,10 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
       content: `summary`,
     },
     {
-      name: `twitter:creator`,
-      content: site.siteMetadata.author,
-    },
-    {
       name: `twitter:title`,
-      content: title,
+      content: title
+        ? `${title} | ${site.siteMetadata.title}`
+        : site.siteMetadata.title,
     },
     {
       name: `twitter:description`,

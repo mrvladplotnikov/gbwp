@@ -14,7 +14,11 @@ const PortfolioBox = () => (
 )
 
 const Portfolio = ({ data, location }) => (
-  <Layout location={location} title="Portfolio">
+  <Layout
+    location={location}
+    title="Portfolio"
+    description="➡️ Our projects 🎹 Music 🎶 Sonic Identity 🎧 Sound Design 🗣 Voice Casting. ✅ For video games, apps, animation, advertising, theatre, questrooms. 🎵 Audio that works for millions of people."
+  >
     <Outer>
       <Headline Tag="h1" className={styles.title}>
         Portfolio

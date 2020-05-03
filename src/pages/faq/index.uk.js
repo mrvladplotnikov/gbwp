@@ -27,7 +27,11 @@ const Faq = ({ location }) => {
   const [showFrom, setShowForm] = useState(false)
 
   return (
-    <Layout location={location} title="FAQ">
+    <Layout
+      location={location}
+      title="FAQ"
+      description="➡️ Відповіді на поширені питання.💡 Організація процесу співпраці. 📝 Юридичні аспекти. 💰 Фінансові питання. ✅ Все, що потрібно знати до початку роботи."
+    >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           faq

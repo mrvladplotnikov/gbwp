@@ -36,7 +36,11 @@ const About = ({ data, location }) => {
   const team = data.team.members
 
   return (
-    <Layout location={location} title="Про нас">
+    <Layout
+      location={location}
+      title="Про аудіо агенцію"
+      description="🎶 Наша команда. 🎼 Хто, навіщо і як створює аудіо, яке працює на ваш проєкт і аудиторію. ✅ Особливості та переваги нашого підходу."
+    >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           Про нас

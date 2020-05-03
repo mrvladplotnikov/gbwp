@@ -60,7 +60,8 @@ const AudioBranding = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Audio Branding"
+      title="Audio Branding. Sonic Identity"
+      description="🎶 Your brand’s sonic identity. 🎯 Emotional point of differentiation.👌 A new way to attract attention and communicate with your audience. 💡 A process of cooperation. ✅ Our offers and approach. 💬 Clients’ testimonials."
     >
       <ServiceSection title="What are we doing?">
         <p>We create:</p>

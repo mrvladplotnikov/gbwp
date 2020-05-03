@@ -25,7 +25,11 @@ const Testimonials = ({ data, location }) => {
   const userReviews = data.userReviews.nodes
 
   return (
-    <Layout location={location} title="Reviews">
+    <Layout
+      location={location}
+      title="Reviews"
+      description="🎧 Millions of people have already heard our work. 💬 Reviews from some of them are on this page. Customer and partner reviews are also here."
+    >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
           Reviews

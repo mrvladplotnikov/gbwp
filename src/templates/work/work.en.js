@@ -38,7 +38,12 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     data.reviews.nodes.filter(r => r.meta.project === wordpress_id)
 
   return (
-    <Layout location={location} translations={translations} title={title}>
+    <Layout
+      location={location}
+      translations={translations}
+      title={title}
+      description={acf.description}
+    >
       {isHeroFormat && acf.work_video && (
         <div className={styles.videoBGWrapper}>
           <div className={styles.videoBG}>
@@ -155,6 +160,7 @@ export const pageQuery = graphql`
       acf {
         autors
         work_video
+        description
       }
       work_developer {
         id

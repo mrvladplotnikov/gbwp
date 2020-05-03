@@ -83,7 +83,8 @@ const MusicCreation = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Music composing"
+      title="Music composing services"
+      description="🎶 Soundtracks that perform tasks and work for your audience. 🎹 Music on the verge of pure creativity and functionality. 💡 A process of cooperation. ✅ Our offers and approach. 💬 Clients' testimonials."
     >
       <ServiceSection title="What are we doing?">
         <p>We compose soundtracks and create music for:</p>

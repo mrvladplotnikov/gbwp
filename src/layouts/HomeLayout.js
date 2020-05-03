@@ -16,7 +16,13 @@ import SEO from "../components/seo"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
 import InfoBadge from "../components/InfoBadge"
 
-const HomeLayout = ({ children, location, i18nMessages }) => {
+const HomeLayout = ({
+  children,
+  location,
+  i18nMessages,
+  title,
+  description,
+}) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const handleMenuToogle = () => {
     setMenuIsOpen(!menuIsOpen)
@@ -70,7 +76,13 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
             <>
-              <SEO lang={langKey} pathname={url} langsMenu={langsMenu} />
+              <SEO
+                lang={langKey}
+                pathname={url}
+                langsMenu={langsMenu}
+                title={title}
+                description={description}
+              />
               {!hideOnScroll ? (
                 <>
                   <Languages langsMenu={langsMenu} />
@@ -114,11 +126,15 @@ const HomeLayout = ({ children, location, i18nMessages }) => {
 
 HomeLayout.defaultProps = {
   pageTitle: "",
+  title: "",
+  description: "",
 }
 
 HomeLayout.propTypes = {
   pageTitle: PropTypes.string,
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
 }
 
 export default HomeLayout
