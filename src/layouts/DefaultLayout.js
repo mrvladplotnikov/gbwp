@@ -20,6 +20,7 @@ const DefaultLayout = ({
   title,
   description,
   meta,
+  noindex = false,
 }) => {
   useDetectKeyboard()
   return (
@@ -88,7 +89,11 @@ const DefaultLayout = ({
               <SEO
                 title={title}
                 description={description}
-                meta={meta}
+                meta={
+                  noindex
+                    ? meta.concat([{ name: "robots", content: "noindex" }])
+                    : meta
+                }
                 lang={langKey}
                 pathname={url}
                 langsMenu={

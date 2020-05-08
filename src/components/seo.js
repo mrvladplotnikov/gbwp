@@ -33,10 +33,6 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
    */
   const metaProp = [
     {
-      name: "robots",
-      content: "noindex",
-    },
-    {
       name: `description`,
       content: metaDescription,
     },

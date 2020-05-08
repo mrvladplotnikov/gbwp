@@ -7,9 +7,15 @@ import mailTo from "../../utils/mailTo"
 
 const PageTemplate = ({ data, location }) => {
   const currentPage = data.wordpressPage
+  const acf = data.wordpressPage.acf
 
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      title={acf.title || currentPage.title}
+      description={acf.description}
+      noindex={acf.noindex}
+    >
       <Inner>
         <div
           style={{
@@ -40,6 +46,11 @@ export const pageQuery = graphql`
     wordpressPage(id: { eq: $id }) {
       title
       content
+      acf {
+        title
+        description
+        noindex
+      }
     }
     site {
       id
