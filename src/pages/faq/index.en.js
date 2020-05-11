@@ -30,7 +30,7 @@ const Faq = ({ location }) => {
     <Layout
       location={location}
       title="FAQ"
-      description="➡️ Answering all frequently asked questions.💡 Organization of the cooperation process. 📝 Legal aspects. 💰 Financial questions. ✅ Everything you need to know before the start."
+      description="Answering all frequently asked questions. • Organization of the cooperation process. • Legal aspects. • Financial questions. ✔ Everything you need to know before the start."
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>

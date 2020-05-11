@@ -28,7 +28,7 @@ const Testimonials = ({ data, location }) => {
     <Layout
       location={location}
       title="Reviews"
-      description="🎧 Millions of people have already heard our work. 💬 Reviews from some of them are on this page. Customer and partner reviews are also here."
+      description="Millions of people have already heard our works. ✔ You can find some of their reviews on this page. Clients’ and partners’ testimonials are also here."
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>

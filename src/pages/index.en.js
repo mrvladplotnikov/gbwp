@@ -30,7 +30,7 @@ const Home = ({ data, location }) => {
     <Layout
       location={location}
       title="Audio Agency"
-      description="🎹 Music 🎶 Sound Design 🗣 Voice Casting for Games, Brands, Videos, and other Media Projects. ✅ We create audio that works for your audience. 𝟬 broken deadlines. Millions of listeners. 🎧"
+      description="• Music Composing • Sound Design • Voice Casting for games, brands, videos, and other media projects. ✔ We create audio that works for your audience. 0 broken deadlines. Millions of listeners."
     >
       <Hero link="/en/portfolio" />
       <About

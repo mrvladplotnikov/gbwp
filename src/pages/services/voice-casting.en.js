@@ -84,7 +84,7 @@ const VoiceCasting = ({ data, location }) => {
       }
       location={location}
       title="Voice casting"
-      description="🎙 Selecting and recording the right voice for your project. 🗣 A squad of professional local and foreign voice actors. 🔊 7+ languages. 💡 A process of cooperation. ✅ Our offers and approach. 💬 Clients’ testimonials."
+      description="Selecting and recording the right voice for your project. A squad of professional local and foreign voice actors. 7+ languages. ✔ A process of cooperation. Our offers and approach. Clients’ testimonials."
     >
       <ServiceSection title="What are we doing?">
         <p>In short, we produce voice-overs, and specifically deal with the:</p>

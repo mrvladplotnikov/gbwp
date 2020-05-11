@@ -38,7 +38,7 @@ const About = ({ data, location }) => {
     <Layout
       location={location}
       title="About audio agency"
-      description="🎶 Our team. 🎼 Who, why, and how creates audio that works for your project and audience. ✅ Features and benefits of our approach. "
+      description="• Our team. • Who, why, and how creates audio that works for your project and audience. ✔ Features and benefits of our approach."
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
