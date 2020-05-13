@@ -28,6 +28,8 @@ const About = ({ title = "", text = "", linkLabel = "", linkURL = null }) => {
         <Inner>
           <figure className={styles.imageCard}>
             <Img
+              fadeIn={false}
+              loading="eager"
               fluid={data.placeholderImage.childImageSharp.fluid}
               alt={title}
               className={styles.image}

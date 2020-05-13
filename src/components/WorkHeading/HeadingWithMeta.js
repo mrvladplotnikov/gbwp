@@ -10,7 +10,12 @@ const HeadingWithMeta = ({ image, title, terms }) => (
   <div className={styles.heading}>
     <div className={styles.featuredImage}>
       {image && (
-        <Img fluid={image.localFile.childImageSharp.fluid} alt={strip(title)} />
+        <Img
+          fadeIn={false}
+          loading="eager"
+          fluid={image.localFile.childImageSharp.fluid}
+          alt={strip(title)}
+        />
       )}
     </div>
 

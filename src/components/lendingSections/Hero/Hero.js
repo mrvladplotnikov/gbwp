@@ -28,6 +28,7 @@ const Hero = ({ link = "/porfolio" }) => {
         alt=""
         role="presentation"
         className={styles.bg}
+        loading="eager"
       />
       <div className={styles.overlay}>
         <SocialLinks />

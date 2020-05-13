@@ -78,7 +78,12 @@ const HorizontalNav = ({
       }
     >
       <Link className={styles.logo} to={homeLink}>
-        <IMG fluid={logo.childImageSharp.fluid} alt="VP Production logo" />
+        <IMG
+          fadeIn={false}
+          loading="eager"
+          fluid={logo.childImageSharp.fluid}
+          alt="VP Production logo"
+        />
       </Link>
       {!hideMenu ? (
         <>

@@ -13,24 +13,31 @@ const WorkCard = ({
   image = "",
   title = "",
   lang = "",
-}) => (
-  <Link
-    className={classNames("WorkCard", className)}
-    to={gPath(lang, `works/${link}`)}
-  >
-    <figure className="WorkCard__container">
-      {image ? (
-        <Img className="WorkCard__image" fluid={image} alt={strip(title)} />
-      ) : (
-        <img src={noImage} className="WorkCard__image" alt="" />
-      )}
-      <figcaption
-        className="WorkCard__title"
-        dangerouslySetInnerHTML={{ __html: title }}
-      />
-    </figure>
-  </Link>
-)
+}) => {
+  return (
+    <Link
+      className={classNames("WorkCard", className)}
+      to={gPath(lang, `works/${link}`)}
+    >
+      <figure className="WorkCard__container">
+        {image ? (
+          <Img
+            backgroundColor="#000000"
+            className="WorkCard__image"
+            fluid={image}
+            alt={strip(title)}
+          />
+        ) : (
+          <img src={noImage} className="WorkCard__image" alt="" />
+        )}
+        <figcaption
+          className="WorkCard__title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      </figure>
+    </Link>
+  )
+}
 
 WorkCard.propTypes = {
   className: PropTypes.string,
