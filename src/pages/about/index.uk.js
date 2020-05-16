@@ -34,11 +34,12 @@ const About = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
 
   const team = data.team.members
+  const contactEmail = data.site.siteMetadata.adminEmail
 
   return (
     <Layout
       location={location}
-      title="Про аудіо агенцію"
+      title="Про аудіоагенцію"
       description="• Наша команда. • Хто, навіщо і як створює аудіо, яке працює на ваш проєкт і аудиторію. ✔ Особливості та переваги нашого підходу."
     >
       <Inner>
@@ -179,7 +180,11 @@ const About = ({ data, location }) => {
             крутого темплейта ТЗ
           </InlineButton>
           ? Ми завжди відкриті до спілкування, так що сміливо{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`mailto:${contactEmail}`}
+          >
             пишіть
           </a>
           .
@@ -221,6 +226,11 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageUkQuery {
+    site {
+      siteMetadata {
+        adminEmail
+      }
+    }
     team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "uk" } }) {
       members: nodes {
         id

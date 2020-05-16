@@ -50,6 +50,8 @@ const VoiceCasting = ({ data, location }) => {
 
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
+  const contactEmail = data.site.siteMetadata.adminEmail
+
   return (
     <Layout
       Sidebar={
@@ -243,7 +245,11 @@ const VoiceCasting = ({ data, location }) => {
         </PlanList>
         <p>
           Якщо в списку доступних мов ви не знайшли потрібну вам — обов’язково{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`mailto:${contactEmail}`}
+          >
             напишіть нам
           </a>{" "}
           і ми підберемо потрібного актора.
@@ -335,6 +341,11 @@ export const query = graphql`
     sitePage {
       id
       path
+    }
+    site {
+      siteMetadata {
+        adminEmail
+      }
     }
   }
 `

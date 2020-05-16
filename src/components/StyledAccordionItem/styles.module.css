@@ -29,9 +29,8 @@
 .content {
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: justify;
+  font-size: 0.75rem;
+  line-height: 1.65;
   color: #d2d2d2;
   padding: 15px 35px;
 }
@@ -47,8 +46,7 @@
     line-height: 73px;
   }
   .content {
-    font-size: 22px;
-    line-height: 35px;
+    font-size: 1.3rem;
     padding: 55px 100px 50px;
   }
 }

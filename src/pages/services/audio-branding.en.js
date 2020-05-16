@@ -297,11 +297,7 @@ export const query = graphql`
         featured_media {
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 500
-                srcSetBreakpoints: [445, 900]
-                quality: 100
-              ) {
+              fluid(maxWidth: 750, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

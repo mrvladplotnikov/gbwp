@@ -25,6 +25,7 @@ const Home = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
 
   const works = data.works.nodes
+  const contactEmail = data.site.siteMetadata.adminEmail
 
   return (
     <Layout
@@ -74,7 +75,11 @@ const Home = ({ data, location }) => {
             technical task template
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`mailto:${contactEmail}`}
+          >
             email us
           </a>
           .
@@ -135,6 +140,11 @@ const Home = ({ data, location }) => {
 
 export const query = graphql`
   query HomePageEnQuery {
+    site {
+      siteMetadata {
+        adminEmail
+      }
+    }
     works: allWordpressWpWork(
       filter: {
         acf: { front_page: { front_page_visibility: { eq: true } } }

@@ -33,6 +33,7 @@ const Box = () => (
 const About = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
   const team = data.team.members
+  const contactEmail = data.site.siteMetadata.adminEmail
 
   return (
     <Layout
@@ -174,7 +175,11 @@ const About = ({ data, location }) => {
             technical task template
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`mailto:${contactEmail}`}
+          >
             email us
           </a>
           .
@@ -216,6 +221,11 @@ About.propTypes = {
 
 export const query = graphql`
   query AboutPageEnQuery {
+    site {
+      siteMetadata {
+        adminEmail
+      }
+    }
     team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "en" } }) {
       members: nodes {
         id

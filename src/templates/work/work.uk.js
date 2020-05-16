@@ -103,7 +103,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
           <div
             className={styles.content}
             style={{
-              marginBottom: reviews.length ? "0" : "10rem",
+              marginBottom: reviews.length ? "0" : "3rem",
             }}
           >
             {Content}

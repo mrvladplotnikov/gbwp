@@ -12,7 +12,7 @@ import classNames from "classnames"
 import mailTo from "../../utils/mailTo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../../components/InlineButton"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -23,8 +23,9 @@ const Boxes = ({ className = "" }) => (
   />
 )
 
-const Faq = ({ location }) => {
+const Faq = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
+  const contactEmail = data.site.siteMetadata.adminEmail
 
   return (
     <Layout
@@ -65,7 +66,7 @@ const Faq = ({ location }) => {
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                href={mailTo.mail.uk}
+                href={`maito:${contactEmail}`}
               >
                 Напишіть нам
               </a>
@@ -93,7 +94,7 @@ const Faq = ({ location }) => {
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                href={mailTo.mail.uk}
+                href={`maito:${contactEmail}`}
               >
                 сміливо пишіть
               </a>
@@ -216,5 +217,15 @@ const Faq = ({ location }) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query FAQPageUkQuery {
+    site {
+      siteMetadata {
+        adminEmail
+      }
+    }
+  }
+`
 
 export default Faq

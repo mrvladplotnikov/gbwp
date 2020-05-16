@@ -25,11 +25,12 @@ const Home = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
 
   const works = data.works.nodes
+  const contactEmail = data.site.siteMetadata.adminEmail
 
   return (
     <Layout
       location={location}
-      title="Аудио агенство"
+      title="Аудиоагенство"
       description="• Музыка • Звуковой дизайн • Голосовое озвучивание для игр, брендов, видео и других медиапроектов. ✔ Мы создаём аудио, которое работает на вашу аудиторию. 0 сорванных дедлайнов. Миллионы слушателей."
     >
       <Hero link="/ru/portfolio" />
@@ -74,7 +75,11 @@ const Home = ({ data, location }) => {
             крутого темплейта ТЗ
           </InlineButton>
           ? Мы всегда открыты к общению, так что смело{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`mailto:${contactEmail}`}
+          >
             пишите
           </a>
           .
@@ -135,6 +140,11 @@ const Home = ({ data, location }) => {
 
 export const query = graphql`
   query HomePageRuQuery {
+    site {
+      siteMetadata {
+        adminEmail
+      }
+    }
     works: allWordpressWpWork(
       filter: {
         acf: { front_page: { front_page_visibility: { eq: true } } }
