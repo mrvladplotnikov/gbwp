@@ -74,6 +74,7 @@ const customStyles = {
     ...provided,
     display: "inline-block",
     minWidth: 132,
+    fontWeight: 400,
     "@media(min-width: 540px)": {
       minWidth: 182,
     },
