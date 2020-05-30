@@ -89,6 +89,21 @@
   color: #ffffff;
   text-decoration: underline;
   padding: 0;
+  cursor: pointer;
+}
+
+.readMoreButton:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f3461b),
+    color-stop(97.79%, #0da6f2)
+  );
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .closeModalButton {

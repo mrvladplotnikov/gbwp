@@ -45,6 +45,15 @@
   margin: 5px;
 }
 
+.footerLinks a {
+  color: #d2d2d2;
+  transition: color 0.3s ease-in;
+}
+
+.footerLinks a:hover {
+  color: #ffffff;
+}
+
 .link {
   cursor: pointer;
   display: block;
@@ -63,6 +72,20 @@
   text-transform: capitalize;
   color: #bebebe;
   margin-bottom: 24px;
+}
+
+.privacyPolicy:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f3461b),
+    color-stop(97.79%, #0da6f2)
+  );
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footerTitle {

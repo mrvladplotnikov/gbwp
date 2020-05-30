@@ -64,12 +64,16 @@ body {
   overflow-x: hidden;
 }
 
+body .InlineButton,
 body a {
   color: #d2d2d2;
   text-decoration-line: underline;
 }
 
-body p > a:hover {
+body .InlineButton:hover,
+body figcaption > a:hover,
+body p > a:hover,
+body .languages a:hover {
   background: -webkit-gradient(
     linear,
     left top,
@@ -81,9 +85,6 @@ body p > a:hover {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  text-shadow: none;
 }
 
 body svg {

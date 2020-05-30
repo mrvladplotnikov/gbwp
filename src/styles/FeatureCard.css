@@ -16,13 +16,9 @@
   margin: 0;
   margin-left: 15px;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.75rem;
+  line-height: 1.2;
   letter-spacing: -0.02em;
-}
-
-.FeatureCard__text a {
-  color: #ffffff;
 }
 
 @media (min-width: 992px) {
