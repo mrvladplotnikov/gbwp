@@ -18,7 +18,7 @@ const StyledAccordionItem = ({ index = 0, title, children }) => {
       <AccordionItemHeading className={styles.heading}>
         <AccordionItemButton className={styles.button}>
           <span className={styles.index}>{index}.</span>
-          {title}
+          <span className={styles.title}>{title}</span>
           <AccordionItemState>
             {({ expanded }) =>
               expanded ? (

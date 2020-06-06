@@ -2,9 +2,7 @@
   border: 1px solid #747474;
   box-sizing: border-box;
   padding: 20px 20px 35px;
-  /* margin-right: 10px; */
-  min-width: 265px;
-  max-width: 410px;
+  width: 265px;
   margin: auto;
   margin-bottom: 10px;
   display: flex;
@@ -101,11 +99,20 @@
     padding-bottom: 20px;
     color: #bebebe;
     border-bottom: 1px solid #747474;
+    min-height: 44px;
   }
 
   .PlanCard__list {
     font-size: 16px;
     line-height: 20px;
+    max-height: 265px;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .PlanCard__list::-webkit-scrollbar {
+    width: 0.2em;
+    height: 0.2em;
   }
 
   .PlanCard__button {
