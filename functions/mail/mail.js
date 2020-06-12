@@ -63,7 +63,7 @@ exports.handler = function(event, context, callback) {
     if (err) {
       return callback(null, {
         statusCode: 500,
-        body: JSON.stringify(error),
+        body: JSON.stringify(err),
       })
     }
 
