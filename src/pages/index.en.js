@@ -39,6 +39,7 @@ const Home = ({ data, location }) => {
         text="We are a team that creates music, sound effects and produces voice-overs on the verge of pure creativity and functionality."
         linkLabel="About us"
         linkURL="/en/about"
+        alt="Sound design studio"
       />
       <Why>
         <FeatureCard img={icon1}>
@@ -97,18 +98,22 @@ const Home = ({ data, location }) => {
           {
             title: "Music Composing",
             link: "/en/services/music-composing",
+            alt: "Music Composing",
           },
           {
             title: "Audio Branding",
             link: "/en/services/audio-branding",
+            alt: "Audio branding",
           },
           {
             title: "Sound Design",
             link: "/en/services/sound-design",
+            alt: "Sound design",
           },
           {
             title: "Voice Casting",
             link: "/en/services/voice-casting",
+            alt: "Voice over services",
           },
         ]}
       />

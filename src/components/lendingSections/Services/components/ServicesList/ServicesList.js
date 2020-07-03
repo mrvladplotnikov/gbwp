@@ -56,6 +56,7 @@ const ServicesList = ({ services = [] }) => {
             bgPath={data[`image${i}`].childImageSharp.fluid}
             iconPath={icons[i]}
             link={service.link}
+            alt={service.alt}
           />
         ))}
     </ul>

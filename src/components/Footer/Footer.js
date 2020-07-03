@@ -5,8 +5,9 @@ import footerLogoIcon from "../../images/footer-logo.svg"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useStaticQuery, graphql } from "gatsby"
+import { injectIntl } from "react-intl"
 
-const Footer = () => {
+const Footer = ({ intl }) => {
   const {
     site: {
       siteMetadata: { socialLinks },
@@ -20,6 +21,7 @@ const Footer = () => {
               name
               link
               icon
+              title
             }
           }
         }
@@ -41,7 +43,10 @@ const Footer = () => {
                     rel="noopener noreferrer nofollow"
                     href={item.link}
                   >
-                    <FontAwesomeIcon icon={["fab", item.icon]} />
+                    <FontAwesomeIcon
+                      icon={["fab", item.icon]}
+                      title={item.title}
+                    />
                   </a>
                 </li>
               ))}
@@ -61,7 +66,7 @@ const Footer = () => {
               <img
                 src={footerLogoIcon}
                 className={styles.footerLogo}
-                alt="Footer logo"
+                alt={intl.formatMessage({ id: "footerLogoAlt" })}
               />
             </Link>
           </div>
@@ -70,4 +75,4 @@ const Footer = () => {
     </div>
   )
 }
-export default Footer
+export default injectIntl(Footer)

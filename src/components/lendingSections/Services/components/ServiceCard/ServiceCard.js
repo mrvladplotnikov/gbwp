@@ -11,13 +11,19 @@ const ServiceCard = ({
   link = "/",
   bgPath,
   iconPath,
+  alt = "",
 }) => (
   <li className={className}>
     <Link to={link} className={styles.Card}>
       <div className={styles.bgWrapper}>
         <BGIMG fluid={bgPath} className={styles.bg} />
       </div>
-      <img src={iconPath} role="presentation" alt="" className={styles.icon} />
+      <img
+        src={iconPath}
+        role="presentation"
+        alt={alt}
+        className={styles.icon}
+      />
       <h4 className={styles.title}>{title}</h4>
     </Link>
   </li>
@@ -29,6 +35,7 @@ ServiceCard.propTypes = {
   link: PropTypes.string.isRequired,
   bgPath: PropTypes.object.isRequired,
   iconPath: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 }
 
 export default ServiceCard

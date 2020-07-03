@@ -39,6 +39,7 @@ const Home = ({ data, location }) => {
         text="Мы — команда, которая создаёт музыку, звуки и продюсирует голосовое озвучивание на грани чистого творчества и функциональности."
         linkLabel="О нас"
         linkURL="/ru/about"
+        alt="Студия саунд дизайна"
       />
       <Why>
         <FeatureCard img={icon1}>
@@ -97,18 +98,22 @@ const Home = ({ data, location }) => {
           {
             title: "Создание музыки",
             link: "/ru/services/music-composing",
+            alt: "Создание музыки",
           },
           {
             title: "Аудиобрендинг",
             link: "/ru/services/audio-branding",
+            alt: "Аудиобрендинг",
           },
           {
             title: "Звуковой дизайн",
             link: "/ru/services/sound-design",
+            alt: "Саунд дизайн",
           },
           {
             title: "Голосовое озвучивание",
             link: "/ru/services/voice-casting",
+            alt: "Озвучка",
           },
         ]}
       />

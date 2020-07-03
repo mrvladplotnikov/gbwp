@@ -39,6 +39,7 @@ const Home = ({ data, location }) => {
         text="Ми — команда, яка створює музику, звуки і продюсує голосове озвучення на межі чистої творчості і функціональності."
         linkLabel="Про нас"
         linkURL="/about"
+        alt="Студія саунд дизайну"
       />
       <Why>
         <FeatureCard img={icon1}>
@@ -98,18 +99,22 @@ const Home = ({ data, location }) => {
           {
             title: "Створення музики",
             link: "/services/music-composing",
+            alt: "Створення музики",
           },
           {
             title: "Аудіобрендинг",
             link: "/services/audio-branding",
+            alt: "Аудіобрендинг",
           },
           {
             title: "Звуковий дизайн",
             link: "/services/sound-design",
+            alt: "Саунд дизайн",
           },
           {
             title: "Голосове озвучення",
             link: "/services/voice-casting",
+            alt: "Озвучення",
           },
         ]}
       />

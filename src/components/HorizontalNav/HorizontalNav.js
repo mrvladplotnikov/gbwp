@@ -82,7 +82,7 @@ const HorizontalNav = ({
           fadeIn={false}
           loading="eager"
           fluid={logo.childImageSharp.fluid}
-          alt="VP Production logo"
+          alt="VP Production"
         />
       </Link>
       {!hideMenu ? (
