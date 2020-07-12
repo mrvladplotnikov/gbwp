@@ -13,6 +13,7 @@ import mailTo from "../../utils/mailTo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../../components/InlineButton"
 import { Link, graphql } from "gatsby"
+import schemaOrg from "./schemaOrg.json"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -32,6 +33,7 @@ const Faq = ({ data, location }) => {
       location={location}
       title="FAQ"
       description="Answering all frequently asked questions. • Organization of the cooperation process. • Legal aspects. • Financial questions. ✔ Everything you need to know before the start."
+      schemaOrg={schemaOrg.en}
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>

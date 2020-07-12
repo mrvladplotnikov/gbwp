@@ -11,7 +11,15 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { escapeHtml } from "../utils/htmlHelpers"
 
-function SEO({ description, lang, meta, title, pathname, langsMenu }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+  pathname,
+  langsMenu,
+  schemaOrg,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +34,8 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
       }
     `
   )
+
+  const schema = schemaOrg ? schemaOrg : {}
 
   const metaDescription = description || site.siteMetadata.description
   /**
@@ -92,7 +102,9 @@ function SEO({ description, lang, meta, title, pathname, langsMenu }) {
           href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
         })),
       ]}
-    />
+    >
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
   )
 }
 
@@ -101,6 +113,7 @@ SEO.defaultProps = {
   description: ``,
   title: ``,
   langsMenu: [],
+  schemaOrg: null,
 }
 
 SEO.propTypes = {
@@ -110,6 +123,7 @@ SEO.propTypes = {
   title: PropTypes.string,
   pathname: PropTypes.string.isRequired,
   langsMenu: PropTypes.array,
+  schemaOrg: PropTypes.object,
 }
 
 export default SEO

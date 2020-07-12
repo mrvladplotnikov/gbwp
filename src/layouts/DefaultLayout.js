@@ -21,6 +21,7 @@ const DefaultLayout = ({
   description,
   meta,
   noindex = false,
+  schemaOrg,
 }) => {
   useDetectKeyboard()
   return (
@@ -89,6 +90,7 @@ const DefaultLayout = ({
               <SEO
                 title={title}
                 description={description}
+                schemaOrg={schemaOrg}
                 meta={
                   noindex
                     ? meta.concat([{ name: "robots", content: "noindex" }])
@@ -135,6 +137,7 @@ DefaultLayout.defaultProps = {
   description: "",
   meta: [],
   translations: [],
+  schemaOrg: null,
 }
 
 DefaultLayout.propTypes = {
@@ -143,6 +146,7 @@ DefaultLayout.propTypes = {
   meta: PropTypes.array,
   translations: PropTypes.array,
   children: PropTypes.node.isRequired,
+  schemaOrg: PropTypes.object,
 }
 
 export default DefaultLayout
