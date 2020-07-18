@@ -122,12 +122,6 @@ const Faq = ({ data, location }) => {
               and, if necessary, help with the filling.
             </p>
           </StyledAccordionItem>
-          <ModalContactForm
-            title="Technical task template"
-            subTitle="We are confident that a correctly made technical task increases the chances of success of the project. Therefore, we are happy to share what works for us!"
-            open={showFrom}
-            onClose={() => setShowForm(false)}
-          />
           <StyledAccordionItem title="How is the rest of the work process organized?">
             <p>
               Depending on the chosen service, the process may vary, although
@@ -145,7 +139,12 @@ const Faq = ({ data, location }) => {
             </p>
           </StyledAccordionItem>
         </StyledAccordion>
-
+        <ModalContactForm
+          title="Technical task template"
+          subTitle="We are confident that a correctly made technical task increases the chances of success of the project. Therefore, we are happy to share what works for us!"
+          open={showFrom}
+          onClose={() => setShowForm(false)}
+        />
         <Headline Tag="h2" className={styles.subtitle}>
           Financial questions
         </Headline>

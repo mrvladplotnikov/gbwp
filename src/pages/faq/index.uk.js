@@ -118,12 +118,6 @@ const Faq = ({ data, location }) => {
               й за необхідності допоможемо з заповненням.
             </p>
           </StyledAccordionItem>
-          <ModalContactForm
-            title="Темплейт технічного завдання"
-            subTitle="Ми впевнені, що правильно складене ТЗ підвищує шанси на успіх проєкту. Тому з радістю ділимося тим, що працює для нас!"
-            open={showFrom}
-            onClose={() => setShowForm(false)}
-          />
           <StyledAccordionItem title="Як організована решта процесу роботи?">
             <p>
               Залежно від обраної послуги процес може варіюватися, хоча основні
@@ -141,7 +135,12 @@ const Faq = ({ data, location }) => {
             </p>
           </StyledAccordionItem>
         </StyledAccordion>
-
+        <ModalContactForm
+          title="Темплейт технічного завдання"
+          subTitle="Ми впевнені, що правильно складене ТЗ підвищує шанси на успіх проєкту. Тому з радістю ділимося тим, що працює для нас!"
+          open={showFrom}
+          onClose={() => setShowForm(false)}
+        />
         <Headline Tag="h2" className={styles.subtitle}>
           Фінансові питання
         </Headline>
