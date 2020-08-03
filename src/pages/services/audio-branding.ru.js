@@ -70,7 +70,7 @@ const AudioBranding = ({ data, location }) => {
           <ServiceIcon title="Аудио логотипы и джинглы" icon={JingleIcon} />
           <ServiceIcon title="Аудиорекламу и бренд-музыку" icon={AudioIcon} />
           <ServiceIcon
-            title="Звуковую айдентику для приложения"
+            title="Звуковую айдентику для приложений"
             icon={PhoneIcon}
           />
           <ServiceIcon
