@@ -75,7 +75,7 @@ const AudioBranding = ({ data, location }) => {
           />
           <ServiceIcon title="Sound identity for the apps" icon={PhoneIcon} />
           <ServiceIcon
-            title="Other audio contact points with a customer"
+            title="Other audio touchpoints with a customer"
             icon={SoundIcon}
           />
         </ServiceIconList>
