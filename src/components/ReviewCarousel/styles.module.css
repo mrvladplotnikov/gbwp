@@ -22,12 +22,12 @@
 .nameAndPos {
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.125rem;
+  line-height: 1.2;
   text-align: center;
   display: inline-block;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 1.15em;
   width: auto;
 }
 
@@ -36,7 +36,8 @@
   height: auto;
   display: block;
   margin: 0 auto;
-  margin-bottom: 13px;
+  font-size: 1.125rem;
+  margin-bottom: 1.15em;
 }
 
 .thumbnail img {
@@ -50,25 +51,27 @@
   max-width: 170px;
   display: block;
   margin: 0 auto;
-  margin-bottom: 12px;
+  font-size: 1.125rem;
+  margin-bottom: 1.15em;
 }
 
 .company {
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.2;
   text-align: center;
   margin: 0;
+  margin-bottom: 1.45em;
 }
 
 .content {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25;
   text-align: center;
-  max-width: 710px;
+  max-width: 290px;
 }
 
 .content p:first-child {
@@ -84,8 +87,8 @@
   background-color: transparent;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25;
   color: #ffffff;
   text-decoration: underline;
   padding: 0;
@@ -128,6 +131,12 @@
 
 .modal {
   position: relative;
+}
+
+@media (min-width: 710px) {
+  .content {
+    max-width: 710px;
+  }
 }
 
 @media (min-width: 1200px) {

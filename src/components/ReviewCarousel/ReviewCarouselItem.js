@@ -63,7 +63,12 @@ const ReviewCarouselItem = ({
     <div className={classNames(styles.review, classes.review)}>
       <div className={classNames(styles.meta, classes.meta)}>
         {link ? (
-          <a href={link} target="__blank" rel="nofollow noindex">
+          <a
+            href={link}
+            title="Open user profile"
+            target="__blank"
+            rel="nofollow noindex"
+          >
             {thumbnail && thumbnail.localFile ? (
               <Img
                 fluid={thumbnail.localFile.childImageSharp.fluid}
