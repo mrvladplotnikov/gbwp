@@ -40,7 +40,7 @@ const Testimonials = ({ data, location }) => {
       <section>
         <Inner>
           <Headline Tag="h2" className={styles.sectionTitle}>
-            Customer testimonials
+            Customer and partners' testimonials
           </Headline>
           {testimonials.map((node, index) => (
             <ReviewCarousel

@@ -76,7 +76,7 @@ const Home = ({ data, location }) => {
           <InlineButton onClick={() => setShowForm(true)}>
             крутого темплейта ТЗ
           </InlineButton>
-          ? Ми завжди відкриті до спілкування, так що сміливо{" "}
+          ? Ми завжди відкриті до спілкування, тож сміливо{" "}
           <a
             rel="noopener noreferrer"
             target="_blank"
