@@ -5,8 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
+
+  position: sticky;
+  top: 2.5rem;
+  transform-origin: center top;
 }
 .card.rect::before {
   content: url("../../images/cards-bg-vectors/rect.svg");
