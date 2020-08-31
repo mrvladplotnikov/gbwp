@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vp-production.com/</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/portfolio</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/about</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/reviews</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/services/music-composing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/services/audio-branding</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/services/sound-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/services/voice-casting</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/foxtail</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/monobank</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/indie-cup</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/bronze-hoof</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/fate-hunters</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/ram-pressure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/playua</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/merman</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/haydee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/carpe-diem-solutions</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/our-values</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/portfolio</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/about</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/reviews</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/services/music-composing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/services/audio-branding</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/services/sound-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/services/voice-casting</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/foxtail</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/monobank</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/indie-cup</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/bronze-hoof</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/fate-hunters</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/ram-pressure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/playua</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/merman</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/haydee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/carpe-diem-solutions</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/our-values</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/portfolio</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/about</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/reviews</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/services/music-composing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/services/audio-branding</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/services/sound-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/services/voice-casting</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/foxtail</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/monobank</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/indie-cup</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/bronze-hoof</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/fate-hunters</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/ram-pressure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/playua</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/merman</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/haydee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/carpe-diem-solutions</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/our-values</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/faq</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/audio-for-motion-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/vishivankovij-festival</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/jing-jing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/pirates-pirates</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/wildcraft</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/papaya-summer-farm</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/faq</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/audio-for-motion-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/vyshivankovyy-festival</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/jing-jing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/pirates-pirates</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/wildcraft</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/papaya-summer-farm</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/faq</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/audio-for-motion-design</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/vishivankovij-festival</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/jing-jing</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/pirates-pirates</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/wildcraft</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/papaya-summer-farm</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/prymary</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/jane-s-story-design-adventure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/look-right</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/weesee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/birdsisle</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/fish-frost</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/visions</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/jane-s-story-design-adventure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/look-right</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/weesee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/birdsisle</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/fish-frost</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/videnija</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/jane-s-story-design-adventure</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/look-right</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/weesee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/birdsisle</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/fish-frost</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/idle-girls</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/love-money-rock-n-roll</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/piratemania</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/mousetrap</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/idle-girls</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/love-money-rock-n-roll</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/necromancer</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/idle-girls</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/love-money-rock-n-roll</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/necromancer</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/necromancer</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/piratemania</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/piratemania</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/works/pinqlee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/mousetrap</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/myshelovka</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/en/works/pinqlee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>https://vp-production.com/ru/works/pinqlee</loc>
+  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
+
+
+</urlset>
