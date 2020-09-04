@@ -40,7 +40,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
     <Layout
       location={location}
       translations={translations}
-      title={title}
+      title={acf.title || title}
       description={acf.description}
     >
       {isHeroFormat && acf.work_video && (
@@ -160,6 +160,7 @@ export const pageQuery = graphql`
       acf {
         autors
         work_video
+        title
         description
       }
       work_developer {
