@@ -1,260 +1,227 @@
 {
   "en": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
         "@type": "Question",
         "name": "What do you need to get started?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "First of all, we need to get to know you and your project. To do this, you fill out a brief, and we conduct a <a href=mailto:connect@vp-production.com?subject=Consultation&body=Name%3A%3Cbr%20/%3EProject%E2%80%99s%20name%3A%3Cbr%20/%3EProject%E2%80%99s%20type%3A%3Cbr%20/%3EA%20convenient%20way%20of%20communication%3A%3Cbr%20/%3EConvenient%20time%20(day%20%2F%20time)%3A%3Cbr%20/%3E%0A%0A%0APlease%20note%20that%20we%20consider%20applications%20for%20a%20free%20consultation%20from%20Monday%20to%20Friday%20from%2010%3A00%20to%2018%3A00%20(GMT%20%2B3)%20and%20respond%20to%20them%20in%20the%20order%20they%20are%20received.%20Thank%20you!>free consultation</a> for you. If everything is good, it remains only to prepare the technical task and sign the contract."
+          "text": "First of all, we need to get to know you and your project. To do this, you fill out a brief, and we conduct a free consultation for you. If everything is good, it remains only to prepare the technical task and sign the contract."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "What if my project is under the NDA?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can <a href=https://vp-production.com/maito:connect@vp-production.com>email us</a>, we will sign all the documents needed, and we will be able to discuss everything freely."
+          "text": "You can email us, we will sign all the documents needed, and we will be able to discuss everything freely."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Do you do test tasks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Of course, we carry out test tasks, but at the standard cost of services.<br/> <p>We believe that the format of the free test tasks makes the performer focus not on the needs of the project, but on how to impress the customer. Most often, the results of such test tasks are not objective, and this may harm the entire project in the future.</p> <p>Nevertheless, we are ready to make an exception. For example, if we see an exciting indie project that appeals to us for help and presents itself in a great way. If this is about you — feel free to <a href=https://vp-production.com/maito:connect@vp-production.com>write to us</a>!</p>"
+          "text": "Of course, we carry out test tasks, but at the standard cost of services.<br/> <p>We believe that the format of the free test tasks makes the performer focus not on the needs of the project, but on how to impress the customer. Most often, the results of such test tasks are not objective, and this may harm the entire project in the future.</p> <p>Nevertheless, we are ready to make an exception. For example, if we see an exciting indie project that appeals to us for help and presents itself in a great way. If this is about you — feel free to write to us!</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Who prepares the technical task for the project?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ideally, it is a client who prepares the technical task for the project. In this case, both sides initially have crystal clear expectations from the results of cooperation. It helps to select the desired vector and lays a solid foundation for successful work.<br/> <p>We are happy to share with you our fantastic template for the technical task and, if necessary, help with the filling.</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "How is the rest of the work process organized?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depending on the chosen service, the process may vary, although the main six stages remain unchanged: acquaintance, preparation, launch, production, project acceptance, and further support.<br/> <p>You can read in detail how the work process is organized for each of our services on the following pages: <a href=https://vp-production.com/en/services/music-composing>music composing</a>, <a href=https://vp-production.com/en/services/sound-design>sound design</a>, <a href=https://vp-production.com/en/services/audio-branding>audio branding</a> і <a href=https://vp-production.com/en/services/voice-casting>voice casting</a>.</p>"
-        }
-      },
-      {
+          "text":"Depending on the chosen service, the process may vary, although the main six stages remain unchanged: acquaintance, preparation, launch, production, project acceptance, and further support.<br/> <p>You can read in detail how the work process is organized for each of our services on the following pages: <a href=https://vp-production.com/en/services/music-composing>music composing</a>, <a href=https://vp-production.com/en/services/sound-design>sound design</a>, <a href=https://vp-production.com/en/services/audio-branding>audio branding</a> і <a href=https://vp-production.com/en/services/voice-casting>voice casting</a>.</p>"
+		}
+      }, {
         "@type": "Question",
         "name": "Do you work on a prepaid basis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we work on a prepaid basis. Most often, advance payment is 50 % of the full amount, but in some cases, full prepayment is required."
-        }
-      },
-      {
+          "text":"Yes, we work on a prepaid basis. Most often, advance payment is 50 % of the full amount, but in some cases, full prepayment is required."
+		}
+      }, {
         "@type": "Question",
         "name": "In what cases, 100% prepayment is required?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Full prepayment is required for any voice over order and in the case when you choose the S.O.S package for music composing."
-        }
-      },
-      {
+          "text":"Full prepayment is required for any voice over order and in the case when you choose the S.O.S package for music composing."
+		}
+      }, {
         "@type": "Question",
         "name": "How can I pay for your services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We accept payments for the provided services only to the physical person entrepreneur (PPE) account or to the Payoneer account."
-        }
-      },
-      {
+          "text":"We accept payments for the provided services only to the physical person entrepreneur (PPE) account or to the Payoneer account."
+		}
+      }, {
         "@type": "Question",
         "name": "Do you have a contract?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we sign a contract for providing services with each client. We have a great craft contract — all thanks to the team of lawyers with whom we work."
-        }
-      },
-      {
+          "text":"Yes, we sign a contract for providing services with each client. We have a great craft contract — all thanks to the team of lawyers with whom we work."
+		}
+      }, {
         "@type": "Question",
         "name": "What rights to the result will I get?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "By default, we transfer to you all exclusive intellectual property rights to the sound effects, voice-overs, and audio brand elements we created, of course, with one condition — after you pay for our services.<br/> <p>By default, we transfer to you the intellectual property rights to the music compositions that we created, with the restriction on the possibility of their free resale and re-release, outside the project we have agreed on, as well as monetization from streaming services and marketplaces.</p> <p>If necessary, we can transfer to you all exclusive intellectual property rights without any restrictions, but this should be discussed separately. In this case, the total cost of the project will be higher.</p>"
-        }
-      }
-    ]
-  },
+          "text":"By default, we transfer to you all exclusive intellectual property rights to the sound effects, voice-overs, and audio brand elements we created, of course, with one condition — after you pay for our services.<br/> <p>By default, we transfer to you the intellectual property rights to the music compositions that we created, with the restriction on the possibility of their free resale and re-release, outside the project we have agreed on, as well as monetization from streaming services and marketplaces.</p> <p>If necessary, we can transfer to you all exclusive intellectual property rights without any restrictions, but this should be discussed separately. In this case, the total cost of the project will be higher.</p>"}
+		  
+        }]
+    },
   "ru": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
         "@type": "Question",
         "name": "Что нужно, чтобы вы могли начать работу?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Нам нужно сперва познакомиться с вами и вашим проектом. Для этого вы заполняете бриф, а мы проводим для вас <a href=mailto:connect@vp-production.com?subject=%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F&body=%D0%98%D0%BC%D1%8F%3A%3Cbr%20/%3E%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%3Cbr%20/%3E%D0%A2%D0%B8%D0%BF%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%3Cbr%20/%3E%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B8%3A%3Cbr%20/%3E%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20(%D0%B4%D0%B5%D0%BD%D1%8C%2F%D0%B2%D1%80%D0%B5%D0%BC%D1%8F)%3A%3Cbr%20/%3E%0A%0A%0A%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D0%BC%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%B2%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5%2C%20%D1%87%D1%82%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BC%D1%8B%20%D1%80%D0%B0%D1%81%D1%81%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%20%D1%81%20%D0%BF%D0%BE%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%8F%D1%82%D0%BD%D0%B8%D1%86%D1%83%20%D1%81%2010%3A00%20%D0%B4%D0%BE%2018%3A00%20(GMT%20%2B3)%20%D0%B8%20%D0%BE%D1%82%D0%B2%D0%B5%D1%87%D0%B0%D0%B5%D0%BC%20%D0%BD%D0%B0%20%D0%BD%D0%B8%D1%85%20%D0%B2%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5%20%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.%20%D0%A1%D0%BF%D0%B0%D1%81%D0%B8%D0%B1%D0%BE!>бесплатную консультацию</a>. Если мы с вами совпадём характерами, останется только составить техническое задание и подписать договор."
+          "text": "Нам нужно сперва познакомиться с вами и вашим проектом. Для этого вы заполняете бриф, а мы проводим для вас бесплатную консультацию. Если мы с вами совпадём характерами, останется только составить техническое задание и подписать договор."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "А что делать, если мой проект под NDA?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<a href=https://vp-production.com/maito:connect@vp-production.com>Напишите нам</a>, мы подпишем соответствующие документы и сможем свободно всё обсудить."
+          "text": "Напишите нам, мы подпишем соответствующие документы и сможем свободно всё обсудить."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Вы делаете тестовые задания?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Конечно, мы выполняем тестовые задания, но по стандартной стоимости услуг.<br/> <p>Мы считаем, что формат бесплатного тестового задания заставляет исполнителя фокусироваться не на потребностях проекта, а на том, как впечатлить заказчика. Чаще всего результаты таких заданий не объективны и это в будущем может вредить всему проекту.</p> <p>Тем не менее, мы готовы сделать исключение в том случае, если перед нами интересный инди проект, который обращается к нам за помощью и круто себя презентует. Если это о вас — <a href=https://vp-production.com/maito:connect@vp-production.com>смело пишите</a>!</p>"
+          "text": "Конечно, мы выполняем тестовые задания, но по стандартной стоимости услуг.<br/> <p>Мы считаем, что формат бесплатного тестового задания заставляет исполнителя фокусироваться не на потребностях проекта, а на том, как впечатлить заказчика. Чаще всего результаты таких заданий не объективны и это в будущем может вредить всему проекту.</p> <p>Тем не менее, мы готовы сделать исключение в том случае, если перед нами интересный инди проект, который обращается к нам за помощью и круто себя презентует. Если это о вас — смело пишите!</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Кто составляет техническое задание на проект?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "В идеале ТЗ на проект составляет клиент. В таком случае у обеих сторон изначально максимально чёткие ожидания от результатов сотрудничества. Это помогает выбрать нужный вектор и закладывает прочный фундамент для успешной работы.<br/> <p>Мы же с радостью поделимся с вамипроверенным темплейтом техническогозадания и при необходимости поможем с заполнением.</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Как организован остальной процесс работы?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "В зависимости от выбранной услуги процесс может варьироваться, хотя основные 6 стадий остаются неизменными: знакомство, подготовка, запуск, продакшн, приём проекта и его дальнейшая поддержка.<br /> <p>Как организован процесс работы для каждой из наших услуг, можно подробно прочитать на страницах  <a href=https://vp-production.com/ru/services/music-composing>создание музыки</a>, <a href=https://vp-production.com/ru/services/sound-design>звуковой дизайн</a>, <a href=https://vp-production.com/ru/services/audio-branding>аудиобрендинг</a> і <a href=https://vp-production.com/ru/services/voice-casting>голосовое озвучивание</a>.</p>"
-        }
-      },
-      {
+          "text":"В зависимости от выбранной услуги процесс может варьироваться, хотя основные 6 стадий остаются неизменными: знакомство, подготовка, запуск, продакшн, приём проекта и его дальнейшая поддержка.<br /> <p>Как организован процесс работы для каждой из наших услуг, можно подробно прочитать на страницах  <a href=https://vp-production.com/ru/services/music-composing>создание музыки</a>, <a href=https://vp-production.com/ru/services/sound-design>звуковой дизайн</a>, <a href=https://vp-production.com/ru/services/audio-branding>аудиобрендинг</a> і <a href=https://vp-production.com/ru/services/voice-casting>голосовое озвучивание</a>.</p>"
+		}
+      }, {
         "@type": "Question",
         "name": "Вы работаете по предоплате?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Да, мы работаем по предоплате. Чаще всего аванс — это 50% суммы, но в некоторых случаях нужна полная предоплата."
-        }
-      },
-      {
+          "text":"Да, мы работаем по предоплате. Чаще всего аванс — это 50% суммы, но в некоторых случаях нужна полная предоплата."
+		}
+      }, {
         "@type": "Question",
         "name": "В каких случаях предоплата 100 %?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Полная предоплата нужна при любом заказе голосового озвучивания и если вы выберете пакет S.O.S для создания музыки."
-        }
-      },
-      {
+          "text":"Полная предоплата нужна при любом заказе голосового озвучивания и если вы выберете пакет S.O.S для создания музыки."
+		}
+      }, {
         "@type": "Question",
         "name": "Как можно оплатить ваши услуги?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Мы принимаем оплату за оказанные услуги только на расчётный счёт физического лица предпринимателя (ФЛП) или на счёт Payoneer."
-        }
-      },
-      {
+          "text":"Мы принимаем оплату за оказанные услуги только на расчётный счёт физического лица предпринимателя (ФЛП) или на счёт Payoneer."
+		}
+      }, {
         "@type": "Question",
         "name": "Есть ли у вас договор?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Да, с каждым клиентом мы заключаем договор о предоставлении услуг. Он у нас крутой и крафтовый — всё благодаря команде юристов, с которой мы сотрудничаем."
-        }
-      },
-      {
+          "text":"Да, с каждым клиентом мы заключаем договор о предоставлении услуг. Он у нас крутой и крафтовый — всё благодаря команде юристов, с которой мы сотрудничаем."
+		}
+      }, {
         "@type": "Question",
         "name": "Какие права на результат я получу?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "На созданные нами звуковые эффекты, голосовое озвучивание и элементы аудио бренда мы по умолчанию передаём вам исключительные материальные права интеллектуальной собственности, конечно, с одним условием — после оплаты наших услуг.<br /> <p>На созданные нами музыкальные композиции мы по умолчанию передаём вам имущественные права интеллектуальной собственности, с ограничением возможности свободной их перепродажи и перевыпуска, вне оговоренного нами проекта, а также получения монетизации со стриминговых сервисов и маркетплейсов.</p> <p>При необходимости мы можем передать вам все исключительные имущественные права интеллектуальной собственности без каких-либо ограничений, но это следует оговаривать отдельно и в таком случае общая стоимость проекта будет выше.</p>"
-        }
-      }
-    ]
-  },
+          "text":"На созданные нами звуковые эффекты, голосовое озвучивание и элементы аудио бренда мы по умолчанию передаём вам исключительные материальные права интеллектуальной собственности, конечно, с одним условием — после оплаты наших услуг.<br /> <p>На созданные нами музыкальные композиции мы по умолчанию передаём вам имущественные права интеллектуальной собственности, с ограничением возможности свободной их перепродажи и перевыпуска, вне оговоренного нами проекта, а также получения монетизации со стриминговых сервисов и маркетплейсов.</p> <p>При необходимости мы можем передать вам все исключительные имущественные права интеллектуальной собственности без каких-либо ограничений, но это следует оговаривать отдельно и в таком случае общая стоимость проекта будет выше.</p>"}
+		  
+        }]
+    },
   "uk": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
         "@type": "Question",
         "name": "Що потрібно аби ви могли почати роботу?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Спершу нам потрібно познайомитися з вами і вашим проєктом. Для цього ви заповнюєте бриф, а ми проводимо для вас <a href=mailto:connect@vp-production.com?subject=%D0%9A%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D1%96%D1%8F&body=%D0%86%D0%BC%E2%80%99%D1%8F%3A%3Cbr%20/%3E%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%20%D0%BF%D1%80%D0%BE%D1%94%D0%BA%D1%82%D1%83%3A%3Cbr%20/%3E%D0%A2%D0%B8%D0%BF%20%D0%BF%D1%80%D0%BE%D1%94%D0%BA%D1%82%D1%83%3A%3Cbr%20/%3E%D0%97%D1%80%D1%83%D1%87%D0%BD%D0%B8%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D1%96%D0%B1%20%D0%B7%D0%B2%E2%80%99%D1%8F%D0%B7%D0%BA%D1%83%3A%3Cbr%20/%3E%D0%97%D1%80%D1%83%D1%87%D0%BD%D0%B8%D0%B9%20%D1%87%D0%B0%D1%81%20(%D0%B4%D0%B5%D0%BD%D1%8C%2F%D1%87%D0%B0%D1%81)%3A%3Cbr%20/%3E%0A%0A%0A%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%94%D0%BC%D0%BE%20%D0%B2%D0%B0%D1%88%D1%83%20%D1%83%D0%B2%D0%B0%D0%B3%D1%83%2C%20%D1%89%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D0%B7%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D1%96%D1%8E%20%D0%BC%D0%B8%20%D1%80%D0%BE%D0%B7%D0%B3%D0%BB%D1%8F%D0%B4%D0%B0%D1%94%D0%BC%D0%BE%20%D0%B7%20%D0%BF%D0%BE%D0%BD%D0%B5%D0%B4%D1%96%D0%BB%D0%BA%D0%B0%20%D0%B4%D0%BE%20%D0%BF%E2%80%99%D1%8F%D1%82%D0%BD%D0%B8%D1%86%D1%96%20%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%BD%D0%BE%2C%20%D0%B7%2010%3A00%20%D0%B4%D0%BE%2018%3A00%20(GMT%20%2B3)%2C%20%D1%96%20%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D0%B0%D1%94%D0%BC%D0%BE%20%D0%BD%D0%B0%20%D0%BD%D0%B8%D1%85%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%BE%D0%BC%20%D0%BD%D0%B0%D0%B4%D1%85%D0%BE%D0%B4%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F.%20%D0%94%D1%8F%D0%BA%D1%83%D1%94%D0%BC%D0%BE!>безплатну консультацію</a>. Якщо ми з вами збігатемося характерами, залишиться тільки скласти технічне завдання й підписати договір."
+          "text": "Спершу нам потрібно познайомитися з вами і вашим проєктом. Для цього ви заповнюєте бриф, а ми проводимо для вас безплатну консультацію. Якщо ми з вами збігатемося характерами, залишиться тільки скласти технічне завдання й підписати договір."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "А що робити, якщо мій проєкт під NDA?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<a href=https://vp-production.com/maito:connect@vp-production.com>Напишіть нам</a>, ми підпишемо відповідні документи і зможемо вільно все обговорити."
+          "text": "Напишіть нам, ми підпишемо відповідні документи і зможемо вільно все обговорити."
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Ви робите тестові завдання?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Звичайно, ми виконуємо тестові завдання, але за стандартною вартістю послуг.<br/> <p>Ми вважаємо, що формат безоплатного тестового завдання змушує виконавця фокусуватися не на потребах проєкту, а на тому, як вразити замовника. Найчастіше результати таких завдань не об’єктивні й це в майбутньому може шкодити всьому проєкту.</p> <p>Проте, ми готові зробити виняток у тому випадку, якщо перед нами цікавий інді проєкт, який звертається до нас по допомогу і круто себе презентує. Якщо це про вас — <a href=https://vp-production.com/maito:connect@vp-production.com>сміливо пишіть</a>!</p>"
+          "text": "Звичайно, ми виконуємо тестові завдання, але за стандартною вартістю послуг.<br/> <p>Ми вважаємо, що формат безоплатного тестового завдання змушує виконавця фокусуватися не на потребах проєкту, а на тому, як вразити замовника. Найчастіше результати таких завдань не об’єктивні й це в майбутньому може шкодити всьому проєкту.</p> <p>Проте, ми готові зробити виняток у тому випадку, якщо перед нами цікавий інді проєкт, який звертається до нас по допомогу і круто себе презентує. Якщо це про вас — сміливо пишіть!</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Хто складає технічне завдання на проєкт?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ідеально, коли ТЗ на проєкт складає клієнт. У такому випадку в обох сторін від самого початку формуються максимально чіткі очікування від результатів співпраці. Це допомагає обрати потрібний вектор і закладає міцний фундамент для успішної роботи.<br/> <p>Ми з радістю поділимося з вами перевіреним темплейтом технічного завдання й за необхідності допоможемо з заповненням.</p>"
         }
-      },
-      {
+      }, {
         "@type": "Question",
         "name": "Як організована решта процесу роботи?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Залежно від обраної послуги процес може варіюватися, хоча основні 6 стадій залишаються незмінними: знайомство, підготовка, запуск, продакшн, прийом проєкту і його подальша підтримка.<br/> <p>Як організований процес роботи для кожної з наших послуг, можна детально прочитати на  сторінках <a href=https://vp-production.com/services/music-composing>створення музики</a>, <a href=https://vp-production.com/services/sound-design>звуковий дизайн</a>, <a href=https://vp-production.com/services/audio-branding>аудіобрендинг</a> і <a href=https://vp-production.com/services/voice-casting>голосове озвучення</a>.</p>"
-        }
-      },
-      {
+          "text":"Залежно від обраної послуги процес може варіюватися, хоча основні 6 стадій залишаються незмінними: знайомство, підготовка, запуск, продакшн, прийом проєкту і його подальша підтримка.<br/> <p>Як організований процес роботи для кожної з наших послуг, можна детально прочитати на  сторінках <a href=https://vp-production.com/services/music-composing>створення музики</a>, <a href=https://vp-production.com/services/sound-design>звуковий дизайн</a>, <a href=https://vp-production.com/services/audio-branding>аудіобрендинг</a> і <a href=https://vp-production.com/services/voice-casting>голосове озвучення</a>.</p>"
+		}
+      }, {
         "@type": "Question",
         "name": "Ви працюєте за передоплатою?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Так, ми працюємо за передоплатою. Найчастіше аванс складає 50 % суми, але в деяких випадках потрібна повна передоплата."
-        }
-      },
-      {
+          "text":"Так, ми працюємо за передоплатою. Найчастіше аванс складає 50% суми, але в деяких випадках потрібна повна передоплата."
+		}
+      }, {
         "@type": "Question",
         "name": "У яких випадках передоплата становить 100%?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Повна передоплата потрібна у разі замовлення голосового озвучення, а також якщо ви обирете пакет S.O.S для створення музики."
-        }
-      },
-      {
+          "text":"Повна передоплата потрібна у разі замовлення голосового озвучення, а також якщо ви обирете пакет S.O.S для створення музики."
+		}
+      }, {
         "@type": "Question",
         "name": "Як можна оплатити ваші послуги?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ми приймаємо оплату за надані послуги тільки на розрахунковий рахунок фізичної особи підприємця (ФОП) або на рахунок Payoneer."
-        }
-      },
-      {
+          "text":"Ми приймаємо оплату за надані послуги тільки на розрахунковий рахунок фізичної особи підприємця (ФОП) або на рахунок Payoneer."
+		}
+      }, {
         "@type": "Question",
         "name": "Чи є у вас договір?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Так, із кожним клієнтом ми укладаємо договір про надання послуг. Він у нас крутий і крафтовий — усе завдяки команді юристів, з якою ми співпрацюємо."
-        }
-      },
-      {
+          "text":"Так, із кожним клієнтом ми укладаємо договір про надання послуг. Він у нас крутий і крафтовий — усе завдяки команді юристів, з якою ми співпрацюємо."
+		}
+      }, {
         "@type": "Question",
         "name": "Які права на результат я отримаю?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "На створені нами звукові ефекти, голосове озвучення та елементи аудіо бренда ми за замовчуванням передаємо вам усі виняткові майнові права інтелектуальної власності, звичайно, з однією умовою — після оплати наших послуг.<br/> <p>На створені нами музичні композиції ми за замовчуванням передаємо вам майнові права інтелектуальної власності, з обмеженням можливості вільного їх перепродажу й перевипуску, поза обумовленого нами проєкту, а також отримання монетизації зі стрімінгових сервісів і маркетплейсів.</p> <p>За необхідності ми можемо передати вам усі виключні майнові права інтелектуальної власності без будь-яких обмежень, але це слід обговорювати окремо й у такому випадку загальна вартість проєкту буде вище.</p>"
-        }
-      }
-    ]
-  }
+          "text":"На створені нами звукові ефекти, голосове озвучення та елементи аудіо бренда ми за замовчуванням передаємо вам усі виняткові майнові права інтелектуальної власності, звичайно, з однією умовою — після оплати наших послуг.<br/> <p>На створені нами музичні композиції ми за замовчуванням передаємо вам майнові права інтелектуальної власності, з обмеженням можливості вільного їх перепродажу й перевипуску, поза обумовленого нами проєкту, а також отримання монетизації зі стрімінгових сервісів і маркетплейсів.</p> <p>За необхідності ми можемо передати вам усі виключні майнові права інтелектуальної власності без будь-яких обмежень, але це слід обговорювати окремо й у такому випадку загальна вартість проєкту буде вище.</p>"}
+		  
+        }]
+    }
 }
