@@ -21,8 +21,8 @@ import mailTo from "../utils/mailTo"
 import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../components/InlineButton"
 
-const Home = ({ data, location }) => {
-  const [showFrom, setShowForm] = useState(false)
+const Home = ({ data, location, ...props }) => {
+  const [showFrom, setShowForm] = useState(location.search === "?contact-form")
 
   const works = data.works.nodes
   const contactEmail = data.site.siteMetadata.adminEmail
