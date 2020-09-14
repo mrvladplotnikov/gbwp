@@ -26,13 +26,6 @@ exports.handler = function(event, context, callback) {
   const user = process.env.MAIL_USER
   const pass = process.env.MAIL_PASSWORD
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: { user, pass },
-  })
-
   // Parse data sent in form hook (email, name etc)
   const data = JSON.parse(event.body)
 
@@ -58,6 +51,26 @@ exports.handler = function(event, context, callback) {
       .readFileSync(require.resolve(`./emails/${data.type}/${data.lang}.html`))
       .toString("utf8"),
   }
+
+  if (process.env.MODE_DEV) {
+    console.log({
+      adminMailOptions,
+      userMailOptions,
+    })
+    return callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({
+        status: "Ok",
+      }),
+    })
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: { user, pass },
+  })
 
   transporter.sendMail(adminMailOptions, (err, info) => {
     if (err) {
