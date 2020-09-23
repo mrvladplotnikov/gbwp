@@ -1,0 +1,65 @@
+.Typography {
+  font-family: $font;
+  color: $light;
+}
+
+.body1 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+  @media (min-width: 768px) {
+    font-size: 1.375rem;
+  }
+}
+
+.body2 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.title1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1;
+
+  @media (min-width: 576px) {
+    font-size: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 5rem;
+  }
+}
+
+.subtitle1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+
+  @media (min-width: 576px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 4.375rem;
+  }
+}
+
+.disableGutters {
+  margin: 0;
+  padding: 0;
+}

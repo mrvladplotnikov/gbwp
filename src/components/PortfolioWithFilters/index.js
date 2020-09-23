@@ -4,7 +4,7 @@ import FilterBar from "./FilterBar"
 import WorkCards from "../WorkCards"
 import { flatten, uniqBy, chunk } from "lodash/array"
 import { FormattedMessage } from "react-intl"
-import StyledLink from "../StyledLink"
+import Button from "~components/Button"
 import styles from "./styles.module.css"
 
 const handleWorksDividing = (chunks, chunksToShow = 1) => {
@@ -62,12 +62,15 @@ const PortfolioWithFilters = ({ works = [] }) => {
       />
       <WorkCards works={paginatedWorks} className={styles.works} />
       {page < chunkedWorks.length && (
-        <StyledLink
-          onClick={() => setPage(page + 1)}
-          className={styles.loadMoreButton}
-        >
-          <FormattedMessage id="loadMoreButton" />
-        </StyledLink>
+        <div className={styles.container}>
+          <Button
+            onClick={() => setPage(page + 1)}
+            className={styles.loadMoreButton}
+            arrowPosition="right"
+          >
+            <FormattedMessage id="loadMoreButton" />
+          </Button>
+        </div>
       )}
     </div>
   )

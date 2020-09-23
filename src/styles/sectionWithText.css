@@ -1,9 +1,4 @@
 .SectionWithText {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
   color: #ffffff;
   margin: 0;
   padding: 177px 15px 213px 15px;
@@ -15,10 +10,12 @@
   position: static;
 }
 
-.SectionWithText__outer > * {
+.SectionWithText__text {
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
+  letter-spacing: -0.01em;
 }
 
 .SectionWithText__box {
@@ -52,11 +49,9 @@
 
 @media (min-width: 992px) {
   .SectionWithText {
-    font-size: 60px;
-    line-height: 73px;
     padding: 319px 15px 177px 15px;
   }
-  .SectionWithText__outer > * {
+  .SectionWithText__text {
     font-size: 60px;
     line-height: 73px;
   }

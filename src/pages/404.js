@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../layouts/en/empty"
-import StyledLink from "../components/StyledLink"
+import Button from "~components/Button"
 import { Inner } from "../components/Container"
 import styles from "./styles-404.module.css"
 
@@ -21,7 +21,7 @@ const NotFoundPage = ({ location }) => (
         />
       </svg>
       <h1 className={styles.notFoundCode}>404</h1>
-      <StyledLink to="/">Home</StyledLink>
+      <Button to="/">Home</Button>
     </Inner>
   </Layout>
 )

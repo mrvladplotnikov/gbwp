@@ -1,0 +1,124 @@
+.Button {
+  font-family: $font;
+  color: $light;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5em 1em;
+  border: 1px solid $semi-light;
+  box-sizing: border-box;
+  min-width: 123px;
+  display: inline-flex;
+  justify-content: center;
+  z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    padding: 0.6em 1em;
+    font-size: 1.25rem;
+    min-width: 177px;
+  }
+}
+
+.container {
+  display: inline-block;
+  font-family: $font;
+  color: $light;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+
+  &.arrowRight {
+    display: inline-flex;
+  }
+}
+
+.container a.Button {
+  text-decoration: none;
+}
+.container a.Button:hover {
+  text-decoration: none;
+  color: inherit;
+  -webkit-text-fill-color: unset;
+}
+
+.Button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(90.32deg, $primary 0.07%, $secondary 99.93%);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.buttonArrowContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttonArrow {
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+  stroke: $semi-light;
+  stroke-width: 1;
+  margin-top: 0.5em;
+
+  @media (min-width: 768px) {
+    margin-top: 0.75em;
+  }
+}
+.buttonArrow path {
+  transition: stroke 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+
+.container:hover .Button::before {
+  transform: scaleX(1);
+}
+.container:hover .buttonArrow {
+  transform: translateX(13px);
+}
+.container:hover .buttonArrow path {
+  stroke: $light;
+}
+
+.buttonRightArrow {
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+  stroke-width: 1;
+  max-height: 25px;
+  margin-left: 0.25em;
+
+  & path {
+    stroke: $semi-light;
+    transition: stroke 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+  }
+
+  @media (min-width: 768px) {
+    max-height: 42px;
+    margin-left: 0.5em;
+  }
+}
+
+.container:hover .buttonRightArrow {
+  transform: translateY(5px);
+  & path {
+    stroke: url(#paint0_linear);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+
+  & .Button {
+    width: 100%;
+  }
+}

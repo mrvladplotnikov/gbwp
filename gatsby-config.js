@@ -1,8 +1,10 @@
+const path = require("path")
 const { createProxyMiddleware } = require("http-proxy-middleware")
 const languages = require("./src/utils/languages")
 const siteMenu = require("./src/utils/siteMenu.js")
 const siteSocialLinks = require("./src/utils/siteSocialLinks.js")
 const normalizer = require("./src/utils/normalizeData.js")
+const sass = require("sass")
 
 module.exports = {
   siteMetadata: {
@@ -16,6 +18,14 @@ module.exports = {
     siteUrl: process.env.SITE_URL || "http://localhost:8000/",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        data: '@import "vars.scss";',
+        implementation: sass,
+        includePaths: ["src/components"],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -5,44 +5,17 @@
   flex-wrap: wrap;
 }
 
+.PlanList__button-container {
+  display: flex;
+}
+
 .PlanList__button {
   margin-top: 33px;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-color: transparent;
-  text-align: center;
-  width: 100%;
-  line-height: 35px;
-  font-size: 14px;
-  color: #ffffff;
-  border: 1px solid #747474;
-  cursor: pointer;
-  display: block;
-  max-width: 266px;
   margin: auto;
-}
-.PlanList__button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: linear-gradient(90.32deg, #f2390b 0.07%, #1897d9 99.93%);
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition: transform 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
-}
-.PlanList__button:hover::before {
-  transform: scaleX(1);
 }
 
 @media (min-width: 992px) {
   .PlanList__button {
     margin-top: 66px;
-    line-height: 36px;
-    font-size: 16px;
   }
 }

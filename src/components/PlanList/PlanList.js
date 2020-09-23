@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import ReactAliceCarousel from "react-alice-carousel"
+import Button from "~components/Button"
 
 const PlanList = ({ children, label = "", onClick = null }) => (
   <div className="PlanList__container">
@@ -27,9 +28,15 @@ const PlanList = ({ children, label = "", onClick = null }) => (
       {children}
     </ReactAliceCarousel>
     {onClick && (
-      <button type="button" className="PlanList__button" onClick={onClick}>
-        {label}
-      </button>
+      <div className="PlanList__button-container">
+        <Button
+          showArrow={false}
+          className="PlanList__button"
+          onClick={onClick}
+        >
+          {label}
+        </Button>
+      </div>
     )}
   </div>
 )

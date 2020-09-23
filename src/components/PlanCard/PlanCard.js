@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { FormattedMessage } from "react-intl"
+import Button from "~components/Button"
 
 const PlanCard = ({
   icon,
@@ -22,9 +23,14 @@ const PlanCard = ({
         ))}
       </ul>
     )}
-    <button className="PlanCard__button" type="button" onClick={onClick}>
+    <Button
+      fullWidth
+      className="PlanCard__button"
+      showArrow={false}
+      onClick={onClick}
+    >
       <FormattedMessage id="planCardButtonLabel" />
-    </button>
+    </Button>
   </div>
 )
 

@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./styles.module.css"
 import { Inner, Outer } from "../../Container"
-import StyledLink from "../../StyledLink"
+import Button from "~components/Button"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Headline from "../../Headline"
@@ -44,9 +44,9 @@ const About = ({
           </figure>
           {linkURL && (
             <div className={styles.linkWrapper}>
-              <StyledLink className={styles.link} to={linkURL}>
+              <Button className={styles.link} to={linkURL}>
                 {linkLabel}
-              </StyledLink>
+              </Button>
             </div>
           )}
         </Inner>

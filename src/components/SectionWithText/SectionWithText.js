@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import StyledLink from "../StyledLink"
 import { Outer } from "../Container"
 import boxOfDotsLink from "../../images/box-of-dots.svg"
 import boxOfDotsWhiteLink from "../../images/box-of-dots-white.svg"
+import Button from "~components/Button"
 
 const SectionBox = ({ className }) => {
   const [hover, setHover] = useState(false)
@@ -30,10 +30,10 @@ const SectionWithText = ({ link = "", linkLabel = "", children, ...props }) => (
       <SectionBox className="SectionWithText__box--box-TopRight" />
       <SectionBox className="SectionWithText__box--box-BottomLeft" />
       <SectionBox className="SectionWithText__box--box-BottomRight" />
-      {children}
+      <div className="SectionWithText__text">{children}</div>
       {link && (
         <div className="SectionWithText__linkContainer">
-          <StyledLink to={link}>{linkLabel}</StyledLink>
+          <Button to={link}>{linkLabel}</Button>
         </div>
       )}
     </Outer>

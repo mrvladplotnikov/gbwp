@@ -19,7 +19,7 @@ import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
 import mailTo from "../../utils/mailTo"
-import StyledLink from "../../components/StyledLink"
+import Button from "~components/Button"
 
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
@@ -103,7 +103,7 @@ const SoundDesign = ({ data, location }) => {
           }}
         />
         <div className="service-works-porfolio-button-container">
-          <StyledLink
+          <Button
             state={{
               service: "sound-design",
             }}
@@ -111,7 +111,7 @@ const SoundDesign = ({ data, location }) => {
             className="service-works-porfolio-button"
           >
             Портфолiо
-          </StyledLink>
+          </Button>
         </div>
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">

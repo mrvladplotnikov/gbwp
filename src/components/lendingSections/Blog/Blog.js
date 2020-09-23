@@ -4,7 +4,7 @@ import { Outer } from "../../Container"
 import Headline from "../../Headline"
 import Carousel from "../../Carousel"
 import PostCard from "../../PostCard/PostCard"
-import StyledLink from "../../StyledLink"
+import Button from "~components/Button"
 
 import image1 from "../../../images/post-t.jpg"
 import image2 from "../../../images/post-t-2.jpg"
@@ -60,7 +60,7 @@ const Blog = () => (
     </Carousel>
     <Outer>
       <div className={styles.linkWrapper}>
-        <StyledLink to="/blog">Перейти в блог</StyledLink>
+        <Button to="/blog">Перейти в блог</Button>
       </div>
     </Outer>
   </section>

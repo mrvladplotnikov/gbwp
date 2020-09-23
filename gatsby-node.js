@@ -9,6 +9,12 @@ const generatePath = require("./src/utils/generatePath")
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig()
+
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    "~components": path.resolve(__dirname, "src/components"),
+  }
+
   if (stage.startsWith("develop") && config.resolve) {
     config.resolve.alias = {
       ...config.resolve.alias,
