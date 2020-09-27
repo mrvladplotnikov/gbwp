@@ -16,15 +16,10 @@ const ChosenWorks = ({
   <section id={id} ref={portfolioRef} className={styles.ChosenWorks}>
     <Outer className={styles.container}>
       <Headline className={styles.title}>{title}</Headline>
-      {linkURL && (
-        <Button className={styles.desktopButton} to={linkURL}>
-          {linkLabel}
-        </Button>
-      )}
     </Outer>
     <WorkCards works={works} />
     {linkURL && (
-      <div className={styles.mobileButtonContainer}>
+      <div className={styles.buttonContainer}>
         <Button to={linkURL}>{linkLabel}</Button>
       </div>
     )}
