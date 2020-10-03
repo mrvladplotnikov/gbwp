@@ -127,7 +127,7 @@ const SoundDesign = ({ data, location }) => {
             <p>
               Ви пишете нам і отримуєте в зручній формі{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.uk}
               >
@@ -251,7 +251,11 @@ const SoundDesign = ({ data, location }) => {
         <ContactUs>
           Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
           отримайте повноцінну{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатну консультацію
           </a>
           . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми

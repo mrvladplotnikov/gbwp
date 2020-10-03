@@ -130,7 +130,7 @@ const AudioBranding = ({ data, location }) => {
             <p>
               Ви пишете нам і отримуєте в зручній формі{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.uk}
               >
@@ -198,7 +198,7 @@ const AudioBranding = ({ data, location }) => {
           Вартість розробки аудіо бренду залежить від набору елементів, які вам
           потрібно отримати в результаті.{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={mailTo.audioBranding.uk}
           >
@@ -245,7 +245,11 @@ const AudioBranding = ({ data, location }) => {
         <ContactUs>
           Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
           отримайте повноцінну{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатну консультацію
           </a>
           . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми

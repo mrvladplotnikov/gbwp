@@ -65,11 +65,18 @@ const Home = ({ data, location, ...props }) => {
         <FeatureCard img={icon5}>
           Наші роботи вже чули мільйони людей і багато з них залишилися
           задоволеними. Переконатися в цьому можна{" "}
-          <Link to="/reviews">тут</Link>.
+          <Link rel="nofollow" to="/reviews">
+            тут
+          </Link>
+          .
         </FeatureCard>
         <FeatureCard img={icon6}>
           Як щодо{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатної консультації
           </a>{" "}
           або{" "}
@@ -78,7 +85,7 @@ const Home = ({ data, location, ...props }) => {
           </InlineButton>
           ? Ми завжди відкриті до спілкування, тож сміливо{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -133,7 +140,11 @@ const Home = ({ data, location, ...props }) => {
       <Contacts>
         Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
         отримайте повноцінну{" "}
-        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={mailTo.mail.uk}
+        >
           безплатну консультацію
         </a>
         . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми

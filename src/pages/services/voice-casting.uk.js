@@ -139,7 +139,7 @@ const VoiceCasting = ({ data, location }) => {
             <p>
               Ви пишете нам і отримуєте в зручній формі{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.uk}
               >
@@ -246,7 +246,7 @@ const VoiceCasting = ({ data, location }) => {
         <p>
           Якщо в списку доступних мов ви не знайшли потрібну вам — обов’язково{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -290,7 +290,11 @@ const VoiceCasting = ({ data, location }) => {
         <ContactUs>
           Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
           отримайте повноцінну{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатну консультацію
           </a>
           . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми

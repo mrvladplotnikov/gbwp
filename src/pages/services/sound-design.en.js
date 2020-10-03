@@ -128,7 +128,7 @@ const SoundDesign = ({ data, location }) => {
             <p>
               You write to us and get a{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.en}
               >
@@ -254,7 +254,11 @@ const SoundDesign = ({ data, location }) => {
         <ContactUs>
           Tell us about your project, product, or idea. Ask for advice, or get a
           full{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.en}
+          >
             free consultation
           </a>
           . Find out the cost, specify a vital question, well anything you want!

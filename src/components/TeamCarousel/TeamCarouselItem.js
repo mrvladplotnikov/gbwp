@@ -23,7 +23,7 @@ const TeamCarouselItem = ({
           <a
             href={link}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             title={link}
             onClick={handleClick}
           >

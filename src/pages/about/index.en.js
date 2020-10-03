@@ -163,11 +163,19 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon5}>
           Millions of people have already listened to our work, and many of them
-          were satisfied. You can check this <Link to="/en/reviews">here</Link>.
+          were satisfied. You can check this{" "}
+          <Link rel="nofollow" to="/en/reviews">
+            here
+          </Link>
+          .
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.en}
+          >
             free consultation
           </a>{" "}
           or a cool{" "}
@@ -176,7 +184,7 @@ const About = ({ data, location }) => {
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -198,7 +206,11 @@ const About = ({ data, location }) => {
       <Contacts>
         Tell us about your project, product, or idea. Ask for advice, or get a
         full{" "}
-        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={mailTo.mail.en}
+        >
           free consultation
         </a>
         . Find out the cost, specify a vital question, or maybe you want to

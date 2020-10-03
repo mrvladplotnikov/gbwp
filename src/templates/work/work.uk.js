@@ -134,7 +134,11 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
         <Contacts>
           Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
           отримайте повноцінну{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатну консультацію
           </a>
           . Дізнайтеся вартість, уточніть важливе питання, та що завгодно! Ми

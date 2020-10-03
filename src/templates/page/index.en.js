@@ -29,7 +29,11 @@ const PageTemplate = ({ data, location }) => {
       <Contacts>
         Tell us about your project, product, or idea. Ask for advice, or get a
         full{" "}
-        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={mailTo.mail.en}
+        >
           free consultation
         </a>
         . Find out the cost, specify a vital question, well anything you want!
