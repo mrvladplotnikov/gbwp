@@ -199,9 +199,15 @@ const AudioBranding = ({ data, location }) => {
         <p>
           The cost of developing an audio brand depends on the set of elements
           that you need to get as a result.{" "}
-          <a href={mailTo.audioBranding.en}>Email us</a> and tell about your
-          brand and its needs, and we will notify you of what needs to be done
-          and how much it costs.
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={mailTo.audioBranding.en}
+          >
+            Email us
+          </a>{" "}
+          and tell about your brand and its needs, and we will notify you of
+          what needs to be done and how much it costs.
         </p>
       </ServiceSection>
       <ServiceSection title="Our approach">
