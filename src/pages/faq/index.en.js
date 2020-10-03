@@ -53,7 +53,7 @@ const Faq = ({ data, location }) => {
               First of all, we need to get to know you and your project. To do
               this, you fill out a brief, and we conduct a{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.en}
               >
@@ -67,7 +67,7 @@ const Faq = ({ data, location }) => {
             <p>
               You can{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={`maito:${contactEmail}`}
               >
@@ -97,7 +97,7 @@ const Faq = ({ data, location }) => {
               presents itself in a great way. If this is about you — feel free
               to{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={`maito:${contactEmail}`}
               >

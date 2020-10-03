@@ -68,7 +68,11 @@ const Home = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           How about a{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.en}
+          >
             free consultation
           </a>{" "}
           or a cool{" "}
@@ -77,7 +81,7 @@ const Home = ({ data, location }) => {
           </InlineButton>
           ? We are always open to communication, so feel free to{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -133,7 +137,11 @@ const Home = ({ data, location }) => {
       <Contacts>
         Tell us about your project, product, or idea. Ask for advice, or get a
         full{" "}
-        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={mailTo.mail.en}
+        >
           free consultation
         </a>
         . Find out the cost, specify a vital question, well anything you want!

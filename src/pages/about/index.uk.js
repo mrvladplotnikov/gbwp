@@ -172,7 +172,11 @@ const About = ({ data, location }) => {
         </FeatureCard>
         <FeatureCard img={icon6}>
           Як щодо{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.uk}
+          >
             безплатної консультації
           </a>{" "}
           або{" "}
@@ -181,7 +185,7 @@ const About = ({ data, location }) => {
           </InlineButton>
           ? Ми завжди відкриті до спілкування, так що сміливо{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -203,7 +207,11 @@ const About = ({ data, location }) => {
       <Contacts>
         Розкажіть нам про свій проєкт, продукт або ідею. Запитайте пораду або
         отримайте повноцінну{" "}
-        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.uk}>
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={mailTo.mail.uk}
+        >
           безплатну консультацію
         </a>
         . Дізнайтеся вартість, уточніть важливе питання, чи, може, ви хочете

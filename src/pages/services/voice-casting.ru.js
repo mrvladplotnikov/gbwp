@@ -141,7 +141,7 @@ const VoiceCasting = ({ data, location }) => {
             <p>
               Вы пишете нам и получаете в удобной форме{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.ru}
               >
@@ -247,7 +247,7 @@ const VoiceCasting = ({ data, location }) => {
         <p>
           Если в списке доступных языков вы не нашли нужный вам — обязательно{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -292,7 +292,11 @@ const VoiceCasting = ({ data, location }) => {
         <ContactUs>
           Расскажите нам о своём проекте, продукте или идее. Спросите совет или
           получите полноценную{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.ru}
+          >
             бесплатную консультацию
           </a>
           . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с

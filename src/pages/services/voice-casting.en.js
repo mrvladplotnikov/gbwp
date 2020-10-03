@@ -139,7 +139,7 @@ const VoiceCasting = ({ data, location }) => {
             <p>
               You write to us and get a{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.en}
               >
@@ -246,7 +246,7 @@ const VoiceCasting = ({ data, location }) => {
           If you did not find the language you need in the list of available
           languages, be sure to{" "}
           <a
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
           >
@@ -290,7 +290,11 @@ const VoiceCasting = ({ data, location }) => {
         <ContactUs>
           Tell us about your project, product, or idea. Ask for advice, or get a
           full{" "}
-          <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.en}>
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={mailTo.mail.en}
+          >
             free consultation
           </a>
           . Find out the cost, specify a vital question, well anything you want!

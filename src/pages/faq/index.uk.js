@@ -53,7 +53,7 @@ const Faq = ({ data, location }) => {
               Спершу нам потрібно познайомитися з вами і вашим проєктом. Для
               цього ви заповнюєте бриф, а ми проводимо для вас{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={mailTo.mail.uk}
               >
@@ -66,7 +66,7 @@ const Faq = ({ data, location }) => {
           <StyledAccordionItem title="А що робити, якщо мій проєкт під NDA?">
             <p>
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={`maito:${contactEmail}`}
               >
@@ -94,7 +94,7 @@ const Faq = ({ data, location }) => {
               цікавий інді проєкт, який звертається до нас по допомогу і круто
               себе презентує. Якщо це про вас —{" "}
               <a
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={`maito:${contactEmail}`}
               >
