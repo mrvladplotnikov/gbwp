@@ -10,6 +10,7 @@ const OurValues = ({ location }) => (
     location={location}
     title="Наши ценности"
     description="Наши взгляды. Наш манифест. То, что определяет наш подход к созданию аудио и к ведению бизнеса в целом. ✔ Это позволит вам узнать нас ещё лучше."
+    noindex
   >
     <div className={styles.container}>
       <div className={classNames(styles.module, styles.rectImg)}>

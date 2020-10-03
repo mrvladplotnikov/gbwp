@@ -29,6 +29,7 @@ const Testimonials = ({ data, location }) => {
       location={location}
       title="Відгуки"
       description="Наші роботи чули мільйони людей. ✔ Відгуки деяких із них — на цій сторінці. Відгуки клієнтів та партнерів — теж тут."
+      noindex
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>

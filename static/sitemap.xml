@@ -33,11 +33,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vp-production.com/reviews</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://vp-production.com/services/music-composing</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.80</priority>
@@ -108,22 +103,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vp-production.com/our-values</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://vp-production.com/en/portfolio</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://vp-production.com/en/about</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vp-production.com/en/reviews</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -198,22 +183,12 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vp-production.com/en/our-values</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://vp-production.com/ru/portfolio</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://vp-production.com/ru/about</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vp-production.com/ru/reviews</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -284,11 +259,6 @@
 </url>
 <url>
   <loc>https://vp-production.com/ru/works/carpe-diem-solutions</loc>
-  <lastmod>2020-08-31T16:49:58+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://vp-production.com/ru/our-values</loc>
   <lastmod>2020-08-31T16:49:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
