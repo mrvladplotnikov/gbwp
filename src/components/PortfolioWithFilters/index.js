@@ -1,17 +1,22 @@
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import PropTypes from "prop-types"
 import FilterBar from "./FilterBar"
 import WorkCards from "../WorkCards"
-import { flatten, uniqBy, chunk } from "lodash/array"
-import { FormattedMessage } from "react-intl"
-import Button from "~components/Button"
+import flatten from "lodash/flatten"
+import uniqBy from "lodash/uniqBy"
+import chunk from "lodash/chunk"
 import styles from "./styles.module.css"
+import LoadMoreButton from "./LoadMoreButton"
 
-const handleWorksDividing = (chunks, chunksToShow = 1) => {
+const handleWorksDividing = (chunks = [], chunksToShow = 1) => {
   let result = []
-  for (let index = 0; index < chunksToShow; index++) {
-    result.push(...chunks[index])
+
+  if (chunks.length > 0) {
+    for (let index = 0; index < chunksToShow; index++) {
+      result.push(...chunks[index])
+    }
   }
+
   return result
 }
 const getFilterOptions = (array = [], optionName) => {
@@ -21,33 +26,42 @@ const getFilterOptions = (array = [], optionName) => {
   return flattenOptions.filter(option => option !== null)
 }
 
-const PortfolioWithFilters = ({ works = [] }) => {
+const getFilteredData = (item, filter, filterValue) => {
+  return item[filter].some(({ value }) => value === filterValue)
+}
+
+const PortfolioWithFilters = ({
+  works = [],
+  filters: { category, service },
+  onFiltersChange = (category, service) => {},
+}) => {
   const [data, setData] = useState(works)
   const [page, setPage] = useState(1)
 
+  const handlePageChange = () => setPage(page + 1)
+
   //TODO: need to figure out how we can add data to this useCallback deps
-  const handleFilters = useCallback((category, service) => {
+  const handleFiltering = useCallback((c, s) => {
     let filteredWorks = [...data]
 
-    if (category) {
-      filteredWorks = filteredWorks.filter(item => {
-        if (!item.category) return []
-
-        return item.category.some(({ value }) => value === category)
-      })
+    if (c) {
+      filteredWorks = filteredWorks.filter(item =>
+        getFilteredData(item, "category", c)
+      )
     }
-
-    if (service) {
-      filteredWorks = filteredWorks.filter(item => {
-        if (!item.service) return []
-
-        return item.service.some(({ value }) => value === service)
-      })
+    if (s) {
+      filteredWorks = filteredWorks.filter(item =>
+        getFilteredData(item, "service", s)
+      )
     }
     setPage(1)
     setData(filteredWorks)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    handleFiltering(category, service)
+  }, [category, service, handleFiltering])
 
   const chunkedWorks = chunk(data, 10)
 
@@ -56,21 +70,15 @@ const PortfolioWithFilters = ({ works = [] }) => {
   return (
     <div>
       <FilterBar
+        category={category}
         categoryOptions={getFilterOptions(data, "category")}
+        service={service}
         serviceOptions={getFilterOptions(data, "service")}
-        onChange={handleFilters}
+        onChange={onFiltersChange}
       />
       <WorkCards works={paginatedWorks} className={styles.works} />
       {page < chunkedWorks.length && (
-        <div className={styles.container}>
-          <Button
-            onClick={() => setPage(page + 1)}
-            className={styles.loadMoreButton}
-            arrowPosition="right"
-          >
-            <FormattedMessage id="loadMoreButton" />
-          </Button>
-        </div>
+        <LoadMoreButton onClick={handlePageChange} />
       )}
     </div>
   )
@@ -78,6 +86,10 @@ const PortfolioWithFilters = ({ works = [] }) => {
 
 PortfolioWithFilters.propTypes = {
   works: PropTypes.array,
+  filters: PropTypes.shape({
+    category: PropTypes.string,
+    service: PropTypes.string,
+  }),
 }
 
 export default PortfolioWithFilters

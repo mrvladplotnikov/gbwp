@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Outer } from "../Container"
 import StyledSelect from "../StyledSelect"
@@ -11,31 +11,22 @@ const FilterBar = ({
   categoryOptions = [],
   serviceOptions = [],
   onChange = (category, service) => null,
-  category = null,
-  service = null,
+  category = undefined,
+  service = undefined,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState(category)
+  const selectedCategory = category
+    ? categoryOptions.find(({ value }) => value === category)
+    : undefined
+  const selectedService = service
+    ? serviceOptions.find(({ value }) => value === service)
+    : undefined
 
-  const handleChangeCategory = selectedOption => {
-    setSelectedCategory(selectedOption)
-  }
+  const handleChangeCategory = selectedOption =>
+    onChange(selectedOption ? selectedOption.value : undefined, service)
+  const handleChangeService = selectedOption =>
+    onChange(category, selectedOption ? selectedOption.value : undefined)
 
-  const [selectedService, setSelectedService] = useState(service)
-  const handleChangeService = selectedOption => {
-    setSelectedService(selectedOption)
-  }
-
-  const handleResetFilters = () => {
-    setSelectedCategory(null)
-    setSelectedService(null)
-  }
-
-  useEffect(() => {
-    onChange(
-      selectedCategory ? selectedCategory.value : null,
-      selectedService ? selectedService.value : null
-    )
-  }, [selectedCategory, selectedService, onChange])
+  const handleResetFilters = () => onChange()
 
   return (
     <Outer>
@@ -66,25 +57,19 @@ FilterBar.propTypes = {
   intl: intlShape.isRequired,
   categoryOptions: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.number,
+      value: PropTypes.string,
       label: PropTypes.string,
     })
   ),
   serviceOptions: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.number,
+      value: PropTypes.string,
       label: PropTypes.string,
     })
   ),
   onChange: PropTypes.func.isRequired,
-  category: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string,
-  }),
-  service: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string,
-  }),
+  category: PropTypes.string,
+  service: PropTypes.string,
 }
 
 export default injectIntl(FilterBar)

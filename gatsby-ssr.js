@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+import React from "react"
+import Router from "./router-config"
+
+export const wrapRootElement = ({ element }) => <Router>{element}</Router>

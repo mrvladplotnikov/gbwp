@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { useQueryParams, StringParam } from "use-query-params"
 import Layout from "../../layouts/ru/default"
 import Contacts from "../../components/lendingSections/Contacts"
 import Headline from "../../components/Headline"
@@ -13,31 +14,45 @@ const PortfolioBox = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
 
-const Portfolio = ({ data, location }) => (
-  <Layout
-    location={location}
-    title="Портфолио"
-    description="Наши проекты по созданию • музыки • аудио брендов • звукового дизайна • голосового озвучивания. ✔ Игры, приложения, анимация, реклама, театр, квеструмы. Аудио, которое работает на миллионные аудитории."
-  >
-    <Outer>
-      <Headline Tag="h1" className={styles.title}>
-        Портфолио
-      </Headline>
-      <PortfolioBox />
-      <PortfolioBox />
-    </Outer>
-    <WorksList works={data.allWordpressWpWork.works} />
-    <Contacts>
-      Расскажите нам о своём проекте, продукте или идее. Спросите совет или
-      получите полноценную{" "}
-      <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
-        бесплатную консультацию
-      </a>
-      . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с
-      вами познакомиться и помочь.
-    </Contacts>
-  </Layout>
-)
+const Portfolio = ({ data, location }) => {
+  const [filters, setFilters] = useQueryParams({
+    category: StringParam,
+    service: StringParam,
+  })
+
+  const handleFilterChange = (category, service) =>
+    setFilters({ category, service })
+
+  return (
+    <Layout
+      location={location}
+      title="Портфолио"
+      description="Наши проекты по созданию • музыки • аудио брендов • звукового дизайна • голосового озвучивания. ✔ Игры, приложения, анимация, реклама, театр, квеструмы. Аудио, которое работает на миллионные аудитории."
+    >
+      <Outer>
+        <Headline Tag="h1" className={styles.title}>
+          Портфолио
+        </Headline>
+        <PortfolioBox />
+        <PortfolioBox />
+      </Outer>
+      <WorksList
+        works={data.allWordpressWpWork.works}
+        filters={filters}
+        onFiltersChange={handleFilterChange}
+      />
+      <Contacts>
+        Расскажите нам о своём проекте, продукте или идее. Спросите совет или
+        получите полноценную{" "}
+        <a rel="noopener noreferrer" target="_blank" href={mailTo.mail.ru}>
+          бесплатную консультацию
+        </a>
+        . Узнайте цены, уточните важный вопрос, да что угодно! Мы будем рады с
+        вами познакомиться и помочь.
+      </Contacts>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query PortfolioPageRuQuery {
@@ -51,11 +66,11 @@ export const query = graphql`
         title
         lang: polylang_current_lang
         category: work_category {
-          value: wordpress_id
+          value: slug
           label: name
         }
         service: work_service {
-          value: wordpress_id
+          value: slug
           label: name
         }
         featured_media {

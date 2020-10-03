@@ -38,6 +38,7 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "ptz-i18n": "^1.0.0",
+    "query-string": "^6.13.4",
     "react": "^16.13.1",
     "react-accessible-accordion": "^3.0.1",
     "react-alice-carousel": "^1.15.3",
@@ -52,6 +53,7 @@
     "react-transition-group": "^4.3.0",
     "sass": "^1.26.11",
     "styled-components": "^5.0.1",
+    "use-query-params": "^1.1.8",
     "yup": "^0.28.1"
   },
   "devDependencies": {
