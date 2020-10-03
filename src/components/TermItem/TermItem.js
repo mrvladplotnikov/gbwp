@@ -1,5 +1,16 @@
 import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
+
+const Item = ({ link, children, last, ...props }) => {
+  if (!link) return <li {...props}>{children}</li>
+
+  return (
+    <Link to={link} {...props}>
+      {children}
+    </Link>
+  )
+}
 
 const TermItem = ({ className = "", terms, name }) => {
   if (!terms) return null
@@ -12,12 +23,12 @@ const TermItem = ({ className = "", terms, name }) => {
         <ul className={className}>
           {splitTerms.map((name, i) => {
             if (splitTerms.length === i + 1) {
-              return <li key={i}>{name}</li>
+              return <Item key={i}>{name}</Item>
             }
 
             return (
               <Fragment key={i}>
-                <li>{`${name},`}</li>{" "}
+                <Item>{`${name},`}</Item>{" "}
               </Fragment>
             )
           })}
@@ -29,14 +40,18 @@ const TermItem = ({ className = "", terms, name }) => {
     <li>
       {`${name}: `}
       <ul className={className}>
-        {terms.map(({ name, id }, i) => {
+        {terms.map(({ link, name, id }, i) => {
           if (terms.length === i + 1) {
-            return <li key={id}>{name}</li>
+            return (
+              <Item link={link} key={id}>
+                {name}
+              </Item>
+            )
           }
 
           return (
             <Fragment key={id}>
-              <li>{`${name},`}</li>{" "}
+              <Item link={link}>{`${name},`}</Item>{" "}
             </Fragment>
           )
         })}
@@ -52,6 +67,7 @@ TermItem.propTypes = {
       PropTypes.shape({
         id: PropTypes.string,
         name: PropTypes.string,
+        link: PropTypes.string,
       })
     ),
     PropTypes.string,

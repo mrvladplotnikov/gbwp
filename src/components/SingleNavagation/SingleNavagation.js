@@ -30,7 +30,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
           <div className={styles.topLine}>
             <Link
               className={classNames(styles.next, { [styles.disabled]: !prev })}
-              to={prev ? prevPostLink : ""}
+              to={prev ? prevPostLink : listPostLink}
               onMouseEnter={handlePrevMouseEnter}
               onMouseLeave={handlePrevMouseLeave}
             >
@@ -55,7 +55,7 @@ const WorkTemplate = ({ prev = "", next = "", list = "", prefix = "" }) => {
 
             <Link
               className={classNames(styles.prev, { [styles.disabled]: !next })}
-              to={next ? nextPostLink : ""}
+              to={next ? nextPostLink : listPostLink}
               onMouseEnter={handleNextMouseEnter}
               onMouseLeave={handleNextMouseLeave}
             >

@@ -14,6 +14,7 @@ import styles from "./styles.module.css"
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import Headline from "../../components/Headline"
 import mailTo from "../../utils/mailTo"
+import getServiceURI from "../../utils/getServiceURI"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
@@ -72,7 +73,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
                   />
                   <TermItem
                     className={styles.metaValues}
-                    terms={work_service}
+                    terms={getServiceURI(work_service)}
                     name="Услуга"
                   />
                   <TermItem
@@ -182,6 +183,7 @@ export const pageQuery = graphql`
       work_service {
         id
         name
+        lang: polylang_current_lang
       }
       translations: polylang_translations {
         slug
