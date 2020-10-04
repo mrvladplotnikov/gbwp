@@ -15,6 +15,7 @@ const PageTemplate = ({ data, location }) => {
       title={acf.title || currentPage.title}
       description={acf.description}
       noindex={acf.noindex}
+      translations={data.wordpressPage.translations}
     >
       <Inner>
         <div
@@ -54,6 +55,10 @@ export const pageQuery = graphql`
         title
         description
         noindex
+      }
+      translations: polylang_translations {
+        slug
+        langKey: polylang_current_lang
       }
     }
     site {

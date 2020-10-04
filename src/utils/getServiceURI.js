@@ -57,7 +57,6 @@ const SERVICES = {
 
 const workServices = services => {
   return services.map(service => {
-    console.log(SERVICES[service.lang])
     const s = SERVICES[service.lang].find(
       ({ name = "" }) =>
         name.toLocaleLowerCase() === service.name.toLocaleLowerCase()

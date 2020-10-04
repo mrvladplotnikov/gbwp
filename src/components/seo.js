@@ -95,12 +95,14 @@ function SEO({
           key: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
           href: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
         },
-        ...langsMenu.map(lang => ({
-          rel: "alternate",
-          hreflang: lang.langKey,
-          key: lang.langKey,
-          href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
-        })),
+        ...langsMenu
+          .filter(item => !item.disabled)
+          .map(lang => ({
+            rel: "alternate",
+            hreflang: lang.langKey,
+            key: lang.langKey,
+            href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
+          })),
       ]}
     >
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
