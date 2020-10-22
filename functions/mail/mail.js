@@ -24,7 +24,9 @@ const types = ["voice-casting", "music", "reference"]
 
 exports.handler = function(event, context, callback) {
   const user = process.env.MAIL_USER
-  const pass = process.env.MAIL_PASSWORD
+  const clientId = process.env.MAIL_CLIENT_ID
+  const clientSecret = process.env.MAIL_CLIENT_SECRET
+  const refreshToken = process.env.MAIL_REFRESH_TOKEN
 
   // Parse data sent in form hook (email, name etc)
   const data = JSON.parse(event.body)
@@ -52,25 +54,35 @@ exports.handler = function(event, context, callback) {
       .toString("utf8"),
   }
 
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      type: "OAuth2",
+      user,
+      clientId,
+      clientSecret,
+      refreshToken,
+    },
+  })
+
   if (process.env.MODE_DEV) {
-    console.log({
-      adminMailOptions,
-      userMailOptions,
-    })
-    return callback(null, {
-      statusCode: 200,
-      body: JSON.stringify({
-        status: "Ok",
-      }),
+    transporter.verify(function(error, success) {
+      if (error) {
+        console.log(error)
+        return callback(null, {
+          statusCode: 500,
+          body: JSON.stringify(err),
+        })
+      }
+      return callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({
+          success,
+          status: "Ok",
+        }),
+      })
     })
   }
-
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: { user, pass },
-  })
 
   transporter.sendMail(adminMailOptions, (err, info) => {
     if (err) {
