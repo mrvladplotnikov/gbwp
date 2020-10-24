@@ -64,10 +64,16 @@ body {
   overflow-x: hidden;
 }
 
+body figcaption,
+body p {
+  color: #bebebe;
+}
+
 body .InlineButton,
 body a {
-  color: #d2d2d2;
-  text-decoration-line: underline;
+  color: #ffffff;
+  text-decoration-line: none;
+  font-weight: 500;
 }
 
 body .InlineButton:hover,
