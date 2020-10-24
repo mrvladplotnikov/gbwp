@@ -68,7 +68,7 @@
 .privacyPolicy {
   font-size: 16px;
   line-height: 20px;
-  text-decoration-line: underline;
+  text-decoration-line: none;
   text-transform: capitalize;
   color: #bebebe;
   margin-bottom: 24px;
