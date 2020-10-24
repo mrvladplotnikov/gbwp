@@ -1,6 +1,5 @@
 .ContactUs__container {
   display: flex;
-
   flex-direction: column;
 }
 .ContactUs__col:nth-child(1) {
@@ -8,22 +7,23 @@
 }
 .ContactUs__title {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.625rem;
 }
 .ContactUs__text {
   color: #bebebe;
-  font-size: 14px;
-  line-height: 17px;
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.225;
+  margin-top: 0;
+  margin-bottom: 1.3em;
 }
 .ContactUs__email {
   color: #ffffff;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.15rem;
+  line-height: 1;
   letter-spacing: -0.01em;
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5em;
   display: inline-block;
 }
 
@@ -38,54 +38,40 @@
 }
 
 .ContactUs__contactsLinks {
-  columns: 2;
   list-style: none;
   padding: 0;
   margin: 0;
-  column-gap: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.875rem;
+  row-gap: 1.85em;
 }
-.ContactUs__contactsLinks li {
-  line-height: 1.65;
-  margin: 20px 0;
-}
-.ContactUs__contactsLinks li:nth-child(1),
-.ContactUs__contactsLinks li:nth-child(4) {
-  margin-top: 0;
-}
-.ContactUs__contactsLinks li:nth-child(3),
-.ContactUs__contactsLinks li:nth-child(6) {
-  margin-bottom: 0;
-}
-.ContactUs__contactsLinks li:nth-last-child(-n + 3) {
-  text-align: right;
-}
+
 .ContactUs__link {
-  color: #ffffff;
+  font-weight: 400;
   text-decoration: none;
   position: relative;
   display: flex;
   align-items: center;
-  transition: text-shadow 0.3s;
-}
-.ContactUs__link:hover {
-  text-shadow: 0px 1px, 1px 0px, 1px 0px;
-}
-.ContactUs__link svg {
-  margin-left: 16px;
-}
-.ContactUs__link svg path {
-  fill: currentColor;
 }
 
-.ContactUs__link[href=""] {
-  color: #bebebe;
-  cursor: default;
-  opacity: 0.5;
+.ContactUs__contactsLinks li:nth-child(even) .ContactUs__link {
+  justify-content: flex-end;
+}
+
+.ContactUs__link img {
+  margin-left: 1.2em;
+  transform: translateX(0);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ContactUs__link:hover img {
+  transform: translateX(50%);
 }
 
 @media (min-width: 992px) {
   .ContactUs__container {
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
   }
   .ContactUs__title {
@@ -94,14 +80,13 @@
   .ContactUs__text {
     max-width: 730px;
     font-size: 22px;
-    line-height: 27px;
-    margin-bottom: 25px;
   }
   .ContactUs__email {
     font-size: 2.5rem;
     margin-bottom: 0;
   }
-  .ContactUs__contactsLinks li {
-    margin: 88px 0;
+  .ContactUs__contactsLinks {
+    font-size: 22px;
+    row-gap: 4em;
   }
 }

@@ -4,6 +4,7 @@ import { Inner } from "../Container"
 import Headline from "../Headline"
 import { FormattedMessage } from "react-intl"
 import { graphql, useStaticQuery } from "gatsby"
+import ContactLink from "./ContactLink"
 
 const ContactUs = ({ title, children }) => {
   const {
@@ -44,26 +45,7 @@ const ContactUs = ({ title, children }) => {
           <ul className="ContactUs__contactsLinks">
             {socialLinks.map((sc, i) => (
               <li key={i}>
-                <a
-                  className="ContactUs__link"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  href={sc.link}
-                >
-                  {sc.name}{" "}
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.752 0.810547L19.9414 10L10.752 19.1895L9.87305 18.3105L17.5586 10.625H0V9.375H17.5586L9.87305 1.68945L10.752 0.810547Z"
-                      fill="white"
-                    />
-                  </svg>
-                </a>
+                <ContactLink href={sc.link} label={sc.name} />
               </li>
             ))}
           </ul>
