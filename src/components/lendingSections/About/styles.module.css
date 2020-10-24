@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 50px 15px 35px;
+  padding: 67px 15px 35px;
 }
 .title {
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 0;
   z-index: 2;
   margin: 0;
@@ -14,20 +14,19 @@
 .imageCard {
   margin: 0;
   padding: 0;
-  margin-bottom: 25px;
+  margin-bottom: 34px;
 }
 .image {
   display: block;
   max-width: 100%;
+  margin-bottom: 16px;
 }
-
 .text {
   font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 1.2;
   margin: 0;
   padding: 0;
-  margin-top: 11px;
 }
 
 .linkWrapper {
@@ -35,17 +34,28 @@
   justify-content: flex-end;
 }
 
+@media (min-width: 768px) {
+  .About .title {
+    font-size: 32px;
+    top: 20%;
+    left: 11px;
+  }
+}
+
 @media (min-width: 992px) {
   .About {
     padding: 211px 15px 112px;
+  }
+  .About .title {
+    font-size: 100px;
+    top: 20%;
+    left: auto;
   }
   .imageCard {
     margin-bottom: 48px;
   }
   .text {
-    margin-top: 28px;
-    font-weight: 300;
+    margin-top: 30px;
     font-size: 28px;
-    line-height: 34px;
   }
 }
