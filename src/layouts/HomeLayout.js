@@ -16,6 +16,8 @@ import SEO from "../components/seo"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
 import InfoBadge from "../components/InfoBadge"
 
+import { CSSTransition } from "react-transition-group"
+
 const HomeLayout = ({
   children,
   location,
@@ -86,8 +88,15 @@ const HomeLayout = ({
                 title={title}
                 description={description}
               />
-              {!hideOnScroll ? (
-                <>
+
+              <CSSTransition
+                in={!hideOnScroll}
+                classNames="fade-form-top"
+                mountOnEnter
+                unmountOnExit
+                timeout={200}
+              >
+                <div className="navigation">
                   <Languages langsMenu={langsMenu} />
                   <HamburgerButton
                     isOpen={menuIsOpen}
@@ -99,15 +108,24 @@ const HomeLayout = ({
                     handleOpen={handleMenuToogle}
                     locale={langKey}
                     langsMenu={langsMenu}
-                  />{" "}
-                </>
-              ) : (
+                  />
+                </div>
+              </CSSTransition>
+
+              <CSSTransition
+                in={hideOnScroll}
+                classNames="fade-form-top"
+                mountOnEnter
+                unmountOnExit
+                timeout={200}
+              >
                 <HorizontalNav
                   langsMenu={langsMenu}
                   locale={langKey}
                   homeLink={homeLink.replace("/uk", "/")}
                 />
-              )}
+              </CSSTransition>
+
               <SnackbarProvider
                 position="top"
                 pauseOnHover={true}

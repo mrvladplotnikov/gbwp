@@ -130,8 +130,30 @@
 .childList {
   display: none;
 }
-.childList.open {
+.childListEnter {
+  opacity: 0;
   display: block;
+}
+.childListEnterActive {
+  opacity: 1;
+  display: block;
+  transition: opacity 300ms;
+}
+.childListEnterDone {
+  opacity: 1;
+  display: block;
+}
+.childListExit {
+  opacity: 1;
+  display: block;
+}
+.childListExitActive {
+  opacity: 0;
+  display: block;
+  transition: opacity 300ms;
+}
+.childListExitDone {
+  display: none;
 }
 
 .menuButton {

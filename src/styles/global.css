@@ -128,6 +128,27 @@ body .video-wrapper .video {
   display: inline-block;
 }
 
+.fade-form-top-enter {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.fade-from-top-enter-done,
+.fade-form-top-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-form-top-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-from-top-exit-done,
+.fade-form-top-exit-active {
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 300ms, transform 300ms;
+}
+
 @import "./layout.css";
 @import "./styledLink.css";
 @import "./container.css";

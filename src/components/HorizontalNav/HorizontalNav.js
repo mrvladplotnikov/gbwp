@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import classNames from "classnames"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import { useStaticQuery, Link } from "gatsby"
@@ -15,6 +16,7 @@ const HorizontalNav = ({
   locale = "uk",
   homeLink = "/",
   hideMenu = false,
+  className = "",
 }) => {
   const {
     logo,
@@ -68,7 +70,7 @@ const HorizontalNav = ({
 
   return (
     <header
-      className={styles.container}
+      className={classNames(styles.container, className)}
       style={
         hideMenu
           ? {
@@ -144,6 +146,7 @@ HorizontalNav.propTypes = {
   locale: PropTypes.string,
   homeLink: PropTypes.string,
   hideMenu: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 export default HorizontalNav
