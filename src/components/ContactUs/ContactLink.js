@@ -24,6 +24,7 @@ const ContactLink = ({ href = "", label = "" }) => {
         src={!isHover ? arrowR : gradientArrowR}
         width="22"
         height="22"
+        alt=""
         aria-hidden
       />
     </a>

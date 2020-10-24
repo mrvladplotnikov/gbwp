@@ -47,7 +47,6 @@
 .NavigationDrawer__list button {
   text-decoration: none;
   color: #ffffff;
-  transition: text-shadow 0.2s ease-in;
 }
 
 .NavigationDrawer__list a {
@@ -56,7 +55,7 @@
 
 .NavigationDrawer__list button:hover,
 .NavigationDrawer__list a:hover {
-  text-shadow: 0px 1px, 1px 0px, 1px 0px;
+  font-weight: 600;
 }
 
 .NavigationDrawer__list a:hover .navigationDrawerArrow {
