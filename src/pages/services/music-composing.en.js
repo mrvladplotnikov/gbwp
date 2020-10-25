@@ -83,7 +83,7 @@ const MusicCreation = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Music composing services"
+      title="Music composing services » Audio Production Agency » VP Production"
       description="Soundtracks that perform tasks and work for your audience. Music on the verge of pure creativity and functionality. ✔ A process of cooperation. Our offers and approach. Clients' testimonials."
     >
       <ServiceSection title="What are we doing?">
