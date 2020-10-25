@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 
 const ServiceIcon = ({ title, icon, ...props }) => (
-  <figure className={styles.container} {...props}>
+  <li className={styles.container} {...props}>
     <img className={styles.icon} src={icon} alt={title} />
-    <figcaption className={styles.title}>{title}</figcaption>
-  </figure>
+    <h4 className={styles.title}>{title}</h4>
+  </li>
 )
 
 ServiceIcon.propTypes = {

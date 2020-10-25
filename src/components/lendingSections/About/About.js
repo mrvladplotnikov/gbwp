@@ -32,7 +32,7 @@ const About = ({
           {title}
         </Headline>
         <Inner>
-          <figure className={styles.imageCard}>
+          <div className={styles.imageCard}>
             <Img
               fadeIn={false}
               loading="eager"
@@ -40,8 +40,8 @@ const About = ({
               alt={alt}
               className={styles.image}
             />
-            <figcaption className={styles.text}>{text}</figcaption>
-          </figure>
+            <p className={styles.text}>{text}</p>
+          </div>
           {linkURL && (
             <div className={styles.linkWrapper}>
               <Button className={styles.link} to={linkURL}>

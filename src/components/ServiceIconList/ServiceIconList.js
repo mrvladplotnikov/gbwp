@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 
 const ServiceIconList = ({ children, align }) => (
-  <div className={styles.list} style={{ justifyContent: align }}>
+  <ul className={styles.list} style={{ justifyContent: align }}>
     {children}
-  </div>
+  </ul>
 )
 
 ServiceIconList.defaultProps = {

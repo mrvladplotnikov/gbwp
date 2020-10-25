@@ -1,7 +1,6 @@
 .container {
   margin: 0;
-  max-width: 120px;
-  width: 100%;
+  flex: 1 1 120px;
   margin-bottom: 20px;
 }
 
@@ -10,23 +9,25 @@
   max-width: 100%;
   height: auto;
   margin: auto;
+  margin-bottom: 0.5em;
 }
 
 .title {
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.5;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 992px) {
   .container {
-    min-width: 160px;
+    flex: 1 1 160px;
   }
 
   .title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.125rem;
   }
 }

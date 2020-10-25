@@ -19,7 +19,7 @@ const WorkCard = ({
       className={classNames("WorkCard", className)}
       to={gPath(lang, `works/${link}`)}
     >
-      <figure className="WorkCard__container">
+      <div className="WorkCard__container">
         {image ? (
           <Img
             backgroundColor="#000000"
@@ -30,11 +30,11 @@ const WorkCard = ({
         ) : (
           <img src={noImage} className="WorkCard__image" alt="" />
         )}
-        <figcaption
+        <h4
           className="WorkCard__title"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-      </figure>
+      </div>
     </Link>
   )
 }
