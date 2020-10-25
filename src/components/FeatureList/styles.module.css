@@ -1,27 +1,15 @@
 .FeatureList {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.FeatureList .feature {
-  margin-bottom: 1.25rem;
+  display: grid;
+  row-gap: 1.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 992px) {
-  .FeatureList .feature {
-    margin-bottom: 6.25rem;
-    margin-right: 1rem;
-    flex-basis: calc(50% - 1rem);
-  }
-  .FeatureList .feature:nth-child(5),
-  .FeatureList .feature:nth-child(6) {
-    margin-bottom: 0;
-  }
-
-  .FeatureList .feature:nth-child(2),
-  .FeatureList .feature:nth-child(4),
-  .FeatureList .feature:nth-child(6) {
-    margin-right: 0;
+  .FeatureList {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 6.25rem;
+    column-gap: 1rem;
   }
 }

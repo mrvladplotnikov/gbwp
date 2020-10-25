@@ -2,14 +2,19 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-const FeatureCard = ({ className, img, alt, children }) => (
-  <figure className={classNames("FeatureCard", className)}>
-    <img className="FeatureCard__image" src={img} alt={alt} />
-    <figcaption className="FeatureCard__text">{children}</figcaption>
-  </figure>
-)
+const FeatureCard = ({ tag, className, img, alt, children }) => {
+  const Tag = tag
+
+  return (
+    <Tag className={classNames("FeatureCard", className)}>
+      <img className="FeatureCard__image" src={img} alt={alt} />
+      <p className="FeatureCard__text">{children}</p>
+    </Tag>
+  )
+}
 
 FeatureCard.defaultProps = {
+  tag: "li",
   className: "",
   img: "",
   alt: "",
@@ -17,6 +22,7 @@ FeatureCard.defaultProps = {
 }
 
 FeatureCard.propTypes = {
+  tag: PropTypes.string,
   className: PropTypes.string,
   img: PropTypes.string,
   alt: PropTypes.string,

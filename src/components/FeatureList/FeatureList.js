@@ -5,11 +5,11 @@ import { Inner } from "../Container"
 
 const FeatureList = ({ children }) => (
   <Inner>
-    <div className={styles.FeatureList}>
+    <ul className={styles.FeatureList}>
       {React.Children.map(children, child =>
         React.cloneElement(child, { className: styles.feature })
       )}
-    </div>
+    </ul>
   </Inner>
 )
 
