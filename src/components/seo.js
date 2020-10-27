@@ -19,6 +19,7 @@ function SEO({
   pathname,
   langsMenu,
   schemaOrg,
+  disableSiteNameInTitle,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -86,7 +87,9 @@ function SEO({
         lang,
       }}
       title={escapeHtml(title)}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={
+        !disableSiteNameInTitle ? `%s | ${site.siteMetadata.title}` : null
+      }
       defaultTitle={site.siteMetadata.title}
       meta={metaProp}
       link={[
@@ -116,6 +119,7 @@ SEO.defaultProps = {
   title: ``,
   langsMenu: [],
   schemaOrg: null,
+  disableSiteNameInTitle: false,
 }
 
 SEO.propTypes = {
@@ -126,6 +130,7 @@ SEO.propTypes = {
   pathname: PropTypes.string.isRequired,
   langsMenu: PropTypes.array,
   schemaOrg: PropTypes.object,
+  disableSiteNameInTitle: PropTypes.bool,
 }
 
 export default SEO

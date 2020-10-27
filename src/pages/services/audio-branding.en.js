@@ -60,6 +60,7 @@ const AudioBranding = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      disableSiteNameInTitle
       title="Audio Branding » Sonic Identity &#38; Audio Logo » Audio Agency » VP Production"
       description="Your brand’s sonic identity. Emotional point of differentiation. A new way to attract attention. ✔ Our offers and approach. Clients’ testimonials."
     >

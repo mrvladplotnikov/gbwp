@@ -27,6 +27,7 @@ const SidebarLayout = ({
   title,
   description,
   meta,
+  disableSiteNameInTitle,
 }) => {
   useDetectKeyboard()
   const matchPoints = useBreakpoint(queries)
@@ -80,6 +81,7 @@ const SidebarLayout = ({
                 lang={langKey}
                 pathname={url}
                 langsMenu={langsMenu}
+                disableSiteNameInTitle={disableSiteNameInTitle}
               />
               <HorizontalNav
                 langsMenu={langsMenu}
@@ -142,6 +144,7 @@ SidebarLayout.defaultProps = {
   title: "",
   description: "",
   meta: [],
+  disableSiteNameInTitle: false,
 }
 
 SidebarLayout.propTypes = {
@@ -151,6 +154,7 @@ SidebarLayout.propTypes = {
   Sidebar: PropTypes.element.isRequired,
   ServiceHero: PropTypes.element.isRequired,
   children: PropTypes.node.isRequired,
+  disableSiteNameInTitle: PropTypes.bool,
 }
 
 export default SidebarLayout

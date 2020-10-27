@@ -57,6 +57,7 @@ const SoundDesign = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      disableSiteNameInTitle
       title="Sound Design for films, video games &#38; apps » Audio Agency » VP Production"
       description="Functional sound design. Information and the right emotions for the audience. Implementation in Unity and Unreal Engine via Wwise / Fmod. ✔ A process of cooperation. Our offers and approach. Clients’ testimonials."
     >

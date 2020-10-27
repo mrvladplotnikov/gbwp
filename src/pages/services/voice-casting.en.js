@@ -85,7 +85,8 @@ const VoiceCasting = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Voice-over casting for videos, games, brands &#38; cartoons »  Sound Agency » VP Production"
+      disableSiteNameInTitle
+      title="Voice-over casting for videos, games, brands &#38; cartoons » Audio Agency » VP Production"
       description="Selecting and recording the right voice for your project. A squad of professional local and foreign voice actors. 7+ languages. ✔ A process of cooperation. Our offers and approach. Clients’ testimonials."
     >
       <ServiceSection title="What are we doing?">
