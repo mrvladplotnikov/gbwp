@@ -7,7 +7,8 @@
 .keyboard input:focus,
 .keyboard button:focus,
 .keyboard *[role="button"]:focus,
-.keyboard a:focus {
+.keyboard a:focus,
+.keyboard .vp-react-select__control--is-focused {
   box-shadow: 0 0 0 2px #f2390b;
 }
 

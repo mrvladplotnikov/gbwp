@@ -29,7 +29,7 @@ const FilterBar = ({
   const handleResetFilters = () => onChange()
 
   return (
-    <Outer>
+    <Outer className={styles.container}>
       <StyledSelect
         className={styles.selectFilter}
         placeholder={intl.formatMessage({ id: "categoryFilter" })}
@@ -38,6 +38,7 @@ const FilterBar = ({
         options={categoryOptions}
         onChange={handleChangeCategory}
         value={selectedCategory}
+        minWidth="135px"
       />
       <StyledSelect
         className={styles.selectFilter}
@@ -47,6 +48,7 @@ const FilterBar = ({
         options={serviceOptions}
         onChange={handleChangeService}
         value={selectedService}
+        minWidth="125px"
       />
       <ResetFiltersButton onClick={handleResetFilters} />
     </Outer>
