@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
 import { SnackbarProvider } from "react-snackbar-alert"
-import { IntlProvider, FormattedHTMLMessage } from "react-intl"
+import { IntlProvider } from "react-intl"
 import Languages from "../components/Languages"
 import HamburgerButton from "../components/HamburgerButton"
 import NavigationDrawer from "../components/NavigationDrawer"
@@ -14,7 +14,6 @@ import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
-import InfoBadge from "../components/InfoBadge"
 
 import { CSSTransition } from "react-transition-group"
 
@@ -134,9 +133,6 @@ const HomeLayout = ({
                 {children}
               </SnackbarProvider>
               <Footer />
-              <InfoBadge isOpenDefault>
-                <FormattedHTMLMessage id="work-in-progress-message" />
-              </InfoBadge>
             </>
           </IntlProvider>
         )

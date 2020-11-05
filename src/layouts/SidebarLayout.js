@@ -5,14 +5,13 @@ import Footer from "../components/Footer"
 import { Inner } from "../components/Container"
 import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
-import { IntlProvider, FormattedHTMLMessage } from "react-intl"
+import { IntlProvider } from "react-intl"
 import HorizontalNav from "../components/HorizontalNav/HorizontalNav"
 import SEO from "../components/seo"
 import "intl"
 import "normalize.css"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
 import useBreakpoint from "../hooks/useBreakpoint"
-import InfoBadge from "../components/InfoBadge"
 
 const queries = {
   lg: "(min-width: 1660px)",
@@ -128,9 +127,6 @@ const SidebarLayout = ({
                     </div>
                   </>
                 )}
-                <InfoBadge isOpenDefault>
-                  <FormattedHTMLMessage id="work-in-progress-message" />
-                </InfoBadge>
               </div>
             </>
           </IntlProvider>

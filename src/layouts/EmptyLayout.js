@@ -3,11 +3,10 @@ import PropTypes from "prop-types"
 import { SnackbarProvider } from "react-snackbar-alert"
 import { getCurrentLangKey } from "ptz-i18n"
 import { StaticQuery, graphql } from "gatsby"
-import { IntlProvider, FormattedHTMLMessage } from "react-intl"
+import { IntlProvider } from "react-intl"
 import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
-import InfoBadge from "../components/InfoBadge"
 
 const EmptyLayout = ({
   children,
@@ -52,9 +51,6 @@ const EmptyLayout = ({
               dismissable={false}
             >
               {children}
-              <InfoBadge isOpenDefault>
-                <FormattedHTMLMessage id="work-in-progress-message" />
-              </InfoBadge>
             </SnackbarProvider>
           </>
         </IntlProvider>
