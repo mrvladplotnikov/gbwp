@@ -6,18 +6,16 @@
 .LangSelect ul {
   list-style: none;
   margin: 0;
-  padding: 5px;
-  margin-top: 10px;
+  padding: 0.7em 1em;
   position: absolute;
-  bottom: -180%;
+  bottom: -220%;
   left: -20%;
-  display: none;
   overflow: hidden;
 }
 .LangSelect ul::before {
   content: "";
   position: absolute;
-  top: 33px;
+  top: 1em;
   right: 0;
   height: 100%;
   width: 100%;
@@ -25,13 +23,9 @@
   background-color: rgba(0, 0, 0, 0.94);
 }
 
-.LangSelect ul.LangSelect--open {
-  display: block;
-}
-
 .LangSelect li {
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 0.5em;
 }
 
 .LangSelect .LangSelect--currentLang {
@@ -52,6 +46,11 @@
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
+  color: #bebebe;
+  transition: color 0.5s;
+}
+
+.LangSelect a:hover {
   color: #ffffff;
 }
 

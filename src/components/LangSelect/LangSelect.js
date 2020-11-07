@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { CSSTransition } from "react-transition-group"
 
 const processLangLable = langCode => {
   switch (langCode) {
@@ -28,20 +29,27 @@ const LangSelect = ({ className = "", langsMenu = [] }) => {
       className={classNames("LangSelect", className)}
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
-      role="presentation"
     >
       <button className="LangSelect--currentLang" onClick={handleToogle}>
-        /{processLangLable(currentLang ? currentLang.langKey : "uk")}/
+        / {processLangLable(currentLang ? currentLang.langKey : "uk")} /
       </button>
-      <ul className={classNames({ "LangSelect--open": open })}>
-        {langsMenu
-          .filter(lang => !lang.selected)
-          .map(lang => (
-            <li key={lang.langKey}>
-              <Link to={lang.link}>{processLangLable(lang.langKey)}</Link>
-            </li>
-          ))}
-      </ul>
+      <CSSTransition
+        in={open}
+        classNames="fade"
+        mountOnEnter
+        unmountOnExit
+        timeout={200}
+      >
+        <ul>
+          {langsMenu
+            .filter(lang => !lang.selected)
+            .map(lang => (
+              <li key={lang.langKey}>
+                <Link to={lang.link}> {processLangLable(lang.langKey)} </Link>
+              </li>
+            ))}
+        </ul>
+      </CSSTransition>
     </div>
   )
 }

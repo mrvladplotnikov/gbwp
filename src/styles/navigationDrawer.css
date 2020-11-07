@@ -33,7 +33,7 @@
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
-  color: #ffffff;
+  color: #bebebe;
   padding: 90px 90px 30px 50px;
   margin: 0;
 }
@@ -46,7 +46,8 @@
 .NavigationDrawer__list a,
 .NavigationDrawer__list button {
   text-decoration: none;
-  color: #ffffff;
+  color: #bebebe;
+  transition: color 0.5s;
 }
 
 .NavigationDrawer__list a {
@@ -55,7 +56,7 @@
 
 .NavigationDrawer__list button:hover,
 .NavigationDrawer__list a:hover {
-  font-weight: 600;
+  color: #ffffff;
 }
 
 .NavigationDrawer__list a:hover .navigationDrawerArrow {
