@@ -111,7 +111,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
           </div>
           {reviews.length > 0 && (
             <>
-              <Headline Tag="h2">Customer’s testimonial</Headline>
+              <Headline Tag="h2">Customer testimonial</Headline>
               <div
                 style={{
                   marginBottom: "2rem",
