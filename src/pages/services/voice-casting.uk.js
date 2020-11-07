@@ -119,12 +119,16 @@ const VoiceCasting = ({ data, location }) => {
         <iframe
           title="Приклад голосового озвучення"
           width="100%"
-          height="300"
+          height="900"
           scrolling="no"
           frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/303617614%3Fsecret_token%3Ds-5OnLL&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
+        <p>
+          Завдяки тому, що всі актори з нашої бази — носії мов, послуга{" "}
+          <strong>пруфрідінга</strong> вже включена у вартість робіт.
+        </p>
       </ServiceSection>
       <ServiceSection title="Як проходить процес?">
         <p>

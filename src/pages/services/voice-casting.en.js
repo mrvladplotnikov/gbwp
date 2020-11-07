@@ -120,12 +120,16 @@ const VoiceCasting = ({ data, location }) => {
         <iframe
           title="Example of voice acting"
           width="100%"
-          height="300"
+          height="900"
           scrolling="no"
           frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/303617614%3Fsecret_token%3Ds-5OnLL&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         ></iframe>
+        <p>
+          Thanks to the fact that all actors from our base are native speakers,{" "}
+          <strong>proofreading</strong> is already included in the cost of work.
+        </p>
       </ServiceSection>
       <ServiceSection title="What is the process like?">
         <p>
