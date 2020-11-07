@@ -181,7 +181,7 @@ const ModalContactForm = ({
 
           <div className="ModalContactForm__captcha">
             <ReCAPTCHA
-              sitekey={process.env.RECAPTCHA_SITE_KEY}
+              sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
               onChange={handleCaptchaChange}
               theme="dark"
               hl={intl.locale}
