@@ -29,6 +29,7 @@ const LangSelect = ({ className = "", langsMenu = [] }) => {
       className={classNames("LangSelect", className)}
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
+      role="presentation"
     >
       <button className="LangSelect--currentLang" onClick={handleToogle}>
         / {processLangLable(currentLang ? currentLang.langKey : "uk")} /
