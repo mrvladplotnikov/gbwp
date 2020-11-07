@@ -109,7 +109,7 @@ const SoundDesign = ({ data, location }) => {
             state={{
               service: "sound-design",
             }}
-            to="/en/portfolio"
+            to="/en/portfolio?service=sound-design-3"
             className="service-works-porfolio-button"
           >
             Portfolio
