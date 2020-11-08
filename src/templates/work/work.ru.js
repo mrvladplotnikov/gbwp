@@ -15,6 +15,7 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel"
 import Headline from "../../components/Headline"
 import mailTo from "../../utils/mailTo"
 import getServiceURI from "../../utils/getServiceURI"
+import { filterProjectReviews } from "../../utils/filterProjectReviews"
 
 const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const {
@@ -34,9 +35,8 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
   const media = data.allWordpressWpMedia.edges
   const Content = parseContent(content, media)
   const isHeroFormat = format === "link"
-  const reviews =
-    data.reviews.nodes &&
-    data.reviews.nodes.filter(r => r.meta.project === wordpress_id)
+  const reviews = filterProjectReviews(data.reviews.nodes, wordpress_id)
+
   return (
     <Layout
       location={location}

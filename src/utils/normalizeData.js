@@ -186,9 +186,6 @@ function reviews(entities) {
           e.acf.audiobrending.audiobrending_order
         )
       }
-      if (e.acf.project) {
-        e.acf.project = parseInt(e.acf.project[0], 10)
-      }
     }
     return e
   })
