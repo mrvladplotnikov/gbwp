@@ -9,7 +9,7 @@ import FormButton from "../FormButton"
 import { Outer } from "../Container"
 import Headline from "../Headline"
 import { injectIntl, intlShape, FormattedHTMLMessage } from "react-intl"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FaTimes } from "react-icons/fa"
 import axios from "axios"
 import ReCAPTCHA from "react-google-recaptcha"
 
@@ -151,7 +151,7 @@ const ModalContactForm = ({
           onClick={handleClose}
           className="ModalContactForm__closeButton"
         >
-          <FontAwesomeIcon icon={["fas", "times"]} />
+          <FaTimes />
         </button>
         <Headline className="ModalContactForm__title" Tag="h2">
           {title}

@@ -5,10 +5,6 @@
   "version": "0.1.0",
   "author": "",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
@@ -45,6 +41,7 @@
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^6.1.0",
+    "react-icons": "^3.11.0",
     "react-intl": "2.8.0",
     "react-masonry-css": "^1.0.14",
     "react-modal": "^3.11.1",

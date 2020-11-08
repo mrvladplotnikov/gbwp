@@ -4,7 +4,7 @@ import classNames from "classnames"
 import Img from "gatsby-image"
 import Modal from "react-modal"
 import styles from "./styles.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FaTimes } from "react-icons/fa"
 
 Modal.setAppElement("#___gatsby")
 
@@ -67,7 +67,7 @@ const ReviewGridItem = ({ className = "", image }) => {
           onClick={handleCloseModal}
           className={styles.closeModalButton}
         >
-          <FontAwesomeIcon icon={["fas", "times"]} />
+          <FaTimes />
         </button>
         <Img fluid={image} />
       </Modal>

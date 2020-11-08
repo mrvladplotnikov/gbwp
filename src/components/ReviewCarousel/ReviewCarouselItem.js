@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import { FormattedMessage } from "react-intl"
 import Modal from "react-modal"
 import NoImage from "../../images/no-image.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FaTimes } from "react-icons/fa"
 import { strip } from "../../utils/htmlHelpers"
 import useBreakpoint from "../../hooks/useBreakpoint"
 
@@ -157,7 +157,7 @@ const ReviewCarouselItem = ({
                   onClick={closeModal}
                   className={styles.closeModalButton}
                 >
-                  <FontAwesomeIcon icon={["fas", "times"]} />
+                  <FaTimes />
                 </button>
 
                 <div className={styles.modalInner}>

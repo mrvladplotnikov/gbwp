@@ -6,15 +6,16 @@
 
 // You can delete this file if you're not using it
 import React from "react"
+import { IconContext } from "react-icons"
+
 import Router from "./router-config"
 import "./src/styles/global.css"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { fas } from "@fortawesome/free-solid-svg-icons"
-library.add(fab)
-library.add(fas)
 
-export const wrapRootElement = ({ element }) => <Router>{element}</Router>
+export const wrapRootElement = ({ element }) => (
+  <IconContext.Provider value={{ className: "react-icons" }}>
+    <Router>{element}</Router>
+  </IconContext.Provider>
+)
 
 // TODO: Disabled because can't work with gatsby
 // export const onClientEntry = () => {

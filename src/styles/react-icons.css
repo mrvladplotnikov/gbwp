@@ -1,0 +1,10 @@
+.react-icons {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .react-icons {
+    font-size: 1.125rem;
+  }
+}

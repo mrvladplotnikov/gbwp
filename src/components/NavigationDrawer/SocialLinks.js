@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import SocialIcon from "../SocialIcon"
 
 const SocialLinks = ({ socialLinks = [] }) => {
   if (socialLinks.length === 0) return null
@@ -14,7 +15,7 @@ const SocialLinks = ({ socialLinks = [] }) => {
             rel="noopener noreferrer nofollow"
             href={item.link}
           >
-            <FontAwesomeIcon icon={["fab", item.icon]} />
+            <SocialIcon name={item.name} title={item.title} />
           </a>
         </li>
       ))}

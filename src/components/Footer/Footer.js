@@ -3,9 +3,9 @@ import styles from "./styles.module.css"
 import { Outer } from "../Container"
 import footerLogoIcon from "../../images/footer-logo.svg"
 import { Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useStaticQuery, graphql } from "gatsby"
 import { injectIntl } from "react-intl"
+import SocialIcon from "../SocialIcon"
 
 const Footer = ({ intl }) => {
   const {
@@ -43,10 +43,7 @@ const Footer = ({ intl }) => {
                     rel="noopener noreferrer nofollow"
                     href={item.link}
                   >
-                    <FontAwesomeIcon
-                      icon={["fab", item.icon]}
-                      title={item.title}
-                    />
+                    <SocialIcon name={item.name} title={item.title} />
                   </a>
                 </li>
               ))}

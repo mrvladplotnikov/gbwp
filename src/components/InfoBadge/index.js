@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import PropTypes from "prop-types"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FaTimes } from "react-icons/fa"
 import { CSSTransition } from "react-transition-group"
 
 import "./styles.css"
@@ -24,7 +24,7 @@ const InfoBadge = ({ children, isOpenDefault = false }) => {
             onClick={handleClose}
             className="info-badge__closeButton"
           >
-            <FontAwesomeIcon icon={["fas", "times"]} />
+            <FaTimes />
           </button>
           {children}
         </div>
