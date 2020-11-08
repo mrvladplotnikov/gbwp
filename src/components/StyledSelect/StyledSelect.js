@@ -68,8 +68,6 @@ const StyledSelect = ({
   minWidth = "140px",
   ...props
 }) => {
-  console.log(customSelectStyles)
-
   return (
     <StyledReactSelect
       isSearchable={false}
