@@ -1,19 +1,21 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styles from "./styles.module.css"
+import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+
 import SocialLinks from "../../SocialLinks"
 import PortfolioLink from "../../PortfolioLink"
+
 import HeroLogo from "../../../images/logo.inline.svg"
 
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import styles from "./styles.module.css"
 
 const Hero = ({ link = "/porfolio" }) => {
   const data = useStaticQuery(graphql`
     query {
       bgImage: file(relativePath: { eq: "hero-bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1280, quality: 95) {
+          fluid(maxWidth: 1920, quality: 95) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
@@ -22,20 +24,17 @@ const Hero = ({ link = "/porfolio" }) => {
   `)
 
   return (
-    <div className={styles.Hero}>
-      <Img
-        fluid={data.bgImage.childImageSharp.fluid}
-        alt=""
-        role="presentation"
-        className={styles.bg}
-        loading="eager"
-      />
+    <BackgroundImage
+      fluid={data.bgImage.childImageSharp.fluid}
+      Tag="div"
+      className={styles.Hero}
+    >
       <div className={styles.overlay}>
         <SocialLinks />
         <PortfolioLink link={link} />
         <HeroLogo className={styles.logo} />
       </div>
-    </div>
+    </BackgroundImage>
   )
 }
 

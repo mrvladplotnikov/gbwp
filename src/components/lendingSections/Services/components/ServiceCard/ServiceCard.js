@@ -23,6 +23,9 @@ const ServiceCard = ({
         role="presentation"
         alt={alt}
         className={styles.icon}
+        loading="lazy"
+        width="50"
+        height="50"
       />
       <h4 className={styles.title}>{title}</h4>
     </Link>

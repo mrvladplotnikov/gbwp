@@ -29,6 +29,7 @@
     display: block;
     max-width: 100%;
     width: 80px;
+    height: auto;
   }
   .FeatureCard__text {
     width: auto;

@@ -3,15 +3,9 @@
   position: relative;
   background-color: #000000;
 }
-.bg {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
+
 .overlay {
   position: absolute;
-
   padding: 28px 20px 17px 28px;
   top: 0;
   right: 0;

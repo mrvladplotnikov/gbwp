@@ -67,6 +67,9 @@ const Footer = ({ intl }) => {
                 src={footerLogoIcon}
                 className={styles.footerLogo}
                 alt={intl.formatMessage({ id: "footerLogoAlt" })}
+                loading="lazy"
+                width="76"
+                height="70"
               />
             </Link>
           </div>

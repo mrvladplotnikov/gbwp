@@ -7,7 +7,14 @@ const FeatureCard = ({ tag, className, img, alt, children }) => {
 
   return (
     <Tag className={classNames("FeatureCard", className)}>
-      <img className="FeatureCard__image" src={img} alt={alt} />
+      <img
+        className="FeatureCard__image"
+        loading="lazy"
+        width="36"
+        height="36"
+        src={img}
+        alt={alt}
+      />
       <p className="FeatureCard__text">{children}</p>
     </Tag>
   )
