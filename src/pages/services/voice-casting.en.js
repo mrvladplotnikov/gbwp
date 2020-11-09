@@ -96,16 +96,19 @@ const VoiceCasting = ({ data, location }) => {
           <ServiceIcon
             title="Casting voice actors"
             icon={MaleIcon}
+            alt="Voice over"
             style={{ maxWidth: 200 }}
           />
           <ServiceIcon
             title="Organization of the recording process and project management"
             icon={LaptopIcon}
+            alt="Voice over agency"
             style={{ maxWidth: 200 }}
           />
           <ServiceIcon
             title="Processing audio files"
             icon={FileIcon}
+            alt="Voice over for videos"
             style={{ maxWidth: 200 }}
           />
         </ServiceIconList>
@@ -223,6 +226,7 @@ const VoiceCasting = ({ data, location }) => {
           <PlanCard
             title="Local voice actors"
             icon={HouseIcon}
+            alt="Voice over services"
             subTitle="Available languages"
             list={["Ukrainian", "Russian", "English"]}
             onClick={() =>
@@ -236,6 +240,7 @@ const VoiceCasting = ({ data, location }) => {
           <PlanCard
             title="Foreign voice actors"
             icon={PlanetIcon}
+            alt="Voice over actors"
             subTitle="Available languages"
             list={["English", "German", "French", "Spanish", "Chinese"]}
             onClick={() =>

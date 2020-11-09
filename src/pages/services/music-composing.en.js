@@ -90,12 +90,36 @@ const MusicCreation = ({ data, location }) => {
       <ServiceSection title="What are we doing?">
         <p>We compose soundtracks and create music for:</p>
         <ServiceIconList>
-          <ServiceIcon title="Games" icon={GamesIcon} />
-          <ServiceIcon title="Brands and commercials" icon={AudioIcon} />
-          <ServiceIcon title="Films" icon={FilmIcon} />
-          <ServiceIcon title="Animated films/cartoons" icon={MonsterIcon} />
-          <ServiceIcon title="Trailers" icon={PlayerIcon} />
-          <ServiceIcon title="Theatre" icon={MasksIcon} />
+          <ServiceIcon
+            title="Games"
+            icon={GamesIcon}
+            alt="Composing music for video games"
+          />
+          <ServiceIcon
+            title="Brands and commercials"
+            icon={AudioIcon}
+            alt="Composing music for animation"
+          />
+          <ServiceIcon
+            title="Films"
+            icon={FilmIcon}
+            alt="Composing music for film"
+          />
+          <ServiceIcon
+            title="Animated films/cartoons"
+            icon={MonsterIcon}
+            alt="Composing music for cartoons"
+          />
+          <ServiceIcon
+            title="Trailers"
+            icon={PlayerIcon}
+            alt="Composing trailer music"
+          />
+          <ServiceIcon
+            title="Theatre"
+            icon={MasksIcon}
+            alt="Composing music for theatres"
+          />
         </ServiceIconList>
         <p>
           We also create music for motion graphics, but it relates more to sound

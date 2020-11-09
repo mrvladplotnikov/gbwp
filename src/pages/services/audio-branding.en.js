@@ -68,16 +68,30 @@ const AudioBranding = ({ data, location }) => {
         <p>We create:</p>
 
         <ServiceIconList>
-          <ServiceIcon title="Audio strategies for brands" icon={FemaleIcon} />
-          <ServiceIcon title="Audio logos and jingles" icon={JingleIcon} />
+          <ServiceIcon
+            title="Audio strategies for brands"
+            icon={FemaleIcon}
+            alt="Sonic branding"
+          />
+          <ServiceIcon
+            title="Audio logos and jingles"
+            icon={JingleIcon}
+            alt="Audio logo &#38; radio jingles"
+          />
           <ServiceIcon
             title="Audio advertising and brand music"
             icon={AudioIcon}
+            alt="Brand tracking"
           />
-          <ServiceIcon title="Sound identity for the apps" icon={PhoneIcon} />
+          <ServiceIcon
+            title="Sound identity for the apps"
+            icon={PhoneIcon}
+            alt="Sonic Identity"
+          />
           <ServiceIcon
             title="Other audio touchpoints with a customer"
             icon={SoundIcon}
+            alt="Sound logo"
           />
         </ServiceIconList>
 
