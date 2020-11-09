@@ -9,7 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+
 import { escapeHtml } from "../utils/htmlHelpers"
+
+import metaLogo from "../images/meta-logo.jpg"
 
 function SEO({
   description,
@@ -60,6 +63,18 @@ function SEO({
     {
       property: `og:description`,
       content: metaDescription,
+    },
+    {
+      property: `og:image`,
+      content: `${site.siteMetadata.siteUrl}${metaLogo}`,
+    },
+    {
+      property: `og:image:width`,
+      content: 500,
+    },
+    {
+      property: `og:image:height`,
+      content: 500,
     },
     {
       property: `og:type`,
