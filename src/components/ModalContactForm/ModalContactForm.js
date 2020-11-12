@@ -23,7 +23,7 @@ const sendMail = async ({
   type = "",
 }) => {
   try {
-    const response = await axios(process.env.MAILER_ENDPOINT, {
+    const response = await axios(process.env.GATSBY_MAILER_ENDPOINT, {
       headers: {
         "Content-Type": "application/json",
       },
