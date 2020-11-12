@@ -139,8 +139,8 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
           >
             free consultation
           </a>
-          . Find out the cost, specify a vital question, well anything you want!
-          We will be happy to get to know you and help.
+          . Find out the rates, clarify a vital question, well anything you
+          want! We will be happy to get to know you and help.
         </Contacts>
       </Inner>
     </Layout>

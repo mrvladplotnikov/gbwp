@@ -213,7 +213,7 @@ const About = ({ data, location }) => {
         >
           free consultation
         </a>
-        . Find out the cost, specify a vital question, or maybe you want to
+        . Find out the rates, clarify a vital question, or maybe you want to
         become part of our team? Anything you want! We will be happy to get to
         know you and help.
       </Contacts>

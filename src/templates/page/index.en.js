@@ -37,7 +37,7 @@ const PageTemplate = ({ data, location }) => {
         >
           free consultation
         </a>
-        . Find out the cost, specify a vital question, well anything you want!
+        . Find out the rates, clarify a vital question, well anything you want!
         We will be happy to get to know you and help.
       </Contacts>
     </Layout>
