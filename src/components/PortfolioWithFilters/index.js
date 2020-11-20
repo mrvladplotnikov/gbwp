@@ -26,8 +26,10 @@ const getFilterOptions = (array = [], optionName) => {
   return flattenOptions.filter(option => option !== null)
 }
 
-const getFilteredData = (item, filter, filterValue) => {
-  return item[filter].some(({ value }) => value === filterValue)
+const getFilteredData = (item, filterBy, filterValue) => {
+  const filters = item[filterBy] ?? []
+
+  return filters.some(({ value }) => value === filterValue)
 }
 
 const PortfolioWithFilters = ({
