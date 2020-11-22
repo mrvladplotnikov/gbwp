@@ -21,6 +21,7 @@ const DefaultLayout = ({
   meta,
   noindex = false,
   schemaOrg,
+  disableSiteNameInTitle = false,
 }) => {
   useDetectKeyboard()
   return (
@@ -102,6 +103,7 @@ const DefaultLayout = ({
                     ? dynamicLangsMenu
                     : langsMenu
                 }
+                disableSiteNameInTitle={disableSiteNameInTitle}
               />
               <HorizontalNav
                 langsMenu={

@@ -28,6 +28,7 @@ import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const MusicCreation = ({ data, location }) => {
@@ -55,6 +56,8 @@ const MusicCreation = ({ data, location }) => {
 
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
+
   return (
     <Layout
       Sidebar={
@@ -83,8 +86,9 @@ const MusicCreation = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Услуги создания музыки"
-      description="Саундтреки, которые решают задачи и работают на вашу аудиторию. Музыка на грани чистого творчества и функциональности. ✔ Процесс сотрудничества. Наши предложения и подход. Отзывы клиентов."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <ServiceSection title="Что мы делаем?">
         <p>Мы пишем саундтреки и создаём музыку для:</p>
@@ -357,6 +361,12 @@ const MusicCreation = ({ data, location }) => {
 
 export const query = graphql`
   query MusicCreationRUPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "services/music-composing" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

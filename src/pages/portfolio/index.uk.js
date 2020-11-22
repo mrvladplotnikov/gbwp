@@ -11,12 +11,15 @@ import Contacts from "../../components/lendingSections/Contacts"
 import mailTo from "../../utils/mailTo"
 
 import styles from "./styles.module.css"
+import { seoDefaultData } from "../../utils/seo"
 
 const PortfolioBox = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
 )
 
 const Portfolio = ({ data, location }) => {
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
+
   const [filters, setFilters] = useQueryParams({
     category: StringParam,
     service: StringParam,
@@ -28,8 +31,9 @@ const Portfolio = ({ data, location }) => {
   return (
     <Layout
       location={location}
-      title="Портфолiо"
-      description="Наші проєкти зі створення • музики • аудіо брендів • звукового дизайну • голосового озвучення. ✔ Ігри, застосунки, анімація, реклама, театр, квеструми. Аудіо, яке працює на мільйонні аудиторії."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <Outer>
         <Headline Tag="h1" className={styles.title}>
@@ -62,33 +66,18 @@ const Portfolio = ({ data, location }) => {
 
 export const query = graphql`
   query PortfolioPageUkQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "uk" }
+      acf: { page_slug: { eq: "portfolio" } }
+    ) {
+      ...seoPageData
+    }
+
     allWordpressWpWork(
       filter: { polylang_current_lang: { eq: "uk" } }
       sort: { fields: acf___order, order: DESC }
     ) {
-      works: nodes {
-        id
-        slug
-        title
-        lang: polylang_current_lang
-        category: work_category {
-          value: slug
-          label: name
-        }
-        service: work_service {
-          value: slug
-          label: name
-        }
-        featured_media {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
-      }
+      ...workListItemDataWithFilters
     }
   }
 `

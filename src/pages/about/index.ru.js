@@ -25,6 +25,7 @@ import TeamCarousel from "../../components/TeamCarousel"
 import mailTo from "../../utils/mailTo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../../components/InlineButton"
+import { seoDefaultData } from "../../utils/seo"
 
 const Box = () => (
   <img className={styles.box} src={boxOfDotsLink} role="presentation" alt="" />
@@ -35,12 +36,14 @@ const About = ({ data, location }) => {
 
   const team = data.team.members
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
       location={location}
-      title="Об аудиоагентстве"
-      description="• Наша команда. • Кто, зачем и как создаёт аудио, которое работает на ваш проект и аудиторию. ✔ Особенности и преимущества нашего подхода."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <Inner>
         <Headline Tag="h1" className={styles.title}>
@@ -242,28 +245,14 @@ export const query = graphql`
         adminEmail
       }
     }
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "about" } }
+    ) {
+      ...seoPageData
+    }
     team: allWordpressWpTeam(filter: { polylang_current_lang: { eq: "ru" } }) {
-      members: nodes {
-        id
-        name: title
-        details: content
-        photo: featured_media {
-          localFile {
-            childImageSharp {
-              fluid(
-                maxWidth: 570
-                srcSetBreakpoints: [445, 900]
-                quality: 100
-              ) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-        meta: acf {
-          position
-        }
-      }
+      ...teamData
     }
   }
 `

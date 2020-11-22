@@ -14,6 +14,7 @@ import InlineButton from "../../components/InlineButton"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 import { Link, graphql } from "gatsby"
 import schemaOrg from "./schemaOrg.json"
+import { seoDefaultData } from "../../utils/seo"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -27,12 +28,14 @@ const Boxes = ({ className = "" }) => (
 const Faq = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
       location={location}
-      title="FAQ"
-      description="Ответы на часто задаваемые вопросы. • Организация процесса сотрудничества. • Юридические аспекты. • Финансовые вопросы. ✔ Всё, что нужно знать до начала работы."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
       schemaOrg={schemaOrg.ru}
     >
       <Inner>
@@ -228,6 +231,12 @@ export const query = graphql`
       siteMetadata {
         adminEmail
       }
+    }
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "faq" } }
+    ) {
+      ...seoPageData
     }
   }
 `

@@ -10,6 +10,7 @@ import { Inner } from "../../components/Container"
 import boxOfDotsLink from "../../images/icon-box.svg"
 import { chunk } from "lodash/array"
 import ReviewGrid from "../../components/ReviewGrid"
+import { seoDefaultData } from "../../utils/seo"
 
 const Box = ({ className = "" }) => (
   <img
@@ -21,14 +22,17 @@ const Box = ({ className = "" }) => (
 )
 
 const Testimonials = ({ data, location }) => {
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
+
   const testimonials = chunk(data.testimonials.nodes, 10)
   const userReviews = data.userReviews.nodes
 
   return (
     <Layout
       location={location}
-      title="Отзывы"
-      description="Наши работы слышали миллионы людей. ✔ Отзывы некоторых из них — на этой странице. Отзывы клиентов и партнёров — тоже здесь."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
       noindex
     >
       <Inner>
@@ -67,46 +71,23 @@ Testimonials.propTypes = {
 
 export const query = graphql`
   query TestimonialsPageRuQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "reviews" } }
+    ) {
+      ...seoPageData
+    }
+
     userReviews: allFile(
       filter: { relativeDirectory: { eq: "user-reviews" } }
     ) {
-      totalCount
-      nodes {
-        id
-        childImageSharp {
-          fluid(quality: 95) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+      ...userReviewsList
     }
 
     testimonials: allWordpressWpClientReview(
       filter: { polylang_current_lang: { eq: "ru" } }
     ) {
-      nodes {
-        id
-        title
-        content
-        featured_media {
-          localFile {
-            childImageSharp {
-              fluid(
-                maxWidth: 250
-                maxHeight: 250
-                srcSetBreakpoints: [445, 900]
-              ) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        meta: acf {
-          company
-          position
-          link: s_link
-        }
-      }
+      ...clientReviewsList
     }
   }
 `

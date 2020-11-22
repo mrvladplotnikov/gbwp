@@ -23,6 +23,7 @@ import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const VoiceCasting = ({ data, location }) => {
@@ -51,6 +52,7 @@ const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -84,8 +86,9 @@ const VoiceCasting = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Голосовое озвучивание. Услуги дикторов"
-      description="Подбор и запись нужного голоса для вашего проекта. База локальных и иностранных актёров озвучивания. 7+ языков. ✔ Процесс сотрудничества. Наши предложения и подход. Отзывы клиентов."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <ServiceSection title="Что мы делаем?">
         <p>
@@ -313,6 +316,12 @@ const VoiceCasting = ({ data, location }) => {
 
 export const query = graphql`
   query VoiceCastingRuPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "services/voice-casting" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

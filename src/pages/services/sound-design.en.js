@@ -19,12 +19,14 @@ import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import Button from "~components/Button"
 
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const works = data.works.nodes
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -57,9 +59,9 @@ const SoundDesign = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      title={seo.title}
       disableSiteNameInTitle
-      title="Sound Design for films, video games &#38; apps » Audio Agency » VP Production"
-      description="Functional sound design. Information and the right emotions for the audience. Implementation in Unity and Unreal Engine via Wwise / Fmod. ✔ A process of cooperation. Our offers and approach. Clients’ testimonials."
+      description={seo.description}
     >
       <ServiceSection title="What are we doing?">
         <p>We create:</p>
@@ -275,6 +277,12 @@ const SoundDesign = ({ data, location }) => {
 
 export const query = graphql`
   query SoundDesignEnPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "en" }
+      acf: { page_slug: { eq: "services/sound-design" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

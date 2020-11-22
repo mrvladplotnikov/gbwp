@@ -21,12 +21,14 @@ import PhoneIcon from "../../images/service-icons/phone.svg"
 import SoundIcon from "../../images/service-icons/sound.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import Button from "~components/Button"
 
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const works = data.works.nodes
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -60,9 +62,9 @@ const AudioBranding = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      title={seo.title}
       disableSiteNameInTitle
-      title="Audio Branding » Sonic Identity &#38; Audio Logo » Audio Agency » VP Production"
-      description="Your brand’s sonic identity. Emotional point of differentiation. A new way to attract attention. ✔ Our offers and approach. Clients’ testimonials."
+      description={seo.description}
     >
       <ServiceSection title="What are we doing?">
         <p>We create:</p>
@@ -279,6 +281,12 @@ const AudioBranding = ({ data, location }) => {
 
 export const query = graphql`
   query AudioBrandingEnPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "en" }
+      acf: { page_slug: { eq: "services/audio-branding" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

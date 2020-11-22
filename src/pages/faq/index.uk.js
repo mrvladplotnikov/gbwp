@@ -14,6 +14,7 @@ import ModalContactForm from "../../components/ModalContactForm/ModalContactForm
 import InlineButton from "../../components/InlineButton"
 import { Link, graphql } from "gatsby"
 import schemaOrg from "./schemaOrg.json"
+import { seoDefaultData } from "../../utils/seo"
 
 const Boxes = ({ className = "" }) => (
   <img
@@ -27,12 +28,14 @@ const Boxes = ({ className = "" }) => (
 const Faq = ({ data, location }) => {
   const [showFrom, setShowForm] = useState(false)
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
       location={location}
-      title="FAQ"
-      description="Відповіді на поширені питання. • Організація процесу співпраці. • Юридичні аспекти. • Фінансові питання. ✔ Все, що потрібно знати до початку роботи."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
       schemaOrg={schemaOrg.uk}
     >
       <Inner>
@@ -225,6 +228,12 @@ export const query = graphql`
       siteMetadata {
         adminEmail
       }
+    }
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "uk" }
+      acf: { page_slug: { eq: "faq" } }
+    ) {
+      ...seoPageData
     }
   }
 `

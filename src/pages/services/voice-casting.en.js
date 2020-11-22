@@ -23,6 +23,7 @@ import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const VoiceCasting = ({ data, location }) => {
@@ -51,6 +52,7 @@ const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -85,9 +87,9 @@ const VoiceCasting = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      title={seo.title}
       disableSiteNameInTitle
-      title="Voice-over casting for videos, games, brands &#38; cartoons » Audio Agency » VP Production"
-      description="Selecting and recording the right voice for your project. A squad of professional local and foreign voice actors. 7+ languages. ✔ A process of cooperation. Our offers and approach. Clients’ testimonials."
+      description={seo.description}
     >
       <ServiceSection title="What are we doing?">
         <p>In short, we produce voice-overs, and specifically deal with the:</p>
@@ -317,6 +319,12 @@ const VoiceCasting = ({ data, location }) => {
 
 export const query = graphql`
   query VoiceCastingEnPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "en" }
+      acf: { page_slug: { eq: "services/voice-casting" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

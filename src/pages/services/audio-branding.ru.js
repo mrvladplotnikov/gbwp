@@ -21,12 +21,14 @@ import PhoneIcon from "../../images/service-icons/phone.svg"
 import SoundIcon from "../../images/service-icons/sound.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import Button from "~components/Button"
 
 const AudioBranding = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const works = data.works.nodes
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -60,8 +62,9 @@ const AudioBranding = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Аудиобрендинг. Звуковая айдентика и создание джинглов"
-      description="Звуковая идентичность вашего бренда. Эмоциональная точка дифференциации. Новый способ привлечения внимания и коммуникации с вашей аудиторией. ✔ Процесс сотрудничества. Наши предложения и подход. Отзывы клиентов."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <ServiceSection title="Что мы делаем?">
         <p>Мы создаём:</p>
@@ -261,6 +264,12 @@ const AudioBranding = ({ data, location }) => {
 
 export const query = graphql`
   query AudioBrandingRuPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "ru" }
+      acf: { page_slug: { eq: "services/audio-branding" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

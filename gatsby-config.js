@@ -69,6 +69,7 @@ module.exports = {
           "**/work_genre",
           "**/work_service",
           "**/client_review",
+          "**/custom_page",
           "**/team",
         ],
         normalizer,

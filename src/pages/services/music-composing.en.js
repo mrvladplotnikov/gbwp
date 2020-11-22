@@ -28,6 +28,7 @@ import PlayerIcon from "../../images/service-icons/player-2.svg"
 import MasksIcon from "../../images/service-icons/masks.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const MusicCreation = ({ data, location }) => {
@@ -55,6 +56,8 @@ const MusicCreation = ({ data, location }) => {
 
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
+
   return (
     <Layout
       Sidebar={
@@ -83,9 +86,9 @@ const MusicCreation = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
+      title={seo.title}
       disableSiteNameInTitle
-      title="Music composing services » Audio Agency » VP Production"
-      description="Soundtracks that perform tasks and work for your audience. Music on the verge of pure creativity and functionality. ✔ A process of cooperation. Our offers and approach. Clients' testimonials."
+      description={seo.description}
     >
       <ServiceSection title="What are we doing?">
         <p>We compose soundtracks and create music for:</p>
@@ -378,6 +381,12 @@ const MusicCreation = ({ data, location }) => {
 
 export const query = graphql`
   query MusicCreationENPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "en" }
+      acf: { page_slug: { eq: "services/music-composing" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

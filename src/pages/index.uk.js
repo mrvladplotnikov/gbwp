@@ -20,18 +20,21 @@ import icon6 from "../images/vp-icons/icon-6.svg"
 import mailTo from "../utils/mailTo"
 import ModalContactForm from "../components/ModalContactForm/ModalContactForm"
 import InlineButton from "../components/InlineButton"
+import { seoDefaultData } from "../utils/seo"
 
 const Home = ({ data, location, ...props }) => {
   const [showFrom, setShowForm] = useState(location.search === "?contact-form")
 
   const works = data.works.nodes
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
       location={location}
-      title="Аудіоагенція"
-      description="• Музика • Звуковий дизайн • Голосове озвучення для ігор, брендів, відео та інших медіапроєктів. ✔ Ми створюємо аудіо, яке працює на вашу аудиторію. 0 зірваних дедлайнів. Мільйони слухачів."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <Hero link="/portfolio" />
       <About
@@ -161,6 +164,12 @@ export const query = graphql`
         adminEmail
       }
     }
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "uk" }
+      acf: { page_slug: { eq: "home" } }
+    ) {
+      ...seoPageData
+    }
     works: allWordpressWpWork(
       filter: {
         acf: { front_page: { front_page_visibility: { eq: true } } }
@@ -168,21 +177,7 @@ export const query = graphql`
       }
       sort: { fields: acf___front_page___front_page_order, order: DESC }
     ) {
-      nodes {
-        id
-        slug
-        title
-        lang: polylang_current_lang
-        featured_media {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
-      }
+      ...workListItemData
     }
   }
 `

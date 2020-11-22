@@ -23,6 +23,7 @@ import LaptopIcon from "../../images/service-icons/laptop.svg"
 import FileIcon from "../../images/service-icons/file.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import ModalContactForm from "../../components/ModalContactForm/ModalContactForm"
 
 const VoiceCasting = ({ data, location }) => {
@@ -51,6 +52,7 @@ const VoiceCasting = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const contactEmail = data.site.siteMetadata.adminEmail
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -83,8 +85,9 @@ const VoiceCasting = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Голосове озвучення. Послуги дикторів"
-      description="Підбір і запис потрібного голосу для вашого проєкту. База локальних та іноземних акторів озвучення. 7+ мов. ✔ Процес співпраці. Наші пропозиції та підхід. Відгуки клієнтів."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <ServiceSection title="Що ми робимо?">
         <p>
@@ -311,6 +314,12 @@ const VoiceCasting = ({ data, location }) => {
 
 export const query = graphql`
   query VoiceCastingUkPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "uk" }
+      acf: { page_slug: { eq: "services/voice-casting" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

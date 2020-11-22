@@ -19,12 +19,14 @@ import FileIcon from "../../images/service-icons/file-2.svg"
 import RoomIcon from "../../images/service-icons/room.svg"
 
 import mailTo from "../../utils/mailTo"
+import { seoDefaultData } from "../../utils/seo"
 import Button from "~components/Button"
 
 const SoundDesign = ({ data, location }) => {
   const reviews = data.reviews.nodes
   const sidebarImage = data.sidebarImage.childImageSharp.fluid
   const works = data.works.nodes
+  const { seo } = data.seoPagesData ?? { seo: seoDefaultData }
 
   return (
     <Layout
@@ -57,8 +59,9 @@ const SoundDesign = ({ data, location }) => {
         </ServiceHero>
       }
       location={location}
-      title="Саунд дизайн для ігор, відео та застосунків"
-      description="Функціональний звуковий дизайн. Інформативність і правильні емоції для аудиторії. Імплементація Wwise / Fmod в Unity та Unreal Engine. ✔ Процес співпраці. Наші пропозиції та підхід. Відгуки клієнтів."
+      title={seo.title}
+      disableSiteNameInTitle
+      description={seo.description}
     >
       <ServiceSection title="Що ми робимо?">
         <p>Ми створюємо:</p>
@@ -268,6 +271,12 @@ const SoundDesign = ({ data, location }) => {
 
 export const query = graphql`
   query SoundDesignUKPageQuery {
+    seoPagesData: wordpressWpCustomPage(
+      polylang_current_lang: { eq: "uk" }
+      acf: { page_slug: { eq: "services/sound-design" } }
+    ) {
+      ...seoPageData
+    }
     reviews: allWordpressWpClientReview(
       limit: 5
       filter: {

@@ -23,6 +23,7 @@ const HomeLayout = ({
   i18nMessages,
   title,
   description,
+  disableSiteNameInTitle,
 }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const handleMenuToogle = () => {
@@ -86,6 +87,7 @@ const HomeLayout = ({
                 langsMenu={langsMenu}
                 title={title}
                 description={description}
+                disableSiteNameInTitle={disableSiteNameInTitle}
               />
 
               <CSSTransition
