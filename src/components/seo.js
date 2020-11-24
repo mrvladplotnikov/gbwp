@@ -52,9 +52,7 @@ function SEO({
     },
     {
       property: `og:title`,
-      content: title
-        ? `${title} | ${site.siteMetadata.title}`
-        : site.siteMetadata.title,
+      content: title ? title : site.siteMetadata.title,
     },
     {
       property: `og:site_name`,
@@ -86,9 +84,7 @@ function SEO({
     },
     {
       name: `twitter:title`,
-      content: title
-        ? `${title} | ${site.siteMetadata.title}`
-        : site.siteMetadata.title,
+      content: title ? title : site.siteMetadata.title,
     },
     {
       name: `twitter:description`,
