@@ -80,6 +80,7 @@ export const query = graphql`
 
     userReviews: allFile(
       filter: { relativeDirectory: { eq: "user-reviews" } }
+      sort: { fields: changeTime, order: DESC }
     ) {
       ...userReviewsList
     }
