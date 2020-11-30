@@ -89,7 +89,7 @@ const AudioBranding = ({ data, location }) => {
           элементов в зависимости от задач, которые нужно решить.
         </p>
       </ServiceSection>
-      <ServiceSection title="Наши работы" noGatters>
+      <ServiceSection title="Наши работы">
         <WorkCards
           works={works}
           breakpoints={{

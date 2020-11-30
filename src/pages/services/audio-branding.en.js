@@ -105,7 +105,7 @@ const AudioBranding = ({ data, location }) => {
           solved.
         </p>
       </ServiceSection>
-      <ServiceSection title="Our works" noGatters>
+      <ServiceSection title="Our works">
         <WorkCards
           works={works}
           breakpoints={{

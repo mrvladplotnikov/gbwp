@@ -95,7 +95,7 @@ const SoundDesign = ({ data, location }) => {
           виглядала максимально круто.
         </p>
       </ServiceSection>
-      <ServiceSection title="Наші роботи" noGatters>
+      <ServiceSection title="Наші роботи">
         <WorkCards
           works={works}
           breakpoints={{
