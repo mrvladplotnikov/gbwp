@@ -42,6 +42,7 @@ const WorkTemplate = ({ data, pageContext: { next, prev }, location }) => {
       location={location}
       translations={translations}
       title={acf.title || title}
+      disableSiteNameInTitle
       description={acf.description}
     >
       {isHeroFormat && acf.work_video && (
