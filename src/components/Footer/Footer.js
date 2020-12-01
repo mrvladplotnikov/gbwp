@@ -29,6 +29,8 @@ const Footer = ({ intl }) => {
     `
   )
 
+  const homePageLink = intl.locale === "uk" ? "/" : `/${intl.locale}`
+
   return (
     <div className={styles.container}>
       <Outer>
@@ -59,7 +61,7 @@ const Footer = ({ intl }) => {
             </div>
           </div>
           <div className={styles.col}>
-            <Link to="/">
+            <Link to={homePageLink}>
               <img
                 src={footerLogoIcon}
                 className={styles.footerLogo}
