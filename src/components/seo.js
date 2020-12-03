@@ -96,6 +96,18 @@ function SEO({
     uk: "uk-ua",
     ru: "ru",
     en: "en",
+    "x-default": "x-default",
+  }
+
+  let langs = langsMenu
+
+  const hasEnTranslation = langs.some(
+    ({ langKey, disabled }) => langKey === "en" && !disabled
+  )
+
+  if (hasEnTranslation) {
+    const enTranslation = langsMenu.find(({ langKey }) => langKey === "en")
+    langs = [...langsMenu, { ...enTranslation, langKey: "x-default" }]
   }
 
   return (
@@ -115,7 +127,7 @@ function SEO({
           key: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
           href: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
         },
-        ...langsMenu
+        ...langs
           .filter(item => !item.disabled)
           .map(lang => ({
             rel: "alternate",
