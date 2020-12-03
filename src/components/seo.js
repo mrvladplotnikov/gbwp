@@ -92,6 +92,12 @@ function SEO({
     },
   ].concat(meta)
 
+  const alternateHreflangs = {
+    uk: "uk-ua",
+    ru: "ru",
+    en: "en",
+  }
+
   return (
     <Helmet
       htmlAttributes={{
@@ -113,7 +119,7 @@ function SEO({
           .filter(item => !item.disabled)
           .map(lang => ({
             rel: "alternate",
-            hreflang: lang.langKey,
+            hreflang: alternateHreflangs[lang.langKey],
             key: lang.langKey,
             href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
           })),
