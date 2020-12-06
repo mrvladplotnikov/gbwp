@@ -6,6 +6,7 @@ import Button from "~components/Button"
 const PlanCard = ({
   icon,
   title = "",
+  width = "300px",
   subTitle = "",
   alt = "",
   list = [],
@@ -14,7 +15,7 @@ const PlanCard = ({
   const imageAlt = alt || title
 
   return (
-    <div className="PlanCard">
+    <div className="PlanCard" style={{ maxWidth: width }}>
       {icon && <img src={icon} alt={imageAlt} />}
       <h3 className="PlanCard__title">{title}</h3>
       {subTitle && <h5 className="PlanCard__subTitle">{subTitle}</h5>}
@@ -42,6 +43,7 @@ const PlanCard = ({
 PlanCard.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
+  width: PropTypes.string,
   subTitle: PropTypes.string,
   list: PropTypes.arrayOf(PropTypes.string),
   alt: PropTypes.string,

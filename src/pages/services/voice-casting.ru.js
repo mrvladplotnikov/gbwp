@@ -219,6 +219,7 @@ const VoiceCasting = ({ data, location }) => {
         </p>
         <PlanList>
           <PlanCard
+            width="410px"
             title="Локальные актёры озвучивания"
             icon={HouseIcon}
             subTitle="Доступные языки"
@@ -232,6 +233,7 @@ const VoiceCasting = ({ data, location }) => {
             }
           />
           <PlanCard
+            width="410px"
             title="Иностранные актёры озвучивания"
             icon={PlanetIcon}
             subTitle="Доступные языки"

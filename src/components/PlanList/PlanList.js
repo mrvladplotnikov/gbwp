@@ -17,7 +17,7 @@ const PlanList = ({ children, label = "", onClick = null }) => (
         585: {
           items: 2,
         },
-        894: {
+        998: {
           items: 3,
         },
         1366: {

@@ -226,6 +226,7 @@ const VoiceCasting = ({ data, location }) => {
         </p>
         <PlanList>
           <PlanCard
+            width="410px"
             title="Local voice actors"
             icon={HouseIcon}
             alt="Voice over services"
@@ -240,6 +241,7 @@ const VoiceCasting = ({ data, location }) => {
             }
           />
           <PlanCard
+            width="410px"
             title="Foreign voice actors"
             icon={PlanetIcon}
             alt="Voice over actors"

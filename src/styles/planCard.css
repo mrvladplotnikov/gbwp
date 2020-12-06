@@ -2,12 +2,11 @@
   border: 1px solid #747474;
   box-sizing: border-box;
   padding: 20px 20px 35px;
-  width: 265px;
   margin: auto;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  min-height: 562px;
+  min-height: 640px;
   align-items: flex-start;
 }
 
@@ -17,6 +16,10 @@
   font-size: 18px;
   line-height: 22px;
   margin: 20px 0 10px;
+}
+
+.PlanCard__button button {
+  font-size: 14px !important;
 }
 
 .PlanCard__subTitle {
@@ -56,7 +59,6 @@
 @media (min-width: 992px) {
   .PlanCard {
     padding: 25px 20px 20px;
-    min-height: 612px;
   }
 
   .PlanCard__title {
@@ -85,5 +87,9 @@
   .PlanCard__list::-webkit-scrollbar {
     width: 0.2em;
     height: 0.2em;
+  }
+
+  .PlanCard__button button {
+    font-size: 16px !important;
   }
 }
