@@ -1,38 +1,29 @@
 import React from "react"
-import ReactAliceCarousel from "react-alice-carousel"
+import Slider from "~components/Slider"
+import { Inner } from "~components/Container"
 import TeamCarouselItem from "./TeamCarouselItem"
-import "./team-carousel.css"
 
-const TeamCarousel = ({ team = [] }) => (
-  <div className="team-carousel">
-    <ReactAliceCarousel
-      mouseDragEnabled
-      buttonsDisabled
-      fadeOutAnimation
-      infinite={false}
-      responsive={{
-        0: {
-          items: 1,
-        },
-        767: {
-          items: 2,
-        },
-        1023: {
-          items: 1,
-        },
-      }}
-    >
-      {team.map(member => (
-        <TeamCarouselItem
-          key={member.id}
-          photo={member.photo}
-          name={member.name}
-          position={member.meta.position}
-          details={member.details}
-        />
-      ))}
-    </ReactAliceCarousel>
-  </div>
-)
+import styles from "./styles.module.css"
+
+const TeamCarousel = ({ team = [] }) => {
+  return (
+    <div className="team-carousel">
+      <Inner className={styles.container}>
+        <Slider id="team-slider" perView={1} focusAt={0}>
+          {team.map(member => (
+            <div key={member.id}>
+              <TeamCarouselItem
+                photo={member.photo}
+                name={member.name}
+                position={member.meta.position}
+                details={member.details}
+              />
+            </div>
+          ))}
+        </Slider>
+      </Inner>
+    </div>
+  )
+}
 
 export default TeamCarousel

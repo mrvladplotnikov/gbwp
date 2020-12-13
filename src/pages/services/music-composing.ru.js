@@ -221,7 +221,7 @@ const MusicCreation = ({ data, location }) => {
           }
         >
           <PlanCard
-            width="265px"
+            width="auto"
             title="Standard"
             icon={StandartIcon}
             subTitle="Название скучное, пакет крутой"
@@ -239,7 +239,7 @@ const MusicCreation = ({ data, location }) => {
             }
           />
           <PlanCard
-            width="265px"
+            width="auto"
             title="Soft Launch"
             icon={SoftIcon}
             subTitle="Тестируем ваши гипотезы"
@@ -259,7 +259,7 @@ const MusicCreation = ({ data, location }) => {
             }
           />
           <PlanCard
-            width="265px"
+            width="auto"
             title="S.O.S"
             icon={SosIcon}
             subTitle="Когда всё горит и пылает"
@@ -273,7 +273,7 @@ const MusicCreation = ({ data, location }) => {
             }
           />
           <PlanCard
-            width="265px"
+            width="auto"
             title="Premium"
             icon={PremiumIcon}
             subTitle="Да, вы на коне"

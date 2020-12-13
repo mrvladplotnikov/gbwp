@@ -18,14 +18,15 @@ export const teamData = graphql`
       photo: featured_media {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 570, srcSetBreakpoints: [445, 900], quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+            fixed(width: 570, height: 700, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
       }
       meta: acf {
         position
+        s_link
       }
     }
   }

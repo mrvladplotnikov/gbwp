@@ -217,7 +217,7 @@ const VoiceCasting = ({ data, location }) => {
           обработка голоса включена в стоимость, специфическая обработка
           оговаривается отдельно.
         </p>
-        <PlanList>
+        <PlanList type="slider">
           <PlanCard
             width="410px"
             title="Локальные актёры озвучивания"

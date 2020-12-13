@@ -224,7 +224,7 @@ const VoiceCasting = ({ data, location }) => {
           file processing is included in the price; specific processing is
           negotiated separately.
         </p>
-        <PlanList>
+        <PlanList type="slider">
           <PlanCard
             width="410px"
             title="Local voice actors"

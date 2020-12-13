@@ -1,0 +1,68 @@
+.slides,
+.items {
+  padding: 0;
+  margin: 0;
+}
+
+.track {
+  display: flex;
+  justify-content: center;
+}
+
+.arrows {
+  margin-top: 25px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrowLeft {
+  transform: rotateZ(180deg) translateY(3px);
+}
+
+.count {
+  font-size: 18px;
+}
+
+.current {
+  font-weight: bold;
+  position: relative;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f3461b),
+    color-stop(97.79%, #0da6f2)
+  );
+  background: linear-gradient(90deg, #f3461b 0%, #0da6f2 97.79%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.total {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .arrows {
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+  .count {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .arrows {
+    margin-top: 55px;
+  }
+}

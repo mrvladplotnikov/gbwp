@@ -2,7 +2,6 @@ import React from "react"
 import styles from "./styles.module.css"
 import { Outer } from "../../Container"
 import Headline from "../../Headline"
-import Carousel from "../../Carousel"
 import PostCard from "../../PostCard/PostCard"
 import Button from "~components/Button"
 
@@ -18,7 +17,7 @@ const Blog = () => (
     <Outer>
       <Headline className={styles.title}>Блог</Headline>
     </Outer>
-    <Carousel>
+    {/* <Carousel>
       <PostCard
         title="Post 1"
         thumbnail={image1}
@@ -57,7 +56,7 @@ const Blog = () => (
         thumbnail={image3}
         description="Cras dapibus. Vivamus elementum semper nisi."
       />
-    </Carousel>
+    </Carousel> */}
     <Outer>
       <div className={styles.linkWrapper}>
         <Button to="/blog">Перейти в блог</Button>

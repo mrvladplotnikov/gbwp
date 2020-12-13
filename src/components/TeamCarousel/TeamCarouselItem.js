@@ -28,9 +28,10 @@ const TeamCarouselItem = ({
             onClick={handleClick}
           >
             <Img
-              fluid={photo.localFile.childImageSharp.fluid}
+              fixed={photo.localFile.childImageSharp.fixed}
               alt={photo.name}
               className={styles.photo}
+              fadeIn={false}
             />
           </a>
         )}

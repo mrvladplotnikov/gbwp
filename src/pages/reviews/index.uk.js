@@ -49,6 +49,7 @@ const Testimonials = ({ data, location }) => {
           </Headline>
           {testimonials.map((node, index) => (
             <ReviewCarousel
+              id={`review-carousel-${index}`}
               key={index}
               reviews={node}
               responsive={{ 0: { items: 1 }, 767: { items: 2 } }}

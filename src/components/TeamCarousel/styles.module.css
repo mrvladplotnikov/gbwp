@@ -10,9 +10,9 @@
 }
 
 .photo {
-  max-height: 290px;
-  width: auto;
-  overflow: hidden;
+  width: 100% !important;
+  height: auto !important;
+  padding-bottom: 80%;
 }
 
 .photoContainer {
@@ -73,7 +73,7 @@
   margin-bottom: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .member {
     align-items: center;
     flex-direction: row;
@@ -89,21 +89,31 @@
   }
 
   .photo {
-    max-height: 100%;
+    width: 360px !important;
+    height: 360px !important;
+    padding-bottom: 0;
   }
 
   .name {
-    font-size: 70px;
-    line-height: 85px;
     text-align: left;
     margin-top: 0;
   }
+}
 
+@media (min-width: 1024px) {
+  .photo {
+    width: 400px !important;
+    height: 500px !important;
+    padding-bottom: 0;
+  }
+  .name {
+    font-size: 70px;
+    line-height: 85px;
+  }
   .position {
     font-size: 32px;
     line-height: 39px;
   }
-
   .content {
     font-size: 22px;
     line-height: 27px;
@@ -116,5 +126,13 @@
     margin: 0.5em 0;
     font-size: 22px;
     line-height: 27px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo {
+    width: 570px !important;
+    height: 700px !important;
+    padding-bottom: 0;
   }
 }
