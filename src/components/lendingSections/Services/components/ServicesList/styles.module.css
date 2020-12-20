@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 580px) {
   .list {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;

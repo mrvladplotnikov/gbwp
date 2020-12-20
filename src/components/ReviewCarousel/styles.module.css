@@ -141,12 +141,13 @@
 
 @media (min-width: 1200px) {
   .review {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: row;
   }
 
   .nameAndPos {
     text-align: left;
+    font-size: 22px;
   }
 
   .company {
@@ -154,20 +155,37 @@
   }
 
   .meta {
-    max-width: 220px;
+    max-width: 249px;
     margin-right: 0;
   }
 
   .thumbnail {
     margin: 0 0 17px 0;
+    max-width: 249px;
   }
 
   .content {
     text-align: left;
+    font-size: 22px;
+    margin-left: 84px;
+    max-height: 249px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
   }
 
   .modalInner .nameAndPos {
     text-align: left;
     width: 100%;
+  }
+
+  .readMoreButton {
+    font-size: 18px;
+  }
+
+  .modalInner .content {
+    max-height: unset;
+    margin-left: 0;
   }
 }
