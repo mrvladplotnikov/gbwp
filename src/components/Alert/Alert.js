@@ -14,8 +14,10 @@ const Alert = ({
 }) => {
   return (
     <div className={classnames(styles.Alert, className)} {...props}>
-      <CokkieImage />
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        <CokkieImage />
+        {children}
+      </div>
 
       {onClose && (
         <button

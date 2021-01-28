@@ -30,6 +30,7 @@
     font-size: 1.2em;
     line-height: 1.2;
     margin: 0;
+    margin-top: 1.2em;
   }
 
   & .closeIcon {
@@ -52,6 +53,7 @@
   }
 
   & .button {
+    font-weight: normal;
     position: absolute;
     right: 1.2em;
     bottom: 1.2em;
@@ -70,12 +72,26 @@
 
   & .cokkieImage {
     margin-right: 1.2em;
+    max-width: 42px;
+    height: auto;
+    float: left;
   }
 
   @media (min-width: 768px) {
     & {
       padding: 1.2em;
     }
+
+    & h2,
+    & h3,
+    & h4 {
+      margin-top: 0;
+    }
+
+    & .cokkieImage {
+      max-width: unset;
+    }
+
     & .content {
       margin-right: 1em;
       max-width: 85%;
