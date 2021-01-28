@@ -12,6 +12,7 @@ import "intl"
 import "normalize.css"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
 import useBreakpoint from "../hooks/useBreakpoint"
+import AlertProvider from "../utils/AlertProvider"
 
 const queries = {
   lg: "(min-width: 1660px)",
@@ -72,7 +73,7 @@ const SidebarLayout = ({
 
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
-            <>
+            <AlertProvider>
               <SEO
                 title={title}
                 description={description}
@@ -128,7 +129,7 @@ const SidebarLayout = ({
                   </>
                 )}
               </div>
-            </>
+            </AlertProvider>
           </IntlProvider>
         )
       }}

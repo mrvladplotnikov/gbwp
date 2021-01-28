@@ -7,6 +7,7 @@ import { IntlProvider } from "react-intl"
 import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
+import AlertProvider from "../utils/AlertProvider"
 
 const EmptyLayout = ({
   children,
@@ -37,7 +38,7 @@ const EmptyLayout = ({
 
       return (
         <IntlProvider locale={langKey} messages={i18nMessages}>
-          <>
+          <AlertProvider>
             <SEO
               title={title}
               description={description}
@@ -52,7 +53,7 @@ const EmptyLayout = ({
             >
               {children}
             </SnackbarProvider>
-          </>
+          </AlertProvider>
         </IntlProvider>
       )
     }}

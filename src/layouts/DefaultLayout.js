@@ -10,6 +10,7 @@ import "intl"
 import "normalize.css"
 import SEO from "../components/seo"
 import useDetectKeyboard from "../utils/useDetectKeyboard"
+import AlertProvider from "../utils/AlertProvider"
 
 const DefaultLayout = ({
   children,
@@ -86,7 +87,7 @@ const DefaultLayout = ({
 
         return (
           <IntlProvider locale={langKey} messages={i18nMessages}>
-            <>
+            <AlertProvider>
               <SEO
                 title={title}
                 description={description}
@@ -122,7 +123,7 @@ const DefaultLayout = ({
                 {children}
               </SnackbarProvider>
               <Footer />
-            </>
+            </AlertProvider>
           </IntlProvider>
         )
       }}

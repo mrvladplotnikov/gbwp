@@ -1,4 +1,8 @@
 module.exports = {
+  alertButtonLabel: "Accept",
+  alertTitle: "Cookies... Yum...",
+  alertBody: `This website uses cookies to improve Your user-experiencе. We also share information about Your use of the website with our advertising partners. You can read more in our <a href="/privacy-policy">Privacy Policy</a>.
+  By clicking “Accept”, You agree to the storing of cookies on Your device.`,
   "work-in-progress-message": `We’re testing our website right now. If you find a bug or a mistake, please, <a href="mailto:connect@vp-production.com">let us know about that</a>.`,
   successMailSend: "Successfully sent",
   errorMailSend: "Error, try again later",
