@@ -21,6 +21,7 @@ const PageTemplate = ({ data, location }) => {
         <div
           style={{
             margin: "6rem 1rem 2rem",
+            overflow: "hidden",
           }}
         >
           <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />

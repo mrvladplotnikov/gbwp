@@ -7,9 +7,9 @@
   display: flex;
   align-items: center;
   background-color: $primary;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.5;
-  padding: 2em 1.2em 3.25em;
+  padding: 1.5rem 1rem 3.25rem;
   font-weight: 300;
   color: $light;
   max-width: 1137px;
@@ -78,6 +78,8 @@
   }
 
   @media (min-width: 768px) {
+    font-size: 0.875rem;
+
     & {
       padding: 1.2em;
     }

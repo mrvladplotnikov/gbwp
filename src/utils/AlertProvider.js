@@ -24,7 +24,6 @@ const KEY = "cookies_alert"
 const AlertProvider = props => {
   const { children, intl } = props
 
-  console.log(props)
   const [showAlert, setShowAlert] = useState(false)
 
   useEffect(() => {
