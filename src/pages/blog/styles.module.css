@@ -1,0 +1,357 @@
+/* global styles */
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.BlogContainer {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* global blog */
+.BlogCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    /* FOR XL SCREEN */
+    /* justify-content: center; */
+    /* FOR SMALLER SCREEN */
+    height: 100%;
+    padding-top: 6%;
+}
+
+.BlogCard:nth-child(2n+1) {
+    margin-bottom: 6%
+}
+
+.BlogCard:nth-child(2n) {
+    margin-top: 5%
+}
+
+
+/* card */
+.CardContainer {
+    max-width: 488px;
+    max-height: 722px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardImageContainer {
+    display: block;
+    width: 100%;
+    position: relative;
+
+}
+
+.CardContainer:hover {
+    background: linear-gradient(270deg, #0da6f241 0%, #f23b0d38 100%);
+    cursor: pointer;
+}
+
+.CardImage {
+    display: block;
+    width: 100%;
+}
+
+.CardImage__filters {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgba(0, 0, 0, 0.54);
+}
+
+.CardBody__title {
+    margin: 20px 0 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+
+}
+
+.CardBody__text {
+    margin-bottom: 5%;
+    font-size: 18px;
+    color: white;
+
+}
+
+
+/* filters */
+.Filter__containerBtn {
+    padding: 5px 10px;
+    margin: 10px 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 160px;
+    min-width: 72px;
+    max-height: 40px;
+    border-radius: 40px;
+    border: 2px solid transparent;
+    width: 100%;
+}
+
+.Filter__innerContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.Filter__text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+
+/* sidebar  */
+.Sidebar:before {
+    width: 480px;
+    height: 100vh;
+    background: no-repeat url("../../images/blog/blog_sideBar_bg.jpg");
+    background-size: cover;
+    z-index: -1;
+    opacity: .4;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Sidebar {
+    position: relative;
+    z-index: 1;
+    width: 480px;
+    height: 100vh;
+}
+
+.Sidebar__innerContainer {
+    padding: 200px 25px 0;
+
+}
+
+.Sidebar__infoTitle {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 85px;
+    color: #F2F2F2;
+}
+
+.Sidebar__infoText {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.Sidebar__filtersContainer {
+    display: flex;
+}
+
+.Sidebar__filters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Sidebar__infoFilters {
+    margin: 15px 0 25px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+
+/* socails  */
+.Social {
+    padding: 0 10%;
+    margin: 15% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Social__title {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.Social__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Social__linkContainer {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.Social__linkInnerContainer {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Social__iconContainer {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.Social__icon_insta {
+    color: #922559;
+    height: 100%;
+    width: 100%;
+}
+
+.Social__icon_twi {
+    color: #7ABCED;
+    height: 100%;
+    width: 100%;
+}
+
+.Social__icon_hovered {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.Social__icon_fb {
+    color: #18ADFE;
+    height: 100%;
+    width: 100%;
+}
+
+.Social__icon_linkin {
+    color: #0A66C2;
+    height: 100%;
+    width: 100%;
+}
+
+.Social__icon_arrow {
+    align-self: flex-end;
+}
+
+.Social__text {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 23px;
+    color: white;
+
+}
+
+.Social__text_hovered {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 23px;
+    background-color: #ffffff;
+    background-image: linear-gradient(270deg, rgba(13, 166, 242, 1), rgba(242, 59, 13, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* form  */
+.ContactForm {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    margin-bottom: 20%;
+}
+
+.ContactForm__infoContainer {
+    flex-basis: 55%;
+}
+
+.ContactForm__infoTitle {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 85px;
+    margin-bottom: 30px;
+}
+
+.ContactForm__infoText {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 30px;
+    color: rgba(190, 190, 190, 1);
+}
+
+.ContactForm__infoAdress {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 48px;
+}
+
+.ContactForm__formContainer {
+    padding-left: 5%;
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.ContactForm__inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactForm__input {
+    cursor: pointer;
+    color: rgba(190, 190, 190, 1);
+    height: 40px;
+    margin-bottom: 25px;
+    background-color: black;
+    border: 1px solid rgba(190, 190, 190, 1);
+    outline: none;
+}
+
+.ContactForm__input:focus {
+    border: 1px solid #0da6f27c;
+    outline: none;
+}
+
+.ContactForm__policy {
+    margin-bottom: 10px;
+}
+
+.ContactForm__btn {
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 400;
+    background: linear-gradient(270deg, #0da6f2 0%, #f23b0d 100%);
+    color: white;
+    transition: all 1.5s;
+}
+
+.ContactForm__btn:hover {
+    background: white;
+    color: black;
+}
