@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
-import { useStaticQuery, Link } from "gatsby"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
+import { useStaticQuery } from "gatsby"
 import { graphql } from "gatsby"
 import IMG from "gatsby-image"
 import NestedNavItem from "./NestedNavItem"
@@ -11,13 +12,9 @@ import LangSelect from "../LangSelect"
 import HamburgerButton from "../HamburgerButton"
 import NavigationDrawer from "../NavigationDrawer"
 
-const HorizontalNav = ({
-  langsMenu = [],
-  locale = "uk",
-  homeLink = "/",
-  hideMenu = false,
-  className = "",
-}) => {
+const HorizontalNav = ({ hideMenu = false, className = "" }) => {
+  const { language, siteUrl } = useI18next()
+
   const {
     logo,
     site: {
@@ -79,7 +76,7 @@ const HorizontalNav = ({
           : null
       }
     >
-      <Link className={styles.logo} to={homeLink}>
+      <Link className={styles.logo} to="/" language={language}>
         <IMG
           fadeIn={false}
           loading="eager"
@@ -96,9 +93,9 @@ const HorizontalNav = ({
                   return (
                     <NestedNavItem
                       key={index}
-                      label={item.label[locale]}
+                      label={item.label[language]}
                       child={item.child}
-                      locale={locale}
+                      locale={language}
                     />
                   )
                 }
@@ -106,14 +103,14 @@ const HorizontalNav = ({
                 return (
                   <NavItem
                     key={index}
-                    label={item.label[locale]}
-                    link={item.link[locale]}
+                    label={item.label[language]}
+                    link={item.link[language]}
                   />
                 )
               })}
             </ul>
           </nav>
-          <LangSelect langsMenu={langsMenu} className={styles.langsSelect} />
+          <LangSelect className={styles.langsSelect} />
           <HamburgerButton
             isOpen={menuIsOpen}
             onClick={handleMenuToogle}
@@ -122,8 +119,7 @@ const HorizontalNav = ({
           <NavigationDrawer
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
-            langsMenu={langsMenu}
-            locale={locale}
+            locale={language}
           />
         </>
       ) : (
@@ -132,8 +128,7 @@ const HorizontalNav = ({
           <NavigationDrawer
             isOpen={menuIsOpen}
             handleOpen={handleMenuToogle}
-            langsMenu={langsMenu}
-            locale={locale}
+            locale={language}
           />
         </>
       )}
@@ -142,7 +137,6 @@ const HorizontalNav = ({
 }
 
 HorizontalNav.propTypes = {
-  langsMenu: PropTypes.array,
   locale: PropTypes.string,
   homeLink: PropTypes.string,
   hideMenu: PropTypes.bool,

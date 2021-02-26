@@ -12,9 +12,7 @@ import List from "./List"
 const NavigationDrawer = ({
   isOpen = true,
   handleOpen = () => {},
-  locale = "uk",
   className = "",
-  langsMenu = [],
 }) => {
   const drawerRef = useRef()
 
@@ -73,8 +71,8 @@ const NavigationDrawer = ({
         className={classNames("NavigationDrawer", className)}
       >
         <HamburgerButton isOpen={isOpen} onClick={handleOpen} />
-        <List navMenu={navMenu} locale={locale} />
-        <Languages className="NavigationDrawer__langs" langsMenu={langsMenu} />
+        <List navMenu={navMenu} />
+        <Languages className="NavigationDrawer__langs" />
         <SocialLinks socialLinks={socialLinks} />
       </nav>
     </CSSTransition>
@@ -84,9 +82,7 @@ const NavigationDrawer = ({
 NavigationDrawer.propTypes = {
   isOpen: PropTypes.bool,
   handleOpen: PropTypes.func,
-  locale: PropTypes.string,
   className: PropTypes.string,
 }
 
 export default NavigationDrawer
- 

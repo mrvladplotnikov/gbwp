@@ -15,7 +15,7 @@ module.exports = {
     navMenu: siteMenu,
     socialLinks: siteSocialLinks,
     adminEmail: "connect@vp-production.com",
-    siteUrl: process.env.SITE_URL || "http://localhost:8000/",
+    siteUrl: process.env.SITE_URL || "http://localhost:8888/",
   },
   plugins: [
     {
@@ -32,6 +32,33 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `locale`,
+        path: `${__dirname}/locales`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`en`, `ru`, `uk`],
+        defaultLanguage: `uk`,
+        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        siteUrl: process.env.SITE_URL || "http://localhost:8888/",
+        // you can pass any i18next options
+        // pass following options to allow message content as a key
+        i18nextOptions: {
+          debug: true,
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: ".",
+          nsSeparator: ":",
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -73,15 +100,6 @@ module.exports = {
           "**/team",
         ],
         normalizer,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyForNull: "any",
-        langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: true,
-        prefixDefault: false,
       },
     },
     {

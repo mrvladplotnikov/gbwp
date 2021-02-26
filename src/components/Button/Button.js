@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
@@ -18,6 +18,8 @@ const Button = ({
   fullWidth,
   ...props
 }) => {
+  const { language } = useI18next()
+
   const Icon = () =>
     arrowPosition === "bottom" ? (
       <div className={styles.buttonArrowContainer} aria-hidden="true">
@@ -94,7 +96,7 @@ const Button = ({
         )}
         {...containerProps}
       >
-        <Link className={styles.Button} to={to} {...props}>
+        <Link className={styles.Button} to={to} language={language} {...props}>
           {children}
         </Link>
         {showArrow && <Icon />}

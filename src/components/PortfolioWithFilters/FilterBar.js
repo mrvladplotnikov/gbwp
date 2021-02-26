@@ -1,19 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { useI18next } from "gatsby-plugin-react-i18next"
+
 import { Outer } from "../Container"
 import StyledSelect from "../StyledSelect"
-import { injectIntl, intlShape } from "react-intl"
 import ResetFiltersButton from "./ResetFiltersButton"
+
 import styles from "./styles.module.css"
 
 const FilterBar = ({
-  intl,
   categoryOptions = [],
   serviceOptions = [],
   onChange = (category, service) => null,
   category = undefined,
   service = undefined,
 }) => {
+  const { t } = useI18next()
+
   const selectedCategory = category
     ? categoryOptions.find(({ value }) => value === category)
     : undefined
@@ -32,7 +35,7 @@ const FilterBar = ({
     <Outer className={styles.container}>
       <StyledSelect
         className={styles.selectFilter}
-        placeholder={intl.formatMessage({ id: "categoryFilter" })}
+        placeholder={t("categoryFilter", { defaultValue: "Category" })}
         name="category"
         isClearable
         options={categoryOptions}
@@ -42,7 +45,7 @@ const FilterBar = ({
       />
       <StyledSelect
         className={styles.selectFilter}
-        placeholder={intl.formatMessage({ id: "serviceFilter" })}
+        placeholder={t("serviceFilter", { defaultValue: "Service" })}
         name="service"
         isClearable
         options={serviceOptions}
@@ -56,7 +59,6 @@ const FilterBar = ({
 }
 
 FilterBar.propTypes = {
-  intl: intlShape.isRequired,
   categoryOptions: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string,
@@ -74,4 +76,4 @@ FilterBar.propTypes = {
   service: PropTypes.string,
 }
 
-export default injectIntl(FilterBar)
+export default FilterBar

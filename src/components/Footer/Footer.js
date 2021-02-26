@@ -1,35 +1,36 @@
 import React from "react"
-import styles from "./styles.module.css"
-import { Outer } from "../Container"
-import footerLogoIcon from "../../images/footer-logo.svg"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import { injectIntl } from "react-intl"
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
+
+import { Outer } from "../Container"
 import SocialIcon from "../SocialIcon"
 
-const Footer = ({ intl }) => {
+import styles from "./styles.module.css"
+
+import footerLogoIcon from "../../images/footer-logo.svg"
+
+const GET_SOCIAL_LINKS = graphql`
+  query {
+    site {
+      siteMetadata {
+        socialLinks {
+          name
+          link
+          icon
+          title
+        }
+      }
+    }
+  }
+`
+
+const Footer = () => {
+  const { t } = useTranslation()
   const {
     site: {
       siteMetadata: { socialLinks },
     },
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            socialLinks {
-              name
-              link
-              icon
-              title
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const homePageLink = intl.locale === "uk" ? "/" : `/${intl.locale}`
+  } = useStaticQuery(GET_SOCIAL_LINKS)
 
   return (
     <div className={styles.container}>
@@ -61,11 +62,11 @@ const Footer = ({ intl }) => {
             </div>
           </div>
           <div className={styles.col}>
-            <Link to={homePageLink}>
+            <Link to="/">
               <img
                 src={footerLogoIcon}
                 className={styles.footerLogo}
-                alt={intl.formatMessage({ id: "footerLogoAlt" })}
+                alt={t("footerLogoAlt")}
                 loading="lazy"
                 width="76"
                 height="70"
@@ -77,4 +78,4 @@ const Footer = ({ intl }) => {
     </div>
   )
 }
-export default injectIntl(Footer)
+export default Footer

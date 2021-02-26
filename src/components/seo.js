@@ -9,21 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
 
 import { escapeHtml } from "../utils/htmlHelpers"
 
 import metaLogo from "../images/meta-logo.jpg"
 
-function SEO({
-  description,
-  lang,
-  meta,
-  title,
-  pathname,
-  langsMenu,
-  schemaOrg,
-  disableSiteNameInTitle,
-}) {
+function SEO({ description, meta, title, schemaOrg, disableSiteNameInTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -38,6 +30,21 @@ function SEO({
       }
     `
   )
+
+  const {
+    languages,
+    language,
+    originalPath,
+    defaultLanguage,
+    siteUrl = "",
+  } = useI18next()
+
+  const createUrlWithLang = lng => {
+    const url = `${siteUrl}${
+      lng === defaultLanguage ? "" : `/${lng}`
+    }${originalPath}`
+    return url.endsWith("/") ? url : `${url}/`
+  }
 
   const schema = schemaOrg ? schemaOrg : {}
 
@@ -92,51 +99,35 @@ function SEO({
     },
   ].concat(meta)
 
-  const alternateHreflangs = {
-    uk: "uk-ua",
-    ru: "ru",
-    en: "en",
-    "x-default": "x-default",
-  }
-
-  let langs = langsMenu
-
-  const hasEnTranslation = langs.some(
-    ({ langKey, disabled }) => langKey === "en" && !disabled
-  )
-
-  if (hasEnTranslation) {
-    const enTranslation = langsMenu.find(({ langKey }) => langKey === "en")
-    langs = [...langsMenu, { ...enTranslation, langKey: "x-default" }]
-  }
-
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
       title={escapeHtml(title)}
       titleTemplate={
         !disableSiteNameInTitle ? `%s | ${site.siteMetadata.title}` : null
       }
       defaultTitle={site.siteMetadata.title}
       meta={metaProp}
-      link={[
-        {
-          rel: "canonical",
-          key: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
-          href: `${site.siteMetadata.siteUrl}${pathname.replace(/\/$/, "")}`,
-        },
-        ...langs
-          .filter(item => !item.disabled)
-          .map(lang => ({
-            rel: "alternate",
-            hreflang: alternateHreflangs[lang.langKey],
-            key: lang.langKey,
-            href: `${site.siteMetadata.siteUrl}${lang.link.replace(/\/$/, "")}`,
-          })),
-      ]}
     >
+      <html lang={language} />
+      <link rel="canonical" href={createUrlWithLang(language)} />
+      {languages.map(lng => {
+        const lang = lng === "uk" ? "uk-ua" : lng
+        return (
+          <link
+            rel="alternate"
+            key={lng}
+            href={createUrlWithLang(lng)}
+            hrefLang={lang}
+          />
+        )
+      })}
+
+      {/* We need this due SEO request */}
+      <link
+        rel="alternate"
+        href={createUrlWithLang("en")}
+        hrefLang="x-default"
+      />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   )
@@ -146,18 +137,14 @@ SEO.defaultProps = {
   meta: [],
   description: ``,
   title: ``,
-  langsMenu: [],
   schemaOrg: null,
   disableSiteNameInTitle: false,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string.isRequired,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
-  pathname: PropTypes.string.isRequired,
-  langsMenu: PropTypes.array,
   schemaOrg: PropTypes.object,
   disableSiteNameInTitle: PropTypes.bool,
 }

@@ -1,10 +1,12 @@
 import React from "react"
-import styles from "./styles.module.css"
-import { Inner, Outer } from "../../Container"
-import Button from "~components/Button"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Headline from "../../Headline"
+import { useStaticQuery, graphql } from "gatsby"
+
+import { Inner, Outer } from "~components/Container"
+import Button from "~components/Button"
+import Headline from "~components/Headline"
+
+import styles from "./styles.module.css"
 
 const About = ({
   title = "",

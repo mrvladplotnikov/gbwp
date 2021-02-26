@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { FormattedMessage } from "react-intl"
+import { Trans } from "gatsby-plugin-react-i18next"
 
 import Button from "~components/Button"
 
@@ -14,7 +14,7 @@ const LoadMoreButton = ({ onClick }) => {
         className={styles.loadMoreButton}
         arrowPosition="right"
       >
-        <FormattedMessage id="loadMoreButton" />
+        <Trans i18nKey="loadMoreButton" defaults="Load more.." />
       </Button>
     </div>
   )

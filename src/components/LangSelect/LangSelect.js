@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import classNames from "classnames"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import { CSSTransition } from "react-transition-group"
 
 const processLangLable = langCode => {
@@ -17,8 +17,9 @@ const processLangLable = langCode => {
   }
 }
 
-const LangSelect = ({ className = "", langsMenu = [] }) => {
-  const currentLang = langsMenu.find(lang => lang.selected === true)
+const LangSelect = ({ className = "" }) => {
+  const { languages, originalPath, language } = useI18next()
+
   const [open, setOpen] = useState(false)
   const handleToogle = () => setOpen(!open)
   const handleOpen = () => setOpen(true)
@@ -32,7 +33,7 @@ const LangSelect = ({ className = "", langsMenu = [] }) => {
       role="presentation"
     >
       <button className="LangSelect--currentLang" onClick={handleToogle}>
-        / {processLangLable(currentLang ? currentLang.langKey : "uk")} /
+        / {processLangLable(language)} /
       </button>
       <CSSTransition
         in={open}
@@ -42,11 +43,14 @@ const LangSelect = ({ className = "", langsMenu = [] }) => {
         timeout={200}
       >
         <ul>
-          {langsMenu
-            .filter(lang => !lang.selected)
+          {languages
+            .filter(lang => lang !== language)
             .map(lang => (
-              <li key={lang.langKey}>
-                <Link to={lang.link}> {processLangLable(lang.langKey)} </Link>
+              <li key={lang}>
+                <Link to={originalPath} language={lang}>
+                  {" "}
+                  {processLangLable(lang)}{" "}
+                </Link>
               </li>
             ))}
         </ul>

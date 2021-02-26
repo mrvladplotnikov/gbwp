@@ -1,21 +1,24 @@
 import React, { Fragment } from "react"
 import classNames from "classnames"
-import { Link } from "gatsby"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 
-const Languages = ({ className = "", langsMenu = [] }) => {
+const Languages = ({ className = "" }) => {
+  const { languages, originalPath, language } = useI18next()
+
   return (
     <div className={classNames("languages", className)}>
-      {langsMenu.map((lang, i) => (
-        <Fragment key={lang.langKey}>
+      {languages.map((lang, i) => (
+        <Fragment key={lang}>
           <Link
             className={classNames("language", {
-              currentLanguage: lang.selected,
+              currentLanguage: lang === language,
             })}
-            to={lang.link || "/"}
+            to={originalPath}
+            language={lang}
           >
-            {lang.langKey}
+            {lang}
           </Link>
-          {i !== langsMenu.length - 1 ? "/" : ""}
+          {i !== languages.length - 1 ? "/" : ""}
         </Fragment>
       ))}
     </div>

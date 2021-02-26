@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { graphql, useStaticQuery } from "gatsby"
+import { Trans } from "gatsby-plugin-react-i18next"
+
 import { Inner } from "../Container"
 import Headline from "../Headline"
-import { FormattedMessage } from "react-intl"
-import { graphql, useStaticQuery } from "gatsby"
 import ContactLink from "./ContactLink"
 
 const ContactUs = ({ title, children }) => {
@@ -32,10 +33,10 @@ const ContactUs = ({ title, children }) => {
       <div className="ContactUs__container">
         <div className="ContactUs__col">
           <Headline className="ContactUs__title">
-            {title ? title : <FormattedMessage id="contactTitle" />}
+            {title ? title : <Trans i18nKey="contactTitle" />}
           </Headline>
           <p className="ContactUs__text">
-            {children ? children : <FormattedMessage id="contactText" />}
+            {children ? children : <Trans i18nKey="contactText" />}
           </p>
           <a className="ContactUs__email" href={`mailto:${adminEmail}`}>
             {adminEmail}

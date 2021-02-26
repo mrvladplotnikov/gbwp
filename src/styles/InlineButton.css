@@ -2,6 +2,8 @@
   background-color: unset;
   border: none;
   padding: 0;
+  font-size: inherit;
+  font-family: inherit;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.02em;
