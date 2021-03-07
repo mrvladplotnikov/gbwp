@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import classNames from "classnames"
 import { graphql } from "gatsby"
-import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
+import { useI18next } from "gatsby-plugin-react-i18next"
 
 import DefaultLayout from "../../layouts/DefaultLayout"
 
@@ -10,8 +10,6 @@ import Headline from "~components/Headline"
 import { Inner } from "~components/Container"
 import StyledAccordion from "~components/StyledAccordion"
 import StyledAccordionItem from "~components/StyledAccordionItem"
-import ModalContactForm from "~components/ModalContactForm"
-import InlineButton from "~components/InlineButton"
 
 import { seoDefaultData } from "../../utils/seo"
 import boxOfDotsLink from "../../images/icon-box.svg"
