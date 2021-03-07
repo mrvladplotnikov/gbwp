@@ -3,7 +3,7 @@ import classNames from "classnames"
 import PropTypes from "prop-types"
 import styles from "./styles.module.css"
 import Img from "gatsby-image"
-import { FormattedMessage } from "react-intl"
+import { useI18next } from "gatsby-plugin-react-i18next"
 import Modal from "react-modal"
 import NoImage from "../../images/no-image.png"
 import { FaTimes } from "react-icons/fa"
@@ -32,6 +32,7 @@ const ReviewCarouselItem = ({
     content: "",
   },
 }) => {
+  const { t } = useI18next()
   const [previewLen, setPreviewLen] = useState(120)
   const [showReadMoreButton, setShowReadMoreButton] = useState(false)
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -122,7 +123,7 @@ const ReviewCarouselItem = ({
                 className={styles.readMoreButton}
                 onClick={handleReadMore}
               >
-                <FormattedMessage id="loadMoreButton" />
+                {t("loadMoreButton")}
               </button>
 
               <Modal

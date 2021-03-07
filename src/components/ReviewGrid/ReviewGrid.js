@@ -5,7 +5,7 @@ import Masonry from "react-masonry-css"
 import ReviewGridItem from "../ReviewGridItem"
 import useBreakpoint from "../../hooks/useBreakpoint"
 import { chunk } from "lodash/array"
-import { FormattedMessage } from "react-intl"
+import { useI18next } from "gatsby-plugin-react-i18next"
 import styles from "./styles.module.css"
 
 const queries = {
@@ -21,6 +21,7 @@ const handleDividing = (chunks, chunksToShow = 1) => {
 }
 
 const ReviewGrid = ({ className = "", images = [] }) => {
+  const { t } = useI18next()
   const [page, setPage] = useState(1)
   const matchPoints = useBreakpoint(queries)
 
@@ -55,7 +56,7 @@ const ReviewGrid = ({ className = "", images = [] }) => {
           className={styles.loadMoreButton}
           onClick={() => setPage(page + 1)}
         >
-          <FormattedMessage id="loadMoreButton" />
+          {t("loadMoreButton")}
         </button>
       )}
     </>
