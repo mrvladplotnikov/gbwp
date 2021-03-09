@@ -1,18 +1,25 @@
 import React, { useState } from "react"
+import { Outer, Inner } from "../../components/Container/Container"
+import { graphql } from "gatsby"
 import styles from "./styles.module.css"
 import { FaFacebookF } from "react-icons/fa"
 import { IoLogoInstagram } from "react-icons/io"
 import { GrTwitter } from "react-icons/gr"
-import { FaLinkedinIn } from "react-icons/fa"
+import {
+  FaLinkedinIn,
+  FaTimesCircle,
+  FaRegDotCircle,
+  FaRegCircle,
+} from "react-icons/fa"
 import blog1 from "../../images/blog/blog1.jpg"
 import blog2 from "../../images/blog/blog2.jpg"
 import blog3 from "../../images/blog/blog3.jpg"
 import blog4 from "../../images/blog/blog4.jpg"
 import blog5 from "../../images/blog/blog5.jpg"
 import blog6 from "../../images/blog/blog6.jpg"
+
 import arrow from "../../images/blog/icons/link_arrow.svg"
 import arrow2 from "../../images/blog/icons/arrow2.svg"
-
 //data
 const blogCardsInfo = [
   {
@@ -135,7 +142,7 @@ const blogCardsInfo = [
     ],
   },
 ]
-const allFilters = [
+const sidebarBtnFilters = [
   {
     text: "стримы",
     backgroundColor: "#7A379A",
@@ -167,7 +174,7 @@ const allFilters = [
     id: "uu78u6ui9",
   },
 ]
-const filterDiscard = {
+const filterBtnDiscard = {
   text: "сбросить",
   backgroundColor: "#ffffff",
   color: "black",
@@ -198,7 +205,7 @@ const CardImage = ({ image, filters }) => {
       {filters && (
         <div className={styles.CardImage__filters}>
           {filters.map(filter => (
-            <Filter key={filter.id + "t87"} filter={filter} />
+            <Filter key={filter.id} filter={filter} />
           ))}
         </div>
       )}
@@ -230,47 +237,153 @@ const BlogCard = ({ data }) => {
 }
 
 //filters
-const Filter = ({ filter }) => {
+const Filter = ({ filter, icon = false, text = "center", isBtn = false }) => {
+  const [checked, setChecked] = useState(false)
+  const [hover, setHover] = useState(false)
+
   return (
-    <button
+    <div
       className={styles.Filter__containerBtn}
-      style={{ backgroundColor: filter.backgroundColor }}
+      onClick={() => setChecked(!checked)}
+      onMouseEnter={() => {
+        setHover(true)
+      }}
+      onMouseLeave={() => {
+        setHover(false)
+      }}
+      style={{
+        backgroundColor: filter.backgroundColor,
+        border: hover && isBtn ? "2px solid white" : "2px solid transparent",
+        cursor: isBtn ? "pointer" : "unset",
+      }}
     >
-      <p
+      {icon && (
+        <div className={styles.Filter__iconContainer}>
+          {checked && <FaRegDotCircle className={styles.Filter__icon} />}
+          {!checked && <FaRegCircle className={styles.Filter__icon} />}
+        </div>
+      )}
+      <div
         className={styles.Filter__text}
-        style={{ color: filter.color || "#FFFFFF" }}
+        style={{ color: filter.color || "#FFFFFF", textAlign: text }}
       >
         {filter.text}
-      </p>
-    </button>
-  )
-}
-
-//desktop
-const SideBar = ({ filters, data }) => {
-  return (
-    <div className={styles.Sidebar}>
-      <div className={styles.Sidebar__innerContainer}>
-        <div className={styles.Sidebar__infoContainer}>
-          <p className={styles.Sidebar__infoTitle}>{data.title}</p>
-          <p className={styles.Sidebar__infoText}>{data.text}</p>
-        </div>
-        <div className={styles.Sidebar__filtersContainer}>
-          <div className={styles.Sidebar__filters}>
-            <p className={styles.Sidebar__infoFilters}>{data.filterText}</p>
-            {filters.map(filter => (
-              <Filter key={filter.id + "t8447"} filter={filter} />
-            ))}
-          </div>
-          <div className={styles.Sidebar__filters}>
-            <Filter key="uu78u6ui9er5" filter={filterDiscard} />
-          </div>
-        </div>
       </div>
     </div>
   )
 }
+const FilterDiscard = ({
+  filter,
+  icon = false,
+  text = "center",
+  isBtn = false,
+}) => {
+  const [checked, setChecked] = useState(false)
+  const [hover, setHover] = useState(false)
 
+  return (
+    <div
+      className={styles.Filter__containerBtnDiscard}
+      onClick={() => setChecked(!checked)}
+      onMouseEnter={() => {
+        setHover(true)
+      }}
+      onMouseLeave={() => {
+        setHover(false)
+      }}
+      style={{
+        backgroundColor: filter.backgroundColor,
+        border: hover && isBtn ? "2px solid black" : "2px solid transparent",
+        cursor: isBtn ? "pointer" : "unset",
+      }}
+    >
+      {icon && (
+        <div className={styles.Filter__iconContainer}>
+          <FaTimesCircle color="black" className={styles.Filter__icon} />
+        </div>
+      )}
+      <p
+        className={styles.Filter__text}
+        style={{ color: filter.color || "#FFFFFF", textAlign: text }}
+      >
+        {filter.text}
+      </p>
+    </div>
+  )
+}
+
+//custom
+const SideBar = ({ filters, data }) => {
+  const isDeviceLarge = window.innerWidth >= 1200
+
+  return (
+    <div className={styles.Sidebar}>
+      <div className={styles.Sidebar__infoContainer}>
+        <p className={styles.Sidebar__infoTitle}>{data.title}</p>
+        <p className={styles.Sidebar__infoText}>{data.text}</p>
+        <p className={styles.Sidebar__infoFilters}>{data.filterText}</p>
+      </div>
+      {isDeviceLarge && (
+        <div className={styles.Sidebar__filters}>
+          <div className={styles.Sidebar__filtersInnerContainer}>
+            {filters.map(filter => (
+              <Filter
+                key={filter.id}
+                filter={filter}
+                icon={true}
+                text={"left"}
+                isBtn={true}
+              />
+            ))}
+          </div>
+          <div className={styles.Sidebar__filtersDiscard}>
+            <FilterDiscard
+              key={filterBtnDiscard.id}
+              filter={filterBtnDiscard}
+              icon={true}
+              text={"left"}
+              isBtn={true}
+            />
+          </div>
+        </div>
+      )}
+      {!isDeviceLarge && (
+        <div className={styles.Sidebar__filters}>
+          <div className={styles.Sidebar__filtersInnerContainer}>
+            {filters.map(filter => (
+              <Filter
+                key={filter.id}
+                filter={filter}
+                icon={true}
+                text={"left"}
+                isBtn={true}
+              />
+            ))}
+            <FilterDiscard
+              className={styles.Sidebar__filtersDiscard}
+              key={filterBtnDiscard.id}
+              filter={filterBtnDiscard}
+              icon={true}
+              text={"left"}
+              isBtn={true}
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+const BlogPagination = () => {
+  return (
+    <div className={styles.BlogPagination}>
+
+      <div className={styles.BlogPagination__Container}>1</div>
+      <div className={styles.BlogPagination__Container}>10</div>
+      <div className={styles.BlogPagination__Container}>50</div>
+      <div className={styles.BlogPagination__Container}>1504</div>
+    </div>
+  )
+}
 //icon links
 const Social = () => {
   const [isHoveredInst, setIsHoveredInst] = useState(false)
@@ -367,8 +480,10 @@ const Social = () => {
 
   return (
     <div className={styles.Social}>
-      <div className={styles.Social__title}>Want To See More?</div>
-      <div className={styles.Social__container}>{renderSocials(socials)}</div>
+      <Inner>
+        <div className={styles.Social__title}>Want To See More?</div>
+        <div className={styles.Social__container}>{renderSocials(socials)}</div>
+      </Inner>
     </div>
   )
 }
@@ -390,22 +505,22 @@ const ContactForm = ({ contactFormData }) => {
       </div>
       <div className={styles.ContactForm__formContainer}>
         <div className={styles.ContactForm__inputContainer}>
-          <label for="name">{contactFormData.inputName}</label>
+          <label htmlform="name">{contactFormData.inputName}</label>
           <input
             type="text"
             id="name"
             name="name"
-            autocomplete="off"
+            autoComplete="off"
             className={styles.ContactForm__input}
           />
         </div>
         <div className={styles.ContactForm__inputContainer}>
-          <label for="email">{contactFormData.inputEmail}</label>
+          <label htmlform="email">{contactFormData.inputEmail}</label>
           <input
             type="text"
             id="email"
             name="email"
-            autocomplete="off"
+            autoComplete="off"
             className={styles.ContactForm__input}
           />
         </div>
@@ -414,7 +529,6 @@ const ContactForm = ({ contactFormData }) => {
         </div>
         <div>
           <button className={styles.ContactForm__btn}>
-            {" "}
             {contactFormData.inputbtn}
           </button>
         </div>
@@ -422,21 +536,37 @@ const ContactForm = ({ contactFormData }) => {
     </div>
   )
 }
+const Blog = ({ data, location }) => {
+  const sidebarImage = data.sidebarImage.childImageSharp.fluid
 
-const Blog = () => {
   return (
     <div className={styles.BlogContainer}>
-      <div>
-        <SideBar filters={allFilters} data={sideBarData} />
-      </div>
-      <div className={styles.BlogCardContainer}>
-        {blogCardsInfo.map(cardInfo => (
-          <BlogCard key={cardInfo.id + "t187"} data={cardInfo} />
-        ))}
-        <Social />
-        <ContactForm contactFormData={contactFormData} />
-      </div>
+      <SideBar filters={sidebarBtnFilters} data={sideBarData} />
+      <Outer>
+        <Inner>
+          <div className={styles.BlogCardContainer}>
+            {blogCardsInfo.map(cardInfo => (
+              <BlogCard key={cardInfo.id + "t187"} data={cardInfo} />
+            ))}
+            <BlogPagination />
+            <Social />
+            <ContactForm contactFormData={contactFormData} />
+          </div>
+        </Inner>
+      </Outer>
     </div>
   )
 }
+
+export const query = graphql`
+  query BlogPageQuery {
+    sidebarImage: file(relativePath: { eq: "blog/blog_sideBar_bg.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 export default Blog

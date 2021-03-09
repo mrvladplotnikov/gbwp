@@ -6,20 +6,15 @@ p {
 
 .BlogContainer {
     display: flex;
-    padding: 0;
-    margin: 0;
+    flex-direction: row;
 }
-
 
 /* global blog */
 .BlogCardContainer {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: space-around;
-    /* FOR XL SCREEN */
-    /* justify-content: center; */
-    /* FOR SMALLER SCREEN */
+    justify-content: space-between;
     height: 100%;
     padding-top: 6%;
 }
@@ -31,7 +26,6 @@ p {
 .BlogCard:nth-child(2n) {
     margin-top: 5%
 }
-
 
 /* card */
 .CardContainer {
@@ -48,7 +42,6 @@ p {
     display: block;
     width: 100%;
     position: relative;
-
 }
 
 .CardContainer:hover {
@@ -75,72 +68,77 @@ p {
     font-size: 22px;
     font-weight: 700;
     color: white;
-
 }
 
 .CardBody__text {
     margin-bottom: 5%;
     font-size: 18px;
     color: white;
-
 }
-
 
 /* filters */
 .Filter__containerBtn {
-    padding: 5px 10px;
-    margin: 10px 10px 10px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    margin: 10px 5px 10px 0;
+    padding: 5px;
+    padding-left: 10px;
     max-width: 160px;
-    min-width: 72px;
     max-height: 40px;
     border-radius: 40px;
     border: 2px solid transparent;
-    width: 100%;
-}
-
-.Filter__innerContainer {
     display: flex;
     align-items: center;
-    position: relative;
+    flex-basis: content;
+}
 
+.Filter__containerBtnDiscard {
+    margin: 10px 5px;
+    padding: 5px;
+    max-width: 160px;
+    max-height: 40px;
+    border-radius: 40px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    flex-basis: content;
 }
 
 .Filter__text {
-    text-align: center;
+    margin: 0 2%;
+    width: 100%;
     font-size: 18px;
     font-weight: 700;
     color: white;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
 }
 
+.Filter__iconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Filter__icon {
+    font-size: 25px;
+    margin-right: 5px;
+}
 
 /* sidebar  */
-.Sidebar:before {
-    width: 480px;
-    height: 100vh;
-    background: no-repeat url("../../images/blog/blog_sideBar_bg.jpg");
+.Sidebar {
+    background: no-repeat, linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), url("../../images/blog/blog_sideBar_bg.jpg");
     background-size: cover;
-    z-index: -1;
-    opacity: .4;
-    content: "";
-    position: absolute;
+    height: 100vh;
+    max-width: 25%;
+    position: sticky;
     top: 0;
     left: 0;
 }
 
-.Sidebar {
-    position: relative;
-    z-index: 1;
-    width: 480px;
-    height: 100vh;
-}
-
-.Sidebar__innerContainer {
-    padding: 200px 25px 0;
-
+.Sidebar__infoContainer {
+    padding: 25% 5% 0;
 }
 
 .Sidebar__infoTitle {
@@ -157,31 +155,39 @@ p {
     color: #FFFFFF;
 }
 
-.Sidebar__filtersContainer {
-    display: flex;
-}
-
-.Sidebar__filters {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
 .Sidebar__infoFilters {
-    margin: 15px 0 25px;
     font-weight: bold;
     font-size: 18px;
     line-height: 25px;
     color: #FFFFFF;
+    margin: 5% 0;
+}
+
+.Sidebar__filters {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Sidebar__filtersDiscard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.Sidebar__filtersInnerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* socails  */
 .Social {
-    padding: 0 10%;
-    margin: 15% 0;
+    margin-bottom: 15%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -258,7 +264,6 @@ p {
     font-size: 22px;
     line-height: 23px;
     color: white;
-
 }
 
 .Social__text_hovered {
@@ -277,7 +282,6 @@ p {
 .ContactForm {
     display: flex;
     justify-content: space-between;
-    padding: 0 10%;
     margin-bottom: 20%;
 }
 
@@ -304,6 +308,12 @@ p {
     font-weight: 600;
     font-size: 38px;
     line-height: 48px;
+    border-bottom: 1px solid transparent;
+}
+
+.ContactForm__infoAdress:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .ContactForm__formContainer {
@@ -338,13 +348,17 @@ p {
 .ContactForm__policy {
     margin-bottom: 10px;
 }
+.ContactForm__policy:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
 
 .ContactForm__btn {
     cursor: pointer;
     border: 1px solid rgb(255, 255, 255);
     width: 100%;
-    height: 40px;
-    font-size: 25px;
+    min-height: 40px;
+    font-size: 20px;
     font-weight: 400;
     background: linear-gradient(270deg, #0da6f2 0%, #f23b0d 100%);
     color: white;
@@ -354,4 +368,234 @@ p {
 .ContactForm__btn:hover {
     background: white;
     color: black;
+}
+
+/*pagination item*/
+.BlogPagination {
+    margin: 10% 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.BlogPagination__Container {
+    width: 40px;
+    height: 35px;
+    margin: 0 10px;
+    border: 2px solid #747474;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+.BlogPagination__Container:hover,
+.BlogPagination__Container:focus {
+    background: linear-gradient(270deg, #0da6f2 0%, #f23b0d 100%);
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .BlogContainer {
+        flex-direction: column;
+    }
+
+    .Sidebar {
+        height: auto;
+        max-width: 100%;
+        position: initial;
+    }
+
+    .Sidebar__infoTitle {
+        font-size: 32px;
+    }
+
+    .Sidebar__infoContainer {
+        padding: 5% 8%;
+    }
+
+    .Sidebar__infoFilters {
+        display: none;
+    }
+
+    .Sidebar__filters {
+        padding: 2%;
+    }
+
+    .Sidebar__filtersInnerContainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Filter__containerBtn {
+        padding: 0;
+        margin: 5px 2px;
+        width: 100%;
+        max-width: 140px;
+        font-size: 14px;
+    }
+
+    .Filter__containerBtnDiscard {
+        padding: 0;
+        margin: 5px 2px;
+        width: 100%;
+        max-width: 140px;
+        font-size: 14px;
+    }
+
+    .Filter__icon {
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+    .CardContainer {
+        max-width: 400px;
+    }
+
+    .CardBody__text {
+        font-size: 14px;
+    }
+
+    .Social__title {
+        font-size: 32px;
+    }
+
+    .ContactForm__infoTitle {
+        font-size: 32px;
+    }
+
+    .ContactForm__infoText {
+        font-size: 14px;
+    }
+
+    .ContactForm__infoAdress {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .CardContainer {
+        max-width: 320px;
+    }
+
+    .Sidebar__infoContainer {
+        padding: 5% 10%;
+    }
+
+    .Sidebar__filters {
+        padding: 2%;
+    }
+
+    .Sidebar__filtersInnerContainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Filter__containerBtn {
+        padding: 0;
+        margin: 5px 2px;
+        width: 100%;
+        max-width: 100px;
+        justify-content: center;
+    }
+
+    .Filter__containerBtnDiscard {
+        padding: 0;
+        margin: 5px 2px;
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .Sidebar__infoText {
+        font-size: 14px;
+    }
+
+    .Filter__text {
+        font-size: 14px;
+    }
+
+    .Social__text {
+        font-size: 18px;
+    }
+
+    .Social__text_hovered {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 540px) {
+    .Sidebar__infoContainer {
+        padding: 5% 2%;
+    }
+
+    .Sidebar__filters {
+        flex-wrap: wrap;
+    }
+
+    .Sidebar__filtersInnerContainer {
+        flex-wrap: wrap;
+    }
+
+    .Sidebar__filtersDiscard {
+        max-width: 100%;
+    }
+
+    .Filter__containerBtn {
+        margin: 5px 1px;
+        width: 30%;
+        font-size: 12px;
+    }
+
+    .Filter__containerBtnDiscard {
+        max-width: 100%;
+        font-size: 12px;
+        justify-content: center;
+    }
+
+    .Filter__text {
+        text-align: center;
+        width: auto;
+    }
+
+    .ContactForm {
+        flex-direction: column;
+    }
+
+    .CardContainer {
+        max-width: 100%;
+    }
+
+    .CardImage__filters {
+        flex-wrap: wrap;
+    }
+
+    .Social__title {
+        font-size: 24px;
+    }
+
+    .Social__container {
+        flex-wrap: wrap;
+    }
+
+    .Social__linkContainer {
+        width: 50%;
+        margin-bottom: 5%;
+    }
+
+    .ContactForm__infoTitle {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .ContactForm__formContainer {
+        padding: 0;
+
+    }
+
+    .BlogContainer {
+        padding: 0 2%;
+    }
 }
