@@ -14,7 +14,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
     padding-top: 6%;
 }
@@ -88,6 +88,7 @@ p {
     border: 2px solid transparent;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-basis: content;
 }
 
@@ -104,7 +105,6 @@ p {
 }
 
 .Filter__text {
-    margin: 0 2%;
     width: 100%;
     font-size: 18px;
     font-weight: 700;
@@ -115,6 +115,7 @@ p {
 }
 
 .Filter__iconContainer {
+    margin-right: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,7 +124,6 @@ p {
 
 .Filter__icon {
     font-size: 25px;
-    margin-right: 5px;
 }
 
 /* sidebar  */
@@ -132,6 +132,7 @@ p {
     background-size: cover;
     height: 100vh;
     max-width: 25%;
+    min-width: 400px;
     position: sticky;
     top: 0;
     left: 0;
@@ -348,6 +349,7 @@ p {
 .ContactForm__policy {
     margin-bottom: 10px;
 }
+
 .ContactForm__policy:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -397,7 +399,23 @@ p {
     cursor: pointer;
 }
 
+@media (max-width: 1417px) {
+    .BlogCardContainer {
+        padding: 10%;
+    }
+
+    .CardContainer {
+        max-width: 600px;
+        max-height: 800px;
+    }
+}
+
 @media (max-width: 1200px) {
+    .BlogCardContainer {
+        padding: 0;
+        padding-top: 6%;
+    }
+
     .BlogContainer {
         flex-direction: column;
     }
@@ -431,6 +449,7 @@ p {
 
     .Filter__containerBtn {
         padding: 0;
+        padding-left: 10px;
         margin: 5px 2px;
         width: 100%;
         max-width: 140px;
@@ -439,6 +458,7 @@ p {
 
     .Filter__containerBtnDiscard {
         padding: 0;
+        padding-left: 10px;
         margin: 5px 2px;
         width: 100%;
         max-width: 140px;
@@ -452,6 +472,7 @@ p {
 
     .CardContainer {
         max-width: 400px;
+        max-height: 722px;
     }
 
     .CardBody__text {
@@ -475,7 +496,7 @@ p {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .CardContainer {
         max-width: 320px;
     }
@@ -495,17 +516,19 @@ p {
 
     .Filter__containerBtn {
         padding: 0;
+        padding-left: 5px;
         margin: 5px 2px;
         width: 100%;
-        max-width: 100px;
+        max-width: 120px;
         justify-content: center;
     }
 
     .Filter__containerBtnDiscard {
         padding: 0;
+        padding-left: 5px;
         margin: 5px 2px;
         width: 100%;
-        max-width: 100px;
+        max-width: 120px;
     }
 
     .Sidebar__infoText {
@@ -513,7 +536,8 @@ p {
     }
 
     .Filter__text {
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 10px;
     }
 
     .Social__text {
@@ -526,7 +550,11 @@ p {
 
 }
 
-@media (max-width: 540px) {
+@media (max-width: 680px) {
+    .Sidebar {
+        min-width: 0px;
+    }
+
     .Sidebar__infoContainer {
         padding: 5% 2%;
     }
@@ -597,5 +625,28 @@ p {
 
     .BlogContainer {
         padding: 0 2%;
+    }
+
+    .BlogCard {
+        margin: 5% 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .Sidebar__filtersInnerContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Filter__containerBtn {
+        max-width: 50%;
+        width: 100%;
+    }
+
+    .Filter__containerBtnDiscard {
+        width: 100%;
+        max-width: 50%;
     }
 }
