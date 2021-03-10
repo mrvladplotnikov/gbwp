@@ -4,7 +4,7 @@ import SEO from "~components/seo"
 import HorizontalNav from "~components/HorizontalNav"
 import Footer from "~components/Footer"
 
-const HomeLayout = ({
+const DefaultLayout = ({
   title = "",
   description = "",
   disableSiteNameInTitle = false,
@@ -30,6 +30,6 @@ const HomeLayout = ({
   )
 }
 
-HomeLayout.propTypes = {}
+DefaultLayout.propTypes = {}
 
-export default HomeLayout
+export default DefaultLayout

@@ -1,6 +1,6 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import { Outer } from "../Container"
 import SocialIcon from "../SocialIcon"
@@ -24,7 +24,7 @@ const GET_SOCIAL_LINKS = graphql`
   }
 `
 
-const Footer = () => {
+const Footer = ({ disableOuterContainer = false }) => {
   const { t } = useTranslation()
   const {
     site: {
@@ -32,9 +32,11 @@ const Footer = () => {
     },
   } = useStaticQuery(GET_SOCIAL_LINKS)
 
+  const OuterContainer = disableOuterContainer ? Fragment : Outer
+
   return (
     <div className={styles.container}>
-      <Outer>
+      <OuterContainer>
         <div className={styles.innerContainer}>
           <div className={styles.col}>
             <ul className={styles.footerLinks}>
@@ -74,7 +76,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </Outer>
+      </OuterContainer>
     </div>
   )
 }

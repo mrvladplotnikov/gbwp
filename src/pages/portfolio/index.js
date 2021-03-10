@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */
 import React from "react"
 import { useQueryParams, StringParam } from "use-query-params"
 import { Trans, useI18next } from "gatsby-plugin-react-i18next"

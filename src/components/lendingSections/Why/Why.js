@@ -1,11 +1,7 @@
+/* eslint-disable jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import {
-  Trans,
-  Link,
-  useI18next,
-  useTranslation,
-} from "gatsby-plugin-react-i18next"
+import { Trans, Link, useI18next } from "gatsby-plugin-react-i18next"
 
 import InlineButton from "../../InlineButton"
 import FeatureList from "../../FeatureList"

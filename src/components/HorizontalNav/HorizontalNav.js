@@ -13,7 +13,7 @@ import HamburgerButton from "../HamburgerButton"
 import NavigationDrawer from "../NavigationDrawer"
 
 const HorizontalNav = ({ hideMenu = false, className = "" }) => {
-  const { language, siteUrl } = useI18next()
+  const { language } = useI18next()
 
   const {
     logo,

@@ -86,4 +86,11 @@
   .linkContainer {
     margin-top: 106px;
   }
+
+  .boxTopRight {
+    right: 90px;
+  }
+  .boxBottomLeft {
+    left: 80px;
+  }
 }
